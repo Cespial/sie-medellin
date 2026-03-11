@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MEDELLIN_CENTER } from "@/types/geo";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 interface DesercionComuna {
   comuna: string;
@@ -15,9 +16,17 @@ interface DesercionData {
   ultimoAnio: string;
 }
 
+function getColor(tasa: number): string {
+  if (tasa >= 6) return "#EF233C";
+  if (tasa >= 4.5) return "#FF6B6B";
+  if (tasa >= 3) return "#FFB703";
+  if (tasa >= 1.5) return "#06D6A0";
+  return "#06D6A0";
+}
+
 export function MapContainer() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<unknown>(null);
+  const mapRef = useRef<L.Map | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [stats, setStats] = useState({ comunas: 0, ies: 0 });
@@ -25,291 +34,208 @@ export function MapContainer() {
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
 
-    let cancelled = false;
+    try {
+      const map = L.map(mapContainer.current, {
+        center: [6.2476, -75.5636],
+        zoom: 12,
+        zoomControl: false,
+        attributionControl: false,
+      });
 
-    (async () => {
-      try {
-        const mlModule = await import("maplibre-gl");
-        const maplibregl = mlModule.default;
+      mapRef.current = map;
 
-        // Use pre-built CSP worker to avoid webpack worker bundling failures
-        if (mlModule.setWorkerUrl) {
-          mlModule.setWorkerUrl("/maplibre-gl-csp-worker.js");
+      // Dark basemap
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        {
+          subdomains: "abcd",
+          maxZoom: 19,
         }
+      ).addTo(map);
 
-        if (cancelled || !mapContainer.current) return;
+      // Zoom control top-right
+      L.control.zoom({ position: "topright" }).addTo(map);
 
-        const map = new maplibregl.Map({
-          container: mapContainer.current,
-          style: {
-            version: 8 as const,
-            name: "SIE Dark",
-            sources: {
-              "carto-dark": {
-                type: "raster" as const,
-                tiles: [
-                  "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-                  "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-                ],
-                tileSize: 256,
-                attribution: "&copy; OSM &copy; CARTO",
-              },
-            },
-            layers: [
-              {
-                id: "carto-dark-layer",
-                type: "raster" as const,
-                source: "carto-dark",
-              },
-            ],
-          },
-          center: [MEDELLIN_CENTER.longitude, MEDELLIN_CENTER.latitude],
-          zoom: MEDELLIN_CENTER.zoom,
-          pitch: MEDELLIN_CENTER.pitch,
-          bearing: MEDELLIN_CENTER.bearing,
-          maxBounds: [
-            [-75.75, 6.1],
-            [-75.4, 6.45],
-          ],
-        });
+      // Attribution bottom-left
+      L.control
+        .attribution({ position: "bottomleft" })
+        .addAttribution("&copy; OSM &copy; CARTO")
+        .addTo(map);
 
-        mapRef.current = map;
+      // Load data
+      Promise.all([
+        fetch("/geojson/comunas_medellin.geojson").then((r) =>
+          r.ok ? r.json() : null
+        ),
+        fetch("/data/desercion_medellin.json").then((r) =>
+          r.ok ? (r.json() as Promise<DesercionData>) : null
+        ),
+      ])
+        .then(([comunasData, desercionData]) => {
+          if (!comunasData) return;
 
-        map.addControl(new maplibregl.NavigationControl(), "top-right");
+          setStats((s) => ({
+            ...s,
+            comunas: comunasData.features?.length || 0,
+          }));
 
-        map.on("load", () => {
-          if (cancelled) return;
-          setLoaded(true);
-
-          // Load comunas + deserción
-          Promise.all([
-            fetch("/geojson/comunas_medellin.geojson").then((r) =>
-              r.ok ? r.json() : null
-            ),
-            fetch("/data/desercion_medellin.json").then((r) =>
-              r.ok ? (r.json() as Promise<DesercionData>) : null
-            ),
-          ])
-            .then(([comunasData, desercionData]) => {
-              if (!comunasData || cancelled) return;
-              setStats((s) => ({
-                ...s,
-                comunas: comunasData.features?.length || 0,
-              }));
-
-              if (desercionData?.porComuna) {
-                const desercionMap = new Map<string, DesercionComuna>();
-                for (const d of desercionData.porComuna) {
-                  desercionMap.set(d.comuna, d);
-                  desercionMap.set(d.comuna.padStart(2, "0"), d);
-                }
-                for (const feature of comunasData.features) {
-                  const comunaCode = feature.properties?.COMUNA;
-                  if (!comunaCode) continue;
-                  const match =
-                    desercionMap.get(comunaCode) ||
-                    desercionMap.get(String(parseInt(comunaCode, 10)));
-                  if (match) {
-                    feature.properties.tasaDesercion = match.tasaDesercion;
-                    feature.properties.desertores = match.desertores;
-                    feature.properties.matriculaTotal = match.matricula;
-                  }
-                }
+          // Merge deserción
+          const desercionMap = new Map<string, DesercionComuna>();
+          if (desercionData?.porComuna) {
+            for (const d of desercionData.porComuna) {
+              desercionMap.set(d.comuna, d);
+              desercionMap.set(d.comuna.padStart(2, "0"), d);
+            }
+            for (const feature of comunasData.features) {
+              const code = feature.properties?.COMUNA;
+              if (!code) continue;
+              const match =
+                desercionMap.get(code) ||
+                desercionMap.get(String(parseInt(code, 10)));
+              if (match) {
+                feature.properties.tasaDesercion = match.tasaDesercion;
+                feature.properties.desertores = match.desertores;
+                feature.properties.matriculaTotal = match.matricula;
               }
+            }
+          }
 
-              map.addSource("comunas", { type: "geojson", data: comunasData });
+          // Choropleth layer
+          L.geoJSON(comunasData, {
+            style: (feature) => {
+              const tasa = feature?.properties?.tasaDesercion ?? 0;
+              return {
+                fillColor: getColor(tasa),
+                fillOpacity: 0.5,
+                color: "#00D4FF",
+                weight: 1.5,
+                opacity: 0.5,
+              };
+            },
+            onEachFeature: (feature, layer) => {
+              const p = feature.properties || {};
+              const nombre = p.NOMBRE || "Comuna";
+              const tasa =
+                p.tasaDesercion != null
+                  ? Number(p.tasaDesercion).toFixed(2)
+                  : "N/D";
+              const desertores =
+                p.desertores != null
+                  ? Number(p.desertores).toLocaleString("es-CO")
+                  : "N/D";
+              const matricula =
+                p.matriculaTotal != null
+                  ? Number(p.matriculaTotal).toLocaleString("es-CO")
+                  : "N/D";
 
-              map.addLayer({
-                id: "comunas-fill",
-                type: "fill",
-                source: "comunas",
-                paint: {
-                  "fill-color": [
-                    "interpolate",
-                    ["linear"],
-                    ["get", "tasaDesercion"],
-                    0,
-                    "#06D6A0",
-                    3,
-                    "#FFB703",
-                    6,
-                    "#EF233C",
-                  ],
-                  "fill-opacity": 0.55,
-                },
-              });
-
-              map.addLayer({
-                id: "comunas-line",
-                type: "line",
-                source: "comunas",
-                paint: {
-                  "line-color": "#00D4FF",
-                  "line-width": 1.5,
-                  "line-opacity": 0.5,
-                },
-              });
-
-              map.addLayer({
-                id: "comunas-line-glow",
-                type: "line",
-                source: "comunas",
-                paint: {
-                  "line-color": "#00D4FF",
-                  "line-width": 4,
-                  "line-opacity": 0.1,
-                  "line-blur": 3,
-                },
-              });
-
-              map.on("click", "comunas-fill", (e) => {
-                const props = e.features?.[0]?.properties;
-                if (!props) return;
-                const nombre = props.NOMBRE || "Comuna";
-                const tasa =
-                  props.tasaDesercion != null
-                    ? Number(props.tasaDesercion).toFixed(2)
-                    : "N/D";
-                const desertores =
-                  props.desertores != null
-                    ? Number(props.desertores).toLocaleString("es-CO")
-                    : "N/D";
-                const matricula =
-                  props.matriculaTotal != null
-                    ? Number(props.matriculaTotal).toLocaleString("es-CO")
-                    : "N/D";
-
-                new maplibregl.Popup({ closeButton: true, maxWidth: "300px" })
-                  .setLngLat(e.lngLat)
-                  .setHTML(
-                    `<div style="padding:12px;font-family:Inter,sans-serif;">
-                      <h3 style="font-weight:700;font-size:13px;color:#E8F4FD;margin:0 0 8px 0;">${nombre}</h3>
-                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
-                        <div><span style="color:#6B8CAE;">Tasa Deserción</span><br/>
-                          <span style="font-weight:700;color:#EF233C;font-size:16px;">${tasa}%</span></div>
-                        <div><span style="color:#6B8CAE;">Desertores</span><br/>
-                          <span style="font-weight:600;color:#FFB703;font-size:14px;">${desertores}</span></div>
-                        <div style="grid-column:span 2;"><span style="color:#6B8CAE;">Matrícula Total</span><br/>
-                          <span style="font-weight:600;color:#00D4FF;font-size:14px;">${matricula}</span></div>
-                      </div>
-                    </div>`
-                  )
-                  .addTo(map);
-              });
-
-              map.on("mousemove", "comunas-fill", () => {
-                map.getCanvas().style.cursor = "pointer";
-              });
-              map.on("mouseleave", "comunas-fill", () => {
-                map.getCanvas().style.cursor = "";
-              });
-            })
-            .catch(() => {});
-
-          // Load institutions
-          fetch("/geojson/instituciones_educativas.geojson")
-            .then((r) => (r.ok ? r.json() : null))
-            .then((data) => {
-              if (!data || cancelled) return;
-              setStats((s) => ({ ...s, ies: data.features?.length || 0 }));
-
-              map.addSource("instituciones", { type: "geojson", data });
-
-              map.addLayer({
-                id: "ie-circles",
-                type: "circle",
-                source: "instituciones",
-                paint: {
-                  "circle-radius": [
-                    "interpolate",
-                    ["linear"],
-                    ["to-number", ["get", "total_matricula"], 100],
-                    0, 3, 500, 6, 2000, 12, 5000, 18,
-                  ],
-                  "circle-color": [
-                    "case",
-                    ["==", ["get", "cte_id_sector"], "OFICIAL"],
-                    "#00D4FF",
-                    "#FFB703",
-                  ],
-                  "circle-opacity": 0.7,
-                  "circle-stroke-color": "#ffffff",
-                  "circle-stroke-width": 0.5,
-                  "circle-stroke-opacity": 0.3,
-                },
-              });
-
-              map.addLayer(
+              layer.bindPopup(
+                `<div style="padding:12px;font-family:Inter,sans-serif;background:#0D1B2A;color:#E8F4FD;border-radius:12px;min-width:200px;">
+                  <h3 style="font-weight:700;font-size:13px;margin:0 0 8px 0;">${nombre}</h3>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
+                    <div><span style="color:#6B8CAE;">Tasa Deserción</span><br/>
+                      <span style="font-weight:700;color:#EF233C;font-size:16px;">${tasa}%</span></div>
+                    <div><span style="color:#6B8CAE;">Desertores</span><br/>
+                      <span style="font-weight:600;color:#FFB703;font-size:14px;">${desertores}</span></div>
+                    <div style="grid-column:span 2;"><span style="color:#6B8CAE;">Matrícula Total</span><br/>
+                      <span style="font-weight:600;color:#00D4FF;font-size:14px;">${matricula}</span></div>
+                  </div>
+                </div>`,
                 {
-                  id: "ie-circles-glow",
-                  type: "circle",
-                  source: "instituciones",
-                  paint: {
-                    "circle-radius": [
-                      "interpolate",
-                      ["linear"],
-                      ["to-number", ["get", "total_matricula"], 100],
-                      0, 8, 500, 14, 2000, 22, 5000, 30,
-                    ],
-                    "circle-color": [
-                      "case",
-                      ["==", ["get", "cte_id_sector"], "OFICIAL"],
-                      "#00D4FF",
-                      "#FFB703",
-                    ],
-                    "circle-opacity": 0.1,
-                    "circle-blur": 1,
-                  },
-                },
-                "ie-circles"
+                  className: "sie-popup",
+                  closeButton: true,
+                  maxWidth: 300,
+                }
               );
 
-              map.on("click", "ie-circles", (e) => {
-                const props = e.features?.[0]?.properties;
-                if (!props) return;
-                new maplibregl.Popup({ closeButton: true, maxWidth: "320px" })
-                  .setLngLat(e.lngLat)
-                  .setHTML(
-                    `<div style="padding:12px;font-family:Inter,sans-serif;">
-                      <h3 style="font-weight:700;font-size:13px;color:#E8F4FD;margin:0 0 8px 0;">
-                        ${props.nombre_establecimiento || props.nombre_sede || "IE"}
-                      </h3>
-                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
-                        <div><span style="color:#6B8CAE;">Matrícula</span><br/>
-                          <span style="font-weight:600;color:#00D4FF;font-size:14px;">${Number(props.total_matricula || 0).toLocaleString("es-CO")}</span></div>
-                        <div><span style="color:#6B8CAE;">Sector</span><br/>
-                          <span style="font-weight:600;color:${props.cte_id_sector === "OFICIAL" ? "#00D4FF" : "#FFB703"};">${props.cte_id_sector || ""}</span></div>
-                        <div><span style="color:#6B8CAE;">Zona</span><br/>
-                          <span style="color:#E8F4FD;">${props.zona || ""}</span></div>
-                        <div><span style="color:#6B8CAE;">Código DANE</span><br/>
-                          <span style="color:#E8F4FD;font-family:monospace;font-size:10px;">${props.codigo_dane_sede || ""}</span></div>
-                      </div>
-                      <div style="margin-top:8px;font-size:10px;color:#6B8CAE;">${props.direccion || ""}</div>
-                    </div>`
-                  )
-                  .addTo(map);
+              layer.on("mouseover", function () {
+                (layer as L.Path).setStyle({
+                  fillOpacity: 0.75,
+                  weight: 2.5,
+                  opacity: 0.9,
+                });
               });
+              layer.on("mouseout", function () {
+                (layer as L.Path).setStyle({
+                  fillOpacity: 0.5,
+                  weight: 1.5,
+                  opacity: 0.5,
+                });
+              });
+            },
+          }).addTo(map);
 
-              map.on("mousemove", "ie-circles", () => {
-                map.getCanvas().style.cursor = "pointer";
-              });
-              map.on("mouseleave", "ie-circles", () => {
-                map.getCanvas().style.cursor = "";
-              });
-            })
-            .catch(() => {});
+          setLoaded(true);
+        })
+        .catch((err) => {
+          console.error("Error loading comunas:", err);
         });
-      } catch (err) {
-        if (!cancelled) {
-          setError(err instanceof Error ? err.message : String(err));
-        }
-      }
-    })();
+
+      // Load institutions
+      fetch("/geojson/instituciones_educativas.geojson")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+          if (!data) return;
+          setStats((s) => ({ ...s, ies: data.features?.length || 0 }));
+
+          L.geoJSON(data, {
+            pointToLayer: (feature, latlng) => {
+              const p = feature.properties || {};
+              const mat = Number(p.total_matricula || 100);
+              const isOficial = p.cte_id_sector === "OFICIAL";
+              const radius = Math.max(3, Math.min(14, Math.sqrt(mat) * 0.3));
+
+              return L.circleMarker(latlng, {
+                radius,
+                fillColor: isOficial ? "#00D4FF" : "#FFB703",
+                fillOpacity: 0.7,
+                color: "#ffffff",
+                weight: 0.5,
+                opacity: 0.3,
+              });
+            },
+            onEachFeature: (feature, layer) => {
+              const p = feature.properties || {};
+              const isOficial = p.cte_id_sector === "OFICIAL";
+
+              layer.bindPopup(
+                `<div style="padding:12px;font-family:Inter,sans-serif;background:#0D1B2A;color:#E8F4FD;border-radius:12px;min-width:220px;">
+                  <h3 style="font-weight:700;font-size:13px;margin:0 0 8px 0;">
+                    ${p.nombre_establecimiento || p.nombre_sede || "IE"}
+                  </h3>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
+                    <div><span style="color:#6B8CAE;">Matrícula</span><br/>
+                      <span style="font-weight:600;color:#00D4FF;font-size:14px;">${Number(p.total_matricula || 0).toLocaleString("es-CO")}</span></div>
+                    <div><span style="color:#6B8CAE;">Sector</span><br/>
+                      <span style="font-weight:600;color:${isOficial ? "#00D4FF" : "#FFB703"};">${p.cte_id_sector || ""}</span></div>
+                    <div><span style="color:#6B8CAE;">Zona</span><br/>
+                      <span style="color:#E8F4FD;">${p.zona || ""}</span></div>
+                    <div><span style="color:#6B8CAE;">DANE</span><br/>
+                      <span style="color:#E8F4FD;font-family:monospace;font-size:10px;">${p.codigo_dane_sede || ""}</span></div>
+                  </div>
+                  ${p.direccion ? `<div style="margin-top:8px;font-size:10px;color:#6B8CAE;">${p.direccion}</div>` : ""}
+                </div>`,
+                {
+                  className: "sie-popup",
+                  closeButton: true,
+                  maxWidth: 320,
+                }
+              );
+            },
+          }).addTo(map);
+        })
+        .catch((err) => {
+          console.error("Error loading instituciones:", err);
+        });
+
+      // Force resize after mount
+      setTimeout(() => map.invalidateSize(), 100);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    }
 
     return () => {
-      cancelled = true;
-      if (mapRef.current && typeof (mapRef.current as { remove: () => void }).remove === "function") {
-        (mapRef.current as { remove: () => void }).remove();
+      if (mapRef.current) {
+        mapRef.current.remove();
         mapRef.current = null;
       }
     };
@@ -319,7 +245,9 @@ export function MapContainer() {
     return (
       <div className="h-full flex items-center justify-center bg-background">
         <div className="text-center p-6">
-          <p className="text-danger font-semibold mb-2">Error cargando el mapa</p>
+          <p className="text-danger font-semibold mb-2">
+            Error cargando el mapa
+          </p>
           <p className="text-muted text-sm">{error}</p>
         </div>
       </div>
@@ -328,10 +256,10 @@ export function MapContainer() {
 
   return (
     <div className="relative w-full h-full">
-      <div ref={mapContainer} className="absolute inset-0" />
+      <div ref={mapContainer} className="absolute inset-0 z-0" />
 
       {/* Control panel */}
-      <div className="absolute top-4 left-4 z-10 bg-surface/90 backdrop-blur-md border border-border rounded-xl p-4 max-w-xs">
+      <div className="absolute top-4 left-4 z-[1000] bg-surface/90 backdrop-blur-md border border-border rounded-xl p-4 max-w-xs">
         <h2 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
           Mapa Educativo
         </h2>
@@ -357,7 +285,7 @@ export function MapContainer() {
 
       {/* Choropleth legend */}
       {loaded && (
-        <div className="absolute bottom-6 right-6 z-10 bg-surface/90 backdrop-blur-md border border-border rounded-xl p-3">
+        <div className="absolute bottom-6 right-6 z-[1000] bg-surface/90 backdrop-blur-md border border-border rounded-xl p-3">
           <p className="text-[10px] font-semibold text-foreground mb-2">
             Tasa de Deserción (%)
           </p>
