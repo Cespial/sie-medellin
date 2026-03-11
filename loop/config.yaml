@@ -1,0 +1,48 @@
+# ============================================================
+# SIE Medellín — Configuración del Data Loop
+# ============================================================
+loop:
+  version: "1.0"
+  nombre: "SIE Medellín Data Loop"
+
+# Código DANE de Medellín
+medellin:
+  codigo_dane: "05001"
+  nombre: "Medellín"
+  departamento: "Antioquia"
+  codigo_departamento: "05"
+
+fuentes:
+  medata:
+    activa: true
+    base_url: "https://medata.gov.co/api/3/action"
+    frecuencia: "semanal"
+    datasets: []  # Se llenan dinámicamente al descubrir datasets
+
+  datos_gov:
+    activa: true
+    base_url: "https://www.datos.gov.co/resource"
+    frecuencia: "mensual"
+    datasets:
+      - id: "nudc-hpkp"
+        nombre: "SIMAT Matrícula"
+        tabla_destino: "fact_matricula"
+      - id: "kgpf-yjmc"
+        nombre: "Saber 11 Resultados"
+        tabla_destino: "fact_calidad"
+      - id: "cqnp-pnnh"
+        nombre: "Directorio Establecimientos"
+        tabla_destino: "dim_instituciones"
+
+  icfes:
+    activa: true
+    frecuencia: "anual"
+
+  dane:
+    activa: true
+    frecuencia: "anual"
+
+directorios:
+  raw: "loop/data/raw"
+  processed: "loop/data/processed"
+  geojson: "public/geojson"

@@ -1,0 +1,320 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5477,
+          6.2892
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "01",
+        "NOMBRE": "Popular",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5572,
+          6.2847
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "02",
+        "NOMBRE": "Santa Cruz",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5398,
+          6.2752
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "03",
+        "NOMBRE": "Manrique",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5589,
+          6.2732
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "04",
+        "NOMBRE": "Aranjuez",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5758,
+          6.2782
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "05",
+        "NOMBRE": "Castilla",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5805,
+          6.2852
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "06",
+        "NOMBRE": "Doce de Octubre",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5902,
+          6.2722
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "07",
+        "NOMBRE": "Robledo",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5442,
+          6.2582
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "08",
+        "NOMBRE": "Villa Hermosa",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5498,
+          6.2412
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "09",
+        "NOMBRE": "Buenos Aires",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5632,
+          6.2532
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "10",
+        "NOMBRE": "La Candelaria",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5822,
+          6.2482
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "11",
+        "NOMBRE": "Laureles-Estadio",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5942,
+          6.2512
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "12",
+        "NOMBRE": "La América",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6102,
+          6.2572
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "13",
+        "NOMBRE": "San Javier",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5692,
+          6.2112
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "14",
+        "NOMBRE": "El Poblado",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5882,
+          6.2172
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "15",
+        "NOMBRE": "Guayabal",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5972,
+          6.2292
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "16",
+        "NOMBRE": "Belén",
+        "tipo": "comuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.665,
+          6.285
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "50",
+        "NOMBRE": "San Sebastián de Palmitas",
+        "tipo": "corregimiento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.625,
+          6.279
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "60",
+        "NOMBRE": "San Cristóbal",
+        "tipo": "corregimiento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.62,
+          6.228
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "70",
+        "NOMBRE": "Altavista",
+        "tipo": "corregimiento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.64,
+          6.185
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "80",
+        "NOMBRE": "San Antonio de Prado",
+        "tipo": "corregimiento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.505,
+          6.222
+        ]
+      },
+      "properties": {
+        "IDENTIFICACION": "90",
+        "NOMBRE": "Santa Elena",
+        "tipo": "corregimiento"
+      }
+    }
+  ]
+}

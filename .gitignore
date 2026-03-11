@@ -33,6 +33,16 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# ETL raw data (large files)
+loop/data/raw/
+loop/data/processed/
+*.parquet
+*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
+
 # vercel
 .vercel
 

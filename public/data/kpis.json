@@ -1,0 +1,27 @@
+{
+  "totalMatriculados": 441926,
+  "totalSedes": 771,
+  "promedioSaber11": 250.5,
+  "totalEvaluados": 50000,
+  "totalIEs": 342,
+  "coberturaNeta": 89.85,
+  "coberturaBruta": 99.99,
+  "tasaDesercion": 3.78,
+  "tasaAprobacion": 88.95,
+  "sedesConInternet": 0.0,
+  "zonas": {
+    "URBANA": 716,
+    "RURAL": 55
+  },
+  "sectores": {
+    "OFICIAL": 420,
+    "NO OFICIAL": 351
+  },
+  "fuentes": {
+    "saber11": "datos.gov.co/kgxf-xxbe",
+    "sedes": "datos.gov.co/x5ay-984n",
+    "estadisticas": "datos.gov.co/ji8i-4anb",
+    "geo": "OpenStreetMap Overpass API"
+  },
+  "ultimaActualizacion": "2026-03-10"
+}

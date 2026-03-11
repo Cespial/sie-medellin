@@ -1,65 +1,86 @@
-import Image from "next/image";
+import { HeroSection } from "@/components/dashboard/HeroSection";
+import { KPIGrid } from "@/components/dashboard/KPIGrid";
+import { DataSourcesFooter } from "@/components/layout/DataSourcesFooter";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen">
+      <HeroSection />
+
+      <section className="px-6 pb-8">
+        <h2 className="font-[var(--font-syne)] text-lg font-bold text-foreground mb-4">
+          Indicadores Clave
+        </h2>
+        <KPIGrid />
+      </section>
+
+      <section className="px-6 pb-8">
+        <div className="rounded-xl border border-border bg-surface/50 p-6">
+          <h2 className="font-[var(--font-syne)] text-lg font-bold text-foreground mb-2">
+            Dimensiones del Sistema
+          </h2>
+          <p className="text-sm text-muted mb-6">
+            El SIE cruza datos educativos con indicadores socioeconómicos para
+            generar inteligencia accionable.
           </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              {
+                name: "Cobertura",
+                desc: "Matrícula, tasas de cobertura bruta y neta por nivel",
+                color: "from-accent to-secondary",
+                href: "/cobertura",
+              },
+              {
+                name: "Calidad",
+                desc: "Saber 11, ISCE, clasificación de planteles",
+                color: "from-success to-accent",
+                href: "/calidad",
+              },
+              {
+                name: "Permanencia",
+                desc: "Deserción, reprobación, eficiencia interna",
+                color: "from-warning to-danger",
+                href: "/cobertura",
+              },
+              {
+                name: "Eficiencia",
+                desc: "Ratio alumno/docente, infraestructura, conectividad",
+                color: "from-secondary to-primary",
+                href: "/instituciones",
+              },
+              {
+                name: "Equidad",
+                desc: "Brechas de género, estrato, zona, población vulnerable",
+                color: "from-accent to-success",
+                href: "/contexto",
+              },
+              {
+                name: "Contexto",
+                desc: "IPM, violencia, desempleo, hacinamiento por comunas",
+                color: "from-danger to-warning",
+                href: "/contexto",
+              },
+            ].map((dim) => (
+              <a
+                key={dim.name}
+                href={dim.href}
+                className="group rounded-lg border border-border bg-background/50 p-4 hover:border-accent/30 hover:bg-accent/5 transition-all"
+              >
+                <div
+                  className={`w-8 h-1 rounded-full bg-gradient-to-r ${dim.color} mb-3 group-hover:w-12 transition-all`}
+                />
+                <h3 className="font-semibold text-sm text-foreground mb-1">
+                  {dim.name}
+                </h3>
+                <p className="text-xs text-muted leading-relaxed">{dim.desc}</p>
+              </a>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      <DataSourcesFooter />
     </div>
   );
 }
