@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { KPIGrid } from "@/components/dashboard/KPIGrid";
 import { RankingTable } from "@/components/dashboard/RankingTable";
-import { TrendChart } from "@/components/charts/TrendChart";
+import { MedellinTrendChart } from "@/components/charts/MedellinTrendChart";
 import { DataSourcesFooter } from "@/components/layout/DataSourcesFooter";
 
 export default function HomePage() {
@@ -18,14 +18,14 @@ export default function HomePage() {
 
       <section className="px-6 pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <TrendChart
-            title="Cobertura Neta — Antioquia"
+          <MedellinTrendChart
+            title="Cobertura Neta — Medellín"
             dataKey="cobertura_neta"
             color="#00D4FF"
             unit="%"
           />
-          <TrendChart
-            title="Tasa de Deserción"
+          <MedellinTrendChart
+            title="Tasa de Deserción — Medellín"
             dataKey="desercion"
             color="#EF233C"
             unit="%"

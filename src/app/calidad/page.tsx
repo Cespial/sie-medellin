@@ -1,5 +1,7 @@
 import { RankingTable } from "@/components/dashboard/RankingTable";
 import { TrendChart } from "@/components/charts/TrendChart";
+import { ISCEChart } from "@/components/charts/ISCEChart";
+import { Saber11HistoricoChart } from "@/components/charts/Saber11HistoricoChart";
 
 export const metadata = { title: "Calidad — SIE Medellín" };
 
@@ -14,9 +16,19 @@ export default function CalidadPage() {
           Calidad
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
-          Resultados Saber 11 por institución educativa, rankings y evolución
-          histórica de indicadores de calidad.
+          Resultados Saber 11 por institución educativa, ISCE, rankings y
+          evolución histórica de indicadores de calidad.
         </p>
+      </div>
+
+      {/* Saber 11 Histórico */}
+      <div className="mb-6">
+        <Saber11HistoricoChart />
+      </div>
+
+      {/* ISCE */}
+      <div className="mb-6">
+        <ISCEChart />
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">

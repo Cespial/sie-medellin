@@ -1,3 +1,4 @@
+import { MedellinTrendChart } from "@/components/charts/MedellinTrendChart";
 import { TrendChart } from "@/components/charts/TrendChart";
 
 export const metadata = { title: "Contexto — SIE Medellín" };
@@ -14,11 +15,44 @@ export default function ContextoPage() {
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
           Indicadores de eficiencia del sistema educativo y su relación con el
-          contexto socioeconómico de Antioquia. Datos del Ministerio de
-          Educación Nacional.
+          contexto socioeconómico. Datos de Medellín ETC (2011-2024) y
+          Antioquia.
         </p>
       </div>
 
+      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+        Medellín — Eficiencia y Reprobación
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <MedellinTrendChart
+          title="Tasa de Reprobación"
+          dataKey="reprobacion"
+          color="#EF233C"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Reprobación Secundaria"
+          dataKey="reprobacion_secundaria"
+          color="#FF6B6B"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Repitencia"
+          dataKey="repitencia"
+          color="#FFB703"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Aprobación"
+          dataKey="aprobacion"
+          color="#06D6A0"
+          unit="%"
+        />
+      </div>
+
+      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+        Antioquia — Serie Departamental
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <TrendChart
           title="Tamaño Promedio de Grupo"
@@ -32,18 +66,6 @@ export default function ContextoPage() {
           color="#FFB703"
           unit="%"
         />
-        <TrendChart
-          title="Reprobación — Secundaria"
-          dataKey="reprobacion_secundaria"
-          color="#EF233C"
-          unit="%"
-        />
-        <TrendChart
-          title="Repitencia — Media"
-          dataKey="repitencia_media"
-          color="#FF6B6B"
-          unit="%"
-        />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -53,6 +75,26 @@ export default function ContextoPage() {
           </h3>
           <div className="space-y-3">
             {[
+              {
+                fuente: "datos.gov.co — Estadísticas Municipales",
+                desc: "14 años de indicadores para Medellín ETC (2011-2024)",
+                status: "cargado",
+              },
+              {
+                fuente: "MEN — Estadísticas Sectoriales",
+                desc: "Cobertura, deserción, aprobación departamental Antioquia",
+                status: "cargado",
+              },
+              {
+                fuente: "MEData — Deserción por Comuna",
+                desc: "Tasa de deserción por 21 comunas de Medellín",
+                status: "cargado",
+              },
+              {
+                fuente: "MEData — ISCE",
+                desc: "Índice Sintético de Calidad por IE (2015-2018)",
+                status: "cargado",
+              },
               {
                 fuente: "DANE — Censo 2018",
                 desc: "Población por edad, vivienda, servicios, educación alcanzada",
@@ -67,16 +109,6 @@ export default function ContextoPage() {
                 fuente: "Obs. Seguridad",
                 desc: "Tasas de homicidio por comunas — correlación con deserción",
                 status: "pendiente",
-              },
-              {
-                fuente: "SISBEN",
-                desc: "Puntaje SISBEN por barrio — focalización beneficiarios",
-                status: "pendiente",
-              },
-              {
-                fuente: "MEN — Estadísticas",
-                desc: "Cobertura, deserción, aprobación departamental",
-                status: "cargado",
               },
             ].map((s) => (
               <div

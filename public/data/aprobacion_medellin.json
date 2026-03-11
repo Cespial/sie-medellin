@@ -1,0 +1,176 @@
+{
+  "porComuna": [
+    {
+      "comuna": "50",
+      "aprobados": 453,
+      "total": 476,
+      "tasaAprobacion": 95.17
+    },
+    {
+      "comuna": "14",
+      "aprobados": 15616,
+      "total": 16424,
+      "tasaAprobacion": 95.08
+    },
+    {
+      "comuna": "11",
+      "aprobados": 13795,
+      "total": 14637,
+      "tasaAprobacion": 94.25
+    },
+    {
+      "comuna": "15",
+      "aprobados": 8844,
+      "total": 9393,
+      "tasaAprobacion": 94.16
+    },
+    {
+      "comuna": "12",
+      "aprobados": 26837,
+      "total": 29161,
+      "tasaAprobacion": 92.03
+    },
+    {
+      "comuna": "9",
+      "aprobados": 21777,
+      "total": 23737,
+      "tasaAprobacion": 91.74
+    },
+    {
+      "comuna": "16",
+      "aprobados": 22487,
+      "total": 24670,
+      "tasaAprobacion": 91.15
+    },
+    {
+      "comuna": "7",
+      "aprobados": 33389,
+      "total": 36808,
+      "tasaAprobacion": 90.71
+    },
+    {
+      "comuna": "80",
+      "aprobados": 16949,
+      "total": 18685,
+      "tasaAprobacion": 90.71
+    },
+    {
+      "comuna": "70",
+      "aprobados": 1942,
+      "total": 2142,
+      "tasaAprobacion": 90.66
+    },
+    {
+      "comuna": "5",
+      "aprobados": 21292,
+      "total": 23513,
+      "tasaAprobacion": 90.55
+    },
+    {
+      "comuna": "10",
+      "aprobados": 29119,
+      "total": 32400,
+      "tasaAprobacion": 89.87
+    },
+    {
+      "comuna": "4",
+      "aprobados": 23520,
+      "total": 26306,
+      "tasaAprobacion": 89.41
+    },
+    {
+      "comuna": "6",
+      "aprobados": 21361,
+      "total": 23914,
+      "tasaAprobacion": 89.32
+    },
+    {
+      "comuna": "60",
+      "aprobados": 12066,
+      "total": 13650,
+      "tasaAprobacion": 88.4
+    },
+    {
+      "comuna": "13",
+      "aprobados": 13156,
+      "total": 14929,
+      "tasaAprobacion": 88.12
+    },
+    {
+      "comuna": "8",
+      "aprobados": 19561,
+      "total": 22360,
+      "tasaAprobacion": 87.48
+    },
+    {
+      "comuna": "3",
+      "aprobados": 24648,
+      "total": 28182,
+      "tasaAprobacion": 87.46
+    },
+    {
+      "comuna": "1",
+      "aprobados": 20899,
+      "total": 24070,
+      "tasaAprobacion": 86.83
+    },
+    {
+      "comuna": "2",
+      "aprobados": 15419,
+      "total": 17868,
+      "tasaAprobacion": 86.29
+    },
+    {
+      "comuna": "90",
+      "aprobados": 853,
+      "total": 1006,
+      "tasaAprobacion": 84.79
+    }
+  ],
+  "porGenero": [
+    {
+      "genero": "hombres",
+      "aprobados": 176909,
+      "total": 200198,
+      "tasaAprobacion": 88.37
+    },
+    {
+      "genero": "mujeres",
+      "aprobados": 187074,
+      "total": 204133,
+      "tasaAprobacion": 91.64
+    }
+  ],
+  "porNivel": [
+    {
+      "nivel": "Preescolar",
+      "aprobados": 37512,
+      "total": 37512,
+      "tasaAprobacion": 100.0
+    },
+    {
+      "nivel": "Primaria",
+      "aprobados": 145612,
+      "total": 158114,
+      "tasaAprobacion": 92.09
+    },
+    {
+      "nivel": "Secundaria",
+      "aprobados": 105898,
+      "total": 126493,
+      "tasaAprobacion": 83.72
+    },
+    {
+      "nivel": "Media",
+      "aprobados": 44011,
+      "total": 47155,
+      "tasaAprobacion": 93.33
+    },
+    {
+      "nivel": "Otro",
+      "aprobados": 30950,
+      "total": 35057,
+      "tasaAprobacion": 88.28
+    }
+  ]
+}

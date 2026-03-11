@@ -1,0 +1,251 @@
+{
+  "serieTemporal": [
+    {
+      "anio": "2004",
+      "total": 490181,
+      "oficial": 334706,
+      "privado": 155475
+    },
+    {
+      "anio": "2005",
+      "total": 505601,
+      "oficial": 336735,
+      "privado": 168866
+    },
+    {
+      "anio": "2006",
+      "total": 513176,
+      "oficial": 331635,
+      "privado": 181541
+    },
+    {
+      "anio": "2007",
+      "total": 510407,
+      "oficial": 337755,
+      "privado": 172652
+    },
+    {
+      "anio": "2008",
+      "total": 517161,
+      "oficial": 335393,
+      "privado": 181768
+    },
+    {
+      "anio": "2009",
+      "total": 518462,
+      "oficial": 356179,
+      "privado": 162283
+    },
+    {
+      "anio": "2010",
+      "total": 490613,
+      "oficial": 334114,
+      "privado": 156499
+    },
+    {
+      "anio": "2011",
+      "total": 478692,
+      "oficial": 322269,
+      "privado": 156423
+    },
+    {
+      "anio": "2012",
+      "total": 482507,
+      "oficial": 319157,
+      "privado": 163350
+    },
+    {
+      "anio": "2013",
+      "total": 474519,
+      "oficial": 315684,
+      "privado": 158835
+    },
+    {
+      "anio": "2014",
+      "total": 469531,
+      "oficial": 313499,
+      "privado": 156032
+    },
+    {
+      "anio": "2015",
+      "total": 457914,
+      "oficial": 305792,
+      "privado": 152122
+    },
+    {
+      "anio": "2016",
+      "total": 450256,
+      "oficial": 305280,
+      "privado": 144976
+    },
+    {
+      "anio": "2017",
+      "total": 440848,
+      "oficial": 307669,
+      "privado": 133179
+    },
+    {
+      "anio": "2018",
+      "total": 437175,
+      "oficial": 309340,
+      "privado": 127835
+    },
+    {
+      "anio": "2019",
+      "total": 425404,
+      "oficial": 306510,
+      "privado": 118894
+    }
+  ],
+  "porComuna": [
+    {
+      "comuna": "7",
+      "total": 40186,
+      "oficial": 24248,
+      "privado": 15938
+    },
+    {
+      "comuna": "10",
+      "total": 34844,
+      "oficial": 12795,
+      "privado": 22049
+    },
+    {
+      "comuna": "3",
+      "total": 29896,
+      "oficial": 24680,
+      "privado": 5216
+    },
+    {
+      "comuna": "4",
+      "total": 29862,
+      "oficial": 22794,
+      "privado": 7068
+    },
+    {
+      "comuna": "12",
+      "total": 29272,
+      "oficial": 18720,
+      "privado": 10552
+    },
+    {
+      "comuna": "1",
+      "total": 25870,
+      "oficial": 20989,
+      "privado": 4881
+    },
+    {
+      "comuna": "16",
+      "total": 25289,
+      "oficial": 16606,
+      "privado": 8683
+    },
+    {
+      "comuna": "6",
+      "total": 24513,
+      "oficial": 21130,
+      "privado": 3383
+    },
+    {
+      "comuna": "9",
+      "total": 23869,
+      "oficial": 17699,
+      "privado": 6170
+    },
+    {
+      "comuna": "5",
+      "total": 23849,
+      "oficial": 21189,
+      "privado": 2660
+    },
+    {
+      "comuna": "8",
+      "total": 23552,
+      "oficial": 22484,
+      "privado": 1068
+    },
+    {
+      "comuna": "2",
+      "total": 19584,
+      "oficial": 19434,
+      "privado": 150
+    },
+    {
+      "comuna": "80",
+      "total": 18524,
+      "oficial": 12998,
+      "privado": 5526
+    },
+    {
+      "comuna": "60",
+      "total": 17444,
+      "oficial": 15815,
+      "privado": 1629
+    },
+    {
+      "comuna": "14",
+      "total": 15795,
+      "oficial": 4610,
+      "privado": 11185
+    },
+    {
+      "comuna": "13",
+      "total": 15098,
+      "oficial": 13450,
+      "privado": 1648
+    },
+    {
+      "comuna": "11",
+      "total": 14084,
+      "oficial": 4246,
+      "privado": 9838
+    },
+    {
+      "comuna": "15",
+      "total": 9335,
+      "oficial": 8412,
+      "privado": 923
+    },
+    {
+      "comuna": "70",
+      "total": 2289,
+      "oficial": 1962,
+      "privado": 327
+    },
+    {
+      "comuna": "90",
+      "total": 1564,
+      "oficial": 1564,
+      "privado": 0
+    },
+    {
+      "comuna": "50",
+      "total": 685,
+      "oficial": 685,
+      "privado": 0
+    }
+  ],
+  "porNivel": [
+    {
+      "nivel": "Preescolar",
+      "total": 720192
+    },
+    {
+      "nivel": "Primaria",
+      "total": 2959740
+    },
+    {
+      "nivel": "Secundaria",
+      "total": 2350406
+    },
+    {
+      "nivel": "Media",
+      "total": 856559
+    },
+    {
+      "nivel": "Otro",
+      "total": 775550
+    }
+  ],
+  "ultimoAnio": "2019"
+}

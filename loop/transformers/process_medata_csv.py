@@ -193,6 +193,246 @@ def process_docentes():
         print(f"  ✅ {output.name}")
 
 
+def process_matricula():
+    """Procesa matrícula por comuna, nivel y año."""
+    print("\n📊 Matrícula por comuna, nivel y año...")
+    rows = read_csv("medata_matricula.csv")
+    if not rows:
+        return
+
+    print(f"  {len(rows)} registros")
+
+    GRADE_LEVEL = {
+        "pre_jardin": "Preescolar",
+        "jardin": "Preescolar",
+        "transicion": "Preescolar",
+        "primero": "Primaria",
+        "segundo": "Primaria",
+        "tercero": "Primaria",
+        "cuarto": "Primaria",
+        "quinto": "Primaria",
+        "sexto": "Secundaria",
+        "septimo": "Secundaria",
+        "octavo": "Secundaria",
+        "noveno": "Secundaria",
+        "decimo": "Media",
+        "once": "Media",
+    }
+
+    by_year = defaultdict(lambda: {"total": 0, "oficial": 0, "privado": 0})
+    by_year_comuna = defaultdict(lambda: {"total": 0, "oficial": 0, "privado": 0})
+    by_nivel = defaultdict(lambda: {"total": 0})
+
+    for r in rows:
+        anio = r.get("anio", "").strip()
+        comuna = r.get("comuna", "").strip()
+        grado = r.get("grado", "").strip().lower()
+        tipo = r.get("tipo_servicio", "").strip().lower()
+
+        try:
+            total = float(r.get("total", 0)) if r.get("total", "").strip() else 0
+        except (ValueError, TypeError):
+            total = 0
+
+        if not anio:
+            continue
+
+        by_year[anio]["total"] += total
+        if "oficial" in tipo:
+            by_year[anio]["oficial"] += total
+        else:
+            by_year[anio]["privado"] += total
+
+        by_year_comuna[(anio, comuna)]["total"] += total
+        if "oficial" in tipo:
+            by_year_comuna[(anio, comuna)]["oficial"] += total
+        else:
+            by_year_comuna[(anio, comuna)]["privado"] += total
+
+        nivel = GRADE_LEVEL.get(grado, "Otro")
+        by_nivel[nivel]["total"] += total
+
+    # Serie temporal de ciudad
+    serie_temporal = []
+    for anio in sorted(by_year.keys()):
+        d = by_year[anio]
+        serie_temporal.append({
+            "anio": anio,
+            "total": round(d["total"]),
+            "oficial": round(d["oficial"]),
+            "privado": round(d["privado"]),
+        })
+
+    # Por comuna (último año)
+    ultimo_anio = max(by_year.keys()) if by_year else ""
+    comunas_set = set(c for (a, c) in by_year_comuna.keys() if a == ultimo_anio)
+    por_comuna = []
+    for comuna in sorted(comunas_set):
+        d = by_year_comuna.get((ultimo_anio, comuna), {"total": 0, "oficial": 0, "privado": 0})
+        if d["total"] > 0:
+            por_comuna.append({
+                "comuna": comuna,
+                "total": round(d["total"]),
+                "oficial": round(d["oficial"]),
+                "privado": round(d["privado"]),
+            })
+    por_comuna.sort(key=lambda x: x["total"], reverse=True)
+
+    # Por nivel
+    por_nivel = []
+    for nivel in ["Preescolar", "Primaria", "Secundaria", "Media", "Otro"]:
+        if nivel in by_nivel:
+            por_nivel.append({
+                "nivel": nivel,
+                "total": round(by_nivel[nivel]["total"]),
+            })
+
+    output = PUBLIC_DATA / "matricula_medellin.json"
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump({
+            "serieTemporal": serie_temporal,
+            "porComuna": por_comuna,
+            "porNivel": por_nivel,
+            "ultimoAnio": ultimo_anio,
+        }, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ {output.name} ({len(serie_temporal)} años, {len(por_comuna)} comunas, {len(por_nivel)} niveles)")
+
+
+def process_aprobacion():
+    """Procesa tasas de aprobación por comuna, género y nivel."""
+    print("\n📊 Aprobación por comuna, género y nivel...")
+    rows = read_csv("medata_aprobacion.csv")
+    if not rows:
+        return
+
+    print(f"  {len(rows)} registros")
+
+    # Determine aprobacion/reprobacion columns from the first row
+    if not rows:
+        return
+    all_cols = list(rows[0].keys())
+    aprob_cols = [c for c in all_cols if c.lower().startswith("aprobacion_grado")]
+    reprob_cols = [c for c in all_cols if c.lower().startswith("reprobacion_grado")]
+
+    # Grade-level mapping for column names
+    def col_to_nivel(col_name: str) -> str:
+        cl = col_name.lower()
+        if any(g in cl for g in ["prejardin", "pre_jardin", "jardin", "transicion"]):
+            return "Preescolar"
+        for n in ["_1", "_2", "_3", "_4", "_5"]:
+            if cl.endswith(n) or f"grado{n.replace('_', '')}" in cl:
+                return "Primaria"
+        for n in ["_6", "_7", "_8", "_9"]:
+            if cl.endswith(n) or f"grado{n.replace('_', '')}" in cl:
+                return "Secundaria"
+        for n in ["_10", "_11", "_12", "_13"]:
+            if cl.endswith(n) or f"grado{n.replace('_', '')}" in cl:
+                return "Media"
+        return "Otro"
+
+    by_comuna = defaultdict(lambda: {"aprobados": 0, "total": 0})
+    by_genero = defaultdict(lambda: {"aprobados": 0, "total": 0})
+    by_nivel = defaultdict(lambda: {"aprobados": 0, "total": 0})
+
+    for r in rows:
+        comuna = r.get("comuna_Establecimiento", r.get("comuna_establecimiento", "")).strip()
+        sexo = r.get("sexo", "").strip().lower()
+
+        # Sum aprobacion columns
+        total_aprob = 0
+        for col in aprob_cols:
+            try:
+                val = float(r.get(col, 0)) if r.get(col, "").strip() else 0
+            except (ValueError, TypeError):
+                val = 0
+            total_aprob += val
+
+            # Per-nivel accumulation (aprobacion only)
+            nivel = col_to_nivel(col)
+            by_nivel[nivel]["aprobados"] += val
+
+        # Sum reprobacion columns
+        total_reprob = 0
+        for col in reprob_cols:
+            try:
+                val = float(r.get(col, 0)) if r.get(col, "").strip() else 0
+            except (ValueError, TypeError):
+                val = 0
+            total_reprob += val
+
+            # Per-nivel accumulation (reprobacion → total)
+            nivel = col_to_nivel(col)
+            by_nivel[nivel]["total"] += val
+
+        total_row = total_aprob + total_reprob
+
+        # Per-nivel: add aprobados to total as well
+        # (total = aprobados + reprobados, reprobados already added above)
+        for nivel in by_nivel:
+            pass  # handled below after loop
+
+        by_comuna[comuna]["aprobados"] += total_aprob
+        by_comuna[comuna]["total"] += total_row
+
+        by_genero[sexo]["aprobados"] += total_aprob
+        by_genero[sexo]["total"] += total_row
+
+    # Fix by_nivel totals: total should be aprobados + reprobados
+    # Currently aprobados has aprobacion sums, total has reprobacion sums
+    # We need total = aprobados + reprobados
+    for nivel in by_nivel:
+        by_nivel[nivel]["total"] = by_nivel[nivel]["aprobados"] + by_nivel[nivel]["total"]
+
+    # Por comuna
+    por_comuna = []
+    for comuna in sorted(by_comuna.keys()):
+        d = by_comuna[comuna]
+        if d["total"] > 0:
+            tasa = d["aprobados"] / d["total"] * 100
+            por_comuna.append({
+                "comuna": comuna,
+                "aprobados": round(d["aprobados"]),
+                "total": round(d["total"]),
+                "tasaAprobacion": round(tasa, 2),
+            })
+    por_comuna.sort(key=lambda x: x["tasaAprobacion"], reverse=True)
+
+    # Por género
+    por_genero = []
+    for genero in sorted(by_genero.keys()):
+        d = by_genero[genero]
+        if d["total"] > 0:
+            tasa = d["aprobados"] / d["total"] * 100
+            por_genero.append({
+                "genero": genero,
+                "aprobados": round(d["aprobados"]),
+                "total": round(d["total"]),
+                "tasaAprobacion": round(tasa, 2),
+            })
+
+    # Por nivel
+    por_nivel = []
+    for nivel in ["Preescolar", "Primaria", "Secundaria", "Media", "Otro"]:
+        if nivel in by_nivel and by_nivel[nivel]["total"] > 0:
+            d = by_nivel[nivel]
+            tasa = d["aprobados"] / d["total"] * 100
+            por_nivel.append({
+                "nivel": nivel,
+                "aprobados": round(d["aprobados"]),
+                "total": round(d["total"]),
+                "tasaAprobacion": round(tasa, 2),
+            })
+
+    output = PUBLIC_DATA / "aprobacion_medellin.json"
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump({
+            "porComuna": por_comuna,
+            "porGenero": por_genero,
+            "porNivel": por_nivel,
+        }, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ {output.name} ({len(por_comuna)} comunas, {len(por_genero)} géneros, {len(por_nivel)} niveles)")
+
+
 def run():
     print("=" * 60)
     print("TRANSFORMER — MEData CSV Datasets")
@@ -202,6 +442,8 @@ def run():
     process_saber11_historico()
     process_isce()
     process_docentes()
+    process_matricula()
+    process_aprobacion()
 
     print("\n✅ Transformación MEData CSV completa")
 

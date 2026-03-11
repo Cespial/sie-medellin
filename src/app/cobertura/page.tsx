@@ -1,4 +1,5 @@
 import { TrendChart } from "@/components/charts/TrendChart";
+import { MedellinTrendChart } from "@/components/charts/MedellinTrendChart";
 
 export const metadata = { title: "Cobertura — SIE Medellín" };
 
@@ -13,46 +14,67 @@ export default function CoberturaPage() {
           Cobertura
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
-          Tasas de cobertura bruta y neta, matrícula por nivel educativo y series
-          históricas del departamento de Antioquia.
+          Tasas de cobertura bruta y neta para Medellín (2011-2024) y series
+          históricas departamentales de Antioquia.
         </p>
       </div>
 
+      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+        Medellín — Cobertura Municipal
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <MedellinTrendChart
+          title="Cobertura Neta Total"
+          dataKey="cobertura_neta"
+          color="#00D4FF"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Cobertura Bruta Total"
+          dataKey="cobertura_bruta"
+          color="#3E92CC"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Cobertura Neta — Primaria"
+          dataKey="cobertura_neta_primaria"
+          color="#06D6A0"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Cobertura Neta — Secundaria"
+          dataKey="cobertura_neta_secundaria"
+          color="#FFB703"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Cobertura Neta — Media"
+          dataKey="cobertura_neta_media"
+          color="#EF233C"
+          unit="%"
+        />
+        <MedellinTrendChart
+          title="Cobertura Neta — Transición"
+          dataKey="cobertura_neta_transicion"
+          color="#9B5DE5"
+          unit="%"
+        />
+      </div>
+
+      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+        Antioquia — Serie Departamental
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <TrendChart
-          title="Cobertura Neta — Serie Histórica"
+          title="Cobertura Neta — Antioquia"
           dataKey="cobertura_neta"
           color="#00D4FF"
           unit="%"
         />
         <TrendChart
-          title="Cobertura Bruta — Serie Histórica"
+          title="Cobertura Bruta — Antioquia"
           dataKey="cobertura_bruta"
           color="#3E92CC"
-          unit="%"
-        />
-        <TrendChart
-          title="Tasa de Deserción"
-          dataKey="desercion"
-          color="#EF233C"
-          unit="%"
-        />
-        <TrendChart
-          title="Tasa de Aprobación"
-          dataKey="aprobacion"
-          color="#06D6A0"
-          unit="%"
-        />
-        <TrendChart
-          title="Deserción Primaria vs. Secundaria"
-          dataKey="desercion_primaria"
-          color="#FFB703"
-          unit="%"
-        />
-        <TrendChart
-          title="Repitencia"
-          dataKey="repitencia"
-          color="#FF6B6B"
           unit="%"
         />
       </div>

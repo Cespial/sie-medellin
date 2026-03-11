@@ -4,7 +4,12 @@
   "promedioSaber11": 250.5,
   "totalEvaluados": 50000,
   "totalIEs": 342,
-  "coberturaNeta": 89.85,
+  "coberturaNeta": {
+    "valor": 93.58,
+    "unidad": "%",
+    "tendencia": "estable",
+    "fuente": "datos.gov.co (Medellín ETC 2024)"
+  },
   "coberturaBruta": 99.99,
   "tasaDesercion": 3.78,
   "tasaAprobacion": 88.95,
@@ -23,5 +28,17 @@
     "estadisticas": "datos.gov.co/ji8i-4anb",
     "geo": "OpenStreetMap Overpass API"
   },
-  "ultimaActualizacion": "2026-03-10"
+  "ultimaActualizacion": "2026-03-10",
+  "desercion": {
+    "valor": 3.18,
+    "unidad": "%",
+    "tendencia": "baja",
+    "fuente": "datos.gov.co (Medellín ETC 2024)"
+  },
+  "aprobacion": {
+    "valor": 88.74,
+    "unidad": "%",
+    "tendencia": "alza",
+    "fuente": "datos.gov.co (Medellín ETC 2024)"
+  }
 }

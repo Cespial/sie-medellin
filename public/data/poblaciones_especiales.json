@@ -1,0 +1,1146 @@
+{
+  "extranjeros": {
+    "totalUltimoAnio": 14225,
+    "serieTemporal": [
+      {
+        "anio": "2018",
+        "total": 4211
+      },
+      {
+        "anio": "2019",
+        "total": 14225
+      }
+    ],
+    "porPais": [
+      {
+        "pais": "venezuela",
+        "total": 17180
+      },
+      {
+        "pais": "estados unidos de américa",
+        "total": 235
+      },
+      {
+        "pais": "españa",
+        "total": 229
+      },
+      {
+        "pais": "ecuador",
+        "total": 128
+      },
+      {
+        "pais": "estados unidos",
+        "total": 101
+      },
+      {
+        "pais": "brasil",
+        "total": 50
+      },
+      {
+        "pais": "panamá",
+        "total": 47
+      },
+      {
+        "pais": "costa rica",
+        "total": 46
+      },
+      {
+        "pais": "méxico",
+        "total": 43
+      },
+      {
+        "pais": "argentina",
+        "total": 36
+      },
+      {
+        "pais": "chile",
+        "total": 22
+      },
+      {
+        "pais": "mexico",
+        "total": 21
+      },
+      {
+        "pais": "perú",
+        "total": 20
+      },
+      {
+        "pais": "panama",
+        "total": 20
+      },
+      {
+        "pais": "canadá",
+        "total": 19
+      },
+      {
+        "pais": "australia",
+        "total": 18
+      },
+      {
+        "pais": "francia",
+        "total": 17
+      },
+      {
+        "pais": "reino unido",
+        "total": 17
+      },
+      {
+        "pais": "italia",
+        "total": 12
+      },
+      {
+        "pais": "canada",
+        "total": 12
+      },
+      {
+        "pais": "honduras",
+        "total": 11
+      },
+      {
+        "pais": "rusia",
+        "total": 11
+      },
+      {
+        "pais": "guatemala",
+        "total": 10
+      },
+      {
+        "pais": "países bajos",
+        "total": 10
+      },
+      {
+        "pais": "bolivia",
+        "total": 10
+      },
+      {
+        "pais": "peru",
+        "total": 10
+      },
+      {
+        "pais": "india",
+        "total": 9
+      },
+      {
+        "pais": "china",
+        "total": 9
+      },
+      {
+        "pais": "república dominicana",
+        "total": 6
+      },
+      {
+        "pais": "vanuatu",
+        "total": 5
+      },
+      {
+        "pais": "aruba",
+        "total": 4
+      },
+      {
+        "pais": "puerto rico",
+        "total": 4
+      },
+      {
+        "pais": "suecia",
+        "total": 4
+      },
+      {
+        "pais": "suiza",
+        "total": 4
+      },
+      {
+        "pais": "japón",
+        "total": 3
+      },
+      {
+        "pais": "uruguay",
+        "total": 3
+      },
+      {
+        "pais": "bélgica",
+        "total": 3
+      },
+      {
+        "pais": "indonesia",
+        "total": 2
+      },
+      {
+        "pais": "uganda",
+        "total": 2
+      },
+      {
+        "pais": "antártida",
+        "total": 2
+      },
+      {
+        "pais": "cabo verde",
+        "total": 2
+      },
+      {
+        "pais": "vietnam",
+        "total": 2
+      },
+      {
+        "pais": "albania",
+        "total": 2
+      },
+      {
+        "pais": "croacia",
+        "total": 2
+      },
+      {
+        "pais": "nicaragua",
+        "total": 2
+      },
+      {
+        "pais": "israel",
+        "total": 2
+      },
+      {
+        "pais": "polonia",
+        "total": 2
+      },
+      {
+        "pais": "georgia",
+        "total": 2
+      },
+      {
+        "pais": "el salvador",
+        "total": 2
+      },
+      {
+        "pais": "letonia",
+        "total": 2
+      },
+      {
+        "pais": "alemania",
+        "total": 2
+      },
+      {
+        "pais": "paises bajos",
+        "total": 2
+      },
+      {
+        "pais": "luxemburgo",
+        "total": 1
+      },
+      {
+        "pais": "gabón",
+        "total": 1
+      },
+      {
+        "pais": "cuba",
+        "total": 1
+      },
+      {
+        "pais": "taiwán",
+        "total": 1
+      },
+      {
+        "pais": "sudáfrica",
+        "total": 1
+      },
+      {
+        "pais": "nigeria",
+        "total": 1
+      },
+      {
+        "pais": "finlandia",
+        "total": 1
+      },
+      {
+        "pais": "ary macedonia",
+        "total": 1
+      },
+      {
+        "pais": "comoras",
+        "total": 1
+      },
+      {
+        "pais": "republica dominicana",
+        "total": 1
+      },
+      {
+        "pais": "no especificado",
+        "total": 1
+      },
+      {
+        "pais": "antartida",
+        "total": 1
+      },
+      {
+        "pais": "norfolk",
+        "total": 1
+      },
+      {
+        "pais": "namibia",
+        "total": 1
+      },
+      {
+        "pais": "andorra",
+        "total": 1
+      },
+      {
+        "pais": "belgica",
+        "total": 1
+      },
+      {
+        "pais": "taiwan",
+        "total": 1
+      }
+    ],
+    "porComuna": [
+      {
+        "comuna": "10",
+        "total": 1220
+      },
+      {
+        "comuna": "4",
+        "total": 1190
+      },
+      {
+        "comuna": "8",
+        "total": 1016
+      },
+      {
+        "comuna": "16",
+        "total": 965
+      },
+      {
+        "comuna": "3",
+        "total": 963
+      },
+      {
+        "comuna": "12",
+        "total": 941
+      },
+      {
+        "comuna": "7",
+        "total": 885
+      },
+      {
+        "comuna": "5",
+        "total": 815
+      },
+      {
+        "comuna": "9",
+        "total": 802
+      },
+      {
+        "comuna": "1",
+        "total": 768
+      },
+      {
+        "comuna": "6",
+        "total": 670
+      },
+      {
+        "comuna": "13",
+        "total": 559
+      },
+      {
+        "comuna": "14",
+        "total": 546
+      },
+      {
+        "comuna": "15",
+        "total": 533
+      },
+      {
+        "comuna": "2",
+        "total": 503
+      },
+      {
+        "comuna": "80",
+        "total": 476
+      },
+      {
+        "comuna": "11",
+        "total": 471
+      },
+      {
+        "comuna": "60",
+        "total": 451
+      },
+      {
+        "comuna": "70",
+        "total": 339
+      },
+      {
+        "comuna": "90",
+        "total": 101
+      },
+      {
+        "comuna": "50",
+        "total": 11
+      }
+    ]
+  },
+  "etnias": {
+    "totalUltimoAnio": 7309,
+    "serieTemporal": [
+      {
+        "anio": "2004",
+        "total": 336
+      },
+      {
+        "anio": "2005",
+        "total": 158
+      },
+      {
+        "anio": "2006",
+        "total": 109
+      },
+      {
+        "anio": "2007",
+        "total": 93
+      },
+      {
+        "anio": "2008",
+        "total": 74
+      },
+      {
+        "anio": "2009",
+        "total": 80
+      },
+      {
+        "anio": "2010",
+        "total": 89
+      },
+      {
+        "anio": "2012",
+        "total": 303
+      },
+      {
+        "anio": "2013",
+        "total": 3037
+      },
+      {
+        "anio": "2014",
+        "total": 3871
+      },
+      {
+        "anio": "2015",
+        "total": 4801
+      },
+      {
+        "anio": "2016",
+        "total": 5705
+      },
+      {
+        "anio": "2017",
+        "total": 6933
+      },
+      {
+        "anio": "2018",
+        "total": 7067
+      },
+      {
+        "anio": "2019",
+        "total": 7309
+      }
+    ],
+    "porEtnia": [
+      {
+        "etnia": "Negritudes",
+        "total": 14670
+      },
+      {
+        "etnia": "Afrodescendiente",
+        "total": 13785
+      },
+      {
+        "etnia": "indígenas",
+        "total": 4384
+      },
+      {
+        "etnia": "afrodescendiente",
+        "total": 3667
+      },
+      {
+        "etnia": "negritudes",
+        "total": 2970
+      },
+      {
+        "etnia": "Otras Etnias",
+        "total": 388
+      },
+      {
+        "etnia": "Raizal",
+        "total": 35
+      },
+      {
+        "etnia": "palenqueros",
+        "total": 26
+      },
+      {
+        "etnia": "raizal",
+        "total": 22
+      },
+      {
+        "etnia": "Rom",
+        "total": 14
+      },
+      {
+        "etnia": "rom",
+        "total": 3
+      },
+      {
+        "etnia": "otras etnias",
+        "total": 1
+      }
+    ],
+    "porComuna": [
+      {
+        "comuna": "8",
+        "total": 758
+      },
+      {
+        "comuna": "10",
+        "total": 731
+      },
+      {
+        "comuna": "7",
+        "total": 730
+      },
+      {
+        "comuna": "4",
+        "total": 678
+      },
+      {
+        "comuna": "9",
+        "total": 606
+      },
+      {
+        "comuna": "1",
+        "total": 559
+      },
+      {
+        "comuna": "3",
+        "total": 554
+      },
+      {
+        "comuna": "13",
+        "total": 493
+      },
+      {
+        "comuna": "2",
+        "total": 359
+      },
+      {
+        "comuna": "12",
+        "total": 329
+      },
+      {
+        "comuna": "16",
+        "total": 329
+      },
+      {
+        "comuna": "60",
+        "total": 245
+      },
+      {
+        "comuna": "5",
+        "total": 228
+      },
+      {
+        "comuna": "6",
+        "total": 190
+      },
+      {
+        "comuna": "70",
+        "total": 152
+      },
+      {
+        "comuna": "80",
+        "total": 141
+      },
+      {
+        "comuna": "14",
+        "total": 83
+      },
+      {
+        "comuna": "11",
+        "total": 78
+      },
+      {
+        "comuna": "15",
+        "total": 56
+      },
+      {
+        "comuna": "90",
+        "total": 7
+      },
+      {
+        "comuna": "50",
+        "total": 3
+      }
+    ]
+  },
+  "victimas": {
+    "totalUltimoAnio": 20508,
+    "serieTemporal": [
+      {
+        "anio": "2004",
+        "total": 5737
+      },
+      {
+        "anio": "2005",
+        "total": 5669
+      },
+      {
+        "anio": "2006",
+        "total": 4652
+      },
+      {
+        "anio": "2007",
+        "total": 3708
+      },
+      {
+        "anio": "2008",
+        "total": 5617
+      },
+      {
+        "anio": "2009",
+        "total": 8008
+      },
+      {
+        "anio": "2010",
+        "total": 8334
+      },
+      {
+        "anio": "2011",
+        "total": 11077
+      },
+      {
+        "anio": "2012",
+        "total": 11464
+      },
+      {
+        "anio": "2013",
+        "total": 14429
+      },
+      {
+        "anio": "2014",
+        "total": 16361
+      },
+      {
+        "anio": "2015",
+        "total": 17396
+      },
+      {
+        "anio": "2016",
+        "total": 18510
+      },
+      {
+        "anio": "2017",
+        "total": 19733
+      },
+      {
+        "anio": "2018",
+        "total": 20740
+      },
+      {
+        "anio": "2019",
+        "total": 20508
+      }
+    ],
+    "porTipo": [
+      {
+        "tipo": "En situación de desplazamiento",
+        "total": 164134
+      },
+      {
+        "tipo": "en situación de desplazamiento",
+        "total": 19800
+      },
+      {
+        "tipo": "Desvinculados de grupos armados",
+        "total": 3660
+      },
+      {
+        "tipo": "Hijos de adultos desmovilizados",
+        "total": 3023
+      },
+      {
+        "tipo": "víctima de minas",
+        "total": 767
+      },
+      {
+        "tipo": "hijos de adultos desmovilizados",
+        "total": 223
+      },
+      {
+        "tipo": "desplazamiento forzado",
+        "total": 166
+      },
+      {
+        "tipo": "desvinculados de grupos armados",
+        "total": 130
+      },
+      {
+        "tipo": "otros",
+        "total": 16
+      },
+      {
+        "tipo": "desaparicion forzada",
+        "total": 8
+      },
+      {
+        "tipo": "amenaza",
+        "total": 5
+      },
+      {
+        "tipo": "abandono o despojo de tierras",
+        "total": 3
+      },
+      {
+        "tipo": "delitos contra la libertad e integridad sexual",
+        "total": 3
+      },
+      {
+        "tipo": "acto terrorista/atentado/combate/enfrentamiento",
+        "total": 2
+      },
+      {
+        "tipo": "secuestro",
+        "total": 1
+      },
+      {
+        "tipo": "vinculación menores a actividades delictivas",
+        "total": 1
+      },
+      {
+        "tipo": "lesiones personales psicológicas",
+        "total": 1
+      }
+    ],
+    "porComuna": [
+      {
+        "comuna": "7",
+        "total": 2260
+      },
+      {
+        "comuna": "8",
+        "total": 2192
+      },
+      {
+        "comuna": "1",
+        "total": 1779
+      },
+      {
+        "comuna": "3",
+        "total": 1724
+      },
+      {
+        "comuna": "4",
+        "total": 1598
+      },
+      {
+        "comuna": "10",
+        "total": 1592
+      },
+      {
+        "comuna": "60",
+        "total": 1270
+      },
+      {
+        "comuna": "2",
+        "total": 1110
+      },
+      {
+        "comuna": "13",
+        "total": 1003
+      },
+      {
+        "comuna": "6",
+        "total": 978
+      },
+      {
+        "comuna": "5",
+        "total": 965
+      },
+      {
+        "comuna": "9",
+        "total": 941
+      },
+      {
+        "comuna": "12",
+        "total": 936
+      },
+      {
+        "comuna": "80",
+        "total": 721
+      },
+      {
+        "comuna": "16",
+        "total": 577
+      },
+      {
+        "comuna": "15",
+        "total": 227
+      },
+      {
+        "comuna": "70",
+        "total": 221
+      },
+      {
+        "comuna": "14",
+        "total": 216
+      },
+      {
+        "comuna": "11",
+        "total": 128
+      },
+      {
+        "comuna": "90",
+        "total": 44
+      },
+      {
+        "comuna": "50",
+        "total": 26
+      }
+    ]
+  },
+  "nee": {
+    "totalUltimoAnio": 14358,
+    "serieTemporal": [
+      {
+        "anio": "2004",
+        "total": 3228
+      },
+      {
+        "anio": "2005",
+        "total": 4348
+      },
+      {
+        "anio": "2006",
+        "total": 2833
+      },
+      {
+        "anio": "2007",
+        "total": 3081
+      },
+      {
+        "anio": "2008",
+        "total": 3032
+      },
+      {
+        "anio": "2009",
+        "total": 5492
+      },
+      {
+        "anio": "2010",
+        "total": 7678
+      },
+      {
+        "anio": "2011",
+        "total": 4788
+      },
+      {
+        "anio": "2012",
+        "total": 6534
+      },
+      {
+        "anio": "2013",
+        "total": 10282
+      },
+      {
+        "anio": "2014",
+        "total": 11840
+      },
+      {
+        "anio": "2015",
+        "total": 13040
+      },
+      {
+        "anio": "2016",
+        "total": 14359
+      },
+      {
+        "anio": "2017",
+        "total": 15509
+      },
+      {
+        "anio": "2018",
+        "total": 15574
+      },
+      {
+        "anio": "2019",
+        "total": 14358
+      }
+    ],
+    "porTipo": [
+      {
+        "tipo": "Intelectual",
+        "total": 35659
+      },
+      {
+        "tipo": "Otra discapacidad",
+        "total": 24628
+      },
+      {
+        "tipo": "Síndrome de down",
+        "total": 10435
+      },
+      {
+        "tipo": "Mental- psicosocial",
+        "total": 10417
+      },
+      {
+        "tipo": "sistémica",
+        "total": 7266
+      },
+      {
+        "tipo": "mental- psicosocial",
+        "total": 6423
+      },
+      {
+        "tipo": "intelectual",
+        "total": 5040
+      },
+      {
+        "tipo": "Visual - baja vision irreversible",
+        "total": 4969
+      },
+      {
+        "tipo": "deficiencia cognitiva (retardo mental)",
+        "total": 4770
+      },
+      {
+        "tipo": "Sordera profunda",
+        "total": 4150
+      },
+      {
+        "tipo": "Múltiple",
+        "total": 3914
+      },
+      {
+        "tipo": "Visual - ceguera",
+        "total": 2068
+      },
+      {
+        "tipo": "Física - movilidad",
+        "total": 1730
+      },
+      {
+        "tipo": "Hipoacusia o baja audición",
+        "total": 1683
+      },
+      {
+        "tipo": "Trastorno del espectro autista",
+        "total": 1477
+      },
+      {
+        "tipo": "múltiple",
+        "total": 1435
+      },
+      {
+        "tipo": "Lesión neuromuscular",
+        "total": 1173
+      },
+      {
+        "tipo": "otra discapacidad",
+        "total": 1036
+      },
+      {
+        "tipo": "Auditiva - usuario de lengua de señas colombiana",
+        "total": 909
+      },
+      {
+        "tipo": "Parálisis cerebral",
+        "total": 805
+      },
+      {
+        "tipo": "voz y habla",
+        "total": 753
+      },
+      {
+        "tipo": "autismo",
+        "total": 558
+      },
+      {
+        "tipo": "limitación fisica",
+        "total": 551
+      },
+      {
+        "tipo": "Trastorno permanente de voz y habla",
+        "total": 534
+      },
+      {
+        "tipo": "física - movilidad",
+        "total": 511
+      },
+      {
+        "tipo": "Auditiva - usuario del castellano",
+        "total": 403
+      },
+      {
+        "tipo": "trastorno del espectro autista",
+        "total": 395
+      },
+      {
+        "tipo": "auditiva - usuario de lengua de señas colombiana",
+        "total": 265
+      },
+      {
+        "tipo": "sordo castellano",
+        "total": 263
+      },
+      {
+        "tipo": "sordos lengua señas",
+        "total": 260
+      },
+      {
+        "tipo": "baja visión diagnosticada",
+        "total": 256
+      },
+      {
+        "tipo": "trastorno permanente de voz y habla",
+        "total": 248
+      },
+      {
+        "tipo": "psicosocial",
+        "total": 244
+      },
+      {
+        "tipo": "visual - baja vision irreversible",
+        "total": 215
+      },
+      {
+        "tipo": "auditiva - usuario del castellano",
+        "total": 209
+      },
+      {
+        "tipo": "síndrome de down",
+        "total": 75
+      },
+      {
+        "tipo": "ceguera",
+        "total": 68
+      },
+      {
+        "tipo": "visual - ceguera",
+        "total": 64
+      },
+      {
+        "tipo": "Enanismo",
+        "total": 52
+      },
+      {
+        "tipo": "Sordoceguera",
+        "total": 23
+      },
+      {
+        "tipo": "sordoceguera",
+        "total": 21
+      },
+      {
+        "tipo": "parálisis cerebral",
+        "total": 7
+      },
+      {
+        "tipo": "lesión neuromuscular",
+        "total": 5
+      },
+      {
+        "tipo": "sordera profunda",
+        "total": 4
+      },
+      {
+        "tipo": "hipoacusia o baja audición",
+        "total": 3
+      },
+      {
+        "tipo": "enanismo",
+        "total": 2
+      }
+    ],
+    "porComuna": [
+      {
+        "comuna": "7",
+        "total": 1786
+      },
+      {
+        "comuna": "4",
+        "total": 1411
+      },
+      {
+        "comuna": "3",
+        "total": 1086
+      },
+      {
+        "comuna": "10",
+        "total": 1079
+      },
+      {
+        "comuna": "5",
+        "total": 893
+      },
+      {
+        "comuna": "6",
+        "total": 887
+      },
+      {
+        "comuna": "16",
+        "total": 810
+      },
+      {
+        "comuna": "60",
+        "total": 753
+      },
+      {
+        "comuna": "8",
+        "total": 694
+      },
+      {
+        "comuna": "1",
+        "total": 692
+      },
+      {
+        "comuna": "9",
+        "total": 687
+      },
+      {
+        "comuna": "12",
+        "total": 628
+      },
+      {
+        "comuna": "2",
+        "total": 544
+      },
+      {
+        "comuna": "13",
+        "total": 525
+      },
+      {
+        "comuna": "80",
+        "total": 486
+      },
+      {
+        "comuna": "14",
+        "total": 462
+      },
+      {
+        "comuna": "15",
+        "total": 421
+      },
+      {
+        "comuna": "11",
+        "total": 233
+      },
+      {
+        "comuna": "70",
+        "total": 163
+      },
+      {
+        "comuna": "90",
+        "total": 88
+      },
+      {
+        "comuna": "50",
+        "total": 30
+      }
+    ]
+  }
+}
