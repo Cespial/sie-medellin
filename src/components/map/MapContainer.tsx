@@ -29,7 +29,13 @@ export function MapContainer() {
 
     (async () => {
       try {
-        const maplibregl = (await import("maplibre-gl")).default;
+        const mlModule = await import("maplibre-gl");
+        const maplibregl = mlModule.default;
+
+        // Use pre-built CSP worker to avoid webpack worker bundling failures
+        if (mlModule.setWorkerUrl) {
+          mlModule.setWorkerUrl("/maplibre-gl-csp-worker.js");
+        }
 
         if (cancelled || !mapContainer.current) return;
 
