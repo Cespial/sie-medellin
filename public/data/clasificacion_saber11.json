@@ -1,0 +1,3180 @@
+{
+  "porClasificacion": [
+    {
+      "clasificacion": "A",
+      "count": 79
+    },
+    {
+      "clasificacion": "A+",
+      "count": 58
+    },
+    {
+      "clasificacion": "B",
+      "count": 120
+    },
+    {
+      "clasificacion": "C",
+      "count": 82
+    },
+    {
+      "clasificacion": "D",
+      "count": 9
+    }
+  ],
+  "porSectorClasificacion": [
+    {
+      "sector": "oficial",
+      "clasificaciones": {
+        "B": 104,
+        "C": 63,
+        "A": 52,
+        "A+": 6,
+        "D": 6
+      }
+    },
+    {
+      "sector": "no oficial",
+      "clasificaciones": {
+        "C": 19,
+        "B": 16,
+        "A": 27,
+        "D": 3,
+        "A+": 52
+      }
+    }
+  ],
+  "instituciones": [
+    {
+      "codigoDane": "105001000108",
+      "nombre": "inst educ cefa",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 2767,
+      "matriculados": 2807
+    },
+    {
+      "codigoDane": "105001000132",
+      "nombre": "inst educ jose maria bernal",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 193,
+      "matriculados": 193
+    },
+    {
+      "codigoDane": "105001000191",
+      "nombre": "inst educ maestro arenas betancur - sec esc imperio del japon",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 82,
+      "matriculados": 89
+    },
+    {
+      "codigoDane": "105001000485",
+      "nombre": "inst educ la salle de campoamor",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 317,
+      "matriculados": 321
+    },
+    {
+      "codigoDane": "105001000621",
+      "nombre": "inst educ escuela normal superior de medellin",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 376,
+      "matriculados": 382
+    },
+    {
+      "codigoDane": "105001000876",
+      "nombre": "i.e. javiera londoño-sevilla",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 214,
+      "matriculados": 222
+    },
+    {
+      "codigoDane": "105001000931",
+      "nombre": "inst educ diego echavarria misas",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 550,
+      "matriculados": 562
+    },
+    {
+      "codigoDane": "105001001163",
+      "nombre": "institucion educativa la asuncion",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 86,
+      "matriculados": 87
+    },
+    {
+      "codigoDane": "105001001252",
+      "nombre": "inst educ cristobal colon",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 145,
+      "matriculados": 149
+    },
+    {
+      "codigoDane": "105001001317",
+      "nombre": "inst educ madre maria mazarello",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 179,
+      "matriculados": 180
+    },
+    {
+      "codigoDane": "105001001490",
+      "nombre": "inst educ lola gonzalez",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 701,
+      "matriculados": 715
+    },
+    {
+      "codigoDane": "105001001562",
+      "nombre": "inst educ javiera londo?o",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 489,
+      "matriculados": 514
+    },
+    {
+      "codigoDane": "105001001635",
+      "nombre": "inst educ yermo y parres",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 386,
+      "matriculados": 393
+    },
+    {
+      "codigoDane": "105001001791",
+      "nombre": "inst educ monseñor gerardo valencia cano",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 127,
+      "matriculados": 135
+    },
+    {
+      "codigoDane": "105001001881",
+      "nombre": "i.e. carlos vieco ortiz",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 282,
+      "matriculados": 293
+    },
+    {
+      "codigoDane": "105001002011",
+      "nombre": "inst educ federico ozanam",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 400,
+      "matriculados": 409
+    },
+    {
+      "codigoDane": "105001002020",
+      "nombre": "inst educ rafael uribe uribe",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 307,
+      "matriculados": 324
+    },
+    {
+      "codigoDane": "105001002496",
+      "nombre": "inst educ cristo rey",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 133,
+      "matriculados": 141
+    },
+    {
+      "codigoDane": "105001002798",
+      "nombre": "inst educ mater dei",
+      "comuna": "11",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 123,
+      "matriculados": 123
+    },
+    {
+      "codigoDane": "105001002895",
+      "nombre": "inst educ francisco antonio zea",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 391,
+      "matriculados": 407
+    },
+    {
+      "codigoDane": "105001003123",
+      "nombre": "i.e. fatima nutibara",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 138,
+      "matriculados": 143
+    },
+    {
+      "codigoDane": "105001003271",
+      "nombre": "institucion educativa octavio harry - jacqueline kennedy",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 160,
+      "matriculados": 169
+    },
+    {
+      "codigoDane": "105001003441",
+      "nombre": "ins tec industrial pascual bravo",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 726,
+      "matriculados": 732
+    },
+    {
+      "codigoDane": "105001003450",
+      "nombre": "inst educ rosalia suarez",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 199,
+      "matriculados": 210
+    },
+    {
+      "codigoDane": "105001005291",
+      "nombre": "inst educ campo valdes",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 123,
+      "matriculados": 131
+    },
+    {
+      "codigoDane": "105001005347",
+      "nombre": "inst educ tulio ospina",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 151,
+      "matriculados": 159
+    },
+    {
+      "codigoDane": "105001006068",
+      "nombre": "inst educ dinamarca - inst educ dinamarca",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 199,
+      "matriculados": 205
+    },
+    {
+      "codigoDane": "105001006068",
+      "nombre": "inst educ dinamarca",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 256,
+      "matriculados": 260
+    },
+    {
+      "codigoDane": "105001006092",
+      "nombre": "inst educ julio cesar garcia",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 241,
+      "matriculados": 246
+    },
+    {
+      "codigoDane": "105001006718",
+      "nombre": "inst educ asia ignaciana",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 229,
+      "matriculados": 244
+    },
+    {
+      "codigoDane": "105001006980",
+      "nombre": "inst educ concejo de medellin",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 726,
+      "matriculados": 783
+    },
+    {
+      "codigoDane": "105001007421",
+      "nombre": "inst educ octavio calderon mejia",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 246,
+      "matriculados": 254
+    },
+    {
+      "codigoDane": "105001009695",
+      "nombre": "inst educ san juan bosco",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 163,
+      "matriculados": 165
+    },
+    {
+      "codigoDane": "105001010928",
+      "nombre": "cent educal don bosco",
+      "comuna": "5",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 67,
+      "matriculados": 69
+    },
+    {
+      "codigoDane": "105001011461",
+      "nombre": "inst educ fe y alegria aures",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 91,
+      "matriculados": 92
+    },
+    {
+      "codigoDane": "105001012106",
+      "nombre": "inst educ juan maria cespedes",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 277,
+      "matriculados": 290
+    },
+    {
+      "codigoDane": "105001013013",
+      "nombre": "institucion educativa el picachito",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 62,
+      "matriculados": 66
+    },
+    {
+      "codigoDane": "105001013145",
+      "nombre": "inst educ santa teresa",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 205,
+      "matriculados": 207
+    },
+    {
+      "codigoDane": "105001013340",
+      "nombre": "inst educ inem jose felix de restrepo",
+      "comuna": "14",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 2282,
+      "matriculados": 2531
+    },
+    {
+      "codigoDane": "105001014851",
+      "nombre": "inst educ jesus rey",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 398,
+      "matriculados": 403
+    },
+    {
+      "codigoDane": "105001019330",
+      "nombre": "inst educ barrio santa margarita",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 139,
+      "matriculados": 144
+    },
+    {
+      "codigoDane": "105001021547",
+      "nombre": "inst educ villa flora",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 181,
+      "matriculados": 188
+    },
+    {
+      "codigoDane": "205001001672",
+      "nombre": "inst educ monse?or victor wiedemann",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 281,
+      "matriculados": 288
+    },
+    {
+      "codigoDane": "205001009797",
+      "nombre": "inst educ manuel j. betancur",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 269,
+      "matriculados": 280
+    },
+    {
+      "codigoDane": "205001011031",
+      "nombre": "inst educ santa elena",
+      "comuna": "90",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 175,
+      "matriculados": 177
+    },
+    {
+      "codigoDane": "205001012534",
+      "nombre": "inst educ san antonio de prado",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 276,
+      "matriculados": 287
+    },
+    {
+      "codigoDane": "205001019318",
+      "nombre": "inst educ san jose obrero - inst educ san jose obrero",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 242,
+      "matriculados": 248
+    },
+    {
+      "codigoDane": "205001019318",
+      "nombre": "inst educ san jose obrero",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 326,
+      "matriculados": 336
+    },
+    {
+      "codigoDane": "205001026624",
+      "nombre": "inst educ compartir",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 158,
+      "matriculados": 161
+    },
+    {
+      "codigoDane": "305001003629",
+      "nombre": "inst pedag claret",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 34,
+      "matriculados": 34
+    },
+    {
+      "codigoDane": "305001003785",
+      "nombre": "col milit jose maria cordoba",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 190,
+      "matriculados": 192
+    },
+    {
+      "codigoDane": "305001003904",
+      "nombre": "inst antioquia",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 16,
+      "matriculados": 16
+    },
+    {
+      "codigoDane": "305001003947",
+      "nombre": "cent educal conquistadores",
+      "comuna": "70",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 72,
+      "matriculados": 75
+    },
+    {
+      "codigoDane": "305001004218",
+      "nombre": "col nuestra senora de lourdes",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 135,
+      "matriculados": 136
+    },
+    {
+      "codigoDane": "305001004404",
+      "nombre": "col eucaristico de la milagrosa",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 134,
+      "matriculados": 136
+    },
+    {
+      "codigoDane": "305001004528",
+      "nombre": "col maria reina del carmelo",
+      "comuna": "3",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 151,
+      "matriculados": 153
+    },
+    {
+      "codigoDane": "305001004731",
+      "nombre": "col ateneo horizontes",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 21,
+      "matriculados": 21
+    },
+    {
+      "codigoDane": "305001004994",
+      "nombre": "col santa teresita",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 58,
+      "matriculados": 62
+    },
+    {
+      "codigoDane": "305001005125",
+      "nombre": "col madre antonia cerini",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 72,
+      "matriculados": 76
+    },
+    {
+      "codigoDane": "305001005257",
+      "nombre": "col teresiano nstra sra de la candelaria",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 119,
+      "matriculados": 119
+    },
+    {
+      "codigoDane": "305001005265",
+      "nombre": "col latino",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 48,
+      "matriculados": 48
+    },
+    {
+      "codigoDane": "305001005907",
+      "nombre": "col emilia riquelme",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 52,
+      "matriculados": 52
+    },
+    {
+      "codigoDane": "305001007594",
+      "nombre": "inst educ santa juana de lestonac",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 261,
+      "matriculados": 262
+    },
+    {
+      "codigoDane": "305001007969",
+      "nombre": "col nuestra senora de la providencia",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 44,
+      "matriculados": 44
+    },
+    {
+      "codigoDane": "305001009848",
+      "nombre": "i.e. guadalupano la salle",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 82,
+      "matriculados": 82
+    },
+    {
+      "codigoDane": "305001011761",
+      "nombre": "inst ferrini - sede robledo",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 309,
+      "matriculados": 314
+    },
+    {
+      "codigoDane": "305001013195",
+      "nombre": "col manzanares",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 96,
+      "matriculados": 96
+    },
+    {
+      "codigoDane": "305001014248",
+      "nombre": "col parroquial san judas tadeo",
+      "comuna": "5",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 70,
+      "matriculados": 70
+    },
+    {
+      "codigoDane": "305001015686",
+      "nombre": "inst educ maestro arenas betancur",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 128,
+      "matriculados": 132
+    },
+    {
+      "codigoDane": "305001016101",
+      "nombre": "colegio euskadi",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 66,
+      "matriculados": 66
+    },
+    {
+      "codigoDane": "305001016275",
+      "nombre": "col guillermo taborda restrepo",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 45,
+      "matriculados": 46
+    },
+    {
+      "codigoDane": "305001016542",
+      "nombre": "inst educ el triunfo santa teresa",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 132,
+      "matriculados": 134
+    },
+    {
+      "codigoDane": "305001018839",
+      "nombre": "inst educ madre laura",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "A",
+      "evaluados": 198,
+      "matriculados": 198
+    },
+    {
+      "codigoDane": "305001019975",
+      "nombre": "cent educ integ bucarelly",
+      "comuna": "60",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 47,
+      "matriculados": 48
+    },
+    {
+      "codigoDane": "305001021881",
+      "nombre": "col milit general pedro nel ospina",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 95,
+      "matriculados": 97
+    },
+    {
+      "codigoDane": "305001024569",
+      "nombre": "col ciencia y vida",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 64,
+      "matriculados": 64
+    },
+    {
+      "codigoDane": "305001025819",
+      "nombre": "col cent fraternal cristiano",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 25,
+      "matriculados": 26
+    },
+    {
+      "codigoDane": "405001016946",
+      "nombre": "col coop san antonio de prado (ac)",
+      "comuna": "80",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 31,
+      "matriculados": 32
+    },
+    {
+      "codigoDane": "405001022288",
+      "nombre": "col de bto colegiatura colombiana",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A",
+      "evaluados": 15,
+      "matriculados": 17
+    },
+    {
+      "codigoDane": "105001000841",
+      "nombre": "inst educ jesus maria - el rosal",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 191,
+      "matriculados": 196
+    },
+    {
+      "codigoDane": "105001001848",
+      "nombre": "inst educ sor juana ines de la cruz",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 166,
+      "matriculados": 171
+    },
+    {
+      "codigoDane": "105001002461",
+      "nombre": "inst educ lucrecio jaramillo velez",
+      "comuna": "11",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 283,
+      "matriculados": 294
+    },
+    {
+      "codigoDane": "105001004472",
+      "nombre": "inst educ la presentacion",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 198,
+      "matriculados": 198
+    },
+    {
+      "codigoDane": "105001004791",
+      "nombre": "inst educ santo angel",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 298,
+      "matriculados": 308
+    },
+    {
+      "codigoDane": "105001025984",
+      "nombre": "i.e. colegio loyola para la ciencia y la innovación",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "A+",
+      "evaluados": 134,
+      "matriculados": 134
+    },
+    {
+      "codigoDane": "305001000077",
+      "nombre": "el nuevo col the new school",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 78,
+      "matriculados": 82
+    },
+    {
+      "codigoDane": "305001000450",
+      "nombre": "col de maria",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 57,
+      "matriculados": 57
+    },
+    {
+      "codigoDane": "305001003491",
+      "nombre": "col calasanz femenino",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 181,
+      "matriculados": 182
+    },
+    {
+      "codigoDane": "305001003505",
+      "nombre": "col santa clara de asis",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 71,
+      "matriculados": 71
+    },
+    {
+      "codigoDane": "305001003513",
+      "nombre": "inst colombo venezolano",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 152,
+      "matriculados": 160
+    },
+    {
+      "codigoDane": "305001003599",
+      "nombre": "colegio san jose de la salle",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 285,
+      "matriculados": 288
+    },
+    {
+      "codigoDane": "305001003696",
+      "nombre": "lic san rafael",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 106,
+      "matriculados": 110
+    },
+    {
+      "codigoDane": "305001003734",
+      "nombre": "inst san carlos",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 467,
+      "matriculados": 474
+    },
+    {
+      "codigoDane": "305001003769",
+      "nombre": "col marymount",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 205,
+      "matriculados": 207
+    },
+    {
+      "codigoDane": "305001003793",
+      "nombre": "inst salesiano pedro justo berrio",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 328,
+      "matriculados": 330
+    },
+    {
+      "codigoDane": "305001003955",
+      "nombre": "comunidad colegio jesus maria",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 186,
+      "matriculados": 187
+    },
+    {
+      "codigoDane": "305001003963",
+      "nombre": "lic salazar y herrera",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 1566,
+      "matriculados": 1590
+    },
+    {
+      "codigoDane": "305001004161",
+      "nombre": "col de la presentacion - medellin",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 186,
+      "matriculados": 186
+    },
+    {
+      "codigoDane": "305001004200",
+      "nombre": "col calasanz",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 263,
+      "matriculados": 271
+    },
+    {
+      "codigoDane": "305001004293",
+      "nombre": "colegio de la universidad pontificia bolivariana",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 1270,
+      "matriculados": 1290
+    },
+    {
+      "codigoDane": "305001004315",
+      "nombre": "col santa maria del rosario",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 92,
+      "matriculados": 94
+    },
+    {
+      "codigoDane": "305001004455",
+      "nombre": "col salesiano el sufragio",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 288,
+      "matriculados": 289
+    },
+    {
+      "codigoDane": "305001004498",
+      "nombre": "col san ignacio de loyola",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 418,
+      "matriculados": 419
+    },
+    {
+      "codigoDane": "305001004501",
+      "nombre": "col sagrados corazones",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 63,
+      "matriculados": 63
+    },
+    {
+      "codigoDane": "305001004579",
+      "nombre": "col palermo de san jose",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 179,
+      "matriculados": 179
+    },
+    {
+      "codigoDane": "305001004633",
+      "nombre": "inst jorge robledo",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 181,
+      "matriculados": 182
+    },
+    {
+      "codigoDane": "305001004668",
+      "nombre": "col gimn los pinares",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 181,
+      "matriculados": 181
+    },
+    {
+      "codigoDane": "305001004811",
+      "nombre": "col divino salvador",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 177,
+      "matriculados": 177
+    },
+    {
+      "codigoDane": "305001004820",
+      "nombre": "col agustiniano de san nicolas",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 150,
+      "matriculados": 151
+    },
+    {
+      "codigoDane": "305001004901",
+      "nombre": "col san juan bosco",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 153,
+      "matriculados": 153
+    },
+    {
+      "codigoDane": "305001004943",
+      "nombre": "col nuestra senora del rosario de chiquinquira",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 88,
+      "matriculados": 88
+    },
+    {
+      "codigoDane": "305001004986",
+      "nombre": "col de la inmaculada",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 262,
+      "matriculados": 263
+    },
+    {
+      "codigoDane": "305001005036",
+      "nombre": "col san jose de las vegas",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 274,
+      "matriculados": 275
+    },
+    {
+      "codigoDane": "305001005109",
+      "nombre": "col la anunciacion",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 133,
+      "matriculados": 134
+    },
+    {
+      "codigoDane": "305001005150",
+      "nombre": "esc normal superior antioque?a",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 207,
+      "matriculados": 215
+    },
+    {
+      "codigoDane": "305001005176",
+      "nombre": "col bethlemitas",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 164,
+      "matriculados": 166
+    },
+    {
+      "codigoDane": "305001005184",
+      "nombre": "sem menor de la arquidiocesis de medellin",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 51,
+      "matriculados": 52
+    },
+    {
+      "codigoDane": "305001005214",
+      "nombre": "col maria auxiliadora",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 135,
+      "matriculados": 135
+    },
+    {
+      "codigoDane": "305001005541",
+      "nombre": "col nuestra madre de las mercedes",
+      "comuna": "13",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 67,
+      "matriculados": 68
+    },
+    {
+      "codigoDane": "305001005567",
+      "nombre": "col corazonista",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 384,
+      "matriculados": 389
+    },
+    {
+      "codigoDane": "305001005621",
+      "nombre": "col barbara micarelli",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 94,
+      "matriculados": 94
+    },
+    {
+      "codigoDane": "305001005991",
+      "nombre": "gimn los cedros",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 68,
+      "matriculados": 68
+    },
+    {
+      "codigoDane": "305001006784",
+      "nombre": "col de la compania de maria",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 316,
+      "matriculados": 316
+    },
+    {
+      "codigoDane": "305001006831",
+      "nombre": "inst musical diego echavarria",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 27,
+      "matriculados": 27
+    },
+    {
+      "codigoDane": "305001007306",
+      "nombre": "col san francisco javier",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 72,
+      "matriculados": 72
+    },
+    {
+      "codigoDane": "305001007586",
+      "nombre": "col campestre la colina",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 102,
+      "matriculados": 103
+    },
+    {
+      "codigoDane": "305001010781",
+      "nombre": "col montessori",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 225,
+      "matriculados": 226
+    },
+    {
+      "codigoDane": "305001011516",
+      "nombre": "colegio santa bertilla boscardin",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 207,
+      "matriculados": 209
+    },
+    {
+      "codigoDane": "305001011583",
+      "nombre": "col san lucas",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 68,
+      "matriculados": 70
+    },
+    {
+      "codigoDane": "305001012857",
+      "nombre": "colegio vid obra de la congregacion mariana",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 141,
+      "matriculados": 143
+    },
+    {
+      "codigoDane": "305001015716",
+      "nombre": "col parroquial ntra se?ora del buen consejo",
+      "comuna": "5",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 163,
+      "matriculados": 165
+    },
+    {
+      "codigoDane": "305001016003",
+      "nombre": "col madrid campestre",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 31,
+      "matriculados": 31
+    },
+    {
+      "codigoDane": "305001016089",
+      "nombre": "cent educ autonomo",
+      "comuna": "5",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 66,
+      "matriculados": 67
+    },
+    {
+      "codigoDane": "305001017590",
+      "nombre": "col padre manyanet",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 323,
+      "matriculados": 325
+    },
+    {
+      "codigoDane": "305001018286",
+      "nombre": "col san gabriel de la dolorosa",
+      "comuna": "15",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 45,
+      "matriculados": 46
+    },
+    {
+      "codigoDane": "305001019827",
+      "nombre": "col panamericano colombo sueco",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 176,
+      "matriculados": 177
+    },
+    {
+      "codigoDane": "305001025592",
+      "nombre": "colegio empresarial",
+      "comuna": "80",
+      "sector": "no oficial",
+      "clasificacion": "A+",
+      "evaluados": 415,
+      "matriculados": 420
+    },
+    {
+      "codigoDane": "105001000001",
+      "nombre": "inst educ jose maria velaz",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 103,
+      "matriculados": 105
+    },
+    {
+      "codigoDane": "105001000205",
+      "nombre": "inst educ san agustin",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 159,
+      "matriculados": 169
+    },
+    {
+      "codigoDane": "105001000256",
+      "nombre": "inst educ hector abad gomez",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 358,
+      "matriculados": 397
+    },
+    {
+      "codigoDane": "105001000353",
+      "nombre": "inst educ juan de la cruz posada",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 162,
+      "matriculados": 168
+    },
+    {
+      "codigoDane": "105001000418",
+      "nombre": "inst educ la milagrosa",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 278,
+      "matriculados": 305
+    },
+    {
+      "codigoDane": "105001000795",
+      "nombre": "inst educ alfredo cock arango",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 148,
+      "matriculados": 153
+    },
+    {
+      "codigoDane": "105001000809",
+      "nombre": "inst educ perpetuo socorro",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 121,
+      "matriculados": 122
+    },
+    {
+      "codigoDane": "105001000868",
+      "nombre": "inst educ republica de venezuela",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 75,
+      "matriculados": 77
+    },
+    {
+      "codigoDane": "105001000981",
+      "nombre": "inst educ gilberto alzate avenda?o",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 517,
+      "matriculados": 559
+    },
+    {
+      "codigoDane": "105001001023",
+      "nombre": "inst educ antonio ricaurte",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 191,
+      "matriculados": 196
+    },
+    {
+      "codigoDane": "105001001121",
+      "nombre": "inst educ jose roberto vasquez",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 485,
+      "matriculados": 523
+    },
+    {
+      "codigoDane": "105001001198",
+      "nombre": "inst educ aures",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 181,
+      "matriculados": 183
+    },
+    {
+      "codigoDane": "105001001236",
+      "nombre": "i.e. montecarlo guillermo gaviria correa",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 159,
+      "matriculados": 162
+    },
+    {
+      "codigoDane": "105001001279",
+      "nombre": "inst educ ciro mendia",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 160,
+      "matriculados": 174
+    },
+    {
+      "codigoDane": "105001001651",
+      "nombre": "inst educ jose celestino mutis",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 152,
+      "matriculados": 156
+    },
+    {
+      "codigoDane": "105001001660",
+      "nombre": "inst educ jose antonio galan",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 140,
+      "matriculados": 144
+    },
+    {
+      "codigoDane": "105001001686",
+      "nombre": "inst educ dinamarca - sec esc ricardo uribe escobar",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 54,
+      "matriculados": 55
+    },
+    {
+      "codigoDane": "105001001716",
+      "nombre": "institucion educativa santa catalina de siena",
+      "comuna": "14",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 93,
+      "matriculados": 94
+    },
+    {
+      "codigoDane": "105001002003",
+      "nombre": "inst educ san roberto belarmino",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 210,
+      "matriculados": 217
+    },
+    {
+      "codigoDane": "105001002038",
+      "nombre": "inst educ jose eusebio caro",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 187,
+      "matriculados": 195
+    },
+    {
+      "codigoDane": "105001002071",
+      "nombre": "i.e. benjamin herrera",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 116,
+      "matriculados": 119
+    },
+    {
+      "codigoDane": "105001002101",
+      "nombre": "institución educativa juan de dios cock",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 194,
+      "matriculados": 199
+    },
+    {
+      "codigoDane": "105001002119",
+      "nombre": "i.e. marco fidel suarez",
+      "comuna": "11",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 259,
+      "matriculados": 280
+    },
+    {
+      "codigoDane": "105001002135",
+      "nombre": "inst educ ramon munera lopera",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 96,
+      "matriculados": 99
+    },
+    {
+      "codigoDane": "105001002305",
+      "nombre": "inst educ mariscal robledo",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 261,
+      "matriculados": 278
+    },
+    {
+      "codigoDane": "105001002470",
+      "nombre": "inst educ san vicente de paul",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 350,
+      "matriculados": 364
+    },
+    {
+      "codigoDane": "105001002488",
+      "nombre": "inst educ pedro luis villa",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 159,
+      "matriculados": 164
+    },
+    {
+      "codigoDane": "105001002526",
+      "nombre": "inst educ samuel barrientos restrepo",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 317,
+      "matriculados": 330
+    },
+    {
+      "codigoDane": "105001002917",
+      "nombre": "inst educ alfonso lopez - sec esc cardenal crisanto luque",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 39,
+      "matriculados": 41
+    },
+    {
+      "codigoDane": "105001003131",
+      "nombre": "inst educ republica de honduras",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 82,
+      "matriculados": 86
+    },
+    {
+      "codigoDane": "105001003221",
+      "nombre": "institucion educativa manuel jose cayzedo",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 126,
+      "matriculados": 130
+    },
+    {
+      "codigoDane": "105001003280",
+      "nombre": "inst educ maria montessori",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 117,
+      "matriculados": 123
+    },
+    {
+      "codigoDane": "105001003298",
+      "nombre": "inst educ lorenza villegas de santos",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 309,
+      "matriculados": 313
+    },
+    {
+      "codigoDane": "105001005410",
+      "nombre": "inst educ juan de dios carvajal",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 176,
+      "matriculados": 184
+    },
+    {
+      "codigoDane": "105001005495",
+      "nombre": "inst educ republica de uruguay",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 302,
+      "matriculados": 314
+    },
+    {
+      "codigoDane": "105001005878",
+      "nombre": "inst educ francisco miranda",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 227,
+      "matriculados": 237
+    },
+    {
+      "codigoDane": "105001006246",
+      "nombre": "inst educ jorge robledo",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 180,
+      "matriculados": 187
+    },
+    {
+      "codigoDane": "105001007111",
+      "nombre": "inst educ sebastian de belalcazar",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 87,
+      "matriculados": 88
+    },
+    {
+      "codigoDane": "105001007188",
+      "nombre": "inst educ benedikta zur nieden",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 175,
+      "matriculados": 191
+    },
+    {
+      "codigoDane": "105001007218",
+      "nombre": "inst educ maria de los angeles cano marquez",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 316,
+      "matriculados": 323
+    },
+    {
+      "codigoDane": "105001007889",
+      "nombre": "inst educ juvenil nuevo futuro",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 125,
+      "matriculados": 130
+    },
+    {
+      "codigoDane": "105001007919",
+      "nombre": "col sagrada familia aldea pablo vi",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 86,
+      "matriculados": 87
+    },
+    {
+      "codigoDane": "105001008249",
+      "nombre": "inst educ bello horizonte",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 170,
+      "matriculados": 181
+    },
+    {
+      "codigoDane": "105001008486",
+      "nombre": "i.e. capilla del rosario",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 89,
+      "matriculados": 92
+    },
+    {
+      "codigoDane": "105001009652",
+      "nombre": "inst educ san lorenzo de aburra",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 259,
+      "matriculados": 274
+    },
+    {
+      "codigoDane": "105001009709",
+      "nombre": "inst educ felix henao botero",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 160,
+      "matriculados": 177
+    },
+    {
+      "codigoDane": "105001009865",
+      "nombre": "inst educ hernan toro agudelo",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 153,
+      "matriculados": 155
+    },
+    {
+      "codigoDane": "105001010111",
+      "nombre": "inst educ maestro fernando botero",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 239,
+      "matriculados": 265
+    },
+    {
+      "codigoDane": "105001010367",
+      "nombre": "inst educ santos angeles custodios",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 135,
+      "matriculados": 142
+    },
+    {
+      "codigoDane": "105001010448",
+      "nombre": "inst educ la esperanza",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 184,
+      "matriculados": 190
+    },
+    {
+      "codigoDane": "105001010588",
+      "nombre": "inst educ fe y alegria la cima",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 357,
+      "matriculados": 365
+    },
+    {
+      "codigoDane": "105001010855",
+      "nombre": "inst educ  ana de castrillon",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 178,
+      "matriculados": 189
+    },
+    {
+      "codigoDane": "105001011011",
+      "nombre": "inst educ tomas carrasquilla no. 2",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 120,
+      "matriculados": 122
+    },
+    {
+      "codigoDane": "105001011061",
+      "nombre": "inst educ jose asuncion silva",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 178,
+      "matriculados": 183
+    },
+    {
+      "codigoDane": "105001011070",
+      "nombre": "inst educ merceditas gomez martinez",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 247,
+      "matriculados": 258
+    },
+    {
+      "codigoDane": "105001011363",
+      "nombre": "inst educ doce de octubre",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 363,
+      "matriculados": 367
+    },
+    {
+      "codigoDane": "105001011606",
+      "nombre": "inst educ horacio mu?oz suescun",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 270,
+      "matriculados": 277
+    },
+    {
+      "codigoDane": "105001011631",
+      "nombre": "inst educ asamblea departamental",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 349,
+      "matriculados": 370
+    },
+    {
+      "codigoDane": "105001011690",
+      "nombre": "inst educ federico carrasquilla",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 128,
+      "matriculados": 141
+    },
+    {
+      "codigoDane": "105001011711",
+      "nombre": "inst educ fe y alegria villa de la candelaria",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 185,
+      "matriculados": 187
+    },
+    {
+      "codigoDane": "105001012092",
+      "nombre": "inst educ barrio santander",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 275,
+      "matriculados": 289
+    },
+    {
+      "codigoDane": "105001012696",
+      "nombre": "inst educ alfonso lopez pumarejo",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 208,
+      "matriculados": 230
+    },
+    {
+      "codigoDane": "105001012700",
+      "nombre": "inst educ san pablo",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 217,
+      "matriculados": 236
+    },
+    {
+      "codigoDane": "105001013072",
+      "nombre": "inst educ maestro pedro nel gomez",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 176,
+      "matriculados": 180
+    },
+    {
+      "codigoDane": "105001013439",
+      "nombre": "inst educ felix de bedout moreno",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 163,
+      "matriculados": 170
+    },
+    {
+      "codigoDane": "105001014397",
+      "nombre": "inst educ luis lopez de mesa",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 265,
+      "matriculados": 269
+    },
+    {
+      "codigoDane": "105001015091",
+      "nombre": "inst educ fe y alegria granizal",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 150,
+      "matriculados": 154
+    },
+    {
+      "codigoDane": "105001015172",
+      "nombre": "inst educ eduardo santos - inst educ eduardo santos",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 116,
+      "matriculados": 117
+    },
+    {
+      "codigoDane": "105001015172",
+      "nombre": "inst educ eduardo santos",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 208,
+      "matriculados": 211
+    },
+    {
+      "codigoDane": "105001016420",
+      "nombre": "inst educ tricentenario",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 186,
+      "matriculados": 195
+    },
+    {
+      "codigoDane": "105001017965",
+      "nombre": "inst educ manuel jose gomez s",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 193,
+      "matriculados": 213
+    },
+    {
+      "codigoDane": "105001018759",
+      "nombre": "inst educ fe y alegria el limonar",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 131,
+      "matriculados": 136
+    },
+    {
+      "codigoDane": "105001019011",
+      "nombre": "i.e. stella velez londoño",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 145,
+      "matriculados": 151
+    },
+    {
+      "codigoDane": "105001019062",
+      "nombre": "inst educ alfonso mora naranjo",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 84,
+      "matriculados": 94
+    },
+    {
+      "codigoDane": "105001019143",
+      "nombre": "i.e. jorge eliecer gaitan",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 120,
+      "matriculados": 127
+    },
+    {
+      "codigoDane": "105001019194",
+      "nombre": "inst educ el pedregal",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 171,
+      "matriculados": 180
+    },
+    {
+      "codigoDane": "105001019429",
+      "nombre": "inst educ luis carlos galan sarmiento",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 349,
+      "matriculados": 366
+    },
+    {
+      "codigoDane": "105001019453",
+      "nombre": "inst educ villa del socorro",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 310,
+      "matriculados": 326
+    },
+    {
+      "codigoDane": "105001019674",
+      "nombre": "inst educ miraflores - luis eduardo valencia garcia",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 284,
+      "matriculados": 294
+    },
+    {
+      "codigoDane": "105001019798",
+      "nombre": "inst educ alfonso lopez",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 57,
+      "matriculados": 58
+    },
+    {
+      "codigoDane": "105001019925",
+      "nombre": "inst educ alcaldia de medellin",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 200,
+      "matriculados": 212
+    },
+    {
+      "codigoDane": "105001020028",
+      "nombre": "inst educ el salvador",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 163,
+      "matriculados": 164
+    },
+    {
+      "codigoDane": "105001020052",
+      "nombre": "inst educ rafael garcia herreros",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 90,
+      "matriculados": 91
+    },
+    {
+      "codigoDane": "105001020273",
+      "nombre": "inst educ ciudad don bosco",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 16,
+      "matriculados": 17
+    },
+    {
+      "codigoDane": "105001021369",
+      "nombre": "esc barrio san nicolas-en administracion(ac)",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 81,
+      "matriculados": 82
+    },
+    {
+      "codigoDane": "105001021636",
+      "nombre": "inst educ kennedy",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 273,
+      "matriculados": 281
+    },
+    {
+      "codigoDane": "105001021873",
+      "nombre": "inst educ sol de oriente",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 319,
+      "matriculados": 326
+    },
+    {
+      "codigoDane": "105001022101",
+      "nombre": "inst educ las nieves",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 103,
+      "matriculados": 104
+    },
+    {
+      "codigoDane": "105001023965",
+      "nombre": "inst educ finca la mesa",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 247,
+      "matriculados": 248
+    },
+    {
+      "codigoDane": "105001024073",
+      "nombre": "inst educ casd",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 383,
+      "matriculados": 395
+    },
+    {
+      "codigoDane": "105001025763",
+      "nombre": "inst educ debora arango perez",
+      "comuna": "70",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 107,
+      "matriculados": 116
+    },
+    {
+      "codigoDane": "105001025780",
+      "nombre": "inst educ pbro antonio jose bernal londoño sj",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 538,
+      "matriculados": 544
+    },
+    {
+      "codigoDane": "105001025798",
+      "nombre": "inst educ angela restrepo moreno",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 180,
+      "matriculados": 187
+    },
+    {
+      "codigoDane": "105001025844",
+      "nombre": "inst educ antonio derka - santo domingo",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 592,
+      "matriculados": 616
+    },
+    {
+      "codigoDane": "105001026514",
+      "nombre": "inst educ san benito",
+      "comuna": "10",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 41,
+      "matriculados": 45
+    },
+    {
+      "codigoDane": "105001026671",
+      "nombre": "inst educ san nicolas",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 41,
+      "matriculados": 42
+    },
+    {
+      "codigoDane": "105001800112",
+      "nombre": "inst educ el diamante",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 135,
+      "matriculados": 137
+    },
+    {
+      "codigoDane": "205001001397",
+      "nombre": "inst educ san jose obrero - sec esc san jose",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 84,
+      "matriculados": 88
+    },
+    {
+      "codigoDane": "205001006232",
+      "nombre": "inst educ  san cristobal",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 357,
+      "matriculados": 367
+    },
+    {
+      "codigoDane": "205001007735",
+      "nombre": "inst educ hector rogelio montoya",
+      "comuna": "50",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 125,
+      "matriculados": 127
+    },
+    {
+      "codigoDane": "205001010264",
+      "nombre": "i.e. presbitero juan j. escobar",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 212,
+      "matriculados": 222
+    },
+    {
+      "codigoDane": "205001010281",
+      "nombre": "inst educ alfonso upegui orozco",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 181,
+      "matriculados": 182
+    },
+    {
+      "codigoDane": "205001026632",
+      "nombre": "inst educ corvide",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 105,
+      "matriculados": 106
+    },
+    {
+      "codigoDane": "305001004544",
+      "nombre": "inst tomas carrasquilla",
+      "comuna": "9",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 76,
+      "matriculados": 76
+    },
+    {
+      "codigoDane": "305001004854",
+      "nombre": "inst educ alvernia",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 185,
+      "matriculados": 186
+    },
+    {
+      "codigoDane": "305001004871",
+      "nombre": "col pablo vi",
+      "comuna": "3",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 219,
+      "matriculados": 223
+    },
+    {
+      "codigoDane": "305001006458",
+      "nombre": "esc popular eucaristica camilo c. restrepo",
+      "comuna": "15",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 59,
+      "matriculados": 60
+    },
+    {
+      "codigoDane": "305001010358",
+      "nombre": "col adventista simon bolivar",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 91,
+      "matriculados": 92
+    },
+    {
+      "codigoDane": "305001011770",
+      "nombre": "inst vicarial jesus maestro",
+      "comuna": "3",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 56,
+      "matriculados": 56
+    },
+    {
+      "codigoDane": "305001012181",
+      "nombre": "col san juan eudes",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 241,
+      "matriculados": 244
+    },
+    {
+      "codigoDane": "305001013829",
+      "nombre": "inst parra paris",
+      "comuna": "12",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 27,
+      "matriculados": 28
+    },
+    {
+      "codigoDane": "305001015287",
+      "nombre": "inst educ la candelaria",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 215,
+      "matriculados": 226
+    },
+    {
+      "codigoDane": "305001017298",
+      "nombre": "col arenys del mar",
+      "comuna": "13",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 106,
+      "matriculados": 106
+    },
+    {
+      "codigoDane": "305001018421",
+      "nombre": "cent educ jesus amigo",
+      "comuna": "6",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 69,
+      "matriculados": 69
+    },
+    {
+      "codigoDane": "305001020094",
+      "nombre": "col emaus",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 390,
+      "matriculados": 397
+    },
+    {
+      "codigoDane": "305001022178",
+      "nombre": "inst corferrini - sede robledo",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 83,
+      "matriculados": 86
+    },
+    {
+      "codigoDane": "305001022291",
+      "nombre": "col el se?or col the lord college",
+      "comuna": "14",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 18,
+      "matriculados": 18
+    },
+    {
+      "codigoDane": "305001022496",
+      "nombre": "institución educativa pequeña maria",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 90,
+      "matriculados": 95
+    },
+    {
+      "codigoDane": "305001022640",
+      "nombre": "inst educ el bosque ",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "B",
+      "evaluados": 89,
+      "matriculados": 91
+    },
+    {
+      "codigoDane": "305001024419",
+      "nombre": "col antares",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "B",
+      "evaluados": 137,
+      "matriculados": 139
+    },
+    {
+      "codigoDane": "105001000043",
+      "nombre": "inst educ barrio santa cruz",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 129,
+      "matriculados": 143
+    },
+    {
+      "codigoDane": "105001000141",
+      "nombre": "inst educ camilo torres restrepo",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 84,
+      "matriculados": 88
+    },
+    {
+      "codigoDane": "105001000167",
+      "nombre": "col la pastora-en administracion (ac)",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 44,
+      "matriculados": 46
+    },
+    {
+      "codigoDane": "105001000175",
+      "nombre": "inst educ gabriel restrepo moreno",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 138,
+      "matriculados": 141
+    },
+    {
+      "codigoDane": "105001000396",
+      "nombre": "inst educ jose acevedo y gomez",
+      "comuna": "15",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 240,
+      "matriculados": 243
+    },
+    {
+      "codigoDane": "105001000493",
+      "nombre": "inst educ ramon giraldo ceballos - inst educ ramon giraldo ceballos",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 156,
+      "matriculados": 165
+    },
+    {
+      "codigoDane": "105001000493",
+      "nombre": "inst educ ramon giraldo ceballos",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 227,
+      "matriculados": 237
+    },
+    {
+      "codigoDane": "105001000990",
+      "nombre": "inst educ gonzalo restrepo jaramillo",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 420,
+      "matriculados": 428
+    },
+    {
+      "codigoDane": "105001001473",
+      "nombre": "inst educ manuela beltran",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 125,
+      "matriculados": 138
+    },
+    {
+      "codigoDane": "105001001805",
+      "nombre": "inst educ fe y alegria popular nro. 1",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 283,
+      "matriculados": 291
+    },
+    {
+      "codigoDane": "105001001821",
+      "nombre": "inst educ nuevo horizonte",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 107,
+      "matriculados": 126
+    },
+    {
+      "codigoDane": "105001002267",
+      "nombre": "inst educ vida para todos - sec esc sor maria luisa courbin",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 86,
+      "matriculados": 92
+    },
+    {
+      "codigoDane": "105001002348",
+      "nombre": "inst educ fe y alegria santo domingo savio",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 180,
+      "matriculados": 184
+    },
+    {
+      "codigoDane": "105001002356",
+      "nombre": "inst educ gabriel garcia marquez",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 164,
+      "matriculados": 169
+    },
+    {
+      "codigoDane": "105001002780",
+      "nombre": "inst educ san francisco de asis",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 73,
+      "matriculados": 76
+    },
+    {
+      "codigoDane": "105001002976",
+      "nombre": "inst educ la piedad",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 183,
+      "matriculados": 191
+    },
+    {
+      "codigoDane": "105001003387",
+      "nombre": "inst educ santa rosa de lima",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 201,
+      "matriculados": 223
+    },
+    {
+      "codigoDane": "105001005339",
+      "nombre": "inst educ monse?or francisco cristobal toro",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 408,
+      "matriculados": 429
+    },
+    {
+      "codigoDane": "105001005380",
+      "nombre": "i.e. manuel uribe ángel",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 158,
+      "matriculados": 159
+    },
+    {
+      "codigoDane": "105001005525",
+      "nombre": "inst educ enrique olaya herrera",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 214,
+      "matriculados": 220
+    },
+    {
+      "codigoDane": "105001006181",
+      "nombre": "inst educ pedro octavio amado",
+      "comuna": "16",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 205,
+      "matriculados": 215
+    },
+    {
+      "codigoDane": "105001006483",
+      "nombre": "inst educ rodrigo correa palacio",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 61,
+      "matriculados": 63
+    },
+    {
+      "codigoDane": "105001006530",
+      "nombre": "inst educ eduardo santos - sec esc pedro j gomez",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 66,
+      "matriculados": 67
+    },
+    {
+      "codigoDane": "105001006556",
+      "nombre": "inst educ juan xxiii",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 138,
+      "matriculados": 147
+    },
+    {
+      "codigoDane": "105001007439",
+      "nombre": "inst educ pedro claver aguirre",
+      "comuna": "5",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 110,
+      "matriculados": 117
+    },
+    {
+      "codigoDane": "105001007978",
+      "nombre": "inst educ pablo neruda",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 129,
+      "matriculados": 132
+    },
+    {
+      "codigoDane": "105001008389",
+      "nombre": "inst educ loreto-gabriela gomez carvajal",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 221,
+      "matriculados": 241
+    },
+    {
+      "codigoDane": "105001011088",
+      "nombre": "inst educ ciudadela las americas",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 159,
+      "matriculados": 163
+    },
+    {
+      "codigoDane": "105001011886",
+      "nombre": "inst educ america",
+      "comuna": "12",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 176,
+      "matriculados": 184
+    },
+    {
+      "codigoDane": "105001012165",
+      "nombre": "inst educ guadalupe",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 156,
+      "matriculados": 171
+    },
+    {
+      "codigoDane": "105001012581",
+      "nombre": "institucion educativa reino de belgica - inst educ reino de belgica",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 58,
+      "matriculados": 61
+    },
+    {
+      "codigoDane": "105001012581",
+      "nombre": "institucion educativa reino de belgica",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 127,
+      "matriculados": 136
+    },
+    {
+      "codigoDane": "105001013447",
+      "nombre": "inst educ jose horacio betancur",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 82,
+      "matriculados": 86
+    },
+    {
+      "codigoDane": "105001013633",
+      "nombre": "inst educ loma hermosa",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 77,
+      "matriculados": 78
+    },
+    {
+      "codigoDane": "105001015148",
+      "nombre": "inst educ camilo mora carrasquilla",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 156,
+      "matriculados": 166
+    },
+    {
+      "codigoDane": "105001015211",
+      "nombre": "inst educ la libertad",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 76,
+      "matriculados": 85
+    },
+    {
+      "codigoDane": "105001015229",
+      "nombre": "inst educ villa turbay",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 130,
+      "matriculados": 134
+    },
+    {
+      "codigoDane": "105001015831",
+      "nombre": "inst educ vallejuelos",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 108,
+      "matriculados": 115
+    },
+    {
+      "codigoDane": "105001017132",
+      "nombre": "inst educ fe y alegria san jose",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 201,
+      "matriculados": 209
+    },
+    {
+      "codigoDane": "105001019089",
+      "nombre": "inst educ vida para todos",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 128,
+      "matriculados": 137
+    },
+    {
+      "codigoDane": "105001019305",
+      "nombre": "inst educ la avanzada",
+      "comuna": "1",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 76,
+      "matriculados": 78
+    },
+    {
+      "codigoDane": "105001019453",
+      "nombre": "inst educ villa del socorro - inst educ villa del socorro",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 299,
+      "matriculados": 326
+    },
+    {
+      "codigoDane": "105001019534",
+      "nombre": "inst educ rodrigo lara bonilla",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 163,
+      "matriculados": 170
+    },
+    {
+      "codigoDane": "105001020206",
+      "nombre": "col vida y paz progresar",
+      "comuna": "6",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 213,
+      "matriculados": 218
+    },
+    {
+      "codigoDane": "105001021199",
+      "nombre": "inst educ la independencia",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 241,
+      "matriculados": 255
+    },
+    {
+      "codigoDane": "105001022446",
+      "nombre": "col jesus maria valle jaramillo (ac)",
+      "comuna": "6",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 90,
+      "matriculados": 90
+    },
+    {
+      "codigoDane": "105001025771",
+      "nombre": "inst educ joaquin vallejo arbelaez",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 194,
+      "matriculados": 203
+    },
+    {
+      "codigoDane": "105001025992",
+      "nombre": "inst educ la huerta",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 127,
+      "matriculados": 139
+    },
+    {
+      "codigoDane": "105001026000",
+      "nombre": "inst educ ciudadela nuevo occidente",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 366,
+      "matriculados": 382
+    },
+    {
+      "codigoDane": "105001026131",
+      "nombre": "i.e. el pinal",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 159,
+      "matriculados": 173
+    },
+    {
+      "codigoDane": "105001026131",
+      "nombre": "i.e. el pinal - inst educ el pinal",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 91,
+      "matriculados": 106
+    },
+    {
+      "codigoDane": "105001026352",
+      "nombre": "institucion educativa el corazón",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 188,
+      "matriculados": 205
+    },
+    {
+      "codigoDane": "105001026361",
+      "nombre": "institucion educativa jesus maria valle",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 180,
+      "matriculados": 189
+    },
+    {
+      "codigoDane": "105001026549",
+      "nombre": "institucion educativa reino de belgica - sec esc bello oriente",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 34,
+      "matriculados": 38
+    },
+    {
+      "codigoDane": "105001026549",
+      "nombre": "inst educ bello oriente - inst educ bello oriente",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 73,
+      "matriculados": 79
+    },
+    {
+      "codigoDane": "105001026549",
+      "nombre": "inst educ bello oriente",
+      "comuna": "3",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 39,
+      "matriculados": 41
+    },
+    {
+      "codigoDane": "105001026573",
+      "nombre": "ie lusitania- paz de colombia",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 188,
+      "matriculados": 207
+    },
+    {
+      "codigoDane": "105001026581",
+      "nombre": "inst educ la sierra",
+      "comuna": "8",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 160,
+      "matriculados": 168
+    },
+    {
+      "codigoDane": "105001026662",
+      "nombre": "inst educ la pastora",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 54,
+      "matriculados": 56
+    },
+    {
+      "codigoDane": "205001002199",
+      "nombre": "inst educ carlos alberto calderon",
+      "comuna": "60",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 171,
+      "matriculados": 173
+    },
+    {
+      "codigoDane": "205001006526",
+      "nombre": "inst educ marina orth",
+      "comuna": "70",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 53,
+      "matriculados": 58
+    },
+    {
+      "codigoDane": "205001018745",
+      "nombre": "inst educ el limonar",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 95,
+      "matriculados": 98
+    },
+    {
+      "codigoDane": "205001026641",
+      "nombre": "inst educ pradito",
+      "comuna": "80",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 50,
+      "matriculados": 52
+    },
+    {
+      "codigoDane": "305001000093",
+      "nombre": "i.e. prados verdes",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 22,
+      "matriculados": 25
+    },
+    {
+      "codigoDane": "305001007861",
+      "nombre": "gimn guayacanes",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 102,
+      "matriculados": 103
+    },
+    {
+      "codigoDane": "305001013730",
+      "nombre": "col pestalozzi",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 33,
+      "matriculados": 37
+    },
+    {
+      "codigoDane": "305001014256",
+      "nombre": "col bautista de castilla",
+      "comuna": "5",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 12,
+      "matriculados": 13
+    },
+    {
+      "codigoDane": "305001014264",
+      "nombre": "col hispano",
+      "comuna": "11",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 43,
+      "matriculados": 43
+    },
+    {
+      "codigoDane": "305001018022",
+      "nombre": "inst educ fe y alegria luis amigo",
+      "comuna": "4",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 124,
+      "matriculados": 140
+    },
+    {
+      "codigoDane": "305001019541",
+      "nombre": "col nino jesus",
+      "comuna": "3",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 40,
+      "matriculados": 43
+    },
+    {
+      "codigoDane": "305001019690",
+      "nombre": "inst educ arzobispo tulio botero salazar",
+      "comuna": "9",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 162,
+      "matriculados": 170
+    },
+    {
+      "codigoDane": "305001021082",
+      "nombre": "lic rodrigo arenas betancur en administracion (ac)",
+      "comuna": "7",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 164,
+      "matriculados": 169
+    },
+    {
+      "codigoDane": "305001021121",
+      "nombre": "col bello oriente",
+      "comuna": "3",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 41,
+      "matriculados": 41
+    },
+    {
+      "codigoDane": "305001021821",
+      "nombre": "col gente unida jovenes por la paz-santo domingo",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 124,
+      "matriculados": 126
+    },
+    {
+      "codigoDane": "305001022194",
+      "nombre": "col fe y alegria santa maria",
+      "comuna": "1",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 75,
+      "matriculados": 80
+    },
+    {
+      "codigoDane": "305001022232",
+      "nombre": "inst educ  barrio olaya herrera",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "C",
+      "evaluados": 168,
+      "matriculados": 182
+    },
+    {
+      "codigoDane": "305001022534",
+      "nombre": "col gente unida jovenes por la paz - sede villa cafe",
+      "comuna": "16",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 16,
+      "matriculados": 16
+    },
+    {
+      "codigoDane": "305001022551",
+      "nombre": "col barrio blanquizal en administracion (ac)",
+      "comuna": "13",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 153,
+      "matriculados": 159
+    },
+    {
+      "codigoDane": "305001023859",
+      "nombre": "i.e bethesda",
+      "comuna": "10",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 12,
+      "matriculados": 12
+    },
+    {
+      "codigoDane": "305001025185",
+      "nombre": "col basico camino de paz",
+      "comuna": "8",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 82,
+      "matriculados": 85
+    },
+    {
+      "codigoDane": "405001020374",
+      "nombre": "col fe y alegria corvide (ac)",
+      "comuna": "80",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 164,
+      "matriculados": 167
+    },
+    {
+      "codigoDane": "405001022181",
+      "nombre": "esc rural pradito en administracion (ac)",
+      "comuna": "80",
+      "sector": "no oficial",
+      "clasificacion": "C",
+      "evaluados": 70,
+      "matriculados": 70
+    },
+    {
+      "codigoDane": "105001022543",
+      "nombre": "col el corazon en administracion (ac)",
+      "comuna": "13",
+      "sector": "no oficial",
+      "clasificacion": "D",
+      "evaluados": 48,
+      "matriculados": 48
+    },
+    {
+      "codigoDane": "105001026603",
+      "nombre": "inst educ altavista",
+      "comuna": "70",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 46,
+      "matriculados": 47
+    },
+    {
+      "codigoDane": "105001026654",
+      "nombre": "inst educ el playon",
+      "comuna": "2",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 57,
+      "matriculados": 64
+    },
+    {
+      "codigoDane": "105001026689",
+      "nombre": "inst educ blanquizal",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 101,
+      "matriculados": 102
+    },
+    {
+      "codigoDane": "105001026697",
+      "nombre": "inst educ fundadores",
+      "comuna": "13",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 108,
+      "matriculados": 117
+    },
+    {
+      "codigoDane": "105001026701",
+      "nombre": "inst educ progresar",
+      "comuna": "6",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 110,
+      "matriculados": 123
+    },
+    {
+      "codigoDane": "105001026719",
+      "nombre": "inst educ rodrigo arenas betancur",
+      "comuna": "7",
+      "sector": "oficial",
+      "clasificacion": "D",
+      "evaluados": 89,
+      "matriculados": 94
+    },
+    {
+      "codigoDane": "305001021261",
+      "nombre": "col gente unida jovenes por la paz - moravia",
+      "comuna": "4",
+      "sector": "no oficial",
+      "clasificacion": "D",
+      "evaluados": 65,
+      "matriculados": 66
+    },
+    {
+      "codigoDane": "305001022259",
+      "nombre": "inst corferrini - sede la divisa",
+      "comuna": "13",
+      "sector": "no oficial",
+      "clasificacion": "D",
+      "evaluados": 76,
+      "matriculados": 81
+    }
+  ]
+}
