@@ -1,0 +1,582 @@
+[
+  {
+    "fields": [
+      {
+        "name": "codigo_dane",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "código dane del establecimiento"
+      },
+      {
+        "name": "establecimiento educativo",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "nombre del establecimiento educativo"
+      },
+      {
+        "name": "comuna",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "comuna"
+      },
+      {
+        "name": "prestacion_servicio",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "prestación del servicio"
+      },
+      {
+        "name": "isce_total_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce total"
+      },
+      {
+        "name": "isce_prim_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce primaria"
+      },
+      {
+        "name": "isce_secun_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce secundaria"
+      },
+      {
+        "name": "isce_media_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce media"
+      },
+      {
+        "name": "desempeño_prim_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en primaria"
+      },
+      {
+        "name": "progreso_prim_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en primaria"
+      },
+      {
+        "name": "eficiencia_prim_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en primaria"
+      },
+      {
+        "name": "ambiente_prim_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en primaria"
+      },
+      {
+        "name": "desempeño_secun_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en secundaria"
+      },
+      {
+        "name": "progreso_secun_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso de secundaria"
+      },
+      {
+        "name": "eficiencia_secun_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en secundaria"
+      },
+      {
+        "name": "ambiente_secun_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en secundaria"
+      },
+      {
+        "name": "desempeño_media_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en media"
+      },
+      {
+        "name": "progreso_media_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en media"
+      },
+      {
+        "name": "eficiencia_media_2018",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en media"
+      },
+      {
+        "name": "isce_total_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce total"
+      },
+      {
+        "name": "isce_prim_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce primaria"
+      },
+      {
+        "name": "isce_secun_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce secundaria"
+      },
+      {
+        "name": "isce_media_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce media"
+      },
+      {
+        "name": "desempeño_prim_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en primaria"
+      },
+      {
+        "name": "progreso_prim_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en primaria"
+      },
+      {
+        "name": "eficiencia_prim_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en primaria"
+      },
+      {
+        "name": "ambiente_prim_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en primaria"
+      },
+      {
+        "name": "desempeño_secun_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en secundaria"
+      },
+      {
+        "name": "progreso_secun_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en secundaria"
+      },
+      {
+        "name": "eficiencia_secun_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en secundaria"
+      },
+      {
+        "name": "ambiente_secun_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en secundaria"
+      },
+      {
+        "name": "desempeño_media_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en media"
+      },
+      {
+        "name": "progreso_media_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en media"
+      },
+      {
+        "name": "eficiencia_media_2017",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en media"
+      },
+      {
+        "name": "isce_total_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce total"
+      },
+      {
+        "name": "isce_prim_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce primaria"
+      },
+      {
+        "name": "isce_secun_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce secundaria"
+      },
+      {
+        "name": "isce_media_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce media"
+      },
+      {
+        "name": "desempeño_prim_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en primaria"
+      },
+      {
+        "name": "progreso_prim_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en primaria"
+      },
+      {
+        "name": "eficiencia_prim_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en primaria"
+      },
+      {
+        "name": "ambiente_prim_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en primaria"
+      },
+      {
+        "name": "desempeño_secun_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en secundaria"
+      },
+      {
+        "name": "progreso_secun_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en secundaria"
+      },
+      {
+        "name": "eficienciacia_secun_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en secundaria"
+      },
+      {
+        "name": "ambiente_secun_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en secundaria"
+      },
+      {
+        "name": "desempeño_media_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en media"
+      },
+      {
+        "name": "progreso_media_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en media"
+      },
+      {
+        "name": "eficiencia_media_2016",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en media"
+      },
+      {
+        "name": "isce_total_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce total"
+      },
+      {
+        "name": "isce_prim_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce primaria"
+      },
+      {
+        "name": "isce_secun_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce secundaria"
+      },
+      {
+        "name": "isce_media_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "isce media"
+      },
+      {
+        "name": "desempeño_prim_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en primaria"
+      },
+      {
+        "name": "progreso_prim_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en primaria"
+      },
+      {
+        "name": "eficiencia_prim_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en primaria"
+      },
+      {
+        "name": "ambiente_prim_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en primaria"
+      },
+      {
+        "name": "desempeño_secun_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en secundaria"
+      },
+      {
+        "name": "progreso_secun_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en secundaria"
+      },
+      {
+        "name": "eficiencia_secun_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en secundaria"
+      },
+      {
+        "name": "ambiente_secun_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ambiente en secundaria"
+      },
+      {
+        "name": "desempeño_media_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "desempeño en media"
+      },
+      {
+        "name": "progreso_media_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "progreso en media"
+      },
+      {
+        "name": "eficiencia_media_2015",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "eficiencia en media"
+      }
+    ]
+  }
+]

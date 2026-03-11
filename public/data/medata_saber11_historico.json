@@ -1,0 +1,366 @@
+[
+  {
+    "fields": [
+      {
+        "name": "codigo_dane",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "codigo_dane"
+      },
+      {
+        "name": "año_semestre",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "año y semestre de los resultados"
+      },
+      {
+        "name": "establecimiento",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "establecimiento educativo"
+      },
+      {
+        "name": "matriculados",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "cantidad de matriculados"
+      },
+      {
+        "name": "registros",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "numero de registros"
+      },
+      {
+        "name": "presentes",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "numero de presentes"
+      },
+      {
+        "name": "publicados",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "numero de publicados"
+      },
+      {
+        "name": "puntaje_global",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje global"
+      },
+      {
+        "name": "puntaje_lectura",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de lectura"
+      },
+      {
+        "name": "puntaje_matematicas",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de matematicas"
+      },
+      {
+        "name": "puntaje_sociales",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de sociales"
+      },
+      {
+        "name": "puntaje_naturales",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de naturales"
+      },
+      {
+        "name": "puntaje_ingles",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de ingles"
+      },
+      {
+        "name": "grado",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "grado"
+      },
+      {
+        "name": "comuna",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "comuna"
+      },
+      {
+        "name": "prestacion_servicio",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "prestacion servicio educativo"
+      },
+      {
+        "name": "ponderado_global",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de global"
+      },
+      {
+        "name": "ponderado_lectura",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de lectura"
+      },
+      {
+        "name": "ponderado_matematicas",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de matematicas"
+      },
+      {
+        "name": "ponderado_sociales",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de sociales"
+      },
+      {
+        "name": "ponderado_naturales",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de naturales"
+      },
+      {
+        "name": "ponderado_ingles",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "ponderado de ingles"
+      },
+      {
+        "name": "punt_global_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje global medellin"
+      },
+      {
+        "name": "punt_lectura_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de lectura Medellin"
+      },
+      {
+        "name": "punt_matematicas_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de matematicas Medellin"
+      },
+      {
+        "name": "punt_sociales_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de sociales Medellin"
+      },
+      {
+        "name": "punt_naturales_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de naturales Medellin"
+      },
+      {
+        "name": "punt_ingles_med",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de ingles Medellin"
+      },
+      {
+        "name": "punt_global_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de global sector"
+      },
+      {
+        "name": "punt_lectura_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de lectura sector"
+      },
+      {
+        "name": "punt_matematicas_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de matematicas sector"
+      },
+      {
+        "name": "punt_sociales_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de sociales sector"
+      },
+      {
+        "name": "punt_naturales_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de naturales sector"
+      },
+      {
+        "name": "punt_ingles_sector",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de ingles sector"
+      },
+      {
+        "name": "punt_global_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de global comuna"
+      },
+      {
+        "name": "punt_lectura_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de lectura comuna"
+      },
+      {
+        "name": "punt_matematicas_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de matematicas comuna"
+      },
+      {
+        "name": "punt_sociales_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de sociales comuna"
+      },
+      {
+        "name": "punt_naturales_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de naturales comuna"
+      },
+      {
+        "name": "punt_ingles_comu",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": false
+        },
+        "description": "puntaje de ingles comuna"
+      }
+    ]
+  }
+]

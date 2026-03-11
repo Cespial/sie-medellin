@@ -1,0 +1,139 @@
+{
+  "serieTemporal": [
+    {
+      "anio": "2017",
+      "desertores": 14453,
+      "matricula": 453400,
+      "tasaDesercion": 3.19
+    }
+  ],
+  "porComuna": [
+    {
+      "comuna": "10",
+      "desertores": 2146,
+      "matricula": 36837,
+      "tasaDesercion": 5.83
+    },
+    {
+      "comuna": "2",
+      "desertores": 816,
+      "matricula": 20651,
+      "tasaDesercion": 3.95
+    },
+    {
+      "comuna": "8",
+      "desertores": 1023,
+      "matricula": 26107,
+      "tasaDesercion": 3.92
+    },
+    {
+      "comuna": "1",
+      "desertores": 1024,
+      "matricula": 27832,
+      "tasaDesercion": 3.68
+    },
+    {
+      "comuna": "6",
+      "desertores": 985,
+      "matricula": 27163,
+      "tasaDesercion": 3.63
+    },
+    {
+      "comuna": "7",
+      "desertores": 1498,
+      "matricula": 41465,
+      "tasaDesercion": 3.61
+    },
+    {
+      "comuna": "4",
+      "desertores": 1073,
+      "matricula": 29876,
+      "tasaDesercion": 3.59
+    },
+    {
+      "comuna": "80",
+      "desertores": 742,
+      "matricula": 20749,
+      "tasaDesercion": 3.58
+    },
+    {
+      "comuna": "13",
+      "desertores": 555,
+      "matricula": 16938,
+      "tasaDesercion": 3.28
+    },
+    {
+      "comuna": "60",
+      "desertores": 493,
+      "matricula": 15625,
+      "tasaDesercion": 3.16
+    },
+    {
+      "comuna": "9",
+      "desertores": 771,
+      "matricula": 26247,
+      "tasaDesercion": 2.94
+    },
+    {
+      "comuna": "70",
+      "desertores": 71,
+      "matricula": 2430,
+      "tasaDesercion": 2.92
+    },
+    {
+      "comuna": "3",
+      "desertores": 905,
+      "matricula": 31559,
+      "tasaDesercion": 2.87
+    },
+    {
+      "comuna": "12",
+      "desertores": 705,
+      "matricula": 31765,
+      "tasaDesercion": 2.22
+    },
+    {
+      "comuna": "50",
+      "desertores": 11,
+      "matricula": 539,
+      "tasaDesercion": 2.04
+    },
+    {
+      "comuna": "15",
+      "desertores": 188,
+      "matricula": 10503,
+      "tasaDesercion": 1.79
+    },
+    {
+      "comuna": "5",
+      "desertores": 454,
+      "matricula": 25607,
+      "tasaDesercion": 1.77
+    },
+    {
+      "comuna": "14",
+      "desertores": 299,
+      "matricula": 17717,
+      "tasaDesercion": 1.69
+    },
+    {
+      "comuna": "16",
+      "desertores": 451,
+      "matricula": 26906,
+      "tasaDesercion": 1.68
+    },
+    {
+      "comuna": "11",
+      "desertores": 237,
+      "matricula": 15736,
+      "tasaDesercion": 1.51
+    },
+    {
+      "comuna": "90",
+      "desertores": 6,
+      "matricula": 1148,
+      "tasaDesercion": 0.52
+    }
+  ],
+  "ultimoAnio": "2017"
+}

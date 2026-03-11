@@ -1,0 +1,474 @@
+[
+  {
+    "fields": [
+      {
+        "name": "codigo_dane",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "código dane del establecimiento"
+      },
+      {
+        "name": "establecimiento_educativo",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "nombre del establecimiento educativo"
+      },
+      {
+        "name": "sector",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "prestación del servicio"
+      },
+      {
+        "name": "comuna_Establecimiento",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "comuna del establecimiento educativo"
+      },
+      {
+        "name": "sexo",
+        "type": "string",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "sexo"
+      },
+      {
+        "name": "desercion_grado_prejardin",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado prejardin"
+      },
+      {
+        "name": "desercion_grado_jardin",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado jardin"
+      },
+      {
+        "name": "desercion_grado_transicion",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado transicion"
+      },
+      {
+        "name": "desercion_grado_1",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado primero"
+      },
+      {
+        "name": "desercion_grado_2",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado secundo"
+      },
+      {
+        "name": "desercion_grado_3",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado tercero"
+      },
+      {
+        "name": "desercion_grado_4",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado cuarto"
+      },
+      {
+        "name": "desercion_grado_5",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado quinto"
+      },
+      {
+        "name": "desercion_escuela_nueva",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores de escuela nueva"
+      },
+      {
+        "name": "desercion_grado_6",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado sexto"
+      },
+      {
+        "name": "desercion_grado_7",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado septimo"
+      },
+      {
+        "name": "desercion_grado_8",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado octavo"
+      },
+      {
+        "name": "desercion_grado_9",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado noveno"
+      },
+      {
+        "name": "desercion_grado_10",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado decimo"
+      },
+      {
+        "name": "desercion_grado_11",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado once"
+      },
+      {
+        "name": "desercion_grado_12",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado doce"
+      },
+      {
+        "name": "desercion_grado_13",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado trece"
+      },
+      {
+        "name": "desercion_grado_clei1",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 1"
+      },
+      {
+        "name": "desercion_grado_clei2",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 2"
+      },
+      {
+        "name": "desercion_grado_clei3",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 3"
+      },
+      {
+        "name": "desercion_grado_clei4",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 4"
+      },
+      {
+        "name": "desercion_grado_clei5",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 5"
+      },
+      {
+        "name": "desercion_grado_clei6",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de desertores del grado clei 6"
+      },
+      {
+        "name": "matricula_grado_prejardin",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado prejardin"
+      },
+      {
+        "name": "matricula_grado_jardin",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado jardin"
+      },
+      {
+        "name": "matricula_grado_transicion",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado transicion"
+      },
+      {
+        "name": "matricula_grado_1",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado primero"
+      },
+      {
+        "name": "matricula_grado_2",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado secundo"
+      },
+      {
+        "name": "matricula_grado_3",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado tercero"
+      },
+      {
+        "name": "matricula_grado_4",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado cuarto"
+      },
+      {
+        "name": "matricula_grado_5",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado quinto"
+      },
+      {
+        "name": "matricula_escuela_nueva",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados escuela nueva"
+      },
+      {
+        "name": "matricula_grado_6",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado sexto"
+      },
+      {
+        "name": "matricula_grado_7",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado septimo"
+      },
+      {
+        "name": "matricula_grado_8",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado octavo"
+      },
+      {
+        "name": "matricula_grado_9",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado noveno"
+      },
+      {
+        "name": "matricula_grado_10",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado decimo"
+      },
+      {
+        "name": "matricula_grado_11",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado once"
+      },
+      {
+        "name": "matricula_grado_12",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado doce"
+      },
+      {
+        "name": "matricula_grado_13",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado trece"
+      },
+      {
+        "name": "matricula_grado_clei1",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 1"
+      },
+      {
+        "name": "matricula_grado_clei2",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 2"
+      },
+      {
+        "name": "matricula_grado_clei3",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 3"
+      },
+      {
+        "name": "matricula_grado_clei4",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 4"
+      },
+      {
+        "name": "matricula_grado_clei5",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 5"
+      },
+      {
+        "name": "matricula_grado_clei6",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "número de matriculados del grado clei 6"
+      },
+      {
+        "name": "año",
+        "type": "number",
+        "format": "default",
+        "constraints": {
+          "required": true
+        },
+        "description": "año de la información"
+      }
+    ]
+  }
+]

@@ -1,0 +1,260 @@
+[
+  {
+    "periodo": "20142",
+    "promedioCiudad": 260.5,
+    "totalIEs": 322,
+    "top5": [
+      {
+        "nombre": "col montessori",
+        "comuna": "poblado",
+        "puntaje": 365.0
+      },
+      {
+        "nombre": "col de la compania de maria",
+        "comuna": "poblado",
+        "puntaje": 362.0
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "laureles estadio",
+        "puntaje": 350.0
+      },
+      {
+        "nombre": "inst musical diego echavarria",
+        "comuna": "poblado",
+        "puntaje": 348.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "poblado",
+        "puntaje": 347.0
+      }
+    ]
+  },
+  {
+    "periodo": "20151",
+    "promedioCiudad": 247.5,
+    "totalIEs": 6,
+    "top5": [
+      {
+        "nombre": "cibercolegio ucn",
+        "comuna": "palmitas",
+        "puntaje": 287.0
+      },
+      {
+        "nombre": "col lujan",
+        "comuna": "laureles estadio",
+        "puntaje": 284.0
+      },
+      {
+        "nombre": "el nuevo col the new school",
+        "comuna": "poblado",
+        "puntaje": 283.0
+      },
+      {
+        "nombre": "corporacion cier",
+        "comuna": "san cristobal",
+        "puntaje": 237.0
+      },
+      {
+        "nombre": "col gente unida jovenes por la paz-santo domingo",
+        "comuna": " popular",
+        "puntaje": 199.0
+      }
+    ]
+  },
+  {
+    "periodo": "20152",
+    "promedioCiudad": 261.8,
+    "totalIEs": 328,
+    "top5": [
+      {
+        "nombre": "col de la compania de maria",
+        "comuna": "poblado",
+        "puntaje": 377.0
+      },
+      {
+        "nombre": "col montessori",
+        "comuna": "poblado",
+        "puntaje": 373.0
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "laureles estadio",
+        "puntaje": 371.0
+      },
+      {
+        "nombre": "inst musical diego echavarria",
+        "comuna": "poblado",
+        "puntaje": 362.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "poblado",
+        "puntaje": 360.0
+      }
+    ]
+  },
+  {
+    "periodo": "20161",
+    "promedioCiudad": 308.0,
+    "totalIEs": 1,
+    "top5": [
+      {
+        "nombre": "el nuevo col the new school",
+        "comuna": "poblado",
+        "puntaje": 308.0
+      }
+    ]
+  },
+  {
+    "periodo": "20162",
+    "promedioCiudad": 270.4,
+    "totalIEs": 332,
+    "top5": [
+      {
+        "nombre": "col montessori",
+        "comuna": "poblado",
+        "puntaje": 361.0
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "laureles estadio",
+        "puntaje": 354.0
+      },
+      {
+        "nombre": "col de la compania de maria",
+        "comuna": "poblado",
+        "puntaje": 353.0
+      },
+      {
+        "nombre": "comunidad colegio jesus maria",
+        "comuna": "laureles estadio",
+        "puntaje": 349.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "poblado",
+        "puntaje": 347.0
+      }
+    ]
+  },
+  {
+    "periodo": "20171",
+    "promedioCiudad": 325.2,
+    "totalIEs": 4,
+    "top5": [
+      {
+        "nombre": "col montessori",
+        "comuna": "poblado",
+        "puntaje": 352.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "poblado",
+        "puntaje": 336.0
+      },
+      {
+        "nombre": "col marymount",
+        "comuna": "poblado",
+        "puntaje": 326.0
+      },
+      {
+        "nombre": "el nuevo col the new school",
+        "comuna": "poblado",
+        "puntaje": 287.0
+      }
+    ]
+  },
+  {
+    "periodo": "20172",
+    "promedioCiudad": 267.0,
+    "totalIEs": 335,
+    "top5": [
+      {
+        "nombre": "col corazonista",
+        "comuna": "la america",
+        "puntaje": 351.0
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "laureles estadio",
+        "puntaje": 347.0
+      },
+      {
+        "nombre": "col de la compania de maria",
+        "comuna": "poblado",
+        "puntaje": 346.0
+      },
+      {
+        "nombre": "comunidad colegio jesus maria",
+        "comuna": "laureles estadio",
+        "puntaje": 343.0
+      },
+      {
+        "nombre": "col san jose de las vegas",
+        "comuna": "poblado",
+        "puntaje": 339.0
+      }
+    ]
+  },
+  {
+    "periodo": "20181",
+    "promedioCiudad": 331.2,
+    "totalIEs": 4,
+    "top5": [
+      {
+        "nombre": "col montessori",
+        "comuna": "poblado",
+        "puntaje": 360.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "poblado",
+        "puntaje": 339.0
+      },
+      {
+        "nombre": "col marymount",
+        "comuna": "poblado",
+        "puntaje": 336.0
+      },
+      {
+        "nombre": "el nuevo col the new school",
+        "comuna": "poblado",
+        "puntaje": 290.0
+      }
+    ]
+  },
+  {
+    "periodo": "20182",
+    "promedioCiudad": 265.3,
+    "totalIEs": 324,
+    "top5": [
+      {
+        "nombre": "col heraldos del evangelio",
+        "comuna": "poblado",
+        "puntaje": 402.0
+      },
+      {
+        "nombre": "inst jorge robledo",
+        "comuna": "laureles estadio",
+        "puntaje": 346.0
+      },
+      {
+        "nombre": "col san jose de las vegas",
+        "comuna": "poblado",
+        "puntaje": 346.0
+      },
+      {
+        "nombre": "comunidad colegio jesus maria",
+        "comuna": "laureles estadio",
+        "puntaje": 345.0
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "laureles estadio",
+        "puntaje": 344.0
+      }
+    ]
+  }
+]
