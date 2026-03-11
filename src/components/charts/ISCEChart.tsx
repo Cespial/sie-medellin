@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   BarChart,
   Bar,
@@ -11,6 +11,10 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface ISCEEntry {
   codigoDane: string;
@@ -24,23 +28,12 @@ interface ISCEEntry {
 }
 
 export function ISCEChart() {
-  const [data, setData] = useState<ISCEEntry[]>([]);
   const [year, setYear] = useState<"2018" | "2017" | "2016" | "2015">("2018");
+  const { data, loading, error, retry } = useFetchData<ISCEEntry[]>("/data/isce_por_ie.json");
 
-  useEffect(() => {
-    fetch("/data/isce_por_ie.json")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => {});
-  }, []);
-
-  if (!data.length) {
-    return (
-      <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[400px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos ISCE...</p>
-      </div>
-    );
-  }
+  if (loading) return <ChartSkeleton height={500} />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
   const key = `isce_${year}` as keyof ISCEEntry;
   const filtered = data
@@ -106,13 +99,7 @@ export function ISCEChart() {
             width={160}
           />
           <Tooltip
-            contentStyle={{
-              background: "#0D1B2A",
-              border: "1px solid #1A2D42",
-              borderRadius: "8px",
-              fontSize: "12px",
-              color: "#E8F4FD",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [Number(value).toFixed(2), `ISCE ${year}`]}
             labelFormatter={(label) => label}
           />
@@ -144,6 +131,7 @@ export function ISCEChart() {
           (ISCE &ge; 7)
         </span>
       </div>
+      <p className="text-[10px] text-muted mt-2">Nota: El MEN dejó de publicar el ISCE después de 2018.</p>
     </div>
   );
 }

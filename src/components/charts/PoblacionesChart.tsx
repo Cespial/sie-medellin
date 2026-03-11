@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   BarChart,
   Bar,
@@ -13,6 +13,10 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface PoblacionCategory {
   totalUltimoAnio: number;
@@ -48,23 +52,12 @@ const LABELS: Record<Tab, string> = {
 };
 
 export function PoblacionesChart() {
-  const [data, setData] = useState<PoblacionesData | null>(null);
   const [tab, setTab] = useState<Tab>("extranjeros");
+  const { data, loading, error, retry } = useFetchData<PoblacionesData>("/data/poblaciones_especiales.json");
 
-  useEffect(() => {
-    fetch("/data/poblaciones_especiales.json")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => {});
-  }, []);
-
-  if (!data) {
-    return (
-      <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[400px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos de poblaciones...</p>
-      </div>
-    );
-  }
+  if (loading) return <ChartSkeleton />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
   const current = data[tab];
   const categoryData =
@@ -136,13 +129,7 @@ export function PoblacionesChart() {
                 ))}
               </Pie>
               <Tooltip
-                contentStyle={{
-                  background: "#0D1B2A",
-                  border: "1px solid #1A2D42",
-                  borderRadius: "8px",
-                  fontSize: "12px",
-                  color: "#E8F4FD",
-                }}
+                contentStyle={CHART_TOOLTIP_STYLE}
               />
             </PieChart>
           </ResponsiveContainer>
@@ -192,13 +179,7 @@ export function PoblacionesChart() {
                 width={50}
               />
               <Tooltip
-                contentStyle={{
-                  background: "#0D1B2A",
-                  border: "1px solid #1A2D42",
-                  borderRadius: "8px",
-                  fontSize: "12px",
-                  color: "#E8F4FD",
-                }}
+                contentStyle={CHART_TOOLTIP_STYLE}
                 formatter={(value) => [
                   Number(value).toLocaleString(),
                   "Estudiantes",

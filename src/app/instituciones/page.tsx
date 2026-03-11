@@ -27,12 +27,15 @@ interface IEData {
   ingles?: number;
 }
 
+const PER_PAGE = 25;
+
 export default function InstitucionesPage() {
   const [data, setData] = useState<IEData[]>([]);
   const [search, setSearch] = useState("");
   const [sectorFilter, setSectorFilter] = useState("");
   const [sortBy, setSortBy] = useState<"promedioGlobal" | "nombre" | "evaluados">("promedioGlobal");
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     fetch("/data/saber11_por_ie.json")
@@ -43,6 +46,8 @@ export default function InstitucionesPage() {
       })
       .catch(() => setLoading(false));
   }, []);
+
+  useEffect(() => { setPage(1); }, [search, sectorFilter, sortBy]);
 
   const getEval = (ie: IEData) => ie.evaluados ?? ie.numEvaluados ?? 0;
   const getMat = (ie: IEData) => ie.matematicas ?? ie.promedioMatematicas;
@@ -67,6 +72,9 @@ export default function InstitucionesPage() {
       if (sortBy === "evaluados") return getEval(b) - getEval(a);
       return b.promedioGlobal - a.promedioGlobal;
     });
+
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
     <div className="p-6">
@@ -93,12 +101,14 @@ export default function InstitucionesPage() {
               placeholder="Buscar por nombre o código DANE..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              aria-label="Buscar institución"
               className="w-full pl-9 pr-4 py-2 rounded-lg bg-background border border-border text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent/50"
             />
           </div>
           <select
             value={sectorFilter}
             onChange={(e) => setSectorFilter(e.target.value)}
+            aria-label="Filtrar por sector"
             className="px-3 py-2 rounded-lg bg-background border border-border text-sm text-foreground focus:outline-none focus:border-accent/50"
           >
             <option value="">Todos los sectores</option>
@@ -108,6 +118,7 @@ export default function InstitucionesPage() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
+            aria-label="Ordenar resultados"
             className="px-3 py-2 rounded-lg bg-background border border-border text-sm text-foreground focus:outline-none focus:border-accent/50"
           >
             <option value="promedioGlobal">Ordenar: Puntaje Global</option>
@@ -122,26 +133,33 @@ export default function InstitucionesPage() {
         {/* Table */}
         {loading ? (
           <div className="p-12 text-center text-muted text-sm">Cargando...</div>
+        ) : !loading && filtered.length === 0 ? (
+          <div className="p-12 text-center">
+            <p className="text-muted text-sm">No se encontraron instituciones con esos criterios.</p>
+            <button onClick={() => { setSearch(""); setSectorFilter(""); }} className="mt-2 text-xs text-accent hover:underline">
+              Limpiar filtros
+            </button>
+          </div>
         ) : (
           <div className="overflow-x-auto max-h-[calc(100vh-300px)]">
             <table className="w-full text-sm">
               <thead className="sticky top-0 bg-surface z-10">
                 <tr className="border-b border-border text-xs text-muted">
-                  <th className="text-left px-4 py-2 w-8">#</th>
-                  <th className="text-left px-4 py-2">Institución</th>
-                  <th className="text-center px-3 py-2">Sector</th>
-                  <th className="text-right px-3 py-2">Global</th>
-                  <th className="text-right px-3 py-2">Mat</th>
-                  <th className="text-right px-3 py-2">Lec</th>
-                  <th className="text-right px-3 py-2">Cien</th>
-                  <th className="text-right px-3 py-2">Soc</th>
-                  <th className="text-right px-3 py-2">Ing</th>
-                  <th className="text-right px-3 py-2">Eval.</th>
-                  <th className="text-center px-2 py-2 w-8"></th>
+                  <th scope="col" className="text-left px-4 py-2 w-8">#</th>
+                  <th scope="col" className="text-left px-4 py-2">Institución</th>
+                  <th scope="col" className="text-center px-3 py-2">Sector</th>
+                  <th scope="col" className="text-right px-3 py-2">Global</th>
+                  <th scope="col" className="text-right px-3 py-2">Mat</th>
+                  <th scope="col" className="text-right px-3 py-2">Lec</th>
+                  <th scope="col" className="text-right px-3 py-2">Cien</th>
+                  <th scope="col" className="text-right px-3 py-2">Soc</th>
+                  <th scope="col" className="text-right px-3 py-2">Ing</th>
+                  <th scope="col" className="text-right px-3 py-2">Eval.</th>
+                  <th scope="col" className="text-center px-2 py-2 w-8"></th>
                 </tr>
               </thead>
               <tbody>
-                {filtered.map((ie, i) => {
+                {paginated.map((ie, i) => {
                   const nat = (ie.naturaleza || "").toUpperCase();
                   return (
                     <tr
@@ -149,7 +167,7 @@ export default function InstitucionesPage() {
                       className="border-b border-border/30 hover:bg-accent/5 transition-colors group"
                     >
                       <td className="px-4 py-2 text-muted font-mono text-xs">
-                        {i + 1}
+                        {(page - 1) * PER_PAGE + i + 1}
                       </td>
                       <td className="px-4 py-2 max-w-[300px]">
                         <Link
@@ -210,6 +228,44 @@ export default function InstitucionesPage() {
                 })}
               </tbody>
             </table>
+          </div>
+        )}
+        {!loading && totalPages > 1 && (
+          <div className="flex items-center justify-between px-4 py-3 border-t border-border">
+            <p className="text-xs text-muted">
+              {filtered.length} resultados — Página {page} de {totalPages}
+            </p>
+            <div className="flex gap-1">
+              <button
+                onClick={() => setPage(p => Math.max(1, p - 1))}
+                disabled={page === 1}
+                className="px-3 py-1 text-xs rounded border border-border text-muted hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                Anterior
+              </button>
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                const p = page <= 3 ? i + 1 : page + i - 2;
+                if (p < 1 || p > totalPages) return null;
+                return (
+                  <button
+                    key={p}
+                    onClick={() => setPage(p)}
+                    className={`px-2.5 py-1 text-xs rounded ${
+                      page === p ? "bg-accent/20 text-accent border border-accent/30" : "border border-border text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {p}
+                  </button>
+                );
+              })}
+              <button
+                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                disabled={page === totalPages}
+                className="px-3 py-1 text-xs rounded border border-border text-muted hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                Siguiente
+              </button>
+            </div>
           </div>
         )}
       </div>

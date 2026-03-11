@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -10,6 +9,10 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface TrendChartProps {
   title: string;
@@ -29,22 +32,11 @@ export function TrendChart({
   color = "#00D4FF",
   unit = "%",
 }: TrendChartProps) {
-  const [data, setData] = useState<StatRecord[]>([]);
+  const { data, loading, error, retry } = useFetchData<StatRecord[]>("/data/estadisticas_historicas.json");
 
-  useEffect(() => {
-    fetch("/data/estadisticas_historicas.json")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => {});
-  }, []);
-
-  if (!data.length) {
-    return (
-      <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos...</p>
-      </div>
-    );
-  }
+  if (loading) return <ChartSkeleton />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
@@ -73,13 +65,7 @@ export function TrendChart({
             tickFormatter={(v) => `${v}${unit}`}
           />
           <Tooltip
-            contentStyle={{
-              background: "#0D1B2A",
-              border: "1px solid #1A2D42",
-              borderRadius: "8px",
-              fontSize: "12px",
-              color: "#E8F4FD",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [`${value}${unit}`, title]}
             labelFormatter={(label) => `Año ${label}`}
           />

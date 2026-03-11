@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils/cn";
+import { useFetchData } from "@/hooks/useFetchData";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface IEScore {
   codigoDane: string;
@@ -20,24 +21,7 @@ interface RankingTableProps {
 }
 
 export function RankingTable({ limit = 20, showBottom = false }: RankingTableProps) {
-  const [data, setData] = useState<IEScore[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/data/saber11_por_ie.json")
-      .then((r) => r.json())
-      .then((all: IEScore[]) => {
-        // Filter IEs with at least 10 evaluated students
-        const filtered = all.filter((ie) => ie.numEvaluados >= 10);
-        if (showBottom) {
-          setData(filtered.slice(-limit).reverse());
-        } else {
-          setData(filtered.slice(0, limit));
-        }
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [limit, showBottom]);
+  const { data, loading, error, retry } = useFetchData<IEScore[]>("/data/saber11_por_ie.json");
 
   if (loading) {
     return (
@@ -46,6 +30,15 @@ export function RankingTable({ limit = 20, showBottom = false }: RankingTablePro
       </div>
     );
   }
+
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
+
+  // Filter IEs with at least 10 evaluated students
+  const filtered = data.filter((ie) => ie.numEvaluados >= 10);
+  const displayed = showBottom
+    ? filtered.slice(-limit).reverse()
+    : filtered.slice(0, limit);
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
@@ -71,7 +64,7 @@ export function RankingTable({ limit = 20, showBottom = false }: RankingTablePro
             </tr>
           </thead>
           <tbody>
-            {data.map((ie, i) => (
+            {displayed.map((ie, i) => (
               <motion.tr
                 key={ie.codigoDane}
                 initial={{ opacity: 0, x: -10 }}
@@ -80,7 +73,7 @@ export function RankingTable({ limit = 20, showBottom = false }: RankingTablePro
                 className="border-b border-border/50 hover:bg-accent/5 transition-colors"
               >
                 <td className="px-4 py-2.5 text-muted font-mono text-xs">
-                  {showBottom ? data.length - i : i + 1}
+                  {showBottom ? displayed.length - i : i + 1}
                 </td>
                 <td className="px-4 py-2.5">
                   <span className="text-foreground text-xs font-medium line-clamp-1">

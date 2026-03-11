@@ -69,11 +69,11 @@ const CLASIFICACION_COLORS: Record<string, string> = {
 };
 
 const SUBJECT_LABELS: Record<string, string> = {
-  matematicas: "Matematicas",
-  lecturaCritica: "Lectura Critica",
+  matematicas: "Matemáticas",
+  lecturaCritica: "Lectura Crítica",
   cienciasNaturales: "Ciencias Nat.",
   socialesCiudadanas: "Sociales y Ciud.",
-  ingles: "Ingles",
+  ingles: "Inglés",
 };
 
 const SUBJECT_COLORS: Record<string, string> = {
@@ -151,7 +151,7 @@ export default function InstitucionDetallePage() {
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-muted text-sm">Cargando datos de la institucion...</p>
+            <p className="text-muted text-sm">Cargando datos de la institución...</p>
           </div>
         </div>
       </div>
@@ -174,10 +174,10 @@ export default function InstitucionDetallePage() {
           <div className="text-center">
             <School className="w-12 h-12 text-muted/40 mx-auto mb-4" />
             <h2 className="font-[var(--font-syne)] text-xl font-bold text-foreground mb-2">
-              Institucion no encontrada
+              Institución no encontrada
             </h2>
             <p className="text-muted text-sm">
-              No se encontraron datos para el codigo DANE <span className="font-mono text-accent">{codigo}</span>
+              No se encontraron datos para el código DANE <span className="font-mono text-accent">{codigo}</span>
             </p>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function InstitucionDetallePage() {
 
   /* ---- derive display data ---- */
 
-  const nombre = saber?.nombre ?? isce?.nombre ?? clasif?.nombre ?? "Institucion";
+  const nombre = saber?.nombre ?? isce?.nombre ?? clasif?.nombre ?? "Institución";
   const naturaleza = saber?.naturaleza ?? clasif?.sector?.toUpperCase() ?? null;
   const comuna = isce?.comuna ?? clasif?.comuna ?? null;
 
@@ -236,7 +236,7 @@ export default function InstitucionDetallePage() {
                 <span
                   className={
                     "px-2 py-0.5 rounded-full text-[11px] font-semibold " +
-                    (naturaleza === "OFICIAL" || naturaleza === "OFICIAL"
+                    (naturaleza === "OFICIAL" || naturaleza === "O"
                       ? "bg-accent/10 text-accent border border-accent/20"
                       : "bg-warning/10 text-warning border border-warning/20")
                   }
@@ -253,7 +253,7 @@ export default function InstitucionDetallePage() {
                     backgroundColor: (CLASIFICACION_COLORS[clasif.clasificacion] ?? "#6B8CAE") + "15",
                   }}
                 >
-                  Clasificacion {clasif.clasificacion}
+                  Clasificación {clasif.clasificacion}
                 </span>
               )}
             </div>
@@ -317,7 +317,7 @@ export default function InstitucionDetallePage() {
               Puntajes Saber 11 por Competencia
             </h3>
             <p className="text-xs text-muted mb-4">
-              Promedio historico de {saber.periodos} periodo{saber.periodos !== 1 ? "s" : ""}
+              Promedio histórico de {saber.periodos} periodo{saber.periodos !== 1 ? "s" : ""}
             </p>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={subjectData} layout="vertical" margin={{ left: 10, right: 20 }}>
@@ -365,10 +365,10 @@ export default function InstitucionDetallePage() {
         {isceTimeline.length > 0 && (
           <div className="rounded-xl border border-border bg-surface/50 p-6">
             <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
-              ISCE Historico
+              ISCE Histórico
             </h3>
             <p className="text-xs text-muted mb-4">
-              Indice Sintetico de Calidad Educativa (escala 1-10)
+              Índice Sintético de Calidad Educativa (escala 1-10)
             </p>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={isceTimeline} margin={{ left: 10, right: 20, top: 10, bottom: 5 }}>
@@ -395,7 +395,7 @@ export default function InstitucionDetallePage() {
                 <Tooltip
                   contentStyle={tooltipStyle}
                   formatter={(value) => [Number(value).toFixed(2), "ISCE"]}
-                  labelFormatter={(label) => `Ano ${label}`}
+                  labelFormatter={(label) => `Año ${label}`}
                 />
                 <Line
                   type="monotone"
@@ -415,11 +415,11 @@ export default function InstitucionDetallePage() {
       {clasif && (
         <div className="mt-6 rounded-xl border border-border bg-surface/50 p-6">
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
-            Clasificacion Saber 11
+            Clasificación Saber 11
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div>
-              <p className="text-xs text-muted mb-1">Clasificacion</p>
+              <p className="text-xs text-muted mb-1">Clasificación</p>
               <span
                 className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-lg font-bold"
                 style={{

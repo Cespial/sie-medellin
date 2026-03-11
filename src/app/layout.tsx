@@ -54,9 +54,21 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrains.variable} ${syne.variable} antialiased bg-background text-foreground`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-accent focus:text-background focus:font-semibold focus:text-sm"
+        >
+          Ir al contenido principal
+        </a>
         <div className="flex h-screen overflow-hidden">
           <Sidebar />
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <main
+            id="main-content"
+            role="main"
+            className="flex-1 overflow-y-auto pt-14 lg:pt-0"
+          >
+            {children}
+          </main>
         </div>
       </body>
     </html>

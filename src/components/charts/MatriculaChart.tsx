@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -9,7 +8,12 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface SerieTemporal {
   anio: string;
@@ -29,24 +33,13 @@ function formatNumber(value: number): string {
 }
 
 export function MatriculaChart() {
-  const [data, setData] = useState<SerieTemporal[]>([]);
+  const { data, loading, error, retry } = useFetchData<MatriculaResponse>("/data/matricula_medellin.json");
 
-  useEffect(() => {
-    fetch("/data/matricula_medellin.json")
-      .then((r) => r.json())
-      .then((res: MatriculaResponse) => {
-        setData(res.serieTemporal);
-      })
-      .catch(() => {});
-  }, []);
+  if (loading) return <ChartSkeleton />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
-  if (!data.length) {
-    return (
-      <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos...</p>
-      </div>
-    );
-  }
+  const chartData = data.serieTemporal;
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
@@ -54,7 +47,7 @@ export function MatriculaChart() {
         Matrícula Total — Medellín
       </h3>
       <ResponsiveContainer width="100%" height={300}>
-        <AreaChart data={data}>
+        <AreaChart data={chartData}>
           <defs>
             <linearGradient id="grad-oficial" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3} />
@@ -79,18 +72,16 @@ export function MatriculaChart() {
             tickFormatter={(v) => formatNumber(v)}
           />
           <Tooltip
-            contentStyle={{
-              background: "#0D1B2A",
-              border: "1px solid #1A2D42",
-              borderRadius: "8px",
-              fontSize: "12px",
-              color: "#E8F4FD",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value, name) => [
               formatNumber(Number(value)),
               String(name) === "oficial" ? "Oficial" : "Privado",
             ]}
             labelFormatter={(label) => `Año ${label}`}
+          />
+          <Legend
+            wrapperStyle={{ fontSize: "11px" }}
+            formatter={(value) => String(value) === "oficial" ? "Oficial" : "Privado"}
           />
           <Area
             type="monotone"

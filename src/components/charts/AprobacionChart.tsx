@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   BarChart,
   Bar,
@@ -11,6 +11,10 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface AprobacionRecord {
   comuna?: string;
@@ -30,23 +34,12 @@ interface AprobacionData {
 type Tab = "comuna" | "genero" | "nivel";
 
 export function AprobacionChart() {
-  const [data, setData] = useState<AprobacionData | null>(null);
   const [tab, setTab] = useState<Tab>("comuna");
+  const { data, loading, error, retry } = useFetchData<AprobacionData>("/data/aprobacion_medellin.json");
 
-  useEffect(() => {
-    fetch("/data/aprobacion_medellin.json")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => {});
-  }, []);
-
-  if (!data) {
-    return (
-      <div className="min-h-[300px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos de aprobación...</p>
-      </div>
-    );
-  }
+  if (loading) return <ChartSkeleton />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
   const chartData: AprobacionRecord[] =
     tab === "comuna"
@@ -97,13 +90,7 @@ export function AprobacionChart() {
               width={80}
             />
             <Tooltip
-              contentStyle={{
-                background: "#0D1B2A",
-                border: "1px solid #1A2D42",
-                borderRadius: "8px",
-                fontSize: "12px",
-                color: "#E8F4FD",
-              }}
+              contentStyle={CHART_TOOLTIP_STYLE}
               formatter={(value) => [`${Number(value).toFixed(1)}%`, "Aprobación"]}
             />
             <Bar dataKey="tasaAprobacion" fill="#06D6A0" radius={[0, 4, 4, 0]} />
@@ -125,13 +112,7 @@ export function AprobacionChart() {
               tickFormatter={(v) => `${v}%`}
             />
             <Tooltip
-              contentStyle={{
-                background: "#0D1B2A",
-                border: "1px solid #1A2D42",
-                borderRadius: "8px",
-                fontSize: "12px",
-                color: "#E8F4FD",
-              }}
+              contentStyle={CHART_TOOLTIP_STYLE}
               formatter={(value) => [`${Number(value).toFixed(1)}%`, "Aprobación"]}
             />
             <Legend wrapperStyle={{ fontSize: "11px", color: "#6B8CAE" }} />

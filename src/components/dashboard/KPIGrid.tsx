@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { KPICard } from "./KPICard";
+import { useFetchData } from "@/hooks/useFetchData";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface KPIData {
   totalMatriculados: number;
@@ -25,16 +26,9 @@ function extractValue(v: number | { valor: number } | null | undefined): number 
 }
 
 export function KPIGrid() {
-  const [kpis, setKpis] = useState<KPIData | null>(null);
+  const { data: kpis, loading, error, retry } = useFetchData<KPIData>("/data/kpis.json");
 
-  useEffect(() => {
-    fetch("/data/kpis.json")
-      .then((r) => r.json())
-      .then(setKpis)
-      .catch(() => {});
-  }, []);
-
-  if (!kpis) {
+  if (loading) {
     return (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {Array.from({ length: 6 }).map((_, i) => (
@@ -46,6 +40,9 @@ export function KPIGrid() {
       </div>
     );
   }
+
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!kpis) return null;
 
   const cobNeta = extractValue(kpis.coberturaNeta);
   const desercion = kpis.desercion ? kpis.desercion.valor : (kpis.tasaDesercion ?? 0);

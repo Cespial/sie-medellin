@@ -132,8 +132,9 @@ export default function ContextoPage() {
         </div>
 
         <div className="rounded-xl border border-border bg-surface/50 p-6">
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3">
+          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3 flex items-center">
             Cruces Potenciales
+            <span className="ml-2 px-2 py-0.5 text-[10px] rounded-full bg-warning/10 text-warning border border-warning/20">En desarrollo</span>
           </h3>
           <p className="text-xs text-muted mb-4">
             Correlaciones entre indicadores educativos y socioeconómicos por

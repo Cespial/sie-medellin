@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -11,6 +10,10 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import { useFetchData } from "@/hooks/useFetchData";
+import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
+import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 interface ComunaData {
   comuna: string;
@@ -36,41 +39,27 @@ function getBarColor(rate: number, min: number, max: number): string {
 }
 
 export function DesercionComunaChart() {
-  const [data, setData] = useState<ComunaData[]>([]);
-  const [year, setYear] = useState<string>("");
+  const { data, loading, error, retry } = useFetchData<DesercionResponse>("/data/desercion_medellin.json");
 
-  useEffect(() => {
-    fetch("/data/desercion_medellin.json")
-      .then((r) => r.json())
-      .then((res: DesercionResponse) => {
-        const sorted = [...res.porComuna].sort(
-          (a, b) => a.tasaDesercion - b.tasaDesercion
-        );
-        setData(sorted);
-        setYear(res.ultimoAnio);
-      })
-      .catch(() => {});
-  }, []);
+  if (loading) return <ChartSkeleton />;
+  if (error) return <ErrorState message={error} onRetry={retry} />;
+  if (!data) return null;
 
-  if (!data.length) {
-    return (
-      <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-        <p className="text-muted text-sm">Cargando datos...</p>
-      </div>
-    );
-  }
+  const sorted = [...data.porComuna].sort(
+    (a, b) => a.tasaDesercion - b.tasaDesercion
+  );
 
-  const min = Math.min(...data.map((d) => d.tasaDesercion));
-  const max = Math.max(...data.map((d) => d.tasaDesercion));
-  const chartHeight = Math.max(400, data.length * 32);
+  const min = Math.min(...sorted.map((d) => d.tasaDesercion));
+  const max = Math.max(...sorted.map((d) => d.tasaDesercion));
+  const chartHeight = Math.max(400, sorted.length * 32);
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
       <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
-        Tasa de Desercion por Comuna ({year})
+        Tasa de Deserción por Comuna ({data.ultimoAnio})
       </h3>
       <ResponsiveContainer width="100%" height={chartHeight}>
-        <BarChart data={data} layout="vertical" margin={{ left: 20, right: 20 }}>
+        <BarChart data={sorted} layout="vertical" margin={{ left: 20, right: 20 }}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="#1A2D42"
@@ -92,13 +81,7 @@ export function DesercionComunaChart() {
             width={120}
           />
           <Tooltip
-            contentStyle={{
-              background: "#0D1B2A",
-              border: "1px solid #1A2D42",
-              borderRadius: "8px",
-              fontSize: "12px",
-              color: "#E8F4FD",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [
               `${value}%`,
               "Tasa de Deserción",
@@ -106,7 +89,7 @@ export function DesercionComunaChart() {
             cursor={{ fill: "rgba(0, 212, 255, 0.05)" }}
           />
           <Bar dataKey="tasaDesercion" radius={[0, 4, 4, 0]}>
-            {data.map((entry, index) => (
+            {sorted.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={getBarColor(entry.tasaDesercion, min, max)}

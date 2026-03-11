@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
@@ -66,18 +67,18 @@ export function HeroSection() {
           transition={{ delay: 0.6 }}
           className="flex flex-wrap gap-3 mt-8"
         >
-          <a
+          <Link
             href="/mapa"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-background font-semibold text-sm hover:bg-accent/90 transition-colors glow-accent-strong"
           >
             Explorar Mapa
-          </a>
-          <a
+          </Link>
+          <Link
             href="/cobertura"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm hover:border-accent/40 hover:bg-accent/5 transition-all"
           >
             Ver Indicadores
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 

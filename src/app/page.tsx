@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { KPIGrid } from "@/components/dashboard/KPIGrid";
 import { RankingTable } from "@/components/dashboard/RankingTable";
@@ -85,7 +86,7 @@ export default function HomePage() {
                 href: "/contexto",
               },
             ].map((dim) => (
-              <a
+              <Link
                 key={dim.name}
                 href={dim.href}
                 className="group rounded-lg border border-border bg-background/50 p-4 hover:border-accent/30 hover:bg-accent/5 transition-all"
@@ -97,7 +98,7 @@ export default function HomePage() {
                   {dim.name}
                 </h3>
                 <p className="text-xs text-muted leading-relaxed">{dim.desc}</p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
