@@ -1,4 +1,4 @@
-import { MapContainer } from "@/components/map/MapContainer";
+import { MapLoader } from "@/components/map/MapLoader";
 
 export const metadata = {
   title: "Mapa — SIE Medellín",
@@ -7,7 +7,7 @@ export const metadata = {
 export default function MapaPage() {
   return (
     <div className="h-screen relative">
-      <MapContainer />
+      <MapLoader />
     </div>
   );
 }
