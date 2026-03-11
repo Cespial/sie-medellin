@@ -1,5 +1,7 @@
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { KPIGrid } from "@/components/dashboard/KPIGrid";
+import { RankingTable } from "@/components/dashboard/RankingTable";
+import { TrendChart } from "@/components/charts/TrendChart";
 import { DataSourcesFooter } from "@/components/layout/DataSourcesFooter";
 
 export default function HomePage() {
@@ -12,6 +14,27 @@ export default function HomePage() {
           Indicadores Clave
         </h2>
         <KPIGrid />
+      </section>
+
+      <section className="px-6 pb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <TrendChart
+            title="Cobertura Neta — Antioquia"
+            dataKey="cobertura_neta"
+            color="#00D4FF"
+            unit="%"
+          />
+          <TrendChart
+            title="Tasa de Deserción"
+            dataKey="desercion"
+            color="#EF233C"
+            unit="%"
+          />
+        </div>
+      </section>
+
+      <section className="px-6 pb-8">
+        <RankingTable limit={10} />
       </section>
 
       <section className="px-6 pb-8">

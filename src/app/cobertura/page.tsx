@@ -1,3 +1,5 @@
+import { TrendChart } from "@/components/charts/TrendChart";
+
 export const metadata = { title: "Cobertura — SIE Medellín" };
 
 export default function CoberturaPage() {
@@ -10,33 +12,49 @@ export default function CoberturaPage() {
         <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
           Cobertura
         </h1>
-        <p className="text-muted mt-2">
-          Matrícula, tasas de cobertura bruta y neta por nivel educativo, género
-          y zona geográfica.
+        <p className="text-muted mt-2 max-w-2xl">
+          Tasas de cobertura bruta y neta, matrícula por nivel educativo y series
+          históricas del departamento de Antioquia.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Mapa coroplético de cobertura por comunas — datos pendientes del lago
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Serie temporal: matrícula total 2010-2024
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Breakdown por nivel educativo
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Top/bottom comunas por cobertura
-          </p>
-        </div>
+        <TrendChart
+          title="Cobertura Neta — Serie Histórica"
+          dataKey="cobertura_neta"
+          color="#00D4FF"
+          unit="%"
+        />
+        <TrendChart
+          title="Cobertura Bruta — Serie Histórica"
+          dataKey="cobertura_bruta"
+          color="#3E92CC"
+          unit="%"
+        />
+        <TrendChart
+          title="Tasa de Deserción"
+          dataKey="desercion"
+          color="#EF233C"
+          unit="%"
+        />
+        <TrendChart
+          title="Tasa de Aprobación"
+          dataKey="aprobacion"
+          color="#06D6A0"
+          unit="%"
+        />
+        <TrendChart
+          title="Deserción Primaria vs. Secundaria"
+          dataKey="desercion_primaria"
+          color="#FFB703"
+          unit="%"
+        />
+        <TrendChart
+          title="Repitencia"
+          dataKey="repitencia"
+          color="#FF6B6B"
+          unit="%"
+        />
       </div>
     </div>
   );

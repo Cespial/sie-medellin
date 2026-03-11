@@ -1,3 +1,6 @@
+import { RankingTable } from "@/components/dashboard/RankingTable";
+import { TrendChart } from "@/components/charts/TrendChart";
+
 export const metadata = { title: "Calidad — SIE Medellín" };
 
 export default function CalidadPage() {
@@ -10,33 +13,30 @@ export default function CalidadPage() {
         <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
           Calidad
         </h1>
-        <p className="text-muted mt-2">
-          Resultados Saber 11, ISCE, clasificación de planteles y evolución
-          histórica.
+        <p className="text-muted mt-2 max-w-2xl">
+          Resultados Saber 11 por institución educativa, rankings y evolución
+          histórica de indicadores de calidad.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Mapa: burbujas de puntaje Saber 11 por IE
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Distribución de puntajes — histograma
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Ranking: Top/Bottom 20 IEs por puntaje
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-surface/50 p-6 min-h-[300px] flex items-center justify-center">
-          <p className="text-muted text-sm">
-            Evolución: serie temporal ISCE promedio
-          </p>
-        </div>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+        <TrendChart
+          title="Cobertura Neta por Nivel — Primaria"
+          dataKey="cobertura_neta_primaria"
+          color="#00D4FF"
+          unit="%"
+        />
+        <TrendChart
+          title="Cobertura Neta — Media"
+          dataKey="cobertura_neta_media"
+          color="#06D6A0"
+          unit="%"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <RankingTable limit={20} showBottom={false} />
+        <RankingTable limit={20} showBottom={true} />
       </div>
     </div>
   );
