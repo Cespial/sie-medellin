@@ -5,6 +5,18 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { MEDELLIN_CENTER } from "@/types/geo";
 
+interface DesercionComuna {
+  comuna: string;
+  desertores: number;
+  matricula: number;
+  tasaDesercion: number;
+}
+
+interface DesercionData {
+  porComuna: DesercionComuna[];
+  ultimoAnio: string;
+}
+
 export function MapContainer() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -54,22 +66,64 @@ export function MapContainer() {
       setLoaded(true);
       const m = map.current!;
 
-      // Load comunas layer
-      fetch("/geojson/comunas_medellin.geojson")
-        .then((r) => (r.ok ? r.json() : null))
-        .then((data) => {
-          if (!data) return;
-          setStats((s) => ({ ...s, comunas: data.features?.length || 0 }));
+      // Load comunas layer + deserción data in parallel
+      Promise.all([
+        fetch("/geojson/comunas_medellin.geojson").then((r) =>
+          r.ok ? r.json() : null
+        ),
+        fetch("/data/desercion_medellin.json").then((r) =>
+          r.ok ? (r.json() as Promise<DesercionData>) : null
+        ),
+      ])
+        .then(([comunasData, desercionData]) => {
+          if (!comunasData) return;
+          setStats((s) => ({
+            ...s,
+            comunas: comunasData.features?.length || 0,
+          }));
 
-          m.addSource("comunas", { type: "geojson", data });
+          // Merge deserción data into GeoJSON feature properties
+          if (desercionData?.porComuna) {
+            const desercionMap = new Map<string, DesercionComuna>();
+            for (const d of desercionData.porComuna) {
+              // Store under both padded and unpadded keys for matching
+              desercionMap.set(d.comuna, d);
+              desercionMap.set(d.comuna.padStart(2, "0"), d);
+            }
+
+            for (const feature of comunasData.features) {
+              const comunaCode = feature.properties?.COMUNA;
+              if (!comunaCode) continue;
+              const match =
+                desercionMap.get(comunaCode) ||
+                desercionMap.get(String(parseInt(comunaCode, 10)));
+              if (match) {
+                feature.properties.tasaDesercion = match.tasaDesercion;
+                feature.properties.desertores = match.desertores;
+                feature.properties.matriculaTotal = match.matricula;
+              }
+            }
+          }
+
+          m.addSource("comunas", { type: "geojson", data: comunasData });
 
           m.addLayer({
             id: "comunas-fill",
             type: "fill",
             source: "comunas",
             paint: {
-              "fill-color": "#00D4FF",
-              "fill-opacity": 0.08,
+              "fill-color": [
+                "interpolate",
+                ["linear"],
+                ["get", "tasaDesercion"],
+                0,
+                "#06D6A0",
+                3,
+                "#FFB703",
+                6,
+                "#EF233C",
+              ],
+              "fill-opacity": 0.55,
             },
           });
 
@@ -94,6 +148,51 @@ export function MapContainer() {
               "line-opacity": 0.1,
               "line-blur": 3,
             },
+          });
+
+          // Popup on comuna click
+          m.on("click", "comunas-fill", (e) => {
+            const props = e.features?.[0]?.properties;
+            if (!props) return;
+
+            const nombre = props.NOMBRE || "Comuna";
+            const tasa =
+              props.tasaDesercion != null
+                ? Number(props.tasaDesercion).toFixed(2)
+                : "N/D";
+            const desertores =
+              props.desertores != null
+                ? Number(props.desertores).toLocaleString("es-CO")
+                : "N/D";
+            const matricula =
+              props.matriculaTotal != null
+                ? Number(props.matriculaTotal).toLocaleString("es-CO")
+                : "N/D";
+
+            new maplibregl.Popup({
+              closeButton: true,
+              maxWidth: "300px",
+            })
+              .setLngLat(e.lngLat)
+              .setHTML(
+                `<div style="padding:12px;font-family:Inter,sans-serif;">
+                  <h3 style="font-weight:700;font-size:13px;color:#E8F4FD;margin:0 0 8px 0;">
+                    ${nombre}
+                  </h3>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
+                    <div><span style="color:#6B8CAE;">Tasa Deserción</span><br/>
+                      <span style="font-weight:700;color:#EF233C;font-size:16px;">${tasa}%</span>
+                    </div>
+                    <div><span style="color:#6B8CAE;">Desertores</span><br/>
+                      <span style="font-weight:600;color:#FFB703;font-size:14px;">${desertores}</span>
+                    </div>
+                    <div style="grid-column:span 2;"><span style="color:#6B8CAE;">Matrícula Total</span><br/>
+                      <span style="font-weight:600;color:#00D4FF;font-size:14px;">${matricula}</span>
+                    </div>
+                  </div>
+                </div>`
+              )
+              .addTo(m);
           });
 
           // Highlight on hover
@@ -254,6 +353,32 @@ export function MapContainer() {
           </div>
         )}
       </div>
+
+      {/* Choropleth legend */}
+      {loaded && (
+        <div className="absolute bottom-6 right-6 z-10 bg-surface/90 backdrop-blur-md border border-border rounded-xl p-3">
+          <p className="text-[10px] font-semibold text-foreground mb-2">
+            Tasa de Deserción (%)
+          </p>
+          <div className="flex items-center gap-1">
+            <span className="text-[9px] text-muted">0</span>
+            <div
+              className="h-2.5 rounded-sm flex-1"
+              style={{
+                width: 120,
+                background:
+                  "linear-gradient(to right, #06D6A0, #FFB703, #EF233C)",
+              }}
+            />
+            <span className="text-[9px] text-muted">6+</span>
+          </div>
+          <div className="flex justify-between mt-1 text-[8px] text-muted" style={{ paddingLeft: 12, paddingRight: 8 }}>
+            <span>Baja</span>
+            <span>Media</span>
+            <span>Alta</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

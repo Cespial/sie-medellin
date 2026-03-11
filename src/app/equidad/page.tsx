@@ -1,4 +1,5 @@
 import { PoblacionesChart } from "@/components/charts/PoblacionesChart";
+import { GenderGapChart } from "@/components/charts/GenderGapChart";
 import { MedellinTrendChart } from "@/components/charts/MedellinTrendChart";
 
 export const metadata = { title: "Equidad — SIE Medellín" };
@@ -18,6 +19,10 @@ export default function EquidadPage() {
           de Medellín. Datos MEData: extranjeros, etnias, víctimas de
           violencia y necesidades educativas especiales.
         </p>
+      </div>
+
+      <div className="mb-6">
+        <GenderGapChart />
       </div>
 
       <div className="mb-6">
