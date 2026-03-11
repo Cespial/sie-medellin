@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SIE Medellín — Sistema de Inteligencia Educativa
 
-## Getting Started
+> Dashboard de inteligencia educativa para la Secretaría de Educación de Medellín. Visualización interactiva de indicadores de calidad, cobertura y contexto educativo a escala municipal.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Deck.gl](https://img.shields.io/badge/deck.gl-9-00A9E0?logo=data:image/svg+xml;base64,)](https://deck.gl)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Descripción
+
+SIE Medellín es una plataforma de datos abiertos educativos que integra múltiples fuentes oficiales (MeData, datos.gov.co/SIMAT, ICFES Saber 11, DANE) para ofrecer una visión integral del sistema educativo de Medellín.
+
+### Características principales
+
+- **Mapa interactivo** con Deck.gl + MapLibre GL — visualización geoespacial de instituciones educativas, cobertura por comuna y calidad por zona
+- **Dashboard de KPIs** — indicadores clave de matrícula, deserción, resultados Saber 11, infraestructura
+- **Módulos temáticos:**
+  - `/cobertura` — Matrícula oficial vs. no oficial, tasas de cobertura bruta y neta
+  - `/calidad` — Resultados Saber 11, clasificación ICFES, tendencias históricas
+  - `/contexto` — Indicadores socioeconómicos, NBI, estratificación
+  - `/instituciones` — Directorio y perfil individual de establecimientos educativos
+  - `/mapa` — Exploración geoespacial con capas temáticas
+- **Rankings y tablas comparativas** por comuna, zona y estrato
+- **Gráficos de tendencias** con Recharts
+
+### Pipeline de datos (Python)
+
+El directorio `loop/` contiene un pipeline ETL en Python que:
+- Recolecta datos de MeData (Open Data Medellín), datos.gov.co (SIMAT matrícula, Saber 11, Directorio de establecimientos), ICFES y DANE
+- Descarga geometrías de comunas y barrios via Overpass/OSM
+- Transforma y procesa datos para consumo del frontend
+- Orquestado via `config.yaml` con colectores modulares
+
+## Stack tecnológico
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Next.js 16, React 19 |
+| Lenguaje | TypeScript 5 |
+| Estilos | Tailwind CSS 4 |
+| Mapas | Deck.gl 9 + MapLibre GL |
+| Gráficos | Recharts |
+| Estado | TanStack React Query |
+| Animaciones | Framer Motion |
+| Tipografía | Inter, Syne, JetBrains Mono |
+| Data pipeline | Python (pandas, geopandas, requests) |
+
+## Estructura del proyecto
+
+```
+sie-medellin/
+├── src/
+│   ├── app/                    # App Router (Next.js 16)
+│   │   ├── page.tsx            # Dashboard principal
+│   │   ├── calidad/            # Módulo de calidad educativa
+│   │   ├── cobertura/          # Módulo de cobertura
+│   │   ├── contexto/           # Módulo de contexto socioeconómico
+│   │   ├── instituciones/      # Directorio de instituciones
+│   │   └── mapa/               # Mapa interactivo
+│   ├── components/
+│   │   ├── charts/             # TrendChart
+│   │   ├── dashboard/          # HeroSection, KPICard, KPIGrid, RankingTable
+│   │   ├── layout/             # Sidebar, DataSourcesFooter
+│   │   └── map/                # MapContainer (Deck.gl)
+│   ├── lib/
+│   │   ├── data/               # Escalas de color, indicadores
+│   │   └── utils/              # Utilidades (cn, etc.)
+│   └── types/                  # Tipos TypeScript (education, geo)
+├── loop/                       # Pipeline ETL (Python)
+│   ├── config.yaml             # Configuración de fuentes de datos
+│   ├── orchestrator.py         # Orquestador principal
+│   ├── collectors/             # Colectores: MeData, datos.gov, geo
+│   └── transformers/           # Procesamiento para frontend
+├── public/                     # Assets estáticos
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Clonar el repositorio
+git clone https://github.com/Cespial/sie-medellin.git
+cd sie-medellin
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Instalar dependencias
+npm install
 
-## Learn More
+# Ejecutar en desarrollo
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+El servidor estará disponible en `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pipeline de datos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cd loop
+pip install -r requirements.txt
+python orchestrator.py
+```
 
-## Deploy on Vercel
+## Fuentes de datos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Fuente | Dataset | ID |
+|--------|---------|-----|
+| datos.gov.co | SIMAT — Matrícula | `nudc-hpkp` |
+| datos.gov.co | Saber 11 | `kgpf-yjmc` |
+| datos.gov.co | Directorio establecimientos | `cqnp-pnnh` |
+| MeData | Datos abiertos de Medellín | Múltiples endpoints |
+| ICFES | Resultados Saber | API oficial |
+| DANE | Censo, proyecciones | Estadísticas nacionales |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licencia
+
+MIT
+
+---
+
+Desarrollado por [Cristian Espinal Maya](https://github.com/Cespial) · [fourier.dev](https://fourier.dev)
