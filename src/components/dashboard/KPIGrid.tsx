@@ -9,10 +9,19 @@ interface KPIData {
   promedioSaber11: number;
   totalEvaluados: number;
   totalIEs: number;
-  coberturaNeta: number | null;
+  coberturaNeta: number | { valor: number } | null;
   coberturaBruta: number | null;
   tasaDesercion: number | null;
   tasaAprobacion: number | null;
+  desercion?: { valor: number };
+  aprobacion?: { valor: number };
+}
+
+function extractValue(v: number | { valor: number } | null | undefined): number {
+  if (v === null || v === undefined) return 0;
+  if (typeof v === "number") return v;
+  if (typeof v === "object" && "valor" in v) return v.valor;
+  return 0;
 }
 
 export function KPIGrid() {
@@ -38,6 +47,10 @@ export function KPIGrid() {
     );
   }
 
+  const cobNeta = extractValue(kpis.coberturaNeta);
+  const desercion = kpis.desercion ? kpis.desercion.valor : (kpis.tasaDesercion ?? 0);
+  const aprobacion = kpis.aprobacion ? kpis.aprobacion.valor : (kpis.tasaAprobacion ?? 0);
+
   const cards = [
     {
       label: "Total Matriculados",
@@ -62,24 +75,24 @@ export function KPIGrid() {
       trendIsGood: true,
     },
     {
-      label: "Tasa de Deserción",
-      value: kpis.tasaDesercion ?? 0,
+      label: "Deserción",
+      value: desercion,
       unit: "%",
-      decimals: 1,
+      decimals: 2,
       trend: "down" as const,
       trendIsGood: true,
     },
     {
       label: "Cobertura Neta",
-      value: kpis.coberturaNeta ?? 0,
+      value: cobNeta,
       unit: "%",
       decimals: 1,
-      trend: "up" as const,
+      trend: "stable" as const,
       trendIsGood: true,
     },
     {
-      label: "Tasa de Aprobación",
-      value: kpis.tasaAprobacion ?? 0,
+      label: "Aprobación",
+      value: aprobacion,
       unit: "%",
       decimals: 1,
       trend: "up" as const,
