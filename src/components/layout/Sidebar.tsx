@@ -12,6 +12,7 @@ import {
   BarChart3,
   ShieldAlert,
   GraduationCap,
+  Heart,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -24,6 +25,7 @@ const NAV_ITEMS = [
   { href: "/calidad", label: "Calidad", icon: Award },
   { href: "/permanencia", label: "Permanencia", icon: ShieldAlert },
   { href: "/matricula", label: "Matrícula", icon: GraduationCap },
+  { href: "/equidad", label: "Equidad", icon: Heart },
   { href: "/instituciones", label: "Instituciones", icon: School },
   { href: "/contexto", label: "Contexto", icon: BarChart3 },
 ];

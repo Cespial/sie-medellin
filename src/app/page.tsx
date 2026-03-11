@@ -62,21 +62,21 @@ export default function HomePage() {
               },
               {
                 name: "Permanencia",
-                desc: "Deserción, reprobación, eficiencia interna",
+                desc: "Deserción por comuna, reprobación, aprobación escolar",
                 color: "from-warning to-danger",
-                href: "/cobertura",
+                href: "/permanencia",
               },
               {
-                name: "Eficiencia",
-                desc: "Ratio alumno/docente, infraestructura, conectividad",
+                name: "Matrícula",
+                desc: "265K+ registros, matrícula por sector, nivel y comuna",
                 color: "from-secondary to-primary",
-                href: "/instituciones",
+                href: "/matricula",
               },
               {
                 name: "Equidad",
-                desc: "Brechas de género, estrato, zona, población vulnerable",
+                desc: "Poblaciones: extranjeros, etnias, víctimas, NEE",
                 color: "from-accent to-success",
-                href: "/contexto",
+                href: "/equidad",
               },
               {
                 name: "Contexto",
