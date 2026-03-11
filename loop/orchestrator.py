@@ -1,6 +1,6 @@
 """
 SIE Medellín — Data Loop Orchestrator
-Ejecuta todos los collectors en orden y registra resultados.
+Ejecuta collectors y transformers en orden.
 """
 import sys
 import time
@@ -15,18 +15,31 @@ from loop.collectors.medata_collector import run_all as run_medata
 from loop.collectors.datos_gov_collector import run_all as run_datos_gov
 
 
+def run_transformers():
+    """Run all data transformers."""
+    from loop.transformers.process_for_frontend import run as run_frontend
+    from loop.transformers.process_medata_csv import run as run_medata_csv
+    from loop.transformers.process_saber11_enriched import run as run_saber11
+    from loop.transformers.process_poblaciones import run as run_poblaciones
+
+    run_frontend()
+    run_medata_csv()
+    run_saber11()
+    run_poblaciones()
+
+
 def main():
     parser = argparse.ArgumentParser(description="SIE Medellín Data Loop")
     parser.add_argument(
         "--fuente",
         default="all",
-        choices=["all", "geo", "medata", "datos_gov", "icfes", "dane"],
+        choices=["all", "geo", "medata", "datos_gov", "transform"],
         help="Fuente específica a ejecutar",
     )
     args = parser.parse_args()
 
     print("=" * 60)
-    print("🧠 SIE MEDELLÍN — DATA LOOP ORCHESTRATOR")
+    print("SIE MEDELLIN — DATA LOOP ORCHESTRATOR")
     print("=" * 60)
     start = time.time()
 
@@ -34,6 +47,7 @@ def main():
         "geo": ("Datos Geoespaciales", run_geo),
         "medata": ("MEData Medellín", run_medata),
         "datos_gov": ("datos.gov.co", run_datos_gov),
+        "transform": ("Transformers", run_transformers),
     }
 
     results = {}
@@ -42,42 +56,35 @@ def main():
             continue
 
         print(f"\n{'='*60}")
-        print(f"▶ Ejecutando: {name}")
+        print(f"Ejecutando: {name}")
         print(f"{'='*60}")
 
         try:
             func()
-            results[key] = "✅ Exitoso"
+            results[key] = "OK"
         except Exception as e:
-            results[key] = f"❌ Error: {e}"
-            print(f"\n❌ Error en {name}: {e}")
+            results[key] = f"ERROR: {e}"
+            print(f"\nError en {name}: {e}")
 
     elapsed = time.time() - start
 
     print(f"\n{'='*60}")
-    print("📋 RESUMEN DE EJECUCIÓN")
+    print("RESUMEN DE EJECUCION")
     print(f"{'='*60}")
     for key, status in results.items():
         print(f"  {key}: {status}")
-    print(f"\n⏱ Tiempo total: {elapsed:.1f}s")
+    print(f"\nTiempo total: {elapsed:.1f}s")
 
-    # List downloaded files
+    # File inventory
     raw_dir = Path(__file__).parent / "data" / "raw"
+    public_data = Path(__file__).parent.parent / "public" / "data"
     geojson_dir = Path(__file__).parent.parent / "public" / "geojson"
 
-    if raw_dir.exists():
-        files = list(raw_dir.iterdir())
-        print(f"\n📂 Archivos en data/raw/: {len(files)}")
-        for f in sorted(files):
-            size = f.stat().st_size
-            print(f"  {f.name} ({size/1024:.1f} KB)")
-
-    if geojson_dir.exists():
-        files = list(geojson_dir.iterdir())
-        print(f"\n📂 Archivos en public/geojson/: {len(files)}")
-        for f in sorted(files):
-            size = f.stat().st_size
-            print(f"  {f.name} ({size/1024:.1f} KB)")
+    for label, d in [("data/raw", raw_dir), ("public/data", public_data), ("public/geojson", geojson_dir)]:
+        if d.exists():
+            files = list(d.iterdir())
+            total_size = sum(f.stat().st_size for f in files if f.is_file())
+            print(f"\n{label}/: {len(files)} archivos ({total_size/1024/1024:.1f} MB)")
 
 
 if __name__ == "__main__":

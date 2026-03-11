@@ -1,90 +1,90 @@
 [
   {
     "periodo": "20142",
-    "promedio": 252.7,
-    "evaluados": 14337,
-    "promedio_f": 248.3,
-    "promedio_m": 258.8,
-    "promedio_nd": 227.2
+    "promedio": 252.6,
+    "evaluados": 16192,
+    "promedio_f": 248.2,
+    "promedio_m": 258.7,
+    "promedio_nd": 230.9
   },
   {
     "periodo": "20151",
-    "promedio": 242.0,
-    "evaluados": 907,
-    "promedio_f": 234.4,
-    "promedio_m": 249.4
+    "promedio": 241.5,
+    "evaluados": 1007,
+    "promedio_f": 233.3,
+    "promedio_m": 249.2
   },
   {
     "periodo": "20152",
     "promedio": 251.0,
-    "evaluados": 14531,
-    "promedio_m": 258.6,
-    "promedio_f": 245.1,
-    "promedio_nd": 242.4
+    "evaluados": 16344,
+    "promedio_m": 258.7,
+    "promedio_f": 245.2,
+    "promedio_nd": 241.0
   },
   {
     "periodo": "20161",
-    "promedio": 348.5,
-    "evaluados": 140,
-    "promedio_f": 346.8,
-    "promedio_m": 350.5
+    "promedio": 347.3,
+    "evaluados": 155,
+    "promedio_f": 346.5,
+    "promedio_m": 348.4
   },
   {
     "periodo": "20162",
-    "promedio": 262.3,
-    "evaluados": 13901,
-    "promedio_m": 269.3,
+    "promedio": 262.2,
+    "evaluados": 15567,
+    "promedio_m": 269.2,
     "promedio_f": 256.7
   },
   {
     "periodo": "20171",
-    "promedio": 332.7,
-    "evaluados": 243,
-    "promedio_f": 325.5,
-    "promedio_m": 341.1
+    "promedio": 331.4,
+    "evaluados": 277,
+    "promedio_f": 325.8,
+    "promedio_m": 338.1
   },
   {
     "periodo": "20172",
-    "promedio": 258.7,
-    "evaluados": 13786,
-    "promedio_m": 264.7,
-    "promedio_f": 253.9
+    "promedio": 258.8,
+    "evaluados": 15495,
+    "promedio_m": 264.8,
+    "promedio_f": 254.0
   },
   {
     "periodo": "20181",
-    "promedio": 290.4,
-    "evaluados": 802,
-    "promedio_f": 289.3,
-    "promedio_m": 291.6
+    "promedio": 290.8,
+    "evaluados": 917,
+    "promedio_f": 288.3,
+    "promedio_m": 293.4
   },
   {
     "periodo": "20191",
-    "promedio": 334.2,
-    "evaluados": 273,
-    "promedio_m": 332.8,
-    "promedio_f": 335.8
+    "promedio": 334.9,
+    "evaluados": 305,
+    "promedio_m": 333.1,
+    "promedio_f": 336.8
   },
   {
     "periodo": "20194",
-    "promedio": 248.7,
-    "evaluados": 27479,
-    "promedio_m": 255.5,
-    "promedio_f": 243.3,
+    "promedio": 248.5,
+    "evaluados": 30909,
+    "promedio_m": 255.3,
+    "promedio_f": 243.1,
     "promedio_nd": 280.0
   },
   {
     "periodo": "20201",
     "promedio": 283.0,
-    "evaluados": 362,
-    "promedio_m": 285.4,
-    "promedio_f": 280.9
+    "evaluados": 404,
+    "promedio_m": 284.3,
+    "promedio_f": 281.8
   },
   {
     "periodo": "20211",
-    "promedio": 313.4,
-    "evaluados": 319,
-    "promedio_m": 310.4,
-    "promedio_f": 316.9
+    "promedio": 310.6,
+    "evaluados": 371,
+    "promedio_m": 308.4,
+    "promedio_f": 313.1
   },
   {
     "periodo": "20221",
