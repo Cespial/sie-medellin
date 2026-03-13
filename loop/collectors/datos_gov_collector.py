@@ -7,6 +7,10 @@ Datasets confirmados:
 - emd6-ef7x: Directorio establecimientos educativos
 - ji8i-4anb: Estadísticas MEN por departamento (cobertura, desercion, aprobacion)
 - sras-4t5p / nudc-7mev: Estadísticas educación por municipio
+- 5c2k-ahfc: Bachilleres (graduados grado 11 y 26) por municipio
+- y9ga-zwzy: Matrícula educación superior por municipio
+- v5z5-e88h: Índice de paridad de género por municipio
+- pgrh-8um9: Docentes oficiales EPBM por secretaría
 """
 import json
 import time
@@ -207,6 +211,57 @@ def download_estadisticas_municipio():
     return []
 
 
+def download_bachilleres():
+    """Bachilleres (graduados grado 11 y 26) — Medellín (5c2k-ahfc)"""
+    print("\n📊 [6/9] Bachilleres...")
+    data = fetch_paginated(
+        "5c2k-ahfc",
+        where_clause=f"codigo_municipio='{MEDELLIN_CODE}'",
+        order="a_o DESC",
+    )
+    if data:
+        save_json(data, "bachilleres_medellin.json")
+    return data
+
+
+def download_educacion_superior():
+    """Matrícula educación superior por municipio — Medellín (y9ga-zwzy)"""
+    print("\n📊 [7/9] Educación Superior...")
+    data = fetch_paginated(
+        "y9ga-zwzy",
+        where_clause="nombre_del_municipio like '%MEDELL%'",
+        order="a_o DESC",
+    )
+    if data:
+        save_json(data, "educacion_superior_medellin.json")
+    return data
+
+
+def download_paridad_genero():
+    """Índice de paridad de género — Medellín (v5z5-e88h)"""
+    print("\n📊 [8/9] Paridad de Género...")
+    data = fetch_socrata(
+        "v5z5-e88h",
+        params={"$where": "divipola_municipio='5001'"},
+        limit=100,
+    )
+    if data:
+        save_json(data, "paridad_genero_medellin.json")
+    return data
+
+
+def download_docentes():
+    """Docentes oficiales EPBM — Medellín (pgrh-8um9)"""
+    print("\n📊 [9/9] Docentes Oficiales...")
+    data = fetch_paginated(
+        "pgrh-8um9",
+        where_clause="codigo_sed like '%edell%'",
+    )
+    if data:
+        save_json(data, "docentes_medellin_perfil.json")
+    return data
+
+
 def run_all():
     print("=" * 60)
     print("DATOS.GOV.CO COLLECTOR — SIE Medellín")
@@ -219,6 +274,10 @@ def run_all():
         ("Directorio IEs", download_directorio_ie),
         ("Estadísticas MEN", download_estadisticas_men),
         ("Estadísticas Municipio", download_estadisticas_municipio),
+        ("Bachilleres", download_bachilleres),
+        ("Educación Superior", download_educacion_superior),
+        ("Paridad de Género", download_paridad_genero),
+        ("Docentes", download_docentes),
     ]:
         try:
             data = func()
@@ -235,5 +294,37 @@ def run_all():
         print(f"  {name}: {status}")
 
 
+def run_new_only():
+    """Descarga solo los 4 datasets nuevos."""
+    print("=" * 60)
+    print("DATOS.GOV.CO — Nuevos Datasets")
+    print("=" * 60)
+
+    results = {}
+    for name, func in [
+        ("Bachilleres", download_bachilleres),
+        ("Educación Superior", download_educacion_superior),
+        ("Paridad de Género", download_paridad_genero),
+        ("Docentes", download_docentes),
+    ]:
+        try:
+            data = func()
+            results[name] = len(data) if data else 0
+        except Exception as e:
+            print(f"  ❌ Error en {name}: {e}")
+            results[name] = -1
+
+    print(f"\n{'='*60}")
+    print("📋 RESUMEN")
+    print(f"{'='*60}")
+    for name, count in results.items():
+        status = f"✅ {count} registros" if count > 0 else ("⚠️ Sin datos" if count == 0 else "❌ Error")
+        print(f"  {name}: {status}")
+
+
 if __name__ == "__main__":
-    run_all()
+    import sys
+    if "--new-only" in sys.argv:
+        run_new_only()
+    else:
+        run_all()

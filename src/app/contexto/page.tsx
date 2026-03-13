@@ -1,5 +1,7 @@
 import { MedellinTrendChart } from "@/components/charts/MedellinTrendChart";
 import { TrendChart } from "@/components/charts/TrendChart";
+import { EdSuperiorChart } from "@/components/charts/EdSuperiorChart";
+import { DocentesChart } from "@/components/charts/DocentesChart";
 
 export const metadata = { title: "Contexto — SIE Medellín" };
 
@@ -68,6 +70,16 @@ export default function ContextoPage() {
         />
       </div>
 
+      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+        Educación Superior en Medellín
+      </h2>
+      <div className="mb-6">
+        <EdSuperiorChart />
+      </div>
+      <div className="mb-8">
+        <DocentesChart />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="rounded-xl border border-border bg-surface/50 p-6">
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3">
@@ -93,6 +105,26 @@ export default function ContextoPage() {
               {
                 fuente: "MEData — ISCE",
                 desc: "Índice Sintético de Calidad por IE (2015-2018)",
+                status: "cargado",
+              },
+              {
+                fuente: "datos.gov.co — Bachilleres",
+                desc: "Graduados grado 11 y 26 por año (2019-2024)",
+                status: "cargado",
+              },
+              {
+                fuente: "datos.gov.co — Ed. Superior",
+                desc: "Matrícula por nivel de formación (2005-2020)",
+                status: "cargado",
+              },
+              {
+                fuente: "datos.gov.co — Docentes",
+                desc: "Perfil planta docente oficial (2022)",
+                status: "cargado",
+              },
+              {
+                fuente: "datos.gov.co — Paridad de Género",
+                desc: "IPG y matrícula por género×nivel (2020)",
                 status: "cargado",
               },
               {

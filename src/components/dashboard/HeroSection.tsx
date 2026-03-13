@@ -58,7 +58,8 @@ export function HeroSection() {
           y contexto socioeconómico de{" "}
           <span className="text-foreground font-medium">342 instituciones educativas</span>{" "}
           en 16 comunas y 5 corregimientos. 441K+ registros de matrícula,
-          50K+ evaluados Saber 11, y 30+ datasets procesados.
+          50K+ evaluados Saber 11, 243K+ en educación superior,
+          y 34+ datasets procesados.
         </motion.p>
 
         <motion.div
@@ -94,7 +95,8 @@ export function HeroSection() {
           { label: "Corregimientos", value: "5" },
           { label: "IEs Analizadas", value: "342" },
           { label: "Sedes", value: "771" },
-          { label: "Datasets", value: "30+" },
+          { label: "Ed. Superior", value: "243K+" },
+          { label: "Datasets", value: "34+" },
           { label: "Años de datos", value: "14" },
         ].map((stat) => (
           <div key={stat.label}>

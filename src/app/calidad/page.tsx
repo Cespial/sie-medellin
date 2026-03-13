@@ -1,6 +1,7 @@
 import { RankingTable } from "@/components/dashboard/RankingTable";
 import { ISCEChart } from "@/components/charts/ISCEChart";
 import { Saber11HistoricoChart } from "@/components/charts/Saber11HistoricoChart";
+import { BachilleresChart } from "@/components/charts/BachilleresChart";
 
 export const metadata = { title: "Calidad — SIE Medellín" };
 
@@ -28,6 +29,11 @@ export default function CalidadPage() {
       {/* ISCE */}
       <div className="mb-6">
         <ISCEChart />
+      </div>
+
+      {/* Bachilleres */}
+      <div className="mb-6">
+        <BachilleresChart />
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">

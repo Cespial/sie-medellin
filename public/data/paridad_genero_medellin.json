@@ -1,0 +1,79 @@
+{
+  "anio": "2020",
+  "matricula_por_nivel": [
+    {
+      "nivel": "Prejardín",
+      "femenino": 4948,
+      "masculino": 4724
+    },
+    {
+      "nivel": "Transición",
+      "femenino": 14421,
+      "masculino": 14818
+    },
+    {
+      "nivel": "Primaria",
+      "femenino": 80279,
+      "masculino": 83969
+    },
+    {
+      "nivel": "Secundaria",
+      "femenino": 81487,
+      "masculino": 82047
+    },
+    {
+      "nivel": "Media",
+      "femenino": 36905,
+      "masculino": 32900
+    }
+  ],
+  "ipg_cobertura_bruta": [
+    {
+      "nivel": "Prejardín",
+      "ipg": 1.09
+    },
+    {
+      "nivel": "Transición",
+      "ipg": 1.01
+    },
+    {
+      "nivel": "Primaria",
+      "ipg": 0.99
+    },
+    {
+      "nivel": "Secundaria",
+      "ipg": 1.02
+    },
+    {
+      "nivel": "Media",
+      "ipg": 1.15
+    }
+  ],
+  "poblacion_por_edad": [
+    {
+      "rango": "3-4",
+      "hombres": 30515,
+      "mujeres": 29261
+    },
+    {
+      "rango": "5",
+      "hombres": 15276,
+      "mujeres": 14686
+    },
+    {
+      "rango": "6-10",
+      "hombres": 77307,
+      "mujeres": 74649
+    },
+    {
+      "rango": "11-14",
+      "hombres": 65667,
+      "mujeres": 63990
+    },
+    {
+      "rango": "15-16",
+      "hombres": 35633,
+      "mujeres": 34897
+    }
+  ]
+}

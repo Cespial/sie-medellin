@@ -1,0 +1,68 @@
+[
+  {
+    "anio": "2019",
+    "graduados_11": 22035,
+    "graduados_26": 12804,
+    "matricula_11": 22823,
+    "matricula_26": 13902,
+    "tasa_graduacion_11": 96.5,
+    "tasa_graduacion_26": 92.1,
+    "oficial_11": 17849,
+    "no_oficial_11": 4186
+  },
+  {
+    "anio": "2020",
+    "graduados_11": 22774,
+    "graduados_26": 12791,
+    "matricula_11": 23818,
+    "matricula_26": 13966,
+    "tasa_graduacion_11": 95.6,
+    "tasa_graduacion_26": 91.6,
+    "oficial_11": 18628,
+    "no_oficial_11": 4146
+  },
+  {
+    "anio": "2021",
+    "graduados_11": 22872,
+    "graduados_26": 11198,
+    "matricula_11": 24126,
+    "matricula_26": 12824,
+    "tasa_graduacion_11": 94.8,
+    "tasa_graduacion_26": 87.3,
+    "oficial_11": 18763,
+    "no_oficial_11": 4109
+  },
+  {
+    "anio": "2022",
+    "graduados_11": 23535,
+    "graduados_26": 9320,
+    "matricula_11": 24371,
+    "matricula_26": 10444,
+    "tasa_graduacion_11": 96.6,
+    "tasa_graduacion_26": 89.2,
+    "oficial_11": 19643,
+    "no_oficial_11": 3892
+  },
+  {
+    "anio": "2023",
+    "graduados_11": 23376,
+    "graduados_26": 9665,
+    "matricula_11": 24454,
+    "matricula_26": 10881,
+    "tasa_graduacion_11": 95.6,
+    "tasa_graduacion_26": 88.8,
+    "oficial_11": 19357,
+    "no_oficial_11": 4019
+  },
+  {
+    "anio": "2024",
+    "graduados_11": 23535,
+    "graduados_26": 9320,
+    "matricula_11": 24371,
+    "matricula_26": 10444,
+    "tasa_graduacion_11": 96.6,
+    "tasa_graduacion_26": 89.2,
+    "oficial_11": 19643,
+    "no_oficial_11": 3892
+  }
+]

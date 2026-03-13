@@ -1,0 +1,120 @@
+{
+  "anio": "2022",
+  "total_docentes": 11634,
+  "por_genero": [
+    {
+      "genero": "F",
+      "total": 7487
+    },
+    {
+      "genero": "M",
+      "total": 4147
+    }
+  ],
+  "por_nivel_educativo": [
+    {
+      "nivel": "Postgrado en otras áreas",
+      "total": 3844
+    },
+    {
+      "nivel": "Postgrado en educación",
+      "total": 3584
+    },
+    {
+      "nivel": "Profesional o licenciado en educación",
+      "total": 3047
+    },
+    {
+      "nivel": "Profesional en otras áreas, no licenciado",
+      "total": 770
+    },
+    {
+      "nivel": "Normalista superior",
+      "total": 302
+    },
+    {
+      "nivel": "Bachiller pedagógico",
+      "total": 47
+    },
+    {
+      "nivel": "Técnico o tecnólogo en otras áreas",
+      "total": 23
+    },
+    {
+      "nivel": "Técnico o tecnólogo en educación",
+      "total": 15
+    },
+    {
+      "nivel": "Otro bachiller",
+      "total": 2
+    }
+  ],
+  "por_nivel_ensenanza": [
+    {
+      "nivel": "Basica Secundaria y Media",
+      "total": 6261
+    },
+    {
+      "nivel": "Basica Primaria",
+      "total": 3691
+    },
+    {
+      "nivel": "No aplica",
+      "total": 944
+    },
+    {
+      "nivel": "Preescolar",
+      "total": 730
+    },
+    {
+      "nivel": "Ciclo complementario (Normales)",
+      "total": 8
+    }
+  ],
+  "por_estatuto": [
+    {
+      "estatuto": "1278",
+      "total": 8423
+    },
+    {
+      "estatuto": "2277",
+      "total": 3211
+    }
+  ],
+  "por_tipo_vinculacion": [
+    {
+      "tipo": "En propiedad",
+      "total": 8843
+    },
+    {
+      "tipo": "Prov. Vacante Definitiva",
+      "total": 2430
+    },
+    {
+      "tipo": "Prov. Vacante Temporal",
+      "total": 214
+    },
+    {
+      "tipo": "Planta Temporal PTA",
+      "total": 141
+    },
+    {
+      "tipo": "Periodo de Prueba",
+      "total": 6
+    }
+  ],
+  "por_zona": [
+    {
+      "zona": "Urbano",
+      "total": 10933
+    },
+    {
+      "zona": "Rural",
+      "total": 534
+    },
+    {
+      "zona": "No aplica",
+      "total": 167
+    }
+  ]
+}
