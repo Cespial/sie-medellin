@@ -1,0 +1,520 @@
+{
+  "saber11": {
+    "por_estrato": [
+      {
+        "estrato": "1",
+        "promedio": 234.2,
+        "evaluados": 7773
+      },
+      {
+        "estrato": "2",
+        "promedio": 244.7,
+        "evaluados": 18637
+      },
+      {
+        "estrato": "3",
+        "promedio": 258.9,
+        "evaluados": 14193
+      },
+      {
+        "estrato": "4",
+        "promedio": 276.9,
+        "evaluados": 3513
+      },
+      {
+        "estrato": "5",
+        "promedio": 293.8,
+        "evaluados": 1719
+      },
+      {
+        "estrato": "6",
+        "promedio": 289.8,
+        "evaluados": 571
+      }
+    ],
+    "por_internet": [
+      {
+        "internet": "No",
+        "promedio": 223.9,
+        "evaluados": 5950
+      },
+      {
+        "internet": "Si",
+        "promedio": 255.8,
+        "evaluados": 41149
+      }
+    ],
+    "por_educacion_madre": [
+      {
+        "nivel": "Postgrado",
+        "promedio": 308.0,
+        "evaluados": 1227
+      },
+      {
+        "nivel": "Educación profesional completa",
+        "promedio": 279.3,
+        "evaluados": 6024
+      },
+      {
+        "nivel": "Educación profesional incompleta",
+        "promedio": 271.1,
+        "evaluados": 1291
+      },
+      {
+        "nivel": "Técnica o tecnológica completa",
+        "promedio": 267.1,
+        "evaluados": 6366
+      },
+      {
+        "nivel": "No sabe",
+        "promedio": 257.9,
+        "evaluados": 1331
+      },
+      {
+        "nivel": "Técnica o tecnológica incompleta",
+        "promedio": 254.8,
+        "evaluados": 1947
+      },
+      {
+        "nivel": "Secundaria (Bachillerato) completa",
+        "promedio": 246.9,
+        "evaluados": 14564
+      },
+      {
+        "nivel": "No Aplica",
+        "promedio": 239.6,
+        "evaluados": 117
+      },
+      {
+        "nivel": "Secundaria (Bachillerato) incompleta",
+        "promedio": 236.7,
+        "evaluados": 6366
+      },
+      {
+        "nivel": "Primaria completa",
+        "promedio": 230.5,
+        "evaluados": 2760
+      },
+      {
+        "nivel": "Primaria incompleta",
+        "promedio": 225.9,
+        "evaluados": 4506
+      },
+      {
+        "nivel": "Ninguno",
+        "promedio": 206.2,
+        "evaluados": 657
+      }
+    ],
+    "por_jornada": [
+      {
+        "jornada": "COMPLETA",
+        "promedio": 297.5,
+        "evaluados": 6409
+      },
+      {
+        "jornada": "MAÑANA",
+        "promedio": 255.8,
+        "evaluados": 22966
+      },
+      {
+        "jornada": "UNICA",
+        "promedio": 254.9,
+        "evaluados": 24037
+      },
+      {
+        "jornada": "TARDE",
+        "promedio": 251.2,
+        "evaluados": 7611
+      },
+      {
+        "jornada": "NOCHE",
+        "promedio": 212.4,
+        "evaluados": 4246
+      },
+      {
+        "jornada": "SABATINA",
+        "promedio": 209.7,
+        "evaluados": 6553
+      }
+    ],
+    "por_caracter": [
+      {
+        "tipo": "TÉCNICO",
+        "promedio": 280.0,
+        "evaluados": 562
+      },
+      {
+        "tipo": "NO APLICA",
+        "promedio": 255.6,
+        "evaluados": 115
+      },
+      {
+        "tipo": "ACADÉMICO",
+        "promedio": 253.6,
+        "evaluados": 24817
+      },
+      {
+        "tipo": "TÉCNICO/ACADÉMICO",
+        "promedio": 248.0,
+        "evaluados": 22654
+      }
+    ],
+    "por_sector": [
+      {
+        "sector": "NO OFICIAL",
+        "promedio": 255.4,
+        "evaluados": 53450
+      },
+      {
+        "sector": "OFICIAL",
+        "promedio": 252.2,
+        "evaluados": 94790
+      }
+    ],
+    "por_genero": [
+      {
+        "genero": "F",
+        "promedio": 248.7,
+        "evaluados": 81908
+      },
+      {
+        "genero": "M",
+        "promedio": 259.2,
+        "evaluados": 66226
+      }
+    ],
+    "estrato_x_internet": [
+      {
+        "estrato": "1",
+        "con_internet": 239.8,
+        "n_con": 5507,
+        "sin_internet": 220.9,
+        "n_sin": 2245
+      },
+      {
+        "estrato": "2",
+        "con_internet": 247.8,
+        "n_con": 16039,
+        "sin_internet": 225.8,
+        "n_sin": 2546
+      },
+      {
+        "estrato": "3",
+        "con_internet": 260.5,
+        "n_con": 13401,
+        "sin_internet": 233.0,
+        "n_sin": 761
+      },
+      {
+        "estrato": "4",
+        "con_internet": 278.8,
+        "n_con": 3407,
+        "sin_internet": 217.4,
+        "n_sin": 100
+      },
+      {
+        "estrato": "5",
+        "con_internet": 296.2,
+        "n_con": 1667,
+        "sin_internet": 217.4,
+        "n_sin": 45
+      },
+      {
+        "estrato": "6",
+        "con_internet": 295.0,
+        "n_con": 533,
+        "sin_internet": 210.6,
+        "n_sin": 32
+      }
+    ],
+    "por_bilingue": [
+      {
+        "tipo": "Bilingüe",
+        "promedio": 251.6,
+        "evaluados": 179
+      },
+      {
+        "tipo": "No bilingüe",
+        "promedio": 252.5,
+        "evaluados": 42850
+      }
+    ],
+    "total_evaluados": 275000
+  },
+  "comunas": [
+    {
+      "comuna": "1",
+      "tasa_desercion": 3.68,
+      "desertores": 1024,
+      "matricula_total": 27832,
+      "tasa_aprobacion": 86.83,
+      "aprobados": 20899,
+      "matricula_total_serie": 25870,
+      "oficial": 20989,
+      "privado": 4881,
+      "ies_con_saber11": 19,
+      "evaluados_saber11": 3351
+    },
+    {
+      "comuna": "10",
+      "tasa_desercion": 5.83,
+      "desertores": 2146,
+      "matricula_total": 36837,
+      "tasa_aprobacion": 89.87,
+      "aprobados": 29119,
+      "matricula_total_serie": 34844,
+      "oficial": 12795,
+      "privado": 22049,
+      "ies_con_saber11": 17,
+      "evaluados_saber11": 5202
+    },
+    {
+      "comuna": "11",
+      "tasa_desercion": 1.51,
+      "desertores": 237,
+      "matricula_total": 15736,
+      "tasa_aprobacion": 94.25,
+      "aprobados": 13795,
+      "matricula_total_serie": 14084,
+      "oficial": 4246,
+      "privado": 9838,
+      "ies_con_saber11": 10,
+      "evaluados_saber11": 3108
+    },
+    {
+      "comuna": "12",
+      "tasa_desercion": 2.22,
+      "desertores": 705,
+      "matricula_total": 31765,
+      "tasa_aprobacion": 92.03,
+      "aprobados": 26837,
+      "matricula_total_serie": 29272,
+      "oficial": 18720,
+      "privado": 10552,
+      "ies_con_saber11": 20,
+      "evaluados_saber11": 6169
+    },
+    {
+      "comuna": "13",
+      "tasa_desercion": 3.28,
+      "desertores": 555,
+      "matricula_total": 16938,
+      "tasa_aprobacion": 88.12,
+      "aprobados": 13156,
+      "matricula_total_serie": 15098,
+      "oficial": 13450,
+      "privado": 1648,
+      "ies_con_saber11": 16,
+      "evaluados_saber11": 2164
+    },
+    {
+      "comuna": "14",
+      "tasa_desercion": 1.69,
+      "desertores": 299,
+      "matricula_total": 17717,
+      "tasa_aprobacion": 95.08,
+      "aprobados": 15616,
+      "matricula_total_serie": 15795,
+      "oficial": 4610,
+      "privado": 11185,
+      "ies_con_saber11": 22,
+      "evaluados_saber11": 4834
+    },
+    {
+      "comuna": "15",
+      "tasa_desercion": 1.79,
+      "desertores": 188,
+      "matricula_total": 10503,
+      "tasa_aprobacion": 94.16,
+      "aprobados": 8844,
+      "matricula_total_serie": 9335,
+      "oficial": 8412,
+      "privado": 923,
+      "ies_con_saber11": 10,
+      "evaluados_saber11": 1787
+    },
+    {
+      "comuna": "16",
+      "tasa_desercion": 1.68,
+      "desertores": 451,
+      "matricula_total": 26906,
+      "tasa_aprobacion": 91.15,
+      "aprobados": 22487,
+      "matricula_total_serie": 25289,
+      "oficial": 16606,
+      "privado": 8683,
+      "ies_con_saber11": 24,
+      "evaluados_saber11": 4736
+    },
+    {
+      "comuna": "2",
+      "tasa_desercion": 3.95,
+      "desertores": 816,
+      "matricula_total": 20651,
+      "tasa_aprobacion": 86.29,
+      "aprobados": 15419,
+      "matricula_total_serie": 19584,
+      "oficial": 19434,
+      "privado": 150,
+      "ies_con_saber11": 13,
+      "evaluados_saber11": 2194
+    },
+    {
+      "comuna": "3",
+      "tasa_desercion": 2.87,
+      "desertores": 905,
+      "matricula_total": 31559,
+      "tasa_aprobacion": 87.46,
+      "aprobados": 24648,
+      "matricula_total_serie": 29896,
+      "oficial": 24680,
+      "privado": 5216,
+      "ies_con_saber11": 23,
+      "evaluados_saber11": 3389
+    },
+    {
+      "comuna": "4",
+      "tasa_desercion": 3.59,
+      "desertores": 1073,
+      "matricula_total": 29876,
+      "tasa_aprobacion": 89.41,
+      "aprobados": 23520,
+      "matricula_total_serie": 29862,
+      "oficial": 22794,
+      "privado": 7068,
+      "ies_con_saber11": 22,
+      "evaluados_saber11": 3651
+    },
+    {
+      "comuna": "5",
+      "tasa_desercion": 1.77,
+      "desertores": 454,
+      "matricula_total": 25607,
+      "tasa_aprobacion": 90.55,
+      "aprobados": 21292,
+      "matricula_total_serie": 23849,
+      "oficial": 21189,
+      "privado": 2660,
+      "ies_con_saber11": 28,
+      "evaluados_saber11": 4586
+    },
+    {
+      "comuna": "50",
+      "tasa_desercion": 2.04,
+      "desertores": 11,
+      "matricula_total": 539,
+      "tasa_aprobacion": 95.17,
+      "aprobados": 453,
+      "matricula_total_serie": 685,
+      "oficial": 685,
+      "privado": 0,
+      "ies_con_saber11": 1,
+      "evaluados_saber11": 125
+    },
+    {
+      "comuna": "6",
+      "tasa_desercion": 3.63,
+      "desertores": 985,
+      "matricula_total": 27163,
+      "tasa_aprobacion": 89.32,
+      "aprobados": 21361,
+      "matricula_total_serie": 24513,
+      "oficial": 21130,
+      "privado": 3383,
+      "ies_con_saber11": 19,
+      "evaluados_saber11": 3557
+    },
+    {
+      "comuna": "60",
+      "tasa_desercion": 3.16,
+      "desertores": 493,
+      "matricula_total": 15625,
+      "tasa_aprobacion": 88.4,
+      "aprobados": 12066,
+      "matricula_total_serie": 17444,
+      "oficial": 15815,
+      "privado": 1629,
+      "ies_con_saber11": 10,
+      "evaluados_saber11": 1808
+    },
+    {
+      "comuna": "7",
+      "tasa_desercion": 3.61,
+      "desertores": 1498,
+      "matricula_total": 41465,
+      "tasa_aprobacion": 90.71,
+      "aprobados": 33389,
+      "matricula_total_serie": 40186,
+      "oficial": 24248,
+      "privado": 15938,
+      "ies_con_saber11": 35,
+      "evaluados_saber11": 6130
+    },
+    {
+      "comuna": "70",
+      "tasa_desercion": 2.92,
+      "desertores": 71,
+      "matricula_total": 2430,
+      "tasa_aprobacion": 90.66,
+      "aprobados": 1942,
+      "matricula_total_serie": 2289,
+      "oficial": 1962,
+      "privado": 327,
+      "ies_con_saber11": 4,
+      "evaluados_saber11": 278
+    },
+    {
+      "comuna": "8",
+      "tasa_desercion": 3.92,
+      "desertores": 1023,
+      "matricula_total": 26107,
+      "tasa_aprobacion": 87.48,
+      "aprobados": 19561,
+      "matricula_total_serie": 23552,
+      "oficial": 22484,
+      "privado": 1068,
+      "ies_con_saber11": 18,
+      "evaluados_saber11": 3037
+    },
+    {
+      "comuna": "80",
+      "tasa_desercion": 3.58,
+      "desertores": 742,
+      "matricula_total": 20749,
+      "tasa_aprobacion": 90.71,
+      "aprobados": 16949,
+      "matricula_total_serie": 18524,
+      "oficial": 12998,
+      "privado": 5526,
+      "ies_con_saber11": 16,
+      "evaluados_saber11": 2877
+    },
+    {
+      "comuna": "9",
+      "tasa_desercion": 2.94,
+      "desertores": 771,
+      "matricula_total": 26247,
+      "tasa_aprobacion": 91.74,
+      "aprobados": 21777,
+      "matricula_total_serie": 23869,
+      "oficial": 17699,
+      "privado": 6170,
+      "ies_con_saber11": 20,
+      "evaluados_saber11": 3866
+    },
+    {
+      "comuna": "90",
+      "tasa_desercion": 0.52,
+      "desertores": 6,
+      "matricula_total": 1148,
+      "tasa_aprobacion": 84.79,
+      "aprobados": 853,
+      "matricula_total_serie": 1564,
+      "oficial": 1564,
+      "privado": 0,
+      "ies_con_saber11": 1,
+      "evaluados_saber11": 175
+    }
+  ]
+}

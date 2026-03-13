@@ -17,6 +17,7 @@ import {
   ChevronRight,
   Menu,
   X,
+  FlaskConical,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -30,6 +31,7 @@ const NAV_ITEMS = [
   { href: "/equidad", label: "Equidad", icon: Heart },
   { href: "/instituciones", label: "Instituciones", icon: School },
   { href: "/contexto", label: "Contexto", icon: BarChart3 },
+  { href: "/analisis", label: "Análisis", icon: FlaskConical },
 ];
 
 export function Sidebar() {
