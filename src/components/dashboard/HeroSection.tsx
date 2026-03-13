@@ -56,9 +56,9 @@ export function HeroSection() {
         >
           Dashboard ejecutivo con datos de cobertura, calidad, permanencia
           y contexto socioeconómico de{" "}
-          <span className="text-foreground font-medium">806 establecimientos educativos</span>{" "}
-          en 16 comunas y 5 corregimientos. 250K+ registros Saber 11,
-          265K+ de matrícula, y 30+ datasets procesados.
+          <span className="text-foreground font-medium">342 instituciones educativas</span>{" "}
+          en 16 comunas y 5 corregimientos. 441K+ registros de matrícula,
+          50K+ evaluados Saber 11, y 30+ datasets procesados.
         </motion.p>
 
         <motion.div
@@ -92,8 +92,8 @@ export function HeroSection() {
         {[
           { label: "Comunas", value: "16" },
           { label: "Corregimientos", value: "5" },
-          { label: "IEs Analizadas", value: "479" },
-          { label: "Registros Saber 11", value: "250K+" },
+          { label: "IEs Analizadas", value: "342" },
+          { label: "Sedes", value: "771" },
           { label: "Datasets", value: "30+" },
           { label: "Años de datos", value: "14" },
         ].map((stat) => (
