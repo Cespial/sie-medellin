@@ -106,6 +106,68 @@
         "evaluados": 657
       }
     ],
+    "por_educacion_padre": [
+      {
+        "nivel": "Postgrado",
+        "promedio": 313.6,
+        "evaluados": 1026
+      },
+      {
+        "nivel": "Educación profesional completa",
+        "promedio": 280.7,
+        "evaluados": 4501
+      },
+      {
+        "nivel": "Educación profesional incompleta",
+        "promedio": 278.1,
+        "evaluados": 934
+      },
+      {
+        "nivel": "Técnica o tecnológica completa",
+        "promedio": 269.2,
+        "evaluados": 3686
+      },
+      {
+        "nivel": "Técnica o tecnológica incompleta",
+        "promedio": 258.7,
+        "evaluados": 1135
+      },
+      {
+        "nivel": "No sabe",
+        "promedio": 252.9,
+        "evaluados": 4655
+      },
+      {
+        "nivel": "Secundaria (Bachillerato) completa",
+        "promedio": 250.4,
+        "evaluados": 12453
+      },
+      {
+        "nivel": "No Aplica",
+        "promedio": 249.6,
+        "evaluados": 1078
+      },
+      {
+        "nivel": "Secundaria (Bachillerato) incompleta",
+        "promedio": 242.7,
+        "evaluados": 7145
+      },
+      {
+        "nivel": "Primaria completa",
+        "promedio": 238.8,
+        "evaluados": 2945
+      },
+      {
+        "nivel": "Primaria incompleta",
+        "promedio": 232.4,
+        "evaluados": 6333
+      },
+      {
+        "nivel": "Ninguno",
+        "promedio": 210.6,
+        "evaluados": 1211
+      }
+    ],
     "por_jornada": [
       {
         "jornada": "COMPLETA",
@@ -228,6 +290,162 @@
         "n_sin": 32
       }
     ],
+    "genero_x_estrato": [
+      {
+        "estrato": "1",
+        "f": 229.5,
+        "n_f": 4712,
+        "m": 241.6,
+        "n_m": 3061
+      },
+      {
+        "estrato": "2",
+        "f": 240.8,
+        "n_f": 10298,
+        "m": 249.6,
+        "n_m": 8339
+      },
+      {
+        "estrato": "3",
+        "f": 256.7,
+        "n_f": 7311,
+        "m": 261.2,
+        "n_m": 6882
+      },
+      {
+        "estrato": "4",
+        "f": 281.1,
+        "n_f": 1724,
+        "m": 272.8,
+        "n_m": 1789
+      },
+      {
+        "estrato": "5",
+        "f": 300.2,
+        "n_f": 856,
+        "m": 287.5,
+        "n_m": 863
+      },
+      {
+        "estrato": "6",
+        "f": 289.3,
+        "n_f": 315,
+        "m": 290.4,
+        "n_m": 256
+      }
+    ],
+    "sector_x_estrato": [
+      {
+        "estrato": "1",
+        "oficial": 238.6,
+        "n_oficial": 5987,
+        "no_oficial": 219.6,
+        "n_no_oficial": 1786
+      },
+      {
+        "estrato": "2",
+        "oficial": 247.9,
+        "n_oficial": 14674,
+        "no_oficial": 232.9,
+        "n_no_oficial": 3963
+      },
+      {
+        "estrato": "3",
+        "oficial": 257.4,
+        "n_oficial": 10003,
+        "no_oficial": 262.5,
+        "n_no_oficial": 4190
+      },
+      {
+        "estrato": "4",
+        "oficial": 257.0,
+        "n_oficial": 1458,
+        "no_oficial": 290.9,
+        "n_no_oficial": 2055
+      },
+      {
+        "estrato": "5",
+        "oficial": 243.1,
+        "n_oficial": 316,
+        "no_oficial": 305.3,
+        "n_no_oficial": 1403
+      },
+      {
+        "estrato": "6",
+        "oficial": 220.1,
+        "n_oficial": 100,
+        "no_oficial": 304.6,
+        "n_no_oficial": 471
+      }
+    ],
+    "materias_x_estrato": [
+      {
+        "estrato": "1",
+        "matematicas": 46.8,
+        "lectura_critica": 50.4,
+        "c_naturales": 45.6,
+        "sociales_ciudadanas": 45.0,
+        "ingles": 45.5
+      },
+      {
+        "estrato": "2",
+        "matematicas": 49.0,
+        "lectura_critica": 52.5,
+        "c_naturales": 47.5,
+        "sociales_ciudadanas": 47.0,
+        "ingles": 48.5
+      },
+      {
+        "estrato": "3",
+        "matematicas": 51.5,
+        "lectura_critica": 55.2,
+        "c_naturales": 50.1,
+        "sociales_ciudadanas": 49.9,
+        "ingles": 53.4
+      },
+      {
+        "estrato": "4",
+        "matematicas": 55.4,
+        "lectura_critica": 58.2,
+        "c_naturales": 53.4,
+        "sociales_ciudadanas": 53.1,
+        "ingles": 59.8
+      },
+      {
+        "estrato": "5",
+        "matematicas": 59.2,
+        "lectura_critica": 60.6,
+        "c_naturales": 56.5,
+        "sociales_ciudadanas": 56.2,
+        "ingles": 66.5
+      },
+      {
+        "estrato": "6",
+        "matematicas": 58.5,
+        "lectura_critica": 59.2,
+        "c_naturales": 55.5,
+        "sociales_ciudadanas": 55.5,
+        "ingles": 67.2
+      }
+    ],
+    "materias_x_genero": [
+      {
+        "genero": "F",
+        "matematicas": 48.7,
+        "lectura_critica": 53.0,
+        "c_naturales": 48.3,
+        "sociales_ciudadanas": 48.7,
+        "ingles": 50.2
+      },
+      {
+        "genero": "M",
+        "matematicas": 52.5,
+        "lectura_critica": 53.6,
+        "c_naturales": 50.6,
+        "sociales_ciudadanas": 50.3,
+        "ingles": 52.7
+      }
+    ],
     "por_bilingue": [
       {
         "tipo": "Bilingüe",
@@ -238,6 +456,101 @@
         "tipo": "No bilingüe",
         "promedio": 252.5,
         "evaluados": 42850
+      }
+    ],
+    "por_computador": [
+      {
+        "tiene": "No",
+        "promedio": 229.1,
+        "evaluados": 11529
+      },
+      {
+        "tiene": "Si",
+        "promedio": 258.1,
+        "evaluados": 36287
+      }
+    ],
+    "por_automovil": [
+      {
+        "tiene": "No",
+        "promedio": 245.0,
+        "evaluados": 35791
+      },
+      {
+        "tiene": "Si",
+        "promedio": 270.1,
+        "evaluados": 11870
+      }
+    ],
+    "por_lavadora": [
+      {
+        "tiene": "No",
+        "promedio": 232.2,
+        "evaluados": 6443
+      },
+      {
+        "tiene": "Si",
+        "promedio": 254.1,
+        "evaluados": 41358
+      }
+    ],
+    "por_personas_hogar": [
+      {
+        "personas": "1 a 2",
+        "promedio": 248.1,
+        "evaluados": 5685
+      },
+      {
+        "personas": "3 a 4",
+        "promedio": 255.8,
+        "evaluados": 27190
+      },
+      {
+        "personas": "5 a 6",
+        "promedio": 246.1,
+        "evaluados": 11743
+      },
+      {
+        "personas": "7 a 8",
+        "promedio": 237.0,
+        "evaluados": 2442
+      },
+      {
+        "personas": "9 o más",
+        "promedio": 222.8,
+        "evaluados": 824
+      }
+    ],
+    "por_cuartos_hogar": [
+      {
+        "cuartos": "Cinco",
+        "promedio": 246.8,
+        "evaluados": 1390
+      },
+      {
+        "cuartos": "Cuatro",
+        "promedio": 248.3,
+        "evaluados": 5569
+      },
+      {
+        "cuartos": "Dos",
+        "promedio": 250.9,
+        "evaluados": 17794
+      },
+      {
+        "cuartos": "Seis o mas",
+        "promedio": 225.1,
+        "evaluados": 608
+      },
+      {
+        "cuartos": "Tres",
+        "promedio": 255.5,
+        "evaluados": 19917
+      },
+      {
+        "cuartos": "Uno",
+        "promedio": 232.1,
+        "evaluados": 2512
       }
     ],
     "total_evaluados": 275000

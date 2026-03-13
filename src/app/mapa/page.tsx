@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function MapaPage() {
   return (
-    <div className="h-screen relative">
+    <div className="h-full relative">
       <MapLoader />
     </div>
   );
