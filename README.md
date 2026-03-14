@@ -7,6 +7,8 @@
 [![Deck.gl](https://img.shields.io/badge/deck.gl-9-00A9E0?logo=data:image/svg+xml;base64,)](https://deck.gl)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
+**Live:** [sie-medellin.vercel.app](https://sie-medellin.vercel.app)
+
 ## Descripción
 
 SIE Medellín es una plataforma de datos abiertos educativos que integra múltiples fuentes oficiales (MeData, datos.gov.co/SIMAT, ICFES Saber 11, DANE) para ofrecer una visión integral del sistema educativo de Medellín.
