@@ -2,10 +2,34 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useFetchData } from "@/hooks/useFetchData";
+
+interface HeroKPIData {
+  totalIEs: number;
+  totalSedes: number;
+  totalMatriculados: number;
+  totalEvaluados: number;
+  fuentes: Record<string, string>;
+  ultimaActualizacion: string;
+}
 
 export function HeroSection() {
+  const { data: kpis, loading } = useFetchData<HeroKPIData>("/data/kpis.json");
+
+  const totalIEs = kpis?.totalIEs?.toLocaleString("es-CO") ?? "—";
+  const totalSedes = kpis?.totalSedes?.toLocaleString("es-CO") ?? "—";
+  const totalMatriculados = kpis?.totalMatriculados
+    ? `${Math.floor(kpis.totalMatriculados / 1000)}K+`
+    : "—";
+  const totalEvaluados = kpis?.totalEvaluados
+    ? `${Math.floor(kpis.totalEvaluados / 1000)}K+`
+    : "—";
+  const totalDatasets = kpis?.fuentes
+    ? `${Object.keys(kpis.fuentes).length}+`
+    : "—";
+
   return (
-    <section className="relative overflow-hidden px-6 py-12 md:py-16">
+    <section className={`relative overflow-hidden px-6 py-12 md:py-16 transition-opacity duration-300 ${loading ? "opacity-60" : "opacity-100"}`}>
       {/* Background gradient */}
       <div
         className="absolute inset-0 -z-10"
@@ -56,10 +80,10 @@ export function HeroSection() {
         >
           Dashboard ejecutivo con datos de cobertura, calidad, permanencia
           y contexto socioeconómico de{" "}
-          <span className="text-foreground font-medium">342 instituciones educativas</span>{" "}
-          en 16 comunas y 5 corregimientos. 441K+ registros de matrícula,
-          50K+ evaluados Saber 11, 243K+ en educación superior,
-          y 34+ datasets procesados.
+          <span className="text-foreground font-medium">{totalIEs} instituciones educativas</span>{" "}
+          en 16 comunas y 5 corregimientos. {totalMatriculados} registros de matrícula,
+          {` ${totalEvaluados}`} evaluados Saber 11,
+          y {totalDatasets} datasets procesados.
         </motion.p>
 
         <motion.div
@@ -93,11 +117,11 @@ export function HeroSection() {
         {[
           { label: "Comunas", value: "16" },
           { label: "Corregimientos", value: "5" },
-          { label: "IEs Analizadas", value: "342" },
-          { label: "Sedes", value: "771" },
-          { label: "Ed. Superior", value: "243K+" },
-          { label: "Datasets", value: "34+" },
-          { label: "Años de datos", value: "14" },
+          { label: "IEs Analizadas", value: totalIEs },
+          { label: "Sedes", value: totalSedes },
+          { label: "Matriculados", value: totalMatriculados },
+          { label: "Evaluados Saber 11", value: totalEvaluados },
+          { label: "Datasets", value: totalDatasets },
         ].map((stat) => (
           <div key={stat.label}>
             <p className="font-[var(--font-jetbrains)] text-2xl font-bold text-accent">

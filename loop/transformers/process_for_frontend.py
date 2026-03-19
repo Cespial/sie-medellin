@@ -4,9 +4,11 @@ Genera:
 - public/data/kpis.json — KPIs ejecutivos del dashboard
 - public/data/saber11_por_ie.json — Promedios Saber 11 por institución
 - public/data/sedes_resumen.json — Resumen de sedes con matrícula
-- public/data/estadisticas_historicas.json — Series temporales
+- public/data/estadisticas_historicas.json — Series temporales (Antioquia departamental)
+- public/data/estadisticas_medellin.json — Series temporales Medellín ETC (sras-4t5p)
 """
 import json
+from datetime import date
 from pathlib import Path
 from collections import defaultdict
 
@@ -18,15 +20,31 @@ PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
 def process_saber11():
     """Procesa Saber 11 microdatos -> promedios por IE y KPIs."""
     print("📊 Procesando Saber 11...")
-    filepath = RAW_DIR / "saber11_medellin.json"
-    if not filepath.exists():
+
+    # Load ALL saber11 batch files
+    batch_files = sorted(RAW_DIR.glob("saber11_medellin*.json"))
+    if not batch_files:
         print("  ⚠️ No hay datos Saber 11")
         return
 
-    with open(filepath, "r") as f:
-        records = json.load(f)
+    all_records = []
+    for bf in batch_files:
+        with open(bf, "r") as f:
+            data = json.load(f)
+        print(f"  Loaded {bf.name}: {len(data)} registros")
+        all_records.extend(data)
 
-    print(f"  {len(records)} registros cargados")
+    print(f"  Total registros cargados: {len(all_records)}")
+
+    # Identify all periods and select the latest one
+    all_periods = sorted(set(r.get("periodo", "") for r in all_records if r.get("periodo")))
+    latest_period = all_periods[-1] if all_periods else ""
+    print(f"  Periodos encontrados: {all_periods}")
+    print(f"  Periodo más reciente (seleccionado): {latest_period}")
+
+    # Filter to latest period only for KPIs and rankings
+    records = [r for r in all_records if r.get("periodo") == latest_period]
+    print(f"  Registros del periodo {latest_period}: {len(records)} de {len(all_records)} totales")
 
     # Aggregate by institution
     ie_data = defaultdict(lambda: {
@@ -235,13 +253,114 @@ def process_estadisticas():
     return series
 
 
+def _parse_numeric(value) -> float | None:
+    """Parse a numeric value, removing commas from strings like '379,616'."""
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        cleaned = value.replace(",", "").strip()
+        if not cleaned:
+            return None
+        try:
+            return float(cleaned)
+        except ValueError:
+            return None
+    return None
+
+
+# Fields expected per year in estadisticas_medellin.json
+_ESTADISTICAS_FIELDS = [
+    "poblacion_5_16",
+    "cobertura_neta", "cobertura_bruta",
+    "cobertura_neta_transicion", "cobertura_neta_primaria",
+    "cobertura_neta_secundaria", "cobertura_neta_media",
+    "cobertura_bruta_transicion", "cobertura_bruta_primaria",
+    "cobertura_bruta_secundaria", "cobertura_bruta_media",
+    "desercion", "desercion_transicion", "desercion_primaria",
+    "desercion_secundaria", "desercion_media",
+    "aprobacion", "aprobacion_primaria",
+    "aprobacion_secundaria", "aprobacion_media",
+    "reprobacion", "repitencia",
+    "tamano_promedio_grupo", "sedes_conectadas_a_internet",
+]
+
+
+def process_estadisticas_medellin() -> list[dict] | None:
+    """Procesa estadísticas ETC Medellín (sras-4t5p) -> public/data/estadisticas_medellin.json."""
+    print("\n📊 Procesando Estadísticas ETC Medellín...")
+    filepath = RAW_DIR / "estadisticas_etc_medellin.json"
+    if not filepath.exists():
+        print("  ⚠️ No hay datos de estadísticas ETC Medellín")
+        return None
+
+    with open(filepath, "r") as f:
+        records = json.load(f)
+
+    print(f"  {len(records)} registros crudos")
+
+    # Sort by year ascending
+    records.sort(key=lambda x: str(x.get("anio", x.get("ano", ""))))
+
+    series = []
+    for r in records:
+        anio = str(r.get("anio", r.get("ano", "")))
+        if not anio:
+            continue
+
+        entry: dict = {"anio": anio}
+        for field in _ESTADISTICAS_FIELDS:
+            val = _parse_numeric(r.get(field))
+            if val is not None:
+                # poblacion_5_16 is an integer count, keep as int
+                if field == "poblacion_5_16":
+                    entry[field] = int(val)
+                else:
+                    entry[field] = round(val, 2)
+            else:
+                entry[field] = None
+        series.append(entry)
+
+    output = PUBLIC_DATA / "estadisticas_medellin.json"
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump(series, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ {output.name}: {len(series)} años")
+
+    # Verify critical fixes
+    for entry in series:
+        if entry["anio"] == "2021":
+            print(f"  [CHECK] 2021 poblacion_5_16 = {entry['poblacion_5_16']} (should be ~379616)")
+        if entry["anio"] == "2014":
+            print(f"  [CHECK] 2014 cobertura_neta = {entry['cobertura_neta']} (should be ~105.73)")
+
+    return series
+
+
 def generate_kpis(saber_kpis: dict | None, sedes_resumen: dict | None, estadisticas: list | None):
-    """Genera KPIs ejecutivos consolidados."""
+    """Genera KPIs ejecutivos consolidados.
+
+    Uses Medellín ETC data (estadisticas_medellin.json) for education KPIs
+    instead of Antioquia departmental data.
+    """
     print("\n📊 Generando KPIs ejecutivos...")
 
-    latest_stats = {}
-    if estadisticas:
-        latest_stats = estadisticas[-1]  # Most recent year
+    # Read Medellín ETC stats for KPIs (preferred over departmental data)
+    med_stats_path = PUBLIC_DATA / "estadisticas_medellin.json"
+    latest_med = {}
+    if med_stats_path.exists():
+        with open(med_stats_path, "r") as f:
+            med_series = json.load(f)
+        if med_series:
+            latest_med = med_series[-1]  # Most recent year
+            print(f"  Usando Medellín ETC año {latest_med.get('anio')} para KPIs")
+    else:
+        # Fallback to departmental data
+        if estadisticas:
+            latest_med = estadisticas[-1]
+            print(f"  Fallback: usando datos departamentales para KPIs")
+
+    anio_fuente = latest_med.get("anio", "?")
 
     kpis = {
         "totalMatriculados": sedes_resumen.get("totalMatricula", 0) if sedes_resumen else 0,
@@ -249,20 +368,35 @@ def generate_kpis(saber_kpis: dict | None, sedes_resumen: dict | None, estadisti
         "promedioSaber11": saber_kpis.get("promedio_saber11", 0) if saber_kpis else 0,
         "totalEvaluados": saber_kpis.get("total_evaluados", 0) if saber_kpis else 0,
         "totalIEs": saber_kpis.get("total_ies_con_datos", 0) if saber_kpis else 0,
-        "coberturaNeta": latest_stats.get("cobertura_neta"),
-        "coberturaBruta": latest_stats.get("cobertura_bruta"),
-        "tasaDesercion": latest_stats.get("desercion"),
-        "tasaAprobacion": latest_stats.get("aprobacion"),
-        "sedesConInternet": latest_stats.get("sedes_conectadas_a_internet"),
+        "coberturaNeta": {
+            "valor": latest_med.get("cobertura_neta", 0),
+            "fuente": f"datos.gov.co/sras-4t5p (Medellín ETC {anio_fuente})",
+            "tendencia": "estable",
+        },
+        "coberturaBruta": latest_med.get("cobertura_bruta"),
+        "desercion": {
+            "valor": latest_med.get("desercion", 0),
+            "fuente": f"datos.gov.co/sras-4t5p (Medellín ETC {anio_fuente})",
+            "tendencia": "baja",
+        },
+        "aprobacion": {
+            "valor": latest_med.get("aprobacion", 0),
+            "fuente": f"datos.gov.co/sras-4t5p (Medellín ETC {anio_fuente})",
+            "tendencia": "alza",
+        },
+        "reprobacion": latest_med.get("reprobacion"),
+        "repitencia": latest_med.get("repitencia"),
+        "sedesConInternet": latest_med.get("sedes_conectadas_a_internet"),
         "zonas": sedes_resumen.get("zonas", {}) if sedes_resumen else {},
         "sectores": sedes_resumen.get("sectores", {}) if sedes_resumen else {},
         "fuentes": {
             "saber11": "datos.gov.co/kgxf-xxbe",
             "sedes": "datos.gov.co/x5ay-984n",
-            "estadisticas": "datos.gov.co/ji8i-4anb",
+            "estadisticas_medellin": "datos.gov.co/sras-4t5p",
+            "estadisticas_departamental": "datos.gov.co/ji8i-4anb",
             "geo": "OpenStreetMap Overpass API",
         },
-        "ultimaActualizacion": "2026-03-10",
+        "ultimaActualizacion": str(date.today()),
     }
 
     output = PUBLIC_DATA / "kpis.json"
@@ -285,6 +419,7 @@ def run():
     saber_kpis = process_saber11()
     sedes_resumen = process_sedes()
     estadisticas = process_estadisticas()
+    process_estadisticas_medellin()
     generate_kpis(saber_kpis, sedes_resumen, estadisticas)
 
     print(f"\n✅ Transformación completa")

@@ -38,6 +38,8 @@ interface KPIData {
   tasaAprobacion: number | null;
   desercion?: { valor: number };
   aprobacion?: { valor: number };
+  fuentes?: Record<string, string>;
+  ultimaActualizacion?: string;
 }
 
 interface ComunaData {
@@ -338,7 +340,7 @@ export function ExecutiveDashboard() {
               Dashboard Ejecutivo
             </h1>
             <p className="text-sm text-muted mt-1">
-              Medellín — 342 IEs · 16 comunas · 5 corregimientos ·{" "}
+              Medellín — {kpis.totalIEs ?? "—"} IEs · 16 comunas · 5 corregimientos ·{" "}
               {kpis.totalMatriculados.toLocaleString("es-CO")} matriculados
             </p>
           </div>
@@ -421,7 +423,7 @@ export function ExecutiveDashboard() {
         />
         <KPICard
           label="IEs Analizadas"
-          value={kpis.totalIEs?.toString() || "342"}
+          value={kpis.totalIEs?.toString() || "\u2014"}
           unit="instituciones educativas"
           icon={BarChart3}
           color="accent"
@@ -429,7 +431,7 @@ export function ExecutiveDashboard() {
         />
         <KPICard
           label="Datasets"
-          value="34+"
+          value={`${Object.keys(kpis.fuentes || {}).length}+`}
           unit="fuentes de datos integradas"
           icon={FlaskConical}
           color="secondary"
@@ -818,7 +820,7 @@ export function ExecutiveDashboard() {
       <div className="text-center pt-4 pb-8">
         <p className="text-[10px] text-muted">
           Datos: datos.gov.co · MEData · ICFES · MEN ·
-          Secretaría de Educación de Medellín | Actualizado 2024
+          Secretaría de Educación de Medellín | Actualizado {kpis.ultimaActualizacion || "\u2014"}
         </p>
       </div>
     </div>

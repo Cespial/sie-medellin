@@ -24,15 +24,17 @@ fuentes:
     base_url: "https://www.datos.gov.co/resource"
     frecuencia: "mensual"
     datasets:
-      - id: "nudc-hpkp"
-        nombre: "SIMAT Matrícula"
-        tabla_destino: "fact_matricula"
-      - id: "kgpf-yjmc"
-        nombre: "Saber 11 Resultados"
+      # SIMAT matrícula: no Socrata ID — sourced from MEData CSV exports
+      - id: "kgxf-xxbe"
+        nombre: "Saber 11 Microdatos"
         tabla_destino: "fact_calidad"
-      - id: "cqnp-pnnh"
+      - id: "emd6-ef7x"
         nombre: "Directorio Establecimientos"
         tabla_destino: "dim_instituciones"
+      - id: "sras-4t5p"
+        nombre: "Estadísticas Educativas por ETC"
+        tabla_destino: "fact_estadisticas_etc"
+        filtro: "nombre_etc='Medellín'"
 
   icfes:
     activa: true

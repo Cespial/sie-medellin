@@ -211,6 +211,19 @@ def download_estadisticas_municipio():
     return []
 
 
+def download_estadisticas_etc():
+    """Estadísticas educativas por ETC — Medellín (sras-4t5p)"""
+    print("\n📊 [6/10] Estadísticas ETC Medellín...")
+    data = fetch_paginated(
+        "sras-4t5p",
+        where_clause="nombre_etc='Medellín'",
+        order="ano DESC",
+    )
+    if data:
+        save_json(data, "estadisticas_etc_medellin.json")
+    return data
+
+
 def download_bachilleres():
     """Bachilleres (graduados grado 11 y 26) — Medellín (5c2k-ahfc)"""
     print("\n📊 [6/9] Bachilleres...")
@@ -274,6 +287,7 @@ def run_all():
         ("Directorio IEs", download_directorio_ie),
         ("Estadísticas MEN", download_estadisticas_men),
         ("Estadísticas Municipio", download_estadisticas_municipio),
+        ("Estadísticas ETC Medellín", download_estadisticas_etc),
         ("Bachilleres", download_bachilleres),
         ("Educación Superior", download_educacion_superior),
         ("Paridad de Género", download_paridad_genero),

@@ -2,18 +2,27 @@
   "totalMatriculados": 441926,
   "totalSedes": 771,
   "promedioSaber11": 250.5,
-  "totalEvaluados": 50000,
-  "totalIEs": 342,
+  "totalEvaluados": 50281,
+  "totalIEs": 350,
   "coberturaNeta": {
     "valor": 93.58,
-    "unidad": "%",
-    "tendencia": "estable",
-    "fuente": "datos.gov.co (Medellín ETC 2024)"
+    "fuente": "datos.gov.co/sras-4t5p (Medellín ETC 2024)",
+    "tendencia": "estable"
   },
-  "coberturaBruta": 99.99,
-  "tasaDesercion": 3.78,
-  "tasaAprobacion": 88.95,
-  "sedesConInternet": 0.0,
+  "coberturaBruta": 104.12,
+  "desercion": {
+    "valor": 3.18,
+    "fuente": "datos.gov.co/sras-4t5p (Medellín ETC 2024)",
+    "tendencia": "baja"
+  },
+  "aprobacion": {
+    "valor": 88.74,
+    "fuente": "datos.gov.co/sras-4t5p (Medellín ETC 2024)",
+    "tendencia": "alza"
+  },
+  "reprobacion": 8.08,
+  "repitencia": 9.08,
+  "sedesConInternet": null,
   "zonas": {
     "URBANA": 716,
     "RURAL": 55
@@ -25,20 +34,9 @@
   "fuentes": {
     "saber11": "datos.gov.co/kgxf-xxbe",
     "sedes": "datos.gov.co/x5ay-984n",
-    "estadisticas": "datos.gov.co/ji8i-4anb",
+    "estadisticas_medellin": "datos.gov.co/sras-4t5p",
+    "estadisticas_departamental": "datos.gov.co/ji8i-4anb",
     "geo": "OpenStreetMap Overpass API"
   },
-  "ultimaActualizacion": "2026-03-10",
-  "desercion": {
-    "valor": 3.18,
-    "unidad": "%",
-    "tendencia": "baja",
-    "fuente": "datos.gov.co (Medellín ETC 2024)"
-  },
-  "aprobacion": {
-    "valor": 88.74,
-    "unidad": "%",
-    "tendencia": "alza",
-    "fuente": "datos.gov.co (Medellín ETC 2024)"
-  }
+  "ultimaActualizacion": "2026-03-19"
 }
