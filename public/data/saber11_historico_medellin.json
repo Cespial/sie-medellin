@@ -256,5 +256,197 @@
         "puntaje": 344.0
       }
     ]
+  },
+  {
+    "periodo": "20191",
+    "promedioCiudad": 334.2,
+    "totalIEs": 10,
+    "top5": [
+      {
+        "nombre": "col montessori",
+        "comuna": "rural",
+        "puntaje": 361.1
+      },
+      {
+        "nombre": "colegio gimnasio vermont",
+        "comuna": "rural",
+        "puntaje": 356.3
+      },
+      {
+        "nombre": "corporacion colegio cumbres",
+        "comuna": "urbano",
+        "puntaje": 351.2
+      },
+      {
+        "nombre": "col marymount",
+        "comuna": "urbano",
+        "puntaje": 338.3
+      },
+      {
+        "nombre": "colegio sagrado corazon montemayor",
+        "comuna": "urbano",
+        "puntaje": 336.1
+      }
+    ]
+  },
+  {
+    "periodo": "20194",
+    "promedioCiudad": 254.2,
+    "totalIEs": 412,
+    "top5": [
+      {
+        "nombre": "col la salle",
+        "comuna": "urbano",
+        "puntaje": 366.5
+      },
+      {
+        "nombre": "i. e. la paz",
+        "comuna": "",
+        "puntaje": 363.0
+      },
+      {
+        "nombre": "col parroquial san francisco de asis",
+        "comuna": "urbano",
+        "puntaje": 359.3
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "urbano",
+        "puntaje": 351.0
+      },
+      {
+        "nombre": "institucion educativa colegio el carpinelo",
+        "comuna": "",
+        "puntaje": 344.0
+      }
+    ]
+  },
+  {
+    "periodo": "20201",
+    "promedioCiudad": 258.0,
+    "totalIEs": 31,
+    "top5": [
+      {
+        "nombre": "colegio leonardo da vinci",
+        "comuna": "urbano",
+        "puntaje": 366.2
+      },
+      {
+        "nombre": "col fontan",
+        "comuna": "urbano",
+        "puntaje": 363.0
+      },
+      {
+        "nombre": "col gimn los pinares",
+        "comuna": "urbano",
+        "puntaje": 337.5
+      },
+      {
+        "nombre": "col montessori",
+        "comuna": "rural",
+        "puntaje": 335.8
+      },
+      {
+        "nombre": "aspaen - gimnasio los alcazares",
+        "comuna": "urbano",
+        "puntaje": 332.6
+      }
+    ]
+  },
+  {
+    "periodo": "20211",
+    "promedioCiudad": 299.6,
+    "totalIEs": 27,
+    "top5": [
+      {
+        "nombre": "colombo britanico",
+        "comuna": "",
+        "puntaje": 352.0
+      },
+      {
+        "nombre": "colegio leonardo da vinci",
+        "comuna": "urbano",
+        "puntaje": 351.3
+      },
+      {
+        "nombre": "col montessori",
+        "comuna": "rural",
+        "puntaje": 346.9
+      },
+      {
+        "nombre": "col fontan",
+        "comuna": "urbano",
+        "puntaje": 344.4
+      },
+      {
+        "nombre": "colegio gimnasio vermont",
+        "comuna": "rural",
+        "puntaje": 338.4
+      }
+    ]
+  },
+  {
+    "periodo": "20221",
+    "promedioCiudad": 300.8,
+    "totalIEs": 8,
+    "top5": [
+      {
+        "nombre": "corporacion colegio cumbres",
+        "comuna": "urbano",
+        "puntaje": 365.5
+      },
+      {
+        "nombre": "colegio canadiense",
+        "comuna": "rural",
+        "puntaje": 344.0
+      },
+      {
+        "nombre": "col montessori",
+        "comuna": "rural",
+        "puntaje": 337.0
+      },
+      {
+        "nombre": "col marymount",
+        "comuna": "urbano",
+        "puntaje": 321.0
+      },
+      {
+        "nombre": "colegio pinares altoverde",
+        "comuna": "urbano",
+        "puntaje": 316.0
+      }
+    ]
+  },
+  {
+    "periodo": "20224",
+    "promedioCiudad": 256.3,
+    "totalIEs": 350,
+    "top5": [
+      {
+        "nombre": "colegio san jose de las vegas",
+        "comuna": "rural",
+        "puntaje": 389.0
+      },
+      {
+        "nombre": "colegio alcaravanes",
+        "comuna": "rural",
+        "puntaje": 357.0
+      },
+      {
+        "nombre": "col corazonista",
+        "comuna": "urbano",
+        "puntaje": 349.3
+      },
+      {
+        "nombre": "comunidad colegio jesus maria",
+        "comuna": "urbano",
+        "puntaje": 344.4
+      },
+      {
+        "nombre": "col san ignacio de loyola",
+        "comuna": "urbano",
+        "puntaje": 342.8
+      }
+    ]
   }
 ]

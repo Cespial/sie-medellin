@@ -322,6 +322,18 @@ def process_estadisticas_medellin() -> list[dict] | None:
                 entry[field] = None
         series.append(entry)
 
+    # Post-process: sanitize corrupted / missing values
+    for entry in series:
+        # tamano_promedio_grupo: values > 100 are corrupted at source (e.g. 31851, 33967);
+        # values == 0 mean data not reported, not a real zero
+        tpg = entry.get("tamano_promedio_grupo")
+        if tpg is not None and (tpg > 100 or tpg == 0):
+            entry["tamano_promedio_grupo"] = None
+        # sedes_conectadas_a_internet: 0 means data not reported
+        sci = entry.get("sedes_conectadas_a_internet")
+        if sci is not None and sci == 0:
+            entry["sedes_conectadas_a_internet"] = None
+
     output = PUBLIC_DATA / "estadisticas_medellin.json"
     with open(output, "w", encoding="utf-8") as f:
         json.dump(series, f, ensure_ascii=False, indent=2)
@@ -399,14 +411,70 @@ def generate_kpis(saber_kpis: dict | None, sedes_resumen: dict | None, estadisti
         "ultimaActualizacion": str(date.today()),
     }
 
+    # --- Data freshness metadata ---
+    # Compute ultimo_anio / ultimo_periodo from actual data where possible
+    frescura = {}
+
+    # estadisticas_etc (Medellín ETC — sras-4t5p)
+    etc_ultimo = anio_fuente
+    if med_stats_path.exists():
+        with open(med_stats_path, "r") as f:
+            _ms = json.load(f)
+        if _ms:
+            etc_ultimo = _ms[-1].get("anio", anio_fuente)
+    frescura["estadisticas_etc"] = {"fuente": "sras-4t5p", "ultimo_anio": str(etc_ultimo)}
+
+    # saber11 — derive ultimo_periodo from raw batch files
+    saber_batch_files = sorted(RAW_DIR.glob("saber11_medellin*.json"))
+    saber_periods: set[str] = set()
+    for bf in saber_batch_files:
+        with open(bf, "r") as f:
+            _sb = json.load(f)
+        for r in _sb:
+            p = r.get("periodo", "")
+            if p:
+                saber_periods.add(p)
+    saber_ultimo = sorted(saber_periods)[-1] if saber_periods else "?"
+    frescura["saber11"] = {"fuente": "kgxf-xxbe", "ultimo_periodo": saber_ultimo}
+
+    # sedes — derive ultimo_anio from raw file
+    sedes_path = RAW_DIR / "sedes_educativas_medellin.json"
+    sedes_ultimo = "?"
+    if sedes_path.exists():
+        with open(sedes_path, "r") as f:
+            _sd = json.load(f)
+        sedes_years = sorted(set(r.get("a_o", "") for r in _sd if r.get("a_o")))
+        if sedes_years:
+            sedes_ultimo = sedes_years[-1]
+    frescura["sedes"] = {"fuente": "x5ay-984n", "ultimo_anio": str(sedes_ultimo)}
+
+    # matricula MEData — derive from CSV if available
+    medata_csv = RAW_DIR / "medata_matricula.csv"
+    medata_ultimo = "?"
+    if medata_csv.exists():
+        import csv
+        with open(medata_csv, "r") as f:
+            reader = csv.DictReader(f)
+            medata_years: set[str] = set()
+            for row in reader:
+                y = row.get("anio", "")
+                if y and y.isdigit() and int(y) > 2000:
+                    medata_years.add(y)
+        if medata_years:
+            medata_ultimo = sorted(medata_years)[-1]
+    frescura["matricula_medata"] = {"fuente": "MEData CSV", "ultimo_anio": str(medata_ultimo)}
+
+    kpis["frescura"] = frescura
+
     output = PUBLIC_DATA / "kpis.json"
     with open(output, "w", encoding="utf-8") as f:
         json.dump(kpis, f, ensure_ascii=False, indent=2)
     print(f"  ✅ {output.name}")
 
     for key, val in kpis.items():
-        if key not in ("fuentes", "zonas", "sectores"):
+        if key not in ("fuentes", "zonas", "sectores", "frescura"):
             print(f"  {key}: {val}")
+    print(f"  frescura: {json.dumps(kpis['frescura'], ensure_ascii=False)}")
 
     return kpis
 

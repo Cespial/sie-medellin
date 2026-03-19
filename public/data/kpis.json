@@ -38,5 +38,23 @@
     "estadisticas_departamental": "datos.gov.co/ji8i-4anb",
     "geo": "OpenStreetMap Overpass API"
   },
-  "ultimaActualizacion": "2026-03-19"
+  "ultimaActualizacion": "2026-03-19",
+  "frescura": {
+    "estadisticas_etc": {
+      "fuente": "sras-4t5p",
+      "ultimo_anio": "2024"
+    },
+    "saber11": {
+      "fuente": "kgxf-xxbe",
+      "ultimo_periodo": "20224"
+    },
+    "sedes": {
+      "fuente": "x5ay-984n",
+      "ultimo_anio": "2019"
+    },
+    "matricula_medata": {
+      "fuente": "MEData CSV",
+      "ultimo_anio": "2019"
+    }
+  }
 }

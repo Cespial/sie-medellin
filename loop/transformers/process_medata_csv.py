@@ -148,36 +148,116 @@ def process_desercion():
     print(f"  ✅ {output.name} ({len(city_series)} años, {len(comuna_data)} comunas)")
 
 
+def _load_microdatos_saber11(covered_periods: set) -> dict:
+    """Load Saber 11 microdatos batches and aggregate periods NOT in covered_periods.
+
+    Reads only the fields needed (periodo, punt_global, cole_nombre_establecimiento,
+    cole_area_ubicacion) to keep memory usage low.
+
+    Returns dict keyed by period with same structure as by_period in process_saber11_historico.
+    """
+    import glob as glob_mod
+
+    batch_files = sorted(glob_mod.glob(str(RAW_DIR / "saber11_medellin*.json")))
+    if not batch_files:
+        return {}
+
+    # Aggregate per-IE averages by period (IE = cole_nombre_establecimiento)
+    # ie_data[period][ie_name] = {"total_score": float, "count": int, "area": str}
+    ie_data: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"total_score": 0.0, "count": 0, "area": ""}))
+    records_loaded = 0
+
+    for fpath in batch_files:
+        print(f"    Loading {Path(fpath).name}...")
+        with open(fpath, "r", encoding="utf-8") as f:
+            batch = json.load(f)
+        for r in batch:
+            periodo = r.get("periodo", "")
+            if periodo in covered_periods:
+                continue  # MEData CSV already covers this period
+            pg = r.get("punt_global")
+            if pg is None:
+                continue
+            try:
+                score = float(pg)
+            except (ValueError, TypeError):
+                continue
+            if score <= 0:
+                continue
+            ie_name = r.get("cole_nombre_establecimiento", "").strip()
+            area = r.get("cole_area_ubicacion", "")
+            ie_data[periodo][ie_name]["total_score"] += score
+            ie_data[periodo][ie_name]["count"] += 1
+            if area and not ie_data[periodo][ie_name]["area"]:
+                ie_data[periodo][ie_name]["area"] = area
+            records_loaded += 1
+        del batch  # free memory
+
+    print(f"    Microdatos: {records_loaded} registros en {len(ie_data)} períodos nuevos")
+
+    # Build by_period structure: compute per-IE average, then city average from IE averages
+    by_period = {}
+    for periodo, ies in ie_data.items():
+        ie_avgs = []
+        for ie_name, d in ies.items():
+            avg = d["total_score"] / d["count"]
+            ie_avgs.append({
+                "nombre": ie_name.lower(),
+                "comuna": d["area"].lower() if d["area"] else "",
+                "puntaje": round(avg, 1),
+            })
+        # City average = mean of IE averages (consistent with MEData CSV which has per-IE scores)
+        city_avg = sum(ie["puntaje"] for ie in ie_avgs) / len(ie_avgs) if ie_avgs else 0
+        by_period[periodo] = {
+            "promedioCiudad": round(city_avg, 1),
+            "totalIEs": len(ie_avgs),
+            "top5": sorted(ie_avgs, key=lambda x: x["puntaje"], reverse=True)[:5],
+        }
+
+    return by_period
+
+
 def process_saber11_historico():
-    """Procesa Saber 11 histórico por IE."""
+    """Procesa Saber 11 histórico por IE.
+
+    Uses MEData CSV as the primary source (has per-IE data with institution names
+    and comunas). Extends with Saber 11 microdatos batches for periods not covered
+    by the CSV (e.g. 20191-20224).
+    """
     print("\n📊 Saber 11 Histórico por IE...")
     rows = read_csv("medata_saber11_historico.csv")
-    if not rows:
-        return
 
-    print(f"  {len(rows)} registros")
-
-    # Get unique periods and city averages
+    # --- Phase 1: MEData CSV (per-IE data with comunas) ---
     by_period = defaultdict(lambda: {"total_score": 0, "count": 0, "ies": []})
 
-    for r in rows:
-        period = r.get("año_semestre", "")
-        try:
-            score = float(r.get("puntaje_global", 0))
-        except (ValueError, TypeError):
-            continue
+    if rows:
+        print(f"  MEData CSV: {len(rows)} registros")
+        for r in rows:
+            period = r.get("año_semestre", "")
+            try:
+                score = float(r.get("puntaje_global", 0))
+            except (ValueError, TypeError):
+                continue
 
-        if score > 0:
-            by_period[period]["total_score"] += score
-            by_period[period]["count"] += 1
-            by_period[period]["ies"].append({
-                "nombre": r.get("establecimiento", ""),
-                "comuna": r.get("comuna", ""),
-                "puntaje": score,
-            })
+            if score > 0:
+                by_period[period]["total_score"] += score
+                by_period[period]["count"] += 1
+                by_period[period]["ies"].append({
+                    "nombre": r.get("establecimiento", ""),
+                    "comuna": r.get("comuna", ""),
+                    "puntaje": score,
+                })
 
-    # Series temporal
+    csv_periods = set(by_period.keys())
+    print(f"  MEData CSV períodos: {sorted(csv_periods)}")
+
+    # --- Phase 2: Microdatos for periods NOT in MEData CSV ---
+    micro_periods = _load_microdatos_saber11(csv_periods)
+
+    # --- Phase 3: Build unified series ---
     series = []
+
+    # Add CSV-based periods
     for period in sorted(by_period.keys()):
         d = by_period[period]
         avg = d["total_score"] / d["count"] if d["count"] > 0 else 0
@@ -189,10 +269,23 @@ def process_saber11_historico():
             "top5": top,
         })
 
+    # Add microdatos-based periods
+    for period in sorted(micro_periods.keys()):
+        d = micro_periods[period]
+        series.append({
+            "periodo": str(period),
+            "promedioCiudad": d["promedioCiudad"],
+            "totalIEs": d["totalIEs"],
+            "top5": d["top5"],
+        })
+
+    # Sort all periods together
+    series.sort(key=lambda x: x["periodo"])
+
     output = PUBLIC_DATA / "saber11_historico_medellin.json"
     with open(output, "w", encoding="utf-8") as f:
         json.dump(series, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ {output.name} ({len(series)} períodos)")
+    print(f"  ✅ {output.name} ({len(series)} períodos, CSV={len(csv_periods)}, microdatos={len(micro_periods)})")
 
 
 def process_isce():

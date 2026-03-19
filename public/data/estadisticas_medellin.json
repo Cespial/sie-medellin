@@ -158,7 +158,7 @@
     "aprobacion_media": 88.94,
     "reprobacion": 11.02,
     "repitencia": 3.3,
-    "tamano_promedio_grupo": 31851.0,
+    "tamano_promedio_grupo": null,
     "sedes_conectadas_a_internet": 96.59
   },
   {
@@ -185,7 +185,7 @@
     "aprobacion_media": 89.63,
     "reprobacion": 11.23,
     "repitencia": 10.16,
-    "tamano_promedio_grupo": 33967.0,
+    "tamano_promedio_grupo": null,
     "sedes_conectadas_a_internet": 98.33
   },
   {
