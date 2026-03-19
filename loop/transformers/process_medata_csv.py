@@ -21,6 +21,47 @@ def read_csv(filename: str) -> list[dict]:
         return list(reader)
 
 
+def _load_etc_desercion_series() -> list[dict]:
+    """Load multi-year city-level deserción from estadisticas_etc_medellin.json (MEN data)."""
+    filepath = RAW_DIR / "estadisticas_etc_medellin.json"
+    if not filepath.exists():
+        return []
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            records = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+    if not isinstance(records, list):
+        return []
+
+    series = []
+    for r in records:
+        ano = r.get("ano", "")
+        tasa = r.get("desercion")
+        if not ano or tasa is None:
+            continue
+        try:
+            tasa_f = round(float(tasa), 2)
+        except (ValueError, TypeError):
+            continue
+        entry = {"anio": str(ano), "tasaDesercion": tasa_f}
+        # Include sub-level rates when available
+        for src, dst in [
+            ("desercion_transicion", "tasaTransicion"),
+            ("desercion_primaria", "tasaPrimaria"),
+            ("desercion_secundaria", "tasaSecundaria"),
+            ("desercion_media", "tasaMedia"),
+        ]:
+            try:
+                entry[dst] = round(float(r[src]), 2)
+            except (KeyError, ValueError, TypeError):
+                pass
+        series.append(entry)
+
+    series.sort(key=lambda x: x["anio"])
+    return series
+
+
 def process_desercion():
     """Procesa deserción por comuna y genera series temporales."""
     print("📊 Deserción por comuna y año...")
@@ -30,7 +71,7 @@ def process_desercion():
 
     print(f"  {len(rows)} registros")
 
-    # Aggregate by year and comuna
+    # Aggregate by year and comuna from the CSV (per-institution data)
     by_year_comuna = defaultdict(lambda: {"desertores": 0, "matricula": 0})
     by_year = defaultdict(lambda: {"desertores": 0, "matricula": 0})
     comunas_set = set()
@@ -58,19 +99,34 @@ def process_desercion():
         by_year[year]["desertores"] += desertores
         by_year[year]["matricula"] += matricula
 
-    # Series temporal de ciudad
-    city_series = []
-    for year in sorted(by_year.keys()):
-        d = by_year[year]
-        tasa = (d["desertores"] / d["matricula"] * 100) if d["matricula"] > 0 else 0
-        city_series.append({
-            "anio": year,
-            "desertores": round(d["desertores"]),
-            "matricula": round(d["matricula"]),
-            "tasaDesercion": round(tasa, 2),
-        })
+    # Build city-level series: prefer MEN multi-year data, enrich with CSV absolutes
+    etc_series = _load_etc_desercion_series()
+    if etc_series:
+        # Merge CSV absolute counts into matching ETC years
+        city_series = []
+        for entry in etc_series:
+            year = entry["anio"]
+            if year in by_year:
+                d = by_year[year]
+                entry["desertores"] = round(d["desertores"])
+                entry["matricula"] = round(d["matricula"])
+            city_series.append(entry)
+        print(f"  Serie temporal: {len(city_series)} años (MEN/ETC + CSV)")
+    else:
+        # Fallback: CSV-only series
+        city_series = []
+        for year in sorted(by_year.keys()):
+            d = by_year[year]
+            tasa = (d["desertores"] / d["matricula"] * 100) if d["matricula"] > 0 else 0
+            city_series.append({
+                "anio": year,
+                "desertores": round(d["desertores"]),
+                "matricula": round(d["matricula"]),
+                "tasaDesercion": round(tasa, 2),
+            })
+        print(f"  Serie temporal: {len(city_series)} años (solo CSV)")
 
-    # Por comuna (último año)
+    # Por comuna (último año from CSV)
     latest_year = max(by_year.keys()) if by_year else ""
     comuna_data = []
     for comuna in sorted(comunas_set):

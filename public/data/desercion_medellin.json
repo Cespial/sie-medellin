@@ -1,10 +1,117 @@
 {
   "serieTemporal": [
     {
+      "anio": "2011",
+      "tasaDesercion": 3.69,
+      "tasaTransicion": 3.48,
+      "tasaPrimaria": 3.43,
+      "tasaSecundaria": 4.32,
+      "tasaMedia": 2.95
+    },
+    {
+      "anio": "2012",
+      "tasaDesercion": 3.37,
+      "tasaPrimaria": 2.92,
+      "tasaSecundaria": 4.62,
+      "tasaMedia": 3.43
+    },
+    {
+      "anio": "2013",
+      "tasaDesercion": 3.39,
+      "tasaTransicion": 2.54,
+      "tasaPrimaria": 2.69,
+      "tasaSecundaria": 4.63,
+      "tasaMedia": 2.89
+    },
+    {
+      "anio": "2014",
+      "tasaDesercion": 1.8,
+      "tasaTransicion": 1.5,
+      "tasaPrimaria": 1.32,
+      "tasaSecundaria": 2.49,
+      "tasaMedia": 1.77
+    },
+    {
+      "anio": "2015",
+      "tasaDesercion": 3.58,
+      "tasaTransicion": 2.3,
+      "tasaPrimaria": 2.64,
+      "tasaSecundaria": 5.35,
+      "tasaMedia": 2.63
+    },
+    {
+      "anio": "2016",
+      "tasaDesercion": 3.93,
+      "tasaTransicion": 3.03,
+      "tasaPrimaria": 2.8,
+      "tasaSecundaria": 5.84,
+      "tasaMedia": 3.06
+    },
+    {
       "anio": "2017",
+      "tasaDesercion": 3.46,
+      "tasaTransicion": 3.05,
+      "tasaPrimaria": 2.71,
+      "tasaSecundaria": 4.68,
+      "tasaMedia": 2.8,
       "desertores": 14453,
-      "matricula": 453400,
-      "tasaDesercion": 3.19
+      "matricula": 453400
+    },
+    {
+      "anio": "2018",
+      "tasaDesercion": 4.14,
+      "tasaTransicion": 3.45,
+      "tasaPrimaria": 3.24,
+      "tasaSecundaria": 5.72,
+      "tasaMedia": 2.91
+    },
+    {
+      "anio": "2019",
+      "tasaDesercion": 3.91,
+      "tasaTransicion": 3.66,
+      "tasaPrimaria": 3.1,
+      "tasaSecundaria": 5.3,
+      "tasaMedia": 2.69
+    },
+    {
+      "anio": "2020",
+      "tasaDesercion": 1.64,
+      "tasaTransicion": 2.57,
+      "tasaPrimaria": 1.42,
+      "tasaSecundaria": 1.74,
+      "tasaMedia": 1.59
+    },
+    {
+      "anio": "2021",
+      "tasaDesercion": 3.27,
+      "tasaTransicion": 2.94,
+      "tasaPrimaria": 3.27,
+      "tasaSecundaria": 3.56,
+      "tasaMedia": 2.65
+    },
+    {
+      "anio": "2022",
+      "tasaDesercion": 4.91,
+      "tasaTransicion": 5.01,
+      "tasaPrimaria": 4.34,
+      "tasaSecundaria": 5.95,
+      "tasaMedia": 3.77
+    },
+    {
+      "anio": "2023",
+      "tasaDesercion": 5.4,
+      "tasaTransicion": 4.84,
+      "tasaPrimaria": 4.85,
+      "tasaSecundaria": 6.75,
+      "tasaMedia": 3.93
+    },
+    {
+      "anio": "2024",
+      "tasaDesercion": 3.18,
+      "tasaTransicion": 3.25,
+      "tasaPrimaria": 2.81,
+      "tasaSecundaria": 3.95,
+      "tasaMedia": 2.39
     }
   ],
   "porComuna": [
