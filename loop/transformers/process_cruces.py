@@ -309,7 +309,7 @@ def process_saber11_cruces():
         "por_lavadora": lavadora_result,
         "por_personas_hogar": personas_result,
         "por_cuartos_hogar": cuartos_result,
-        "total_evaluados": len(all_records),
+        "total_evaluados": sum(len(v) for v in by_genero.values()),
     }
 
 

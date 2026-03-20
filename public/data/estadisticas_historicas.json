@@ -98,7 +98,7 @@
     "cobertura_neta_primaria": 86.84,
     "cobertura_neta_secundaria": 73.59,
     "cobertura_neta_media": 43.42,
-    "tamano_promedio_grupo": 30588.0,
+    "tamano_promedio_grupo": null,
     "sedes_conectadas_a_internet": 26.18
   },
   {
@@ -115,7 +115,7 @@
     "cobertura_neta_primaria": 83.3,
     "cobertura_neta_secundaria": 73.93,
     "cobertura_neta_media": 42.85,
-    "tamano_promedio_grupo": 31728.0,
+    "tamano_promedio_grupo": null,
     "sedes_conectadas_a_internet": 32.85
   },
   {
@@ -132,8 +132,8 @@
     "cobertura_neta_primaria": 91.89,
     "cobertura_neta_secundaria": 81.29,
     "cobertura_neta_media": 43.83,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2019",
@@ -149,8 +149,8 @@
     "cobertura_neta_primaria": 90.24,
     "cobertura_neta_secundaria": 82.6,
     "cobertura_neta_media": 45.04,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2020",
@@ -166,8 +166,8 @@
     "cobertura_neta_primaria": 88.26,
     "cobertura_neta_secundaria": 83.38,
     "cobertura_neta_media": 47.45,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2021",
@@ -183,8 +183,8 @@
     "cobertura_neta_primaria": 87.05,
     "cobertura_neta_secundaria": 82.8,
     "cobertura_neta_media": 49.85,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2022",
@@ -200,8 +200,8 @@
     "cobertura_neta_primaria": 88.54,
     "cobertura_neta_secundaria": 81.83,
     "cobertura_neta_media": 52.35,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2023",
@@ -217,8 +217,8 @@
     "cobertura_neta_primaria": 88.03,
     "cobertura_neta_secundaria": 79.26,
     "cobertura_neta_media": 53.34,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   },
   {
     "anio": "2024",
@@ -234,7 +234,7 @@
     "cobertura_neta_primaria": 87.32,
     "cobertura_neta_secundaria": 77.04,
     "cobertura_neta_media": 52.81,
-    "tamano_promedio_grupo": 0.0,
-    "sedes_conectadas_a_internet": 0.0
+    "tamano_promedio_grupo": null,
+    "sedes_conectadas_a_internet": null
   }
 ]

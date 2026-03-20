@@ -462,7 +462,9 @@ def process_matricula():
             poblacion_5_16 = None
             try:
                 cobertura_bruta = float(r.get("cobertura_bruta", 0))
-                poblacion_5_16 = int(r.get("poblacion_5_16", 0))
+                # poblacion_5_16 may have commas (e.g., "379,616")
+                pob_raw = str(r.get("poblacion_5_16", 0)).replace(",", "")
+                poblacion_5_16 = int(float(pob_raw))
             except (ValueError, TypeError):
                 pass
 

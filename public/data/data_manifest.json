@@ -1,5 +1,5 @@
 {
-  "generado": "2026-03-19T19:03:13",
+  "generado": "2026-03-19T21:35:14",
   "total_archivos": 21,
   "archivos": {
     "aprobacion_medellin.json": {
@@ -15,7 +15,7 @@
       "ultimo_dato": "2024",
       "obsoleto": false,
       "antiguedad_anios": 2,
-      "tamano_kb": 1.7
+      "tamano_kb": 1.5
     },
     "clasificacion_saber11.json": {
       "fuente": "MEData CSV",
@@ -60,7 +60,7 @@
       "ultimo_dato": "2020",
       "obsoleto": true,
       "antiguedad_anios": 6,
-      "tamano_kb": 6.8
+      "tamano_kb": 3.5
     },
     "estadisticas_historicas.json": {
       "fuente": "datos.gov.co/ji8i-4anb",
@@ -107,7 +107,7 @@
       "nota": "2004-2019 MEData real; 2020-2024 estimado desde cobertura x población",
       "ultimo_dato_real": "2019",
       "ultimo_dato_estimado": "2024",
-      "tamano_kb": 4.6
+      "tamano_kb": 4.8
     },
     "paridad_genero_medellin.json": {
       "fuente": "datos.gov.co/MEN",

@@ -42,7 +42,7 @@ interface KPIData {
   ultimaActualizacion?: string;
   frescura?: {
     estadisticas_etc?: { ultimo_anio?: string };
-    saber11?: { ultimo_periodo?: string };
+    saber11?: { ultimo_periodo?: string; ultimo_anio?: string };
     sedes?: { ultimo_anio?: string };
     matricula_medata?: { ultimo_anio?: string };
   };
@@ -414,7 +414,7 @@ export function ExecutiveDashboard() {
         <KPICard
           label="Saber 11"
           value={kpis.promedioSaber11.toFixed(1)}
-          unit={`puntaje promedio (${kpis.frescura?.saber11?.ultimo_periodo || "—"})`}
+          unit={`puntaje promedio (${kpis.frescura?.saber11?.ultimo_anio || kpis.frescura?.saber11?.ultimo_periodo?.slice(0, 4) || "—"})`}
           icon={GraduationCap}
           color="warning"
           delay={4}
@@ -741,7 +741,7 @@ export function ExecutiveDashboard() {
               <span className="text-foreground font-medium">
                 10.5 pts a favor de hombres
               </span>
-              . Mujeres lideran en Lectura Crítica.
+              . La diferencia es mayor en Matemáticas que en otras áreas.
             </p>
           </div>
         </div>

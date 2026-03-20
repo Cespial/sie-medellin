@@ -7,7 +7,7 @@
   "coberturaNeta": {
     "valor": 93.58,
     "fuente": "datos.gov.co/sras-4t5p (Medellín ETC 2024)",
-    "tendencia": "estable"
+    "tendencia": "baja"
   },
   "coberturaBruta": 104.12,
   "desercion": {
@@ -46,7 +46,8 @@
     },
     "saber11": {
       "fuente": "kgxf-xxbe",
-      "ultimo_periodo": "20224"
+      "ultimo_periodo": "20224",
+      "ultimo_anio": "2022"
     },
     "sedes": {
       "fuente": "x5ay-984n",

@@ -40,15 +40,26 @@ def process_bachilleres():
     with open(filepath, "r") as f:
         records = json.load(f)
 
-    result = []
+    # Deduplicate by year (source may have duplicate rows with conflicting values)
+    seen_years = {}
     for r in records:
+        anio = r.get("a_o", "")
+        if not anio:
+            continue
+        # Keep first occurrence per year
+        if anio not in seen_years:
+            seen_years[anio] = r
+
+    result = []
+    for anio in sorted(seen_years.keys()):
+        r = seen_years[anio]
         mat_11 = safe_int(r.get("matricula_11_total"))
         mat_26 = safe_int(r.get("matricula_26_total"))
         apr_11 = safe_int(r.get("aprobados_11_total"))
         apr_26 = safe_int(r.get("aprobados_26_total"))
 
         entry = {
-            "anio": r.get("a_o", ""),
+            "anio": anio,
             "graduados_11": apr_11,
             "graduados_26": apr_26,
             "matricula_11": mat_11,
@@ -59,8 +70,6 @@ def process_bachilleres():
             "no_oficial_11": safe_int(r.get("aprobados_11_no_oficial")),
         }
         result.append(entry)
-
-    result.sort(key=lambda x: x["anio"])
 
     output = PUBLIC_DATA / "bachilleres_medellin.json"
     with open(output, "w", encoding="utf-8") as f:
@@ -79,8 +88,16 @@ def process_educacion_superior():
     with open(filepath, "r") as f:
         records = json.load(f)
 
-    result = []
+    # Deduplicate by year (source may have duplicate rows)
+    seen_years = {}
     for r in records:
+        anio = r.get("a_o", "")
+        if not anio or anio in seen_years:
+            continue
+        seen_years[anio] = r
+
+    result = []
+    for anio, r in sorted(seen_years.items()):
         tec = safe_int(r.get("tecnica_profesional"))
         tecno = safe_int(r.get("tecnologica"))
         uni = safe_int(r.get("universitaria"))
@@ -89,7 +106,7 @@ def process_educacion_superior():
         doc = safe_int(r.get("doctorado"))
 
         entry = {
-            "anio": r.get("a_o", ""),
+            "anio": anio,
             "tecnica": tec,
             "tecnologica": tecno,
             "universitaria": uni,
@@ -100,8 +117,6 @@ def process_educacion_superior():
             "ies_con_oferta": safe_int(r.get("ies_con_oferta")),
         }
         result.append(entry)
-
-    result.sort(key=lambda x: x["anio"])
 
     output = PUBLIC_DATA / "educacion_superior_medellin.json"
     with open(output, "w", encoding="utf-8") as f:

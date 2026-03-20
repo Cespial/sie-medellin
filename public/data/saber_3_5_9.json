@@ -1,0 +1,342 @@
+{
+  "porGradoArea": [
+    {
+      "grado": "3",
+      "area": "lenguaje",
+      "promedioCiudad": 308.2,
+      "nivelAvanzado": 22.4,
+      "nivelSatisfactorio": 28.5,
+      "nivelMinimo": 31.3,
+      "nivelSuperior": 14.6,
+      "registros": 372
+    },
+    {
+      "grado": "3",
+      "area": "matemáticas",
+      "promedioCiudad": 297.6,
+      "nivelAvanzado": 21.6,
+      "nivelSatisfactorio": 25.1,
+      "nivelMinimo": 32.1,
+      "nivelSuperior": 18.0,
+      "registros": 372
+    },
+    {
+      "grado": "5",
+      "area": "lenguaje",
+      "promedioCiudad": 310.4,
+      "nivelAvanzado": 17.2,
+      "nivelSatisfactorio": 29.4,
+      "nivelMinimo": 39.3,
+      "nivelSuperior": 11.7,
+      "registros": 370
+    },
+    {
+      "grado": "5",
+      "area": "matemáticas",
+      "promedioCiudad": 290.1,
+      "nivelAvanzado": 12.3,
+      "nivelSatisfactorio": 15.0,
+      "nivelMinimo": 27.5,
+      "nivelSuperior": 42.6,
+      "registros": 370
+    },
+    {
+      "grado": "9",
+      "area": "lenguaje",
+      "promedioCiudad": 324.6,
+      "nivelAvanzado": 9.8,
+      "nivelSatisfactorio": 47.7,
+      "nivelMinimo": 34.3,
+      "nivelSuperior": 7.2,
+      "registros": 333
+    },
+    {
+      "grado": "9",
+      "area": "matemáticas",
+      "promedioCiudad": 307.9,
+      "nivelAvanzado": 7.7,
+      "nivelSatisfactorio": 20.8,
+      "nivelMinimo": 49.9,
+      "nivelSuperior": 20.6,
+      "registros": 333
+    }
+  ],
+  "porComuna": [
+    {
+      "comuna": "11",
+      "promedio": 363.8,
+      "count": 58
+    },
+    {
+      "comuna": "14",
+      "promedio": 340.2,
+      "count": 126
+    },
+    {
+      "comuna": "50",
+      "promedio": 321.1,
+      "count": 16
+    },
+    {
+      "comuna": "9",
+      "promedio": 319.6,
+      "count": 130
+    },
+    {
+      "comuna": "15",
+      "promedio": 317.9,
+      "count": 60
+    },
+    {
+      "comuna": "16",
+      "promedio": 313.4,
+      "count": 146
+    },
+    {
+      "comuna": "90",
+      "promedio": 312.2,
+      "count": 18
+    },
+    {
+      "comuna": "5",
+      "promedio": 311.5,
+      "count": 152
+    },
+    {
+      "comuna": "4",
+      "promedio": 310.4,
+      "count": 154
+    },
+    {
+      "comuna": "12",
+      "promedio": 309.8,
+      "count": 122
+    },
+    {
+      "comuna": "80",
+      "promedio": 304.9,
+      "count": 76
+    },
+    {
+      "comuna": "7",
+      "promedio": 301.3,
+      "count": 224
+    },
+    {
+      "comuna": "3",
+      "promedio": 299.4,
+      "count": 144
+    },
+    {
+      "comuna": "1",
+      "promedio": 298.0,
+      "count": 116
+    },
+    {
+      "comuna": "6",
+      "promedio": 297.9,
+      "count": 126
+    },
+    {
+      "comuna": "10",
+      "promedio": 295.5,
+      "count": 108
+    },
+    {
+      "comuna": "2",
+      "promedio": 293.6,
+      "count": 78
+    },
+    {
+      "comuna": "13",
+      "promedio": 291.9,
+      "count": 82
+    },
+    {
+      "comuna": "70",
+      "promedio": 288.5,
+      "count": 28
+    },
+    {
+      "comuna": "8",
+      "promedio": 285.9,
+      "count": 104
+    },
+    {
+      "comuna": "60",
+      "promedio": 264.1,
+      "count": 82
+    }
+  ],
+  "rankingPorGrado": {
+    "3": {
+      "top5": [
+        {
+          "nombre": "col manzanares",
+          "comuna": "14",
+          "promedioEstablecimiento": 31.9
+        },
+        {
+          "nombre": "col caminos abiertos",
+          "comuna": "13",
+          "promedioEstablecimiento": 28.5
+        },
+        {
+          "nombre": "col ateneo horizontes",
+          "comuna": "12",
+          "promedioEstablecimiento": 25.5
+        },
+        {
+          "nombre": "col madre antonia cerini",
+          "comuna": "14",
+          "promedioEstablecimiento": 25.5
+        },
+        {
+          "nombre": "col combos comunidad educativa de base",
+          "comuna": "10",
+          "promedioEstablecimiento": 23.5
+        }
+      ],
+      "bottom5": [
+        {
+          "nombre": "inst educ la salle de campoamor",
+          "comuna": "15",
+          "promedioEstablecimiento": 1.0
+        },
+        {
+          "nombre": "inst educ caracas",
+          "comuna": "8",
+          "promedioEstablecimiento": 0.8
+        },
+        {
+          "nombre": "inst educ jesus maria - el rosal",
+          "comuna": "5",
+          "promedioEstablecimiento": 0.8
+        },
+        {
+          "nombre": "i.e. manuel uribe ángel",
+          "comuna": "2",
+          "promedioEstablecimiento": 0.8
+        },
+        {
+          "nombre": "inst educ san antonio de prado",
+          "comuna": "80",
+          "promedioEstablecimiento": 0.4
+        }
+      ]
+    },
+    "5": {
+      "top5": [
+        {
+          "nombre": "col manzanares",
+          "comuna": "14",
+          "promedioEstablecimiento": 36.1
+        },
+        {
+          "nombre": "col latino",
+          "comuna": "14",
+          "promedioEstablecimiento": 18.4
+        },
+        {
+          "nombre": "cent integl momentos felices",
+          "comuna": "4",
+          "promedioEstablecimiento": 18.3
+        },
+        {
+          "nombre": "col combos comunidad educativa de base",
+          "comuna": "10",
+          "promedioEstablecimiento": 17.0
+        },
+        {
+          "nombre": "col madrid campestre",
+          "comuna": "7",
+          "promedioEstablecimiento": 16.4
+        }
+      ],
+      "bottom5": [
+        {
+          "nombre": "inst educ jorge robledo",
+          "comuna": "7",
+          "promedioEstablecimiento": 0.9
+        },
+        {
+          "nombre": "inst educ doce de octubre",
+          "comuna": "6",
+          "promedioEstablecimiento": 0.9
+        },
+        {
+          "nombre": "inst educ san antonio de prado",
+          "comuna": "80",
+          "promedioEstablecimiento": 0.9
+        },
+        {
+          "nombre": "i.e. manuel uribe ángel",
+          "comuna": "2",
+          "promedioEstablecimiento": 0.6
+        },
+        {
+          "nombre": "inst educ la esperanza",
+          "comuna": "6",
+          "promedioEstablecimiento": 0.5
+        }
+      ]
+    },
+    "9": {
+      "top5": [
+        {
+          "nombre": "col el señor col the lord college",
+          "comuna": "14",
+          "promedioEstablecimiento": 23.8
+        },
+        {
+          "nombre": "col hispano",
+          "comuna": "11",
+          "promedioEstablecimiento": 23.2
+        },
+        {
+          "nombre": "institucion educativa pedagogico integral",
+          "comuna": "16",
+          "promedioEstablecimiento": 21.9
+        },
+        {
+          "nombre": "inst educ san benito",
+          "comuna": "10",
+          "promedioEstablecimiento": 16.7
+        },
+        {
+          "nombre": "cent educal conquistadores",
+          "comuna": "70",
+          "promedioEstablecimiento": 16.6
+        }
+      ],
+      "bottom5": [
+        {
+          "nombre": "inst educ diego echavarria misas",
+          "comuna": "5",
+          "promedioEstablecimiento": 1.1
+        },
+        {
+          "nombre": "ins tec industrial pascual bravo",
+          "comuna": "7",
+          "promedioEstablecimiento": 1.1
+        },
+        {
+          "nombre": "lic salazar y herrera",
+          "comuna": "12",
+          "promedioEstablecimiento": 1.1
+        },
+        {
+          "nombre": "inst educ asamblea departamental",
+          "comuna": "9",
+          "promedioEstablecimiento": 0.9
+        },
+        {
+          "nombre": "inst educ jesus rey",
+          "comuna": "7",
+          "promedioEstablecimiento": 0.7
+        }
+      ]
+    }
+  },
+  "ultimoAnio": "2017"
+}

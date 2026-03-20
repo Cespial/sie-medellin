@@ -240,9 +240,19 @@ def process_estadisticas():
             "tamano_promedio_grupo", "sedes_conectadas_a_internet",
         ]:
             try:
-                entry[field] = round(float(r.get(field, 0)), 2)
+                val = float(r.get(field, 0))
+                entry[field] = round(val, 2)
             except (ValueError, TypeError):
                 entry[field] = None
+
+        # Sanitize corrupted values (same logic as Medellín ETC)
+        tpg = entry.get("tamano_promedio_grupo")
+        if tpg is not None and (tpg > 100 or tpg == 0):
+            entry["tamano_promedio_grupo"] = None
+        sci = entry.get("sedes_conectadas_a_internet")
+        if sci is not None and sci == 0:
+            entry["sedes_conectadas_a_internet"] = None
+
         series.append(entry)
 
     output = PUBLIC_DATA / "estadisticas_historicas.json"
@@ -383,7 +393,7 @@ def generate_kpis(saber_kpis: dict | None, sedes_resumen: dict | None, estadisti
         "coberturaNeta": {
             "valor": latest_med.get("cobertura_neta", 0),
             "fuente": f"datos.gov.co/sras-4t5p (Medellín ETC {anio_fuente})",
-            "tendencia": "estable",
+            "tendencia": "baja",
         },
         "coberturaBruta": latest_med.get("cobertura_bruta"),
         "desercion": {
@@ -435,7 +445,13 @@ def generate_kpis(saber_kpis: dict | None, sedes_resumen: dict | None, estadisti
             if p:
                 saber_periods.add(p)
     saber_ultimo = sorted(saber_periods)[-1] if saber_periods else "?"
-    frescura["saber11"] = {"fuente": "kgxf-xxbe", "ultimo_periodo": saber_ultimo}
+    # Extract year from ICFES period code (e.g., "20224" → "2022")
+    saber_ultimo_anio = saber_ultimo[:4] if len(saber_ultimo) >= 4 else "?"
+    frescura["saber11"] = {
+        "fuente": "kgxf-xxbe",
+        "ultimo_periodo": saber_ultimo,
+        "ultimo_anio": saber_ultimo_anio,
+    }
 
     # sedes — derive ultimo_anio from raw file
     sedes_path = RAW_DIR / "sedes_educativas_medellin.json"

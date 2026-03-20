@@ -18,7 +18,7 @@ interface KPIData {
   aprobacion?: { valor: number };
   frescura?: {
     estadisticas_etc?: { ultimo_anio?: string };
-    saber11?: { ultimo_periodo?: string };
+    saber11?: { ultimo_periodo?: string; ultimo_anio?: string };
     sedes?: { ultimo_anio?: string };
     matricula_medata?: { ultimo_anio?: string };
   };
@@ -56,7 +56,7 @@ export function KPIGrid() {
 
   const f = kpis.frescura;
   const etcYear = f?.estadisticas_etc?.ultimo_anio;
-  const saberPeriodo = f?.saber11?.ultimo_periodo;
+  const saberYear = (f?.saber11 as Record<string, string> | undefined)?.ultimo_anio || f?.saber11?.ultimo_periodo?.slice(0, 4);
   const sedesYear = f?.sedes?.ultimo_anio;
 
   const cards = [
@@ -83,7 +83,7 @@ export function KPIGrid() {
       decimals: 1,
       trend: "up" as const,
       trendIsGood: true,
-      dataYear: saberPeriodo,
+      dataYear: saberYear,
     },
     {
       label: "Deserción",

@@ -225,7 +225,7 @@ export function CrucesPanel() {
             {"Análisis Multivariable — Saber 11 × Contexto Socioeconómico"}
           </h3>
           <span className="text-[10px] text-muted block mt-0.5">
-            datos.gov.co/kgxf-xxbe · Período 20224 · {s.total_evaluados.toLocaleString("es-CO")} evaluados · 20 dimensiones
+            datos.gov.co/kgxf-xxbe · Todos los períodos 2014-2022 · {s.total_evaluados.toLocaleString("es-CO")} evaluados con puntaje · 20 dimensiones
           </span>
         </div>
       </div>
