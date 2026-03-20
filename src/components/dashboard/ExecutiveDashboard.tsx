@@ -13,13 +13,13 @@ import {
   Map,
   BarChart3,
   Heart,
-  School,
   ArrowRight,
   ChevronRight,
   FlaskConical,
   Target,
   CheckCircle2,
   XCircle,
+  School,
 } from "lucide-react";
 import { useFetchData } from "@/hooks/useFetchData";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
@@ -91,48 +91,48 @@ function extractValue(
 }
 
 const fadeUp = {
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 0, y: 8 },
   animate: { opacity: 1, y: 0 },
 };
 
 /* ========== COMPONENTS ========== */
 
-function KPICard({
+function MetricCard({
   label,
   value,
   unit,
+  year,
   icon: Icon,
-  color,
+  accent = false,
   delay = 0,
 }: {
   label: string;
   value: string;
   unit?: string;
+  year?: string;
   icon: React.ElementType;
-  color: string;
+  accent?: boolean;
   delay?: number;
 }) {
-  const colorMap: Record<string, string> = {
-    accent: "border-accent/20 text-accent",
-    danger: "border-danger/20 text-danger",
-    success: "border-[#06D6A0]/20 text-[#06D6A0]",
-    warning: "border-[#FFB703]/20 text-[#FFB703]",
-    secondary: "border-secondary/20 text-secondary",
-  };
-
   return (
     <motion.div
       {...fadeUp}
-      transition={{ delay: delay * 0.08, duration: 0.4 }}
-      className={`rounded-xl border bg-surface/50 p-4 ${colorMap[color] || colorMap.accent}`}
+      transition={{ delay: delay * 0.06, duration: 0.35 }}
+      className="relative border border-border bg-surface p-4 hover:border-accent/20 transition-colors"
     >
+      {accent && <div className="absolute top-0 left-0 w-6 h-[2px] bg-accent" />}
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-4 h-4 opacity-60" />
-        <span className="text-[10px] text-muted uppercase tracking-wider font-medium">
+        <Icon className="w-3.5 h-3.5 text-muted" />
+        <span className="text-[10px] text-muted uppercase tracking-widest font-medium">
           {label}
         </span>
+        {year && (
+          <span className="text-[9px] font-[var(--font-geist-mono)] text-muted/50 ml-auto">
+            {year}
+          </span>
+        )}
       </div>
-      <p className="font-[var(--font-jetbrains)] text-2xl font-bold">
+      <p className="font-[var(--font-geist-mono)] text-xl font-semibold text-foreground tracking-tight">
         {value}
       </p>
       {unit && <p className="text-[10px] text-muted mt-0.5">{unit}</p>}
@@ -155,19 +155,19 @@ function AlertCard({
 }) {
   const styles = {
     critical: {
-      bg: "bg-danger/5 border-danger/20",
-      icon: <XCircle className="w-4 h-4 text-danger" />,
+      border: "border-danger/20",
+      icon: <XCircle className="w-3.5 h-3.5 text-danger" />,
       valueColor: "text-danger",
     },
     warning: {
-      bg: "bg-[#FFB703]/5 border-[#FFB703]/20",
-      icon: <AlertTriangle className="w-4 h-4 text-[#FFB703]" />,
-      valueColor: "text-[#FFB703]",
+      border: "border-warning/20",
+      icon: <AlertTriangle className="w-3.5 h-3.5 text-warning" />,
+      valueColor: "text-warning",
     },
     positive: {
-      bg: "bg-[#06D6A0]/5 border-[#06D6A0]/20",
-      icon: <CheckCircle2 className="w-4 h-4 text-[#06D6A0]" />,
-      valueColor: "text-[#06D6A0]",
+      border: "border-accent/20",
+      icon: <CheckCircle2 className="w-3.5 h-3.5 text-accent" />,
+      valueColor: "text-accent",
     },
   };
 
@@ -176,16 +176,14 @@ function AlertCard({
   return (
     <motion.div
       {...fadeUp}
-      transition={{ delay: delay * 0.06, duration: 0.4 }}
-      className={`rounded-lg border p-3 ${s.bg}`}
+      transition={{ delay: delay * 0.05, duration: 0.35 }}
+      className={`border bg-surface p-3 ${s.border}`}
     >
       <div className="flex items-start gap-2">
         <div className="mt-0.5">{s.icon}</div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-medium text-foreground">{title}</p>
-          <p
-            className={`font-[var(--font-jetbrains)] text-lg font-bold ${s.valueColor}`}
-          >
+          <p className="text-[11px] font-medium text-foreground">{title}</p>
+          <p className={`font-[var(--font-geist-mono)] text-lg font-semibold ${s.valueColor}`}>
             {value}
           </p>
           <p className="text-[10px] text-muted leading-relaxed">{detail}</p>
@@ -209,15 +207,13 @@ function ComunaRow({
   color: string;
 }) {
   return (
-    <div className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0">
-      <span className="font-[var(--font-jetbrains)] text-xs text-muted w-5">
+    <div className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0">
+      <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">
         {rank}
       </span>
-      <span className="text-xs text-foreground flex-1">{name}</span>
+      <span className="text-[12px] text-foreground flex-1 tracking-tight">{name}</span>
       <div className="text-right">
-        <span
-          className={`font-[var(--font-jetbrains)] text-sm font-bold ${color}`}
-        >
+        <span className={`font-[var(--font-geist-mono)] text-[13px] font-semibold ${color}`}>
           {value}
         </span>
         <span className="text-[9px] text-muted ml-1">{label}</span>
@@ -243,13 +239,10 @@ export function ExecutiveDashboard() {
   if (loading) {
     return (
       <div className="p-6 space-y-6">
-        <ChartSkeleton height={100} />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <ChartSkeleton height={80} />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-24 rounded-xl border border-border bg-surface/50 animate-pulse"
-            />
+            <div key={i} className="h-24 bg-surface animate-pulse" />
           ))}
         </div>
         <ChartSkeleton height={300} />
@@ -267,11 +260,10 @@ export function ExecutiveDashboard() {
     ? kpis.aprobacion.valor
     : (kpis.tasaAprobacion ?? 0);
 
-  // Compute comuna alerts from enriched data
   const comunas = mapData
     ? Object.entries(mapData.comunas)
         .map(([code, data]) => ({ code, ...data }))
-        .filter((c) => c.code.length <= 2) // only numbered comunas, not corregimientos
+        .filter((c) => c.code.length <= 2)
     : [];
 
   const COMUNA_NAMES: Record<string, string> = {
@@ -293,35 +285,27 @@ export function ExecutiveDashboard() {
     "16": "Belén",
   };
 
-  // Critical: comunas with desercion > 3.5%
   const criticalDesercion = comunas
     .filter((c) => (c.tasa_desercion ?? 0) > 3.5)
     .sort((a, b) => (b.tasa_desercion ?? 0) - (a.tasa_desercion ?? 0));
 
-  // Warning: comunas with aprobacion < 88%
   const lowApproval = comunas
     .filter((c) => (c.tasa_aprobacion ?? 0) < 88)
     .sort((a, b) => (a.tasa_aprobacion ?? 0) - (b.tasa_aprobacion ?? 0));
 
-  // Positive: comunas with best ISCE or lowest desercion
   const bestComunas = comunas
     .filter((c) => (c.tasa_desercion ?? 99) < 2)
     .sort((a, b) => (a.tasa_desercion ?? 0) - (b.tasa_desercion ?? 0));
 
-  // Top/bottom IEs
   const filteredIEs = ranking
     ? ranking.filter((ie) => ie.numEvaluados >= 10)
     : [];
   const topIEs = filteredIEs.slice(0, 5);
   const bottomIEs = filteredIEs.slice(-5).reverse();
 
-  // Trend data
-  const latestTrend = trends?.length
-    ? trends[trends.length - 1]
-    : null;
-  const prevTrend = trends?.length && trends.length >= 2
-    ? trends[trends.length - 2]
-    : null;
+  const latestTrend = trends?.length ? trends[trends.length - 1] : null;
+  const prevTrend =
+    trends?.length && trends.length >= 2 ? trends[trends.length - 2] : null;
 
   const desercionDelta =
     latestTrend && prevTrend
@@ -332,20 +316,27 @@ export function ExecutiveDashboard() {
       ? (latestTrend.aprobacion ?? 0) - (prevTrend.aprobacion ?? 0)
       : 0;
 
+  const f = kpis.frescura;
+  const etcYear = f?.estadisticas_etc?.ultimo_anio;
+  const saberYear = f?.saber11?.ultimo_anio || f?.saber11?.ultimo_periodo?.slice(0, 4);
+  const sedesYear = f?.sedes?.ultimo_anio;
+
   return (
     <div className="p-6 space-y-6 max-w-[1400px]">
       {/* ---- Header ---- */}
-      <motion.div {...fadeUp} transition={{ duration: 0.5 }}>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <motion.div {...fadeUp} transition={{ duration: 0.4 }}>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Sistema de Inteligencia Educativa
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2 h-2 bg-accent animate-pulse" />
+              <span className="text-[10px] text-muted uppercase tracking-[0.2em] font-medium">
+                Sistema de Inteligencia Educativa
+              </span>
             </div>
-            <h1 className="font-[var(--font-syne)] text-2xl md:text-3xl font-extrabold text-foreground">
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
               Dashboard Ejecutivo
             </h1>
-            <p className="text-sm text-muted mt-1">
+            <p className="text-[13px] text-muted mt-1 tracking-tight">
               Medellín — {kpis.totalIEs ?? "—"} IEs · 16 comunas · 5 corregimientos ·{" "}
               {kpis.totalMatriculados.toLocaleString("es-CO")} matriculados
             </p>
@@ -353,16 +344,16 @@ export function ExecutiveDashboard() {
           <div className="flex gap-2">
             <Link
               href="/mapa"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-background font-semibold text-xs hover:bg-accent/90 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background text-[12px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
             >
-              <Map className="w-3.5 h-3.5" />
+              <Map className="w-3 h-3" />
               Mapa
             </Link>
             <Link
               href="/analisis"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground text-xs hover:border-accent/40 hover:bg-accent/5 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-[12px] tracking-tight hover:border-foreground/30 transition-colors"
             >
-              <FlaskConical className="w-3.5 h-3.5" />
+              <FlaskConical className="w-3 h-3" />
               Análisis
             </Link>
           </div>
@@ -370,96 +361,97 @@ export function ExecutiveDashboard() {
       </motion.div>
 
       {/* ---- KPI Strip ---- */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <KPICard
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border">
+        <MetricCard
           label="Matriculados"
           value={kpis.totalMatriculados.toLocaleString("es-CO")}
-          unit={`estudiantes activos (${kpis.frescura?.sedes?.ultimo_anio || "—"})`}
+          unit="estudiantes activos"
+          year={sedesYear}
           icon={Users}
-          color="accent"
+          accent
           delay={0}
         />
-        <KPICard
+        <MetricCard
           label="Cobertura Neta"
           value={`${cobNeta.toFixed(1)}%`}
-          unit={`tasa neta (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`}
+          unit={`${desercionDelta !== 0 ? "tasa neta" : "tasa neta"}`}
+          year={etcYear}
           icon={Target}
-          color="success"
+          accent
           delay={1}
         />
-        <KPICard
+        <MetricCard
           label="Deserción"
           value={`${desercion.toFixed(2)}%`}
           unit={
             desercionDelta !== 0
-              ? `${desercionDelta > 0 ? "+" : ""}${desercionDelta.toFixed(2)} pp vs. anterior (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
-              : `tasa global (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
+              ? `${desercionDelta > 0 ? "+" : ""}${desercionDelta.toFixed(2)} pp vs. anterior`
+              : "tasa global"
           }
+          year={etcYear}
           icon={desercionDelta <= 0 ? TrendingDown : TrendingUp}
-          color={desercion > 3.5 ? "danger" : "warning"}
+          accent
           delay={2}
         />
-        <KPICard
+        <MetricCard
           label="Aprobación"
           value={`${aprobacion.toFixed(1)}%`}
           unit={
             aprobacionDelta !== 0
-              ? `${aprobacionDelta > 0 ? "+" : ""}${aprobacionDelta.toFixed(1)} pp vs. anterior (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
-              : `tasa global (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
+              ? `${aprobacionDelta > 0 ? "+" : ""}${aprobacionDelta.toFixed(1)} pp vs. anterior`
+              : "tasa global"
           }
+          year={etcYear}
           icon={Award}
-          color="success"
+          accent
           delay={3}
         />
-        <KPICard
+        <MetricCard
           label="Saber 11"
           value={kpis.promedioSaber11.toFixed(1)}
-          unit={`puntaje promedio (${kpis.frescura?.saber11?.ultimo_anio || kpis.frescura?.saber11?.ultimo_periodo?.slice(0, 4) || "—"})`}
+          unit="puntaje promedio global"
+          year={saberYear}
           icon={GraduationCap}
-          color="warning"
           delay={4}
         />
-        <KPICard
+        <MetricCard
           label="Sedes"
           value={kpis.totalSedes.toLocaleString("es-CO")}
-          unit={`sedes educativas (${kpis.frescura?.sedes?.ultimo_anio || "—"})`}
+          unit="sedes educativas"
+          year={sedesYear}
           icon={School}
-          color="secondary"
           delay={5}
         />
-        <KPICard
+        <MetricCard
           label="IEs Analizadas"
           value={kpis.totalIEs?.toString() || "\u2014"}
           unit="instituciones educativas"
           icon={BarChart3}
-          color="accent"
           delay={6}
         />
-        <KPICard
+        <MetricCard
           label="Datasets"
           value={`${Object.keys(kpis.fuentes || {}).length}+`}
-          unit="fuentes de datos integradas"
+          unit="fuentes integradas"
           icon={FlaskConical}
-          color="secondary"
           delay={7}
         />
       </div>
 
       {/* ---- Diagnostic Alerts ---- */}
-      <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.5 }}>
-        <div className="rounded-xl border border-border bg-surface/50 p-5">
+      <motion.div {...fadeUp} transition={{ delay: 0.2, duration: 0.4 }}>
+        <div className="border border-border bg-surface p-5">
           <div className="flex items-center gap-2 mb-4">
-            <ShieldAlert className="w-4 h-4 text-accent" />
-            <h2 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+            <ShieldAlert className="w-3.5 h-3.5 text-muted" />
+            <h2 className="text-[12px] font-semibold text-foreground uppercase tracking-widest">
               Diagnóstico Territorial
             </h2>
-            <span className="text-[10px] text-muted ml-auto">
-              Alertas basadas en umbrales predefinidos
+            <span className="text-[9px] font-[var(--font-geist-mono)] text-muted ml-auto">
+              Umbrales predefinidos
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {/* Critical alerts */}
             {criticalDesercion.length > 0 && (
               <AlertCard
                 type="critical"
@@ -476,7 +468,6 @@ export function ExecutiveDashboard() {
               />
             )}
 
-            {/* Warning alerts */}
             {lowApproval.length > 0 && (
               <AlertCard
                 type="warning"
@@ -493,7 +484,6 @@ export function ExecutiveDashboard() {
               />
             )}
 
-            {/* Positive */}
             {bestComunas.length > 0 && (
               <AlertCard
                 type="positive"
@@ -513,29 +503,26 @@ export function ExecutiveDashboard() {
         </div>
       </motion.div>
 
-      {/* ---- Two-column: Rankings ---- */}
+      {/* ---- Rankings ---- */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Top comunas deserción */}
         <motion.div
           {...fadeUp}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="rounded-xl border border-border bg-surface/50 p-5"
+          transition={{ delay: 0.3, duration: 0.4 }}
+          className="border border-border bg-surface p-5"
         >
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-[var(--font-syne)] text-xs font-bold text-foreground uppercase tracking-wider">
-              Comunas — Mayor Deserción
+            <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
+              Mayor Deserción
             </h3>
             <Link
               href="/permanencia"
-              className="text-[10px] text-accent hover:underline flex items-center gap-0.5"
+              className="text-[10px] text-muted hover:text-foreground flex items-center gap-0.5 transition-colors"
             >
               Ver más <ChevronRight className="w-3 h-3" />
             </Link>
           </div>
           {comunas
-            .sort(
-              (a, b) => (b.tasa_desercion ?? 0) - (a.tasa_desercion ?? 0)
-            )
+            .sort((a, b) => (b.tasa_desercion ?? 0) - (a.tasa_desercion ?? 0))
             .slice(0, 6)
             .map((c, i) => (
               <ComunaRow
@@ -548,35 +535,31 @@ export function ExecutiveDashboard() {
                   (c.tasa_desercion ?? 0) > 3.5
                     ? "text-danger"
                     : (c.tasa_desercion ?? 0) > 2
-                      ? "text-[#FFB703]"
-                      : "text-[#06D6A0]"
+                      ? "text-warning"
+                      : "text-accent"
                 }
               />
             ))}
         </motion.div>
 
-        {/* Top comunas aprobación */}
         <motion.div
           {...fadeUp}
-          transition={{ delay: 0.45, duration: 0.5 }}
-          className="rounded-xl border border-border bg-surface/50 p-5"
+          transition={{ delay: 0.35, duration: 0.4 }}
+          className="border border-border bg-surface p-5"
         >
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-[var(--font-syne)] text-xs font-bold text-foreground uppercase tracking-wider">
-              Comunas — Mayor Aprobación
+            <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
+              Mayor Aprobación
             </h3>
             <Link
               href="/permanencia"
-              className="text-[10px] text-accent hover:underline flex items-center gap-0.5"
+              className="text-[10px] text-muted hover:text-foreground flex items-center gap-0.5 transition-colors"
             >
               Ver más <ChevronRight className="w-3 h-3" />
             </Link>
           </div>
           {comunas
-            .sort(
-              (a, b) =>
-                (b.tasa_aprobacion ?? 0) - (a.tasa_aprobacion ?? 0)
-            )
+            .sort((a, b) => (b.tasa_aprobacion ?? 0) - (a.tasa_aprobacion ?? 0))
             .slice(0, 6)
             .map((c, i) => (
               <ComunaRow
@@ -587,10 +570,10 @@ export function ExecutiveDashboard() {
                 label="aprobación"
                 color={
                   (c.tasa_aprobacion ?? 0) >= 93
-                    ? "text-[#06D6A0]"
+                    ? "text-accent"
                     : (c.tasa_aprobacion ?? 0) >= 90
-                      ? "text-accent"
-                      : "text-[#FFB703]"
+                      ? "text-foreground"
+                      : "text-warning"
                 }
               />
             ))}
@@ -601,34 +584,35 @@ export function ExecutiveDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <motion.div
           {...fadeUp}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="rounded-xl border border-border bg-surface/50 overflow-hidden"
+          transition={{ delay: 0.4, duration: 0.4 }}
+          className="border border-border bg-surface overflow-hidden"
         >
-          <div className="p-4 border-b border-border/50">
-            <h3 className="font-[var(--font-syne)] text-xs font-bold text-foreground uppercase tracking-wider">
+          <div className="p-4 border-b border-border">
+            <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
               Top 5 IEs — Saber 11
             </h3>
+            <span className="text-[9px] font-[var(--font-geist-mono)] text-muted">
+              Min. 10 evaluados · Todos los períodos
+            </span>
           </div>
           <div className="p-4">
             {topIEs.map((ie, i) => (
               <div
                 key={ie.codigoDane}
-                className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0"
+                className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0"
               >
-                <span className="font-[var(--font-jetbrains)] text-xs text-muted w-5">
+                <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">
                   {i + 1}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-foreground font-medium truncate">
+                  <p className="text-[12px] text-foreground font-medium truncate tracking-tight">
                     {ie.nombre}
                   </p>
-                  <span
-                    className={`text-[9px] ${ie.naturaleza === "OFICIAL" ? "text-accent" : "text-[#FFB703]"}`}
-                  >
+                  <span className="text-[9px] text-muted">
                     {ie.naturaleza === "OFICIAL" ? "Oficial" : "Privado"}
                   </span>
                 </div>
-                <span className="font-[var(--font-jetbrains)] text-sm font-bold text-[#06D6A0]">
+                <span className="font-[var(--font-geist-mono)] text-[13px] font-semibold text-accent tabular-nums">
                   {ie.promedioGlobal}
                 </span>
               </div>
@@ -638,37 +622,35 @@ export function ExecutiveDashboard() {
 
         <motion.div
           {...fadeUp}
-          transition={{ delay: 0.55, duration: 0.5 }}
-          className="rounded-xl border border-border bg-surface/50 overflow-hidden"
+          transition={{ delay: 0.45, duration: 0.4 }}
+          className="border border-border bg-surface overflow-hidden"
         >
-          <div className="p-4 border-b border-border/50">
-            <h3 className="font-[var(--font-syne)] text-xs font-bold text-foreground uppercase tracking-wider">
+          <div className="p-4 border-b border-border">
+            <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
               Bottom 5 IEs — Saber 11
             </h3>
-            <p className="text-[10px] text-muted mt-0.5">
+            <span className="text-[9px] font-[var(--font-geist-mono)] text-muted">
               Min. 10 evaluados
-            </p>
+            </span>
           </div>
           <div className="p-4">
             {bottomIEs.map((ie, i) => (
               <div
                 key={ie.codigoDane}
-                className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0"
+                className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0"
               >
-                <span className="font-[var(--font-jetbrains)] text-xs text-muted w-5">
+                <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">
                   {i + 1}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-foreground font-medium truncate">
+                  <p className="text-[12px] text-foreground font-medium truncate tracking-tight">
                     {ie.nombre}
                   </p>
-                  <span
-                    className={`text-[9px] ${ie.naturaleza === "OFICIAL" ? "text-accent" : "text-[#FFB703]"}`}
-                  >
+                  <span className="text-[9px] text-muted">
                     {ie.naturaleza === "OFICIAL" ? "Oficial" : "Privado"}
                   </span>
                 </div>
-                <span className="font-[var(--font-jetbrains)] text-sm font-bold text-danger">
+                <span className="font-[var(--font-geist-mono)] text-[13px] font-semibold text-danger tabular-nums">
                   {ie.promedioGlobal}
                 </span>
               </div>
@@ -677,19 +659,19 @@ export function ExecutiveDashboard() {
         </motion.div>
       </div>
 
-      {/* ---- Key Insights ---- */}
+      {/* ---- Hallazgos ---- */}
       <motion.div
         {...fadeUp}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        className="rounded-xl border border-accent/20 bg-accent/5 p-5"
+        transition={{ delay: 0.5, duration: 0.4 }}
+        className="border border-accent/10 bg-accent/[0.02] p-5"
       >
-        <h2 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3 flex items-center gap-2">
-          <FlaskConical className="w-4 h-4 text-accent" />
+        <h2 className="text-[11px] font-semibold text-foreground mb-4 flex items-center gap-2 uppercase tracking-widest">
+          <FlaskConical className="w-3.5 h-3.5 text-accent" />
           Hallazgos Clave
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-muted leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-[12px] text-muted leading-relaxed">
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">1.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">01</span>
             <p>
               La brecha socioeconómica en Saber 11 es de{" "}
               <span className="text-foreground font-medium">59.6 puntos</span>{" "}
@@ -697,28 +679,24 @@ export function ExecutiveDashboard() {
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">2.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">02</span>
             <p>
               Las comunas periféricas (Popular, Santa Cruz, Villa Hermosa)
               concentran la{" "}
-              <span className="text-foreground font-medium">
-                mayor deserción
-              </span>{" "}
+              <span className="text-foreground font-medium">mayor deserción</span>{" "}
               y menor aprobación simultáneamente.
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">3.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">03</span>
             <p>
               La educación de la madre predice hasta{" "}
-              <span className="text-foreground font-medium">
-                101.8 pts de diferencia
-              </span>{" "}
+              <span className="text-foreground font-medium">101.8 pts de diferencia</span>{" "}
               en Saber 11 (postgrado vs. ninguna).
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">4.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">04</span>
             <p>
               Jornada completa supera a sabatina en{" "}
               <span className="text-foreground font-medium">87.8 pts</span>. La
@@ -726,7 +704,7 @@ export function ExecutiveDashboard() {
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">5.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">05</span>
             <p>
               Colegios oficiales de estrato 1 superan a los no oficiales del
               mismo estrato en{" "}
@@ -735,20 +713,18 @@ export function ExecutiveDashboard() {
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">6.</span>
+            <span className="text-accent mt-0.5 shrink-0 font-[var(--font-geist-mono)] text-[10px]">06</span>
             <p>
               La brecha de género es transversal:{" "}
-              <span className="text-foreground font-medium">
-                10.5 pts a favor de hombres
-              </span>
-              . La diferencia es mayor en Matemáticas que en otras áreas.
+              <span className="text-foreground font-medium">10.5 pts a favor de hombres</span>.
+              La diferencia es mayor en Matemáticas que en otras áreas.
             </p>
           </div>
         </div>
         <div className="mt-4 pt-3 border-t border-accent/10">
           <Link
             href="/analisis"
-            className="text-xs text-accent hover:underline inline-flex items-center gap-1"
+            className="text-[11px] text-accent hover:text-accent/80 inline-flex items-center gap-1 transition-colors"
           >
             Explorar análisis completo
             <ArrowRight className="w-3 h-3" />
@@ -756,64 +732,29 @@ export function ExecutiveDashboard() {
         </div>
       </motion.div>
 
-      {/* ---- Dimension Quick Links ---- */}
-      <motion.div
-        {...fadeUp}
-        transition={{ delay: 0.65, duration: 0.5 }}
-      >
-        <h2 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3 uppercase tracking-wider">
+      {/* ---- Dimensions ---- */}
+      <motion.div {...fadeUp} transition={{ delay: 0.55, duration: 0.4 }}>
+        <h2 className="text-[11px] font-semibold text-foreground mb-3 uppercase tracking-widest">
           Dimensiones del Sistema
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-border">
           {[
-            {
-              name: "Cobertura",
-              icon: Users,
-              color: "from-accent to-secondary",
-              href: "/cobertura",
-            },
-            {
-              name: "Calidad",
-              icon: Award,
-              color: "from-[#06D6A0] to-accent",
-              href: "/calidad",
-            },
-            {
-              name: "Permanencia",
-              icon: ShieldAlert,
-              color: "from-[#FFB703] to-danger",
-              href: "/permanencia",
-            },
-            {
-              name: "Matrícula",
-              icon: GraduationCap,
-              color: "from-secondary to-primary",
-              href: "/matricula",
-            },
-            {
-              name: "Equidad",
-              icon: Heart,
-              color: "from-accent to-[#06D6A0]",
-              href: "/equidad",
-            },
-            {
-              name: "Contexto",
-              icon: BarChart3,
-              color: "from-danger to-[#FFB703]",
-              href: "/contexto",
-            },
+            { name: "Cobertura", icon: Users, href: "/cobertura" },
+            { name: "Calidad", icon: Award, href: "/calidad" },
+            { name: "Permanencia", icon: ShieldAlert, href: "/permanencia" },
+            { name: "Matrícula", icon: GraduationCap, href: "/matricula" },
+            { name: "Equidad", icon: Heart, href: "/equidad" },
+            { name: "Contexto", icon: BarChart3, href: "/contexto" },
           ].map((dim) => (
             <Link
               key={dim.name}
               href={dim.href}
-              className="group rounded-lg border border-border bg-background/50 p-3 hover:border-accent/30 hover:bg-accent/5 transition-all"
+              className="group bg-surface p-3 hover:bg-white/[0.02] transition-colors"
             >
-              <div
-                className={`w-6 h-1 rounded-full bg-gradient-to-r ${dim.color} mb-2 group-hover:w-10 transition-all`}
-              />
+              <div className="w-4 h-[2px] bg-accent/30 mb-2 group-hover:w-8 group-hover:bg-accent transition-all duration-300" />
               <div className="flex items-center gap-1.5">
-                <dim.icon className="w-3.5 h-3.5 text-muted group-hover:text-accent transition-colors" />
-                <span className="text-xs font-semibold text-foreground">
+                <dim.icon className="w-3 h-3 text-muted group-hover:text-accent transition-colors" />
+                <span className="text-[12px] font-medium text-foreground tracking-tight">
                   {dim.name}
                 </span>
               </div>
@@ -824,9 +765,9 @@ export function ExecutiveDashboard() {
 
       {/* ---- Footer ---- */}
       <div className="text-center pt-4 pb-8">
-        <p className="text-[10px] text-muted">
-          Datos: datos.gov.co · MEData · ICFES · MEN ·
-          Secretaría de Educación de Medellín | Actualizado {kpis.ultimaActualizacion || "\u2014"}
+        <p className="text-[10px] font-[var(--font-geist-mono)] text-muted tracking-tight">
+          datos.gov.co · MEData · ICFES · MEN · Secretaría de Educación de Medellín
+          {kpis.ultimaActualizacion && ` · ${kpis.ultimaActualizacion}`}
         </p>
       </div>
     </div>

@@ -58,10 +58,10 @@ export function MatriculaChart() {
   }));
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             Matrícula Total — Medellín
           </h3>
           <DataVintage
@@ -75,27 +75,27 @@ export function MatriculaChart() {
         <AreaChart data={enrichedData}>
           <defs>
             <linearGradient id="grad-oficial" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#00D4FF" stopOpacity={0} />
+              <stop offset="5%" stopColor="#10B981" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="grad-privado" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#FFB703" stopOpacity={0.3} />
               <stop offset="95%" stopColor="#FFB703" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="grad-estimado" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#6B8CAE" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#6B8CAE" stopOpacity={0} />
+              <stop offset="5%" stopColor="#63636E" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#63636E" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="anio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => formatNumber(v)}
@@ -125,16 +125,16 @@ export function MatriculaChart() {
           {hasEstimated && (
             <ReferenceLine
               x={lastRealYear}
-              stroke="#6B8CAE"
+              stroke="#63636E"
               strokeDasharray="5 5"
-              label={{ value: "Estimaciones →", position: "top", fill: "#6B8CAE", fontSize: 9 }}
+              label={{ value: "Estimaciones →", position: "top", fill: "#63636E", fontSize: 9 }}
             />
           )}
           <Area
             type="monotone"
             dataKey="oficial"
             stackId="matricula"
-            stroke="#00D4FF"
+            stroke="#10B981"
             strokeWidth={2}
             fill="url(#grad-oficial)"
             connectNulls={false}
@@ -152,7 +152,7 @@ export function MatriculaChart() {
             <Area
               type="monotone"
               dataKey="totalEstimado"
-              stroke="#6B8CAE"
+              stroke="#63636E"
               strokeWidth={2}
               strokeDasharray="8 4"
               fill="url(#grad-estimado)"

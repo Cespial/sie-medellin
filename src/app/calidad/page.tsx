@@ -12,7 +12,7 @@ export default function CalidadPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-success/20 bg-success/5 text-success text-xs mb-3">
           Calidad Educativa
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Calidad
         </h1>
         <p className="text-muted mt-2 max-w-2xl">

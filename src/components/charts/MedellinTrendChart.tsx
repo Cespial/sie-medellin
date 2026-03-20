@@ -30,7 +30,7 @@ interface StatRecord {
 export function MedellinTrendChart({
   title,
   dataKey,
-  color = "#00D4FF",
+  color = "#10B981",
   unit = "%",
 }: MedellinTrendChartProps) {
   const { data, loading, error, retry } = useFetchData<StatRecord[]>("/data/estadisticas_medellin.json");
@@ -47,10 +47,10 @@ export function MedellinTrendChart({
       : null;
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             {title}
           </h3>
           <DataVintage
@@ -90,15 +90,15 @@ export function MedellinTrendChart({
               <stop offset="95%" stopColor={color} stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="anio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => `${v}${unit}`}
@@ -114,7 +114,7 @@ export function MedellinTrendChart({
             stroke={color}
             strokeWidth={2}
             fill={`url(#grad-mde-${dataKey})`}
-            dot={{ r: 3, fill: color, stroke: "#0D1B2A", strokeWidth: 2 }}
+            dot={{ r: 3, fill: color, stroke: "#111113", strokeWidth: 2 }}
             activeDot={{ r: 5, fill: color }}
           />
         </AreaChart>

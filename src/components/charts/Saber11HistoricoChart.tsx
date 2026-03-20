@@ -44,8 +44,8 @@ export function Saber11HistoricoChart() {
   };
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
+    <div className="border border-border bg-surface/50 p-6">
+      <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"Saber 11 \u2014 Promedio Hist\u00f3rico Medell\u00edn"}
       </h3>
       <DataVintage
@@ -55,16 +55,16 @@ export function Saber11HistoricoChart() {
 
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="periodo"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={formatPeriodo}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             domain={["dataMin - 10", "dataMax + 10"]}
@@ -84,7 +84,7 @@ export function Saber11HistoricoChart() {
             dataKey="promedioCiudad"
             stroke="#FFB703"
             strokeWidth={2}
-            dot={{ r: 4, fill: "#FFB703", stroke: "#0D1B2A", strokeWidth: 2 }}
+            dot={{ r: 4, fill: "#FFB703", stroke: "#111113", strokeWidth: 2 }}
             activeDot={{ r: 6, fill: "#FFB703" }}
           />
         </LineChart>

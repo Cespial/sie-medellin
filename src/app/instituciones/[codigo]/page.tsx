@@ -437,13 +437,13 @@ export default function InstitucionDetallePage() {
             </div>
             <div>
               <p className="text-xs text-muted mb-1">Evaluados</p>
-              <p className="text-sm font-[var(--font-jetbrains)] text-foreground">
+              <p className="text-sm font-[var(--font-geist-mono)] text-foreground">
                 {clasif.evaluados.toLocaleString("es-CO")}
               </p>
             </div>
             <div>
               <p className="text-xs text-muted mb-1">Matriculados</p>
-              <p className="text-sm font-[var(--font-jetbrains)] text-foreground">
+              <p className="text-sm font-[var(--font-geist-mono)] text-foreground">
                 {clasif.matriculados.toLocaleString("es-CO")}
               </p>
             </div>
@@ -475,7 +475,7 @@ function StatCard({
       </div>
       <p
         className={
-          "font-[var(--font-jetbrains)] text-2xl font-bold tabular-nums " +
+          "font-[var(--font-geist-mono)] text-2xl font-bold tabular-nums " +
           (accent ? "text-accent" : "text-foreground")
         }
       >

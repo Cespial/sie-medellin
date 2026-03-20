@@ -1,8 +1,3 @@
-/**
- * DataVintage — subtle pill below chart titles showing data source and freshness.
- * Color-coded: >5 years = red, >2 years = amber, else = muted.
- */
-
 interface DataVintageProps {
   fuente: string;
   ultimoDato?: string;
@@ -19,7 +14,7 @@ function getAgeColor(ultimoDato?: string, descontinuado?: boolean): string {
   if (isNaN(year)) return "text-muted";
   const age = CURRENT_YEAR - year;
   if (age > 5) return "text-danger";
-  if (age > 2) return "text-[#FFB703]";
+  if (age > 2) return "text-warning";
   return "text-muted";
 }
 
@@ -27,10 +22,10 @@ export function DataVintage({ fuente, ultimoDato, nota, descontinuado }: DataVin
   const color = getAgeColor(ultimoDato, descontinuado);
 
   return (
-    <span className={`text-[10px] leading-tight ${color} block mt-0.5`}>
+    <span className={`text-[10px] leading-tight ${color} block mt-1 font-[var(--font-geist-mono)] tracking-tight`}>
       {fuente}
-      {ultimoDato && ` · Último dato: ${ultimoDato}`}
-      {descontinuado && " · Descontinuado"}
+      {ultimoDato && ` · ${ultimoDato}`}
+      {descontinuado && " · DESCONTINUADO"}
       {nota && ` · ${nota}`}
     </span>
   );

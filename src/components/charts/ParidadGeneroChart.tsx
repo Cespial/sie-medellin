@@ -50,8 +50,8 @@ export function ParidadGeneroChart() {
   if (!data) return null;
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
+    <div className="border border-border bg-surface/50 p-6">
+      <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"\u00cdndice de Paridad de G\u00e9nero \u2014 " + data.anio}
       </h3>
       <span className={`text-[10px] block mb-6 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
@@ -70,10 +70,10 @@ export function ParidadGeneroChart() {
               layout="vertical"
               barGap={2}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
               <XAxis
                 type="number"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -83,7 +83,7 @@ export function ParidadGeneroChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={10}
                 tickLine={false}
                 width={75}
@@ -102,7 +102,7 @@ export function ParidadGeneroChart() {
                 }
               />
               <Bar dataKey="femenino" fill="#FF6B9D" radius={[0, 4, 4, 0]} />
-              <Bar dataKey="masculino" fill="#00D4FF" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="masculino" fill="#10B981" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -114,15 +114,15 @@ export function ParidadGeneroChart() {
           </h4>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={data.ipg_cobertura_bruta}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
               <XAxis
                 dataKey="nivel"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={10}
                 tickLine={false}
               />
               <YAxis
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={11}
                 tickLine={false}
                 domain={[0.8, 1.3]}
@@ -136,12 +136,12 @@ export function ParidadGeneroChart() {
               />
               <ReferenceLine
                 y={1}
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 strokeDasharray="5 5"
                 label={{
                   value: "Paridad",
                   position: "right",
-                  fill: "#6B8CAE",
+                  fill: "#63636E",
                   fontSize: 10,
                 }}
               />

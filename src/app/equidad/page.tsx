@@ -12,7 +12,7 @@ export default function EquidadPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs mb-3">
           Equidad Educativa
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Equidad
         </h1>
         <p className="text-muted mt-2 max-w-2xl">

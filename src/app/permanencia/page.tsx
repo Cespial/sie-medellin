@@ -9,7 +9,7 @@ export default function PermanenciaPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-danger/20 bg-danger/5 text-danger text-xs mb-3">
           Permanencia Escolar
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Permanencia
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
@@ -70,7 +70,7 @@ function DesercionSection() {
 function AprobacionSection() {
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
+      <h3 className="text-[12px] font-semibold text-foreground mb-1">
         Aprobación Escolar
       </h3>
       <p className="text-xs text-muted mb-4">

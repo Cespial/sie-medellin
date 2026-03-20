@@ -38,15 +38,14 @@ export function KPICard({
 
   useEffect(() => {
     if (!isInView) return;
-    const duration = 2000;
+    const duration = 1600;
     const startTime = Date.now();
-    const startValue = 0;
 
     const animate = () => {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      setDisplayValue(startValue + (value - startValue) * eased);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplayValue(value * eased);
       if (progress < 1) requestAnimationFrame(animate);
     };
 
@@ -66,45 +65,48 @@ export function KPICard({
     trend === "stable"
       ? "text-muted"
       : (trend === "up") === trendIsGood
-        ? "text-success"
+        ? "text-accent"
         : "text-danger";
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: delay / 1000 }}
+      transition={{ duration: 0.4, delay: delay / 1000 }}
       className={cn(
-        "relative overflow-hidden rounded-xl border border-border bg-surface/80 backdrop-blur-sm p-5",
-        "hover:border-accent/30 hover:glow-accent transition-all duration-300",
+        "relative border border-border bg-surface p-4 hover:border-accent/20 transition-colors duration-200",
         className
       )}
     >
-      {/* Accent line top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" />
+      {/* Sharp accent line — top left */}
+      <div className="absolute top-0 left-0 w-8 h-[2px] bg-accent/40" />
 
-      <p className="text-xs text-muted uppercase tracking-wider mb-2">
+      <p className="text-[11px] text-muted uppercase tracking-widest mb-3 font-medium">
         {label}
-        {dataYear && <span className="normal-case tracking-normal ml-1 opacity-60">({dataYear})</span>}
+        {dataYear && (
+          <span className="normal-case tracking-normal text-muted/50 ml-1.5">
+            {dataYear}
+          </span>
+        )}
       </p>
 
-      <div className="flex items-baseline gap-1.5">
-        <span className="font-[var(--font-jetbrains)] text-3xl font-bold text-foreground tabular-nums">
+      <div className="flex items-baseline gap-1">
+        <span className="font-[var(--font-geist-mono)] text-2xl font-semibold text-foreground tabular-nums tracking-tight">
           {prefix}
           {displayValue.toLocaleString("es-CO", {
             minimumFractionDigits: decimals,
             maximumFractionDigits: decimals,
           })}
         </span>
-        {unit && <span className="text-sm text-muted">{unit}</span>}
+        {unit && <span className="text-[11px] text-muted">{unit}</span>}
       </div>
 
       {(trend || changePercent !== null) && (
-        <div className={cn("flex items-center gap-1 mt-2 text-xs", trendColor)}>
-          <TrendIcon className="w-3.5 h-3.5" />
+        <div className={cn("flex items-center gap-1 mt-2 text-[11px]", trendColor)}>
+          <TrendIcon className="w-3 h-3" />
           {changePercent !== null && (
-            <span>
+            <span className="font-[var(--font-geist-mono)]">
               {changePercent > 0 ? "+" : ""}
               {changePercent.toFixed(1)}%
             </span>

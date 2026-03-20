@@ -38,10 +38,10 @@ export function BachilleresChart() {
   const latest = data[data.length - 1];
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             {"Bachilleres Graduados \u2014 Medell\u00edn"}
           </h3>
           <p className="text-xs text-muted mt-0.5">
@@ -49,7 +49,7 @@ export function BachilleresChart() {
           </p>
         </div>
         <div className="text-right">
-          <p className="font-[var(--font-jetbrains)] text-xl font-bold text-accent">
+          <p className="font-[var(--font-geist-mono)] text-xl font-bold text-accent">
             {latest.graduados_11.toLocaleString("es-CO")}
           </p>
           <p className="text-[10px] text-muted">
@@ -60,15 +60,15 @@ export function BachilleresChart() {
 
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={data} barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="anio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>
@@ -96,12 +96,12 @@ export function BachilleresChart() {
           />
           <Bar
             dataKey="graduados_11"
-            fill="#00D4FF"
+            fill="#10B981"
             radius={[4, 4, 0, 0]}
           />
           <Bar
             dataKey="graduados_26"
-            fill="#3E92CC"
+            fill="#6366F1"
             radius={[4, 4, 0, 0]}
           />
         </BarChart>

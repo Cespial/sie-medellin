@@ -30,7 +30,7 @@ interface DocentesData {
 
 const GENDER_COLORS: Record<string, string> = {
   F: "#FF6B9D",
-  M: "#00D4FF",
+  M: "#10B981",
 };
 
 export function DocentesChart() {
@@ -44,7 +44,7 @@ export function DocentesChart() {
   const genderData = data.por_genero.map((g) => ({
     name: g.genero === "F" ? "Femenino" : "Masculino",
     value: g.total,
-    color: GENDER_COLORS[g.genero] || "#6B8CAE",
+    color: GENDER_COLORS[g.genero] || "#63636E",
   }));
 
   // Truncate long level names for the bar chart
@@ -54,10 +54,10 @@ export function DocentesChart() {
   }));
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             {"Perfil Docente Oficial \u2014 " + data.anio}
           </h3>
           <span className={`text-[10px] block mt-0.5 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
@@ -81,7 +81,7 @@ export function DocentesChart() {
                 innerRadius={50}
                 outerRadius={80}
                 dataKey="value"
-                stroke="#0D1B2A"
+                stroke="#111113"
                 strokeWidth={2}
                 label={({ name, percent }) =>
                   `${name} ${((percent ?? 0) * 100).toFixed(0)}%`
@@ -108,7 +108,7 @@ export function DocentesChart() {
                 key={e.estatuto}
                 className="text-center p-2 rounded-lg bg-background/50"
               >
-                <p className="font-[var(--font-jetbrains)] text-sm font-bold text-foreground">
+                <p className="font-[var(--font-geist-mono)] text-sm font-bold text-foreground">
                   {e.total.toLocaleString("es-CO")}
                 </p>
                 <p className="text-[10px] text-muted">
@@ -126,10 +126,10 @@ export function DocentesChart() {
           </h4>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={nivelData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
               <XAxis
                 type="number"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -139,7 +139,7 @@ export function DocentesChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={9}
                 tickLine={false}
                 width={140}
@@ -151,7 +151,7 @@ export function DocentesChart() {
                   "Docentes",
                 ]}
               />
-              <Bar dataKey="total" fill="#3E92CC" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="total" fill="#6366F1" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

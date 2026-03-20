@@ -53,10 +53,10 @@ export function ISCEChart() {
     filtered.length;
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             ISCE — Top 20 Instituciones ({year})
           </h3>
           <p className="text-xs text-muted mt-1">
@@ -82,10 +82,10 @@ export function ISCEChart() {
       </div>
       <ResponsiveContainer width="100%" height={500}>
         <BarChart data={top20} layout="vertical" margin={{ left: 10 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             domain={[0, 10]}
@@ -93,7 +93,7 @@ export function ISCEChart() {
           <YAxis
             dataKey="nombre"
             type="category"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={10}
             tickLine={false}
             width={160}
@@ -112,7 +112,7 @@ export function ISCEChart() {
                     ? "#FFB703"
                     : entry.valor >= 7
                       ? "#06D6A0"
-                      : "#00D4FF"
+                      : "#10B981"
                 }
               />
             ))}
@@ -121,7 +121,7 @@ export function ISCEChart() {
       </ResponsiveContainer>
       <div className="flex items-center gap-4 mt-3 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#00D4FF]" /> Oficial
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#10B981]" /> Oficial
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-sm bg-[#FFB703]" /> Privado

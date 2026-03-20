@@ -124,7 +124,7 @@ export function HeroSection() {
           { label: "Datasets", value: totalDatasets },
         ].map((stat) => (
           <div key={stat.label}>
-            <p className="font-[var(--font-jetbrains)] text-2xl font-bold text-accent">
+            <p className="font-[var(--font-geist-mono)] text-2xl font-bold text-accent">
               {stat.value}
             </p>
             <p className="text-xs text-muted">{stat.label}</p>

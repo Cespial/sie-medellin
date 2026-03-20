@@ -48,10 +48,10 @@ export function EdSuperiorChart() {
   }));
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             {"Matr\u00edcula Educaci\u00f3n Superior \u2014 Medell\u00edn"}
           </h3>
           <span className="text-[10px] text-[#FFB703] block mt-0.5">
@@ -59,7 +59,7 @@ export function EdSuperiorChart() {
           </span>
         </div>
         <div className="text-right">
-          <p className="font-[var(--font-jetbrains)] text-xl font-bold text-accent">
+          <p className="font-[var(--font-geist-mono)] text-xl font-bold text-accent">
             {latest.total.toLocaleString("es-CO")}
           </p>
           <p className="text-[10px] text-muted">
@@ -70,16 +70,16 @@ export function EdSuperiorChart() {
 
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="anio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={10}
             tickLine={false}
             interval={2}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>
@@ -111,9 +111,9 @@ export function EdSuperiorChart() {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="tecnica" stackId="a" fill="#6B8CAE" />
-          <Bar dataKey="tecnologica" stackId="a" fill="#3E92CC" />
-          <Bar dataKey="universitaria" stackId="a" fill="#00D4FF" />
+          <Bar dataKey="tecnica" stackId="a" fill="#63636E" />
+          <Bar dataKey="tecnologica" stackId="a" fill="#6366F1" />
+          <Bar dataKey="universitaria" stackId="a" fill="#10B981" />
           <Bar
             dataKey="posgrado"
             stackId="a"

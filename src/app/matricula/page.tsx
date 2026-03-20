@@ -10,7 +10,7 @@ export default function MatriculaPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs mb-3">
           Matrícula Educativa
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Matrícula
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
@@ -46,7 +46,7 @@ export default function MatriculaPage() {
 function MatriculaNivelSection() {
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3">
+      <h3 className="text-[12px] font-semibold text-foreground mb-3">
         Fuentes de Datos de Matrícula
       </h3>
       <div className="space-y-3">

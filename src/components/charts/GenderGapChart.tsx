@@ -49,10 +49,10 @@ export function GenderGapChart() {
   const latest = latestWithGender[latestWithGender.length - 1];
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             Saber 11 — Brecha de Género
           </h3>
           <DataVintage
@@ -65,7 +65,7 @@ export function GenderGapChart() {
             <span className="text-[#FF6B9D]">
               F: {latest.promedio_f}
             </span>
-            <span className="text-[#00D4FF]">
+            <span className="text-[#10B981]">
               M: {latest.promedio_m}
             </span>
             <span className={latest.brecha && latest.brecha > 0 ? "text-success" : "text-warning"}>
@@ -76,15 +76,15 @@ export function GenderGapChart() {
       </div>
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="label"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={10}
             tickLine={false}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             domain={["auto", "auto"]}
@@ -105,7 +105,7 @@ export function GenderGapChart() {
           <Line
             type="monotone"
             dataKey="promedio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             strokeWidth={1}
             strokeDasharray="5 5"
             dot={false}
@@ -115,15 +115,15 @@ export function GenderGapChart() {
             dataKey="promedio_f"
             stroke="#FF6B9D"
             strokeWidth={2}
-            dot={{ r: 3, fill: "#FF6B9D", stroke: "#0D1B2A", strokeWidth: 2 }}
+            dot={{ r: 3, fill: "#FF6B9D", stroke: "#111113", strokeWidth: 2 }}
             connectNulls
           />
           <Line
             type="monotone"
             dataKey="promedio_m"
-            stroke="#00D4FF"
+            stroke="#10B981"
             strokeWidth={2}
-            dot={{ r: 3, fill: "#00D4FF", stroke: "#0D1B2A", strokeWidth: 2 }}
+            dot={{ r: 3, fill: "#10B981", stroke: "#111113", strokeWidth: 2 }}
             connectNulls
           />
         </LineChart>

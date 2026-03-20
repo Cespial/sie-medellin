@@ -30,7 +30,7 @@ interface StatRecord {
 export function TrendChart({
   title,
   dataKey,
-  color = "#00D4FF",
+  color = "#10B981",
   unit = "%",
 }: TrendChartProps) {
   const { data, loading, error, retry } = useFetchData<StatRecord[]>("/data/estadisticas_historicas.json");
@@ -40,8 +40,8 @@ export function TrendChart({
   if (!data) return null;
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
+    <div className="border border-border bg-surface/50 p-6">
+      <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {title}
       </h3>
       <DataVintage
@@ -56,15 +56,15 @@ export function TrendChart({
               <stop offset="95%" stopColor={color} stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
           <XAxis
             dataKey="anio"
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#6B8CAE"
+            stroke="#63636E"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => `${v}${unit}`}
@@ -80,7 +80,7 @@ export function TrendChart({
             stroke={color}
             strokeWidth={2}
             fill={`url(#grad-${dataKey})`}
-            dot={{ r: 3, fill: color, stroke: "#0D1B2A", strokeWidth: 2 }}
+            dot={{ r: 3, fill: color, stroke: "#111113", strokeWidth: 2 }}
             activeDot={{ r: 5, fill: color }}
           />
         </AreaChart>

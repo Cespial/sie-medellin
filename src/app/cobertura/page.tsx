@@ -10,7 +10,7 @@ export default function CoberturaPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs mb-3">
           Cobertura Educativa
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Cobertura
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
@@ -19,7 +19,7 @@ export default function CoberturaPage() {
         </p>
       </div>
 
-      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+      <h2 className="text-sm font-semibold tracking-wide uppercase text-foreground mb-3">
         Medellín — Cobertura Municipal
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -61,7 +61,7 @@ export default function CoberturaPage() {
         />
       </div>
 
-      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+      <h2 className="text-sm font-semibold tracking-wide uppercase text-foreground mb-3">
         Antioquia — Serie Departamental
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

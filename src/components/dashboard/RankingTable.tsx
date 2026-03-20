@@ -92,13 +92,13 @@ export function RankingTable({ limit = 20, showBottom = false }: RankingTablePro
                     {ie.naturaleza === "OFICIAL" ? "OF" : "PR"}
                   </span>
                 </td>
-                <td className="px-4 py-2.5 text-right font-[var(--font-jetbrains)] font-bold text-foreground">
+                <td className="px-4 py-2.5 text-right font-[var(--font-geist-mono)] font-bold text-foreground">
                   {ie.promedioGlobal}
                 </td>
-                <td className="px-4 py-2.5 text-right font-[var(--font-jetbrains)] text-muted text-xs">
+                <td className="px-4 py-2.5 text-right font-[var(--font-geist-mono)] text-muted text-xs">
                   {ie.promedioMatematicas ?? "—"}
                 </td>
-                <td className="px-4 py-2.5 text-right font-[var(--font-jetbrains)] text-muted text-xs">
+                <td className="px-4 py-2.5 text-right font-[var(--font-geist-mono)] text-muted text-xs">
                   {ie.promedioLectura ?? "—"}
                 </td>
                 <td className="px-4 py-2.5 text-right text-muted text-xs">

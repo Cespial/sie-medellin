@@ -1,0 +1,14 @@
+[
+  [
+    "clasificacion_saber11",
+    "https://medata.gov.co/sites/default/files/distribution/1-011-08-000064/clasificacion_establecimientos_prueba_saber_11.csv"
+  ],
+  [
+    "isce_sintetico",
+    "https://medata.gov.co/sites/default/files/distribution/1-011-08-000082/indice_sintetico_de_calidad_educativa.csv"
+  ],
+  [
+    "matricula_formal",
+    "https://medata.gov.co/sites/default/files/distribution/1-011-08-000178/matricula_de_educacion_formal.csv"
+  ]
+]

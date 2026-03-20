@@ -9,7 +9,7 @@ export default function AnalisisPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs mb-3">
           Análisis Multivariable
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Análisis
         </h1>
         <p className="text-muted mt-2 max-w-2xl">

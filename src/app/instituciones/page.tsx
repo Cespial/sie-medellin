@@ -82,7 +82,7 @@ export default function InstitucionesPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs mb-3">
           Directorio — {data.length} IEs con datos Saber 11
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Instituciones Educativas
         </h1>
         <p className="text-muted mt-2">
@@ -194,22 +194,22 @@ export default function InstitucionesPage() {
                           {nat === "OFICIAL" || nat === "O" ? "OF" : "PR"}
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] font-bold text-foreground">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] font-bold text-foreground">
                         {ie.promedioGlobal}
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] text-xs text-muted">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] text-xs text-muted">
                         {getMat(ie) ?? "—"}
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] text-xs text-muted">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] text-xs text-muted">
                         {getLec(ie) ?? "—"}
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] text-xs text-muted">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] text-xs text-muted">
                         {getCin(ie) ?? "—"}
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] text-xs text-muted">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] text-xs text-muted">
                         {getSoc(ie) ?? "—"}
                       </td>
-                      <td className="px-3 py-2 text-right font-[var(--font-jetbrains)] text-xs text-muted">
+                      <td className="px-3 py-2 text-right font-[var(--font-geist-mono)] text-xs text-muted">
                         {getIng(ie) ?? "—"}
                       </td>
                       <td className="px-3 py-2 text-right text-xs text-muted">

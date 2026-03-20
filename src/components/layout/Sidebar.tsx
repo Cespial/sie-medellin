@@ -34,17 +34,33 @@ const NAV_ITEMS = [
   { href: "/analisis", label: "Análisis", icon: FlaskConical },
 ];
 
+/* Tensor chevron logo mark */
+function TensorMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="14 4 8 12 14 20" />
+      <polyline points="20 4 14 12 20 20" />
+    </svg>
+  );
+}
+
 export function Sidebar() {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close mobile drawer on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Close mobile drawer on Escape key
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") setMobileOpen(false);
@@ -55,7 +71,6 @@ export function Sidebar() {
     }
   }, [mobileOpen]);
 
-  // Prevent body scroll when mobile drawer is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -68,36 +83,33 @@ export function Sidebar() {
   const navContent = (
     <>
       {/* Logo */}
-      <div className="flex items-center gap-3 px-4 py-5 border-b border-border">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-secondary flex items-center justify-center shrink-0">
-          <span className="text-background font-bold text-sm">S</span>
-        </div>
+      <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
+        <TensorMark className="w-6 h-6 text-foreground shrink-0" />
         {(!collapsed || mobileOpen) && (
           <div className="overflow-hidden">
-            <h1 className="font-[var(--font-syne)] font-bold text-sm text-foreground leading-tight">
+            <h1 className="font-semibold text-[13px] text-foreground tracking-tight leading-tight">
               SIE Medellín
             </h1>
-            <p className="text-[10px] text-muted leading-tight">
+            <p className="text-[10px] text-muted tracking-wide uppercase leading-tight">
               Inteligencia Educativa
             </p>
           </div>
         )}
 
-        {/* Close button for mobile drawer */}
         {mobileOpen && (
           <button
             onClick={() => setMobileOpen(false)}
             className="ml-auto text-muted hover:text-foreground transition-colors lg:hidden"
             aria-label="Cerrar menú"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         )}
       </div>
 
       {/* Navigation */}
       <nav
-        className="flex-1 px-2 py-4 space-y-1"
+        className="flex-1 px-2 py-3 space-y-0.5"
         role="navigation"
         aria-label="Navegación principal"
       >
@@ -111,16 +123,24 @@ export function Sidebar() {
               href={item.href}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200",
+                "group flex items-center gap-3 px-3 py-2 text-[13px] transition-colors duration-150",
                 isActive
-                  ? "bg-accent/10 text-accent glow-accent"
-                  : "text-muted hover:text-foreground hover:bg-white/5"
+                  ? "text-foreground bg-white/[0.04]"
+                  : "text-muted hover:text-foreground"
               )}
             >
+              {isActive && (
+                <span className="absolute left-0 w-[2px] h-5 bg-accent" />
+              )}
               <item.icon
-                className={cn("w-4.5 h-4.5 shrink-0", isActive && "text-accent")}
+                className={cn(
+                  "w-[15px] h-[15px] shrink-0",
+                  isActive ? "text-accent" : "text-muted group-hover:text-foreground"
+                )}
               />
-              {(!collapsed || mobileOpen) && <span>{item.label}</span>}
+              {(!collapsed || mobileOpen) && (
+                <span className="tracking-tight">{item.label}</span>
+              )}
             </Link>
           );
         })}
@@ -130,20 +150,20 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile hamburger button */}
+      {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="fixed top-3 left-3 z-50 flex items-center justify-center w-10 h-10 rounded-lg bg-surface/50 border border-border backdrop-blur-sm text-muted hover:text-foreground transition-colors lg:hidden"
+        className="fixed top-3 left-3 z-50 flex items-center justify-center w-10 h-10 bg-surface border border-border text-muted hover:text-foreground transition-colors lg:hidden"
         aria-label="Abrir menú"
         aria-expanded={mobileOpen}
       >
-        <Menu className="w-5 h-5" />
+        <Menu className="w-4 h-4" />
       </button>
 
       {/* Mobile backdrop */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-black/70 lg:hidden"
           onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
@@ -152,7 +172,7 @@ export function Sidebar() {
       {/* Mobile drawer */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex flex-col w-56 border-r border-border bg-surface/50 backdrop-blur-sm transition-transform duration-300 lg:hidden",
+          "fixed inset-y-0 left-0 z-50 flex flex-col w-52 border-r border-border bg-surface transition-transform duration-200 lg:hidden",
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         )}
         aria-label="Menú de navegación"
@@ -163,24 +183,23 @@ export function Sidebar() {
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "hidden lg:flex flex-col border-r border-border bg-surface/50 backdrop-blur-sm transition-all duration-300",
-          collapsed ? "w-16" : "w-56"
+          "hidden lg:flex flex-col border-r border-border bg-surface transition-all duration-200",
+          collapsed ? "w-14" : "w-52"
         )}
         aria-label="Menú de navegación"
         aria-expanded={!collapsed}
       >
         {navContent}
 
-        {/* Collapse Toggle (desktop only) */}
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="flex items-center justify-center py-3 border-t border-border text-muted hover:text-foreground transition-colors"
           aria-label={collapsed ? "Expandir menú" : "Colapsar menú"}
         >
           {collapsed ? (
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3.5 h-3.5" />
           ) : (
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-3.5 h-3.5" />
           )}
         </button>
       </aside>

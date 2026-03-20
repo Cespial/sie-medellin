@@ -43,7 +43,7 @@ interface PoblacionesData {
 
 type Tab = "extranjeros" | "etnias" | "victimas" | "nee";
 
-const COLORS = ["#00D4FF", "#FFB703", "#EF233C", "#06D6A0", "#9B5DE5", "#FF6B6B", "#3E92CC", "#F8961E"];
+const COLORS = ["#10B981", "#FFB703", "#EF233C", "#06D6A0", "#9B5DE5", "#FF6B6B", "#6366F1", "#F8961E"];
 
 const LABELS: Record<Tab, string> = {
   extranjeros: "Estudiantes Extranjeros",
@@ -74,10 +74,10 @@ export function PoblacionesChart() {
     tab === "extranjeros" ? "pais" : tab === "etnias" ? "etnia" : "tipo";
 
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="border border-border bg-surface/50 p-6">
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <div>
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+          <h3 className="text-[12px] font-semibold text-foreground">
             Poblaciones Especiales en Educación Formal
           </h3>
           <DataVintage
@@ -168,14 +168,14 @@ export function PoblacionesChart() {
             >
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="#1A2D42"
+                stroke="#1F1F23"
                 horizontal={false}
               />
-              <XAxis type="number" stroke="#6B8CAE" fontSize={10} tickLine={false} />
+              <XAxis type="number" stroke="#63636E" fontSize={10} tickLine={false} />
               <YAxis
                 dataKey="comuna"
                 type="category"
-                stroke="#6B8CAE"
+                stroke="#63636E"
                 fontSize={10}
                 tickLine={false}
                 width={50}
@@ -187,7 +187,7 @@ export function PoblacionesChart() {
                   "Estudiantes",
                 ]}
               />
-              <Bar dataKey="total" fill="#00D4FF" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="total" fill="#10B981" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

@@ -12,7 +12,7 @@ export default function ContextoPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-warning/20 bg-warning/5 text-warning text-xs mb-3">
           Contexto Socioeconómico
         </div>
-        <h1 className="font-[var(--font-syne)] text-3xl font-bold text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Contexto
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
@@ -22,7 +22,7 @@ export default function ContextoPage() {
         </p>
       </div>
 
-      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+      <h2 className="text-sm font-semibold tracking-wide uppercase text-foreground mb-3">
         Medellín — Eficiencia y Reprobación
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -52,7 +52,7 @@ export default function ContextoPage() {
         />
       </div>
 
-      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+      <h2 className="text-sm font-semibold tracking-wide uppercase text-foreground mb-3">
         Antioquia — Serie Departamental
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
@@ -70,7 +70,7 @@ export default function ContextoPage() {
         />
       </div>
 
-      <h2 className="font-[var(--font-syne)] text-base font-bold text-foreground mb-3">
+      <h2 className="text-sm font-semibold tracking-wide uppercase text-foreground mb-3">
         Educación Superior en Medellín
       </h2>
       <div className="mb-6">
@@ -82,7 +82,7 @@ export default function ContextoPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="rounded-xl border border-border bg-surface/50 p-6">
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3">
+          <h3 className="text-[12px] font-semibold text-foreground mb-3">
             Fuentes de Datos de Contexto
           </h3>
           <div className="space-y-3">
@@ -164,7 +164,7 @@ export default function ContextoPage() {
         </div>
 
         <div className="rounded-xl border border-border bg-surface/50 p-6">
-          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-3 flex items-center">
+          <h3 className="text-[12px] font-semibold text-foreground mb-3 flex items-center">
             Cruces Potenciales
             <span className="ml-2 px-2 py-0.5 text-[10px] rounded-full bg-warning/10 text-warning border border-warning/20">En desarrollo</span>
           </h3>
