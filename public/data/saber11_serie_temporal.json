@@ -90,6 +90,7 @@
     "periodo": "20221",
     "promedio": 284.8,
     "evaluados": 16,
+    "muestra_menor": true,
     "promedio_f": 289.9,
     "promedio_m": 278.3
   },

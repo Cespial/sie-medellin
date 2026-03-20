@@ -1,18 +1,5 @@
 [
   {
-    "codigoDane": "305001012601",
-    "nombre": "COLEGIO JOSE MARIA BERRIO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 380.7,
-    "evaluados": 6,
-    "periodos": 3,
-    "matematicas": 84.8,
-    "lecturaCritica": 68.7,
-    "cienciasNaturales": 74.2,
-    "socialesCiudadanas": 73.7,
-    "ingles": 85.3
-  },
-  {
     "codigoDane": "305001015503",
     "nombre": "COLEGIO LEONARDO DA VINCI",
     "naturaleza": "NO OFICIAL",
@@ -63,19 +50,6 @@
     "cienciasNaturales": 68.2,
     "socialesCiudadanas": 68.6,
     "ingles": 81.7
-  },
-  {
-    "codigoDane": "305088001325",
-    "nombre": "COL BETHLEMITAS",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 351.3,
-    "evaluados": 7,
-    "periodos": 3,
-    "matematicas": 75.3,
-    "lecturaCritica": 66.1,
-    "cienciasNaturales": 67.9,
-    "socialesCiudadanas": 69.1,
-    "ingles": 77.9
   },
   {
     "codigoDane": "305001004498",
@@ -141,19 +115,6 @@
     "cienciasNaturales": 67.4,
     "socialesCiudadanas": 66.2,
     "ingles": 83.0
-  },
-  {
-    "codigoDane": "405266800053",
-    "nombre": "COLEGIO THEODORO HERTZL",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 343.0,
-    "evaluados": 8,
-    "periodos": 1,
-    "matematicas": 69.0,
-    "lecturaCritica": 69.0,
-    "cienciasNaturales": 65.2,
-    "socialesCiudadanas": 67.2,
-    "ingles": 79.8
   },
   {
     "codigoDane": "305001003955",
@@ -403,19 +364,6 @@
     "ingles": 80.0
   },
   {
-    "codigoDane": "305266000541",
-    "nombre": "COLEGIO LA SALLE ENVIGADO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 316.0,
-    "evaluados": 7,
-    "periodos": 3,
-    "matematicas": 64.9,
-    "lecturaCritica": 60.6,
-    "cienciasNaturales": 64.0,
-    "socialesCiudadanas": 60.7,
-    "ingles": 71.6
-  },
-  {
     "codigoDane": "305001003491",
     "nombre": "COL CALASANZ CAMPESTRE ESCOLAPIAS",
     "naturaleza": "NO OFICIAL",
@@ -585,19 +533,6 @@
     "ingles": 66.9
   },
   {
-    "codigoDane": "313836800158",
-    "nombre": "INSTITUTO IBEROAMERICANO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 305.2,
-    "evaluados": 8,
-    "periodos": 1,
-    "matematicas": 56.0,
-    "lecturaCritica": 66.5,
-    "cienciasNaturales": 57.5,
-    "socialesCiudadanas": 65.2,
-    "ingles": 58.8
-  },
-  {
     "codigoDane": "305001014124",
     "nombre": "COLEGIO SOLEIRA",
     "naturaleza": "NO OFICIAL",
@@ -741,19 +676,6 @@
     "ingles": 63.9
   },
   {
-    "codigoDane": "305266000052",
-    "nombre": "UNIDAD EDUCATIVA SAN MARCOS",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 298.3,
-    "evaluados": 6,
-    "periodos": 3,
-    "matematicas": 59.7,
-    "lecturaCritica": 60.3,
-    "cienciasNaturales": 59.3,
-    "socialesCiudadanas": 58.8,
-    "ingles": 61.7
-  },
-  {
     "codigoDane": "405001022288",
     "nombre": "COL DE BTO COLEGIATURA COLOMBIANA",
     "naturaleza": "NO OFICIAL",
@@ -817,19 +739,6 @@
     "cienciasNaturales": 56.5,
     "socialesCiudadanas": 57.0,
     "ingles": 69.7
-  },
-  {
-    "codigoDane": "305380019430",
-    "nombre": "COLEGIO LUIS AMIGO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 296.2,
-    "evaluados": 8,
-    "periodos": 5,
-    "matematicas": 60.8,
-    "lecturaCritica": 59.9,
-    "cienciasNaturales": 57.5,
-    "socialesCiudadanas": 57.9,
-    "ingles": 62.5
   },
   {
     "codigoDane": "305001000450",
@@ -1573,19 +1482,6 @@
     "ingles": 64.6
   },
   {
-    "codigoDane": "368001007146",
-    "nombre": "CENT EDUC PAULO FREIRE",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 274.7,
-    "evaluados": 9,
-    "periodos": 5,
-    "matematicas": 53.9,
-    "lecturaCritica": 58.3,
-    "cienciasNaturales": 51.9,
-    "socialesCiudadanas": 56.7,
-    "ingles": 52.1
-  },
-  {
     "codigoDane": "105001000108",
     "nombre": "INSTITUCION EDUCATIVA CENTRO FORMATIVO DE ANTIOQUIA -CEFA",
     "naturaleza": "OFICIAL",
@@ -1872,19 +1768,6 @@
     "ingles": 53.2
   },
   {
-    "codigoDane": "305088002950",
-    "nombre": "INSTITUCION EDUCATIVA LICEO ANTIOQUEÑO",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 268.6,
-    "evaluados": 8,
-    "periodos": 4,
-    "matematicas": 54.6,
-    "lecturaCritica": 53.2,
-    "cienciasNaturales": 55.0,
-    "socialesCiudadanas": 51.8,
-    "ingles": 53.8
-  },
-  {
     "codigoDane": "105197000160",
     "nombre": "I. E. COCORNA",
     "naturaleza": "OFICIAL",
@@ -1935,19 +1818,6 @@
     "cienciasNaturales": 50.1,
     "socialesCiudadanas": 52.0,
     "ingles": 61.5
-  },
-  {
-    "codigoDane": "105321000025",
-    "nombre": "I. E. NUESTRA SENORA DEL PILAR",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 267.2,
-    "evaluados": 5,
-    "periodos": 3,
-    "matematicas": 47.6,
-    "lecturaCritica": 55.6,
-    "cienciasNaturales": 52.2,
-    "socialesCiudadanas": 56.2,
-    "ingles": 59.2
   },
   {
     "codigoDane": "305001024569",
@@ -2327,19 +2197,6 @@
     "ingles": 50.5
   },
   {
-    "codigoDane": "305266001709",
-    "nombre": "COLEGIO RUDOLF STEINER",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 259.9,
-    "evaluados": 7,
-    "periodos": 3,
-    "matematicas": 57.3,
-    "lecturaCritica": 48.7,
-    "cienciasNaturales": 49.7,
-    "socialesCiudadanas": 50.3,
-    "ingles": 57.4
-  },
-  {
     "codigoDane": "105001011631",
     "nombre": "INST EDUC ASAMBLEA DEPARTAMENTAL",
     "naturaleza": "OFICIAL",
@@ -2392,19 +2249,6 @@
     "ingles": 50.3
   },
   {
-    "codigoDane": "311001800022",
-    "nombre": "COLEGIO DE FORMACION DE CIUDADANOS - COGLOBAL",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 259.0,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 51.6,
-    "lecturaCritica": 56.2,
-    "cienciasNaturales": 51.6,
-    "socialesCiudadanas": 48.0,
-    "ingles": 51.0
-  },
-  {
     "codigoDane": "105001013072",
     "nombre": "INST EDUC MAESTRO PEDRO NEL GOMEZ",
     "naturaleza": "OFICIAL",
@@ -2429,19 +2273,6 @@
     "cienciasNaturales": 48.8,
     "socialesCiudadanas": 53.0,
     "ingles": 54.8
-  },
-  {
-    "codigoDane": "105360000024",
-    "nombre": "INSTITUCION EDUCATIVA CONCEJO MUNICIPAL DE ITAGUI",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 258.4,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 55.0,
-    "lecturaCritica": 49.4,
-    "cienciasNaturales": 51.8,
-    "socialesCiudadanas": 52.0,
-    "ingles": 47.2
   },
   {
     "codigoDane": "105306000175",
@@ -2559,19 +2390,6 @@
     "cienciasNaturales": 49.4,
     "socialesCiudadanas": 50.4,
     "ingles": 49.4
-  },
-  {
-    "codigoDane": "105088001750",
-    "nombre": "INSTITUCION EDUCATIVA FEDERICO SIERRA ARANGO",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 257.4,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 50.4,
-    "lecturaCritica": 51.0,
-    "cienciasNaturales": 53.4,
-    "socialesCiudadanas": 50.4,
-    "ingles": 52.8
   },
   {
     "codigoDane": "105001003221",
@@ -3172,19 +2990,6 @@
     "ingles": 49.2
   },
   {
-    "codigoDane": "305360002239",
-    "nombre": "INSTITUTO CORFERRINI",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 251.2,
-    "evaluados": 5,
-    "periodos": 3,
-    "matematicas": 45.8,
-    "lecturaCritica": 53.2,
-    "cienciasNaturales": 50.8,
-    "socialesCiudadanas": 51.0,
-    "ingles": 50.6
-  },
-  {
     "codigoDane": "305001015287",
     "nombre": "INSTITUCION EDUCATIVA LA CANDELARIA",
     "naturaleza": "OFICIAL",
@@ -3549,19 +3354,6 @@
     "ingles": 49.2
   },
   {
-    "codigoDane": "105315000021",
-    "nombre": "I. E.  LUIS LOPEZ DE MESA",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 248.0,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 49.4,
-    "lecturaCritica": 49.0,
-    "cienciasNaturales": 50.2,
-    "socialesCiudadanas": 51.0,
-    "ingles": 46.2
-  },
-  {
     "codigoDane": "105001019011",
     "nombre": "INSTITUCION EDUCATIVA STELLA VELEZ LONDOÑO",
     "naturaleza": "OFICIAL",
@@ -3679,19 +3471,6 @@
     "ingles": 47.9
   },
   {
-    "codigoDane": "366001007470",
-    "nombre": "GIMNASIO VIRTUAL SAN FRANCISCO DE ASÍS",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 246.4,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 51.6,
-    "lecturaCritica": 50.8,
-    "cienciasNaturales": 51.0,
-    "socialesCiudadanas": 43.8,
-    "ingles": 49.0
-  },
-  {
     "codigoDane": "105001002305",
     "nombre": "INST EDUC MARISCAL ROBLEDO",
     "naturaleza": "OFICIAL",
@@ -3729,19 +3508,6 @@
     "cienciasNaturales": 47.7,
     "socialesCiudadanas": 47.7,
     "ingles": 50.2
-  },
-  {
-    "codigoDane": "105088002993",
-    "nombre": "INSTITUCION EDUCATIVA ALBERTO DIAZ MUÑOZ",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 245.4,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 48.6,
-    "lecturaCritica": 50.0,
-    "cienciasNaturales": 49.8,
-    "socialesCiudadanas": 48.4,
-    "ingles": 46.6
   },
   {
     "codigoDane": "305001007519",
@@ -4015,19 +3781,6 @@
     "cienciasNaturales": 46.8,
     "socialesCiudadanas": 48.0,
     "ingles": 47.8
-  },
-  {
-    "codigoDane": "311001108889",
-    "nombre": "POLITECNICA COLOMBIANA (ANTES ESCUELA COLOMBIANA DE SISTEMAS)",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 242.0,
-    "evaluados": 7,
-    "periodos": 3,
-    "matematicas": 43.3,
-    "lecturaCritica": 55.1,
-    "cienciasNaturales": 42.7,
-    "socialesCiudadanas": 50.1,
-    "ingles": 55.6
   },
   {
     "codigoDane": "105001021636",
@@ -4314,19 +4067,6 @@
     "cienciasNaturales": 48.2,
     "socialesCiudadanas": 45.7,
     "ingles": 48.0
-  },
-  {
-    "codigoDane": "305021000359",
-    "nombre": "INSTITUTO REGIONAL COREDI",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 239.3,
-    "evaluados": 6,
-    "periodos": 2,
-    "matematicas": 49.2,
-    "lecturaCritica": 48.2,
-    "cienciasNaturales": 44.5,
-    "socialesCiudadanas": 50.3,
-    "ingles": 45.2
   },
   {
     "codigoDane": "105001003395",
@@ -4888,19 +4628,6 @@
     "ingles": 45.7
   },
   {
-    "codigoDane": "105001008192",
-    "nombre": "COL NOCTURNO DE BACHILLERATO UNIVERSIDAD DE ANTIOQUIA",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 232.3,
-    "evaluados": 7,
-    "periodos": 1,
-    "matematicas": 46.7,
-    "lecturaCritica": 45.1,
-    "cienciasNaturales": 45.7,
-    "socialesCiudadanas": 49.0,
-    "ingles": 44.1
-  },
-  {
     "codigoDane": "205649000426",
     "nombre": "I. E.  RURAL PUERTO GARZA",
     "naturaleza": "OFICIAL",
@@ -5317,32 +5044,6 @@
     "ingles": 46.5
   },
   {
-    "codigoDane": "305660001030",
-    "nombre": "INSTITUTO REGIONAL COREDI",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 226.1,
-    "evaluados": 7,
-    "periodos": 2,
-    "matematicas": 44.9,
-    "lecturaCritica": 45.0,
-    "cienciasNaturales": 46.1,
-    "socialesCiudadanas": 45.0,
-    "ingles": 44.9
-  },
-  {
-    "codigoDane": "305088000230",
-    "nombre": "I.E. LEON XIII",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 225.2,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 44.0,
-    "lecturaCritica": 48.4,
-    "cienciasNaturales": 41.8,
-    "socialesCiudadanas": 46.0,
-    "ingles": 44.8
-  },
-  {
     "codigoDane": "305001025568",
     "nombre": "CENTRO DE ESTUDIOS MULTITÉCNICO",
     "naturaleza": "NO OFICIAL",
@@ -5393,19 +5094,6 @@
     "cienciasNaturales": 43.8,
     "socialesCiudadanas": 41.9,
     "ingles": 44.9
-  },
-  {
-    "codigoDane": "305001800227",
-    "nombre": "COLEGIO FORMARTE",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 224.7,
-    "evaluados": 6,
-    "periodos": 1,
-    "matematicas": 40.0,
-    "lecturaCritica": 51.3,
-    "cienciasNaturales": 45.0,
-    "socialesCiudadanas": 41.7,
-    "ingles": 50.3
   },
   {
     "codigoDane": "105001026352",
@@ -5588,19 +5276,6 @@
     "cienciasNaturales": 43.4,
     "socialesCiudadanas": 45.7,
     "ingles": 44.5
-  },
-  {
-    "codigoDane": "205425000111",
-    "nombre": "INSTITUCION EDUCATIVA RURAL CRISTO REY",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 219.7,
-    "evaluados": 6,
-    "periodos": 3,
-    "matematicas": 37.5,
-    "lecturaCritica": 45.2,
-    "cienciasNaturales": 46.7,
-    "socialesCiudadanas": 46.0,
-    "ingles": 45.0
   },
   {
     "codigoDane": "305001019606",
@@ -5811,19 +5486,6 @@
     "ingles": 40.4
   },
   {
-    "codigoDane": "311001105839",
-    "nombre": "INSTITUTO ANDINO DE BACHILLERATO Y CAPACITACION",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 215.0,
-    "evaluados": 5,
-    "periodos": 3,
-    "matematicas": 41.4,
-    "lecturaCritica": 47.8,
-    "cienciasNaturales": 40.6,
-    "socialesCiudadanas": 40.8,
-    "ingles": 47.6
-  },
-  {
     "codigoDane": "302006000019",
     "nombre": "INSTITUTO DE EDUCACION FORMAL Y NO FORMAL ALIANZA ACADEMICA Y CIA LTDA",
     "naturaleza": "NO OFICIAL",
@@ -5863,19 +5525,6 @@
     "ingles": 44.3
   },
   {
-    "codigoDane": "305649001214",
-    "nombre": "INSTITUTO REGIONAL COREDI",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 213.2,
-    "evaluados": 5,
-    "periodos": 2,
-    "matematicas": 42.6,
-    "lecturaCritica": 45.8,
-    "cienciasNaturales": 42.2,
-    "socialesCiudadanas": 39.6,
-    "ingles": 43.8
-  },
-  {
     "codigoDane": "305001022194",
     "nombre": "COL FE Y ALEGRIA SANTA MARIA",
     "naturaleza": "NO OFICIAL",
@@ -5889,19 +5538,6 @@
     "ingles": 43.7
   },
   {
-    "codigoDane": "105266001203",
-    "nombre": "INSTITUCI¿N EDUCATIVA EL SALADO",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 213.0,
-    "evaluados": 7,
-    "periodos": 1,
-    "matematicas": 46.3,
-    "lecturaCritica": 45.3,
-    "cienciasNaturales": 35.7,
-    "socialesCiudadanas": 42.1,
-    "ingles": 45.3
-  },
-  {
     "codigoDane": "305001022666",
     "nombre": "COL EMPRESARIAL EDUCATIVO - CEMPED",
     "naturaleza": "NO OFICIAL",
@@ -5913,19 +5549,6 @@
     "cienciasNaturales": 42.0,
     "socialesCiudadanas": 41.2,
     "ingles": 41.9
-  },
-  {
-    "codigoDane": "305266019888",
-    "nombre": "CENTRO DE EDUCACION FORMAL Y NO FORMALCOMPUESTUDIO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 212.4,
-    "evaluados": 7,
-    "periodos": 1,
-    "matematicas": 46.7,
-    "lecturaCritica": 40.4,
-    "cienciasNaturales": 37.7,
-    "socialesCiudadanas": 43.6,
-    "ingles": 47.0
   },
   {
     "codigoDane": "305001005265",
@@ -5978,19 +5601,6 @@
     "cienciasNaturales": 41.3,
     "socialesCiudadanas": 42.3,
     "ingles": 41.6
-  },
-  {
-    "codigoDane": "105761000299",
-    "nombre": "I. E. ESCUELA NORMAL SUPERIOR SANTA TERESITA",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 211.0,
-    "evaluados": 7,
-    "periodos": 2,
-    "matematicas": 42.9,
-    "lecturaCritica": 39.1,
-    "cienciasNaturales": 43.4,
-    "socialesCiudadanas": 42.9,
-    "ingles": 43.9
   },
   {
     "codigoDane": "305001024544",
@@ -6069,19 +5679,6 @@
     "cienciasNaturales": 41.8,
     "socialesCiudadanas": 41.7,
     "ingles": 44.0
-  },
-  {
-    "codigoDane": "105001025704",
-    "nombre": "COLEGIO MIGUEL ANTONIO RAMON MARTINEZ",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 209.2,
-    "evaluados": 8,
-    "periodos": 1,
-    "matematicas": 40.5,
-    "lecturaCritica": 45.0,
-    "cienciasNaturales": 44.8,
-    "socialesCiudadanas": 36.8,
-    "ingles": 43.0
   },
   {
     "codigoDane": "305001017361",
@@ -6253,19 +5850,6 @@
     "ingles": 42.9
   },
   {
-    "codigoDane": "376001043234",
-    "nombre": "TERRA INSTITUTO",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 194.7,
-    "evaluados": 9,
-    "periodos": 3,
-    "matematicas": 37.9,
-    "lecturaCritica": 41.3,
-    "cienciasNaturales": 38.4,
-    "socialesCiudadanas": 36.9,
-    "ingles": 42.8
-  },
-  {
     "codigoDane": "305315000331",
     "nombre": "INSTITUTO REGIONAL COREDI",
     "naturaleza": "NO OFICIAL",
@@ -6279,19 +5863,6 @@
     "ingles": 43.0
   },
   {
-    "codigoDane": "105042000732",
-    "nombre": "I. E. ARTURO VELASQUEZ ORTIZ",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 189.1,
-    "evaluados": 9,
-    "periodos": 1,
-    "matematicas": 41.9,
-    "lecturaCritica": 41.0,
-    "cienciasNaturales": 33.6,
-    "socialesCiudadanas": 38.0,
-    "ingles": 42.4
-  },
-  {
     "codigoDane": "318001004077",
     "nombre": "COLEGIO PEDAGÓGICO DE COLOMBIA",
     "naturaleza": "NO OFICIAL",
@@ -6303,31 +5874,5 @@
     "cienciasNaturales": 37.7,
     "socialesCiudadanas": 38.6,
     "ingles": 34.6
-  },
-  {
-    "codigoDane": "305697000599",
-    "nombre": "INSTITUTO IBEROLATINO DE EDUCACIÓN SAS INIDE",
-    "naturaleza": "NO OFICIAL",
-    "promedioGlobal": 186.3,
-    "evaluados": 6,
-    "periodos": 2,
-    "matematicas": 35.5,
-    "lecturaCritica": 39.3,
-    "cienciasNaturales": 33.7,
-    "socialesCiudadanas": 41.5,
-    "ingles": 34.5
-  },
-  {
-    "codigoDane": "205040001434",
-    "nombre": "I.E.R LA CRISTALINA",
-    "naturaleza": "OFICIAL",
-    "promedioGlobal": 178.2,
-    "evaluados": 9,
-    "periodos": 2,
-    "matematicas": 32.6,
-    "lecturaCritica": 39.2,
-    "cienciasNaturales": 36.2,
-    "socialesCiudadanas": 34.1,
-    "ingles": 37.0
   }
 ]

@@ -67,15 +67,18 @@ FILE_META = {
     },
     "saber11_por_ie.json": {
         "fuente": "datos.gov.co/kgxf-xxbe",
-        "descripcion": "Promedios Saber 11 por institución educativa",
+        "descripcion": "Promedios Saber 11 por institución educativa (min 10 evaluados)",
+        "nota": "Agrega todos los períodos 2014-2022. Último examen: período ICFES 20224 = año 2022",
     },
     "saber11_historico_medellin.json": {
         "fuente": "MEData CSV + datos.gov.co/kgxf-xxbe",
         "descripcion": "Serie histórica Saber 11 por período",
+        "nota": "Código período ICFES: primeros 4 dígitos = año. Ej: 20224 = año 2022, aplicación 4",
     },
     "saber11_serie_temporal.json": {
         "fuente": "datos.gov.co/kgxf-xxbe",
         "descripcion": "Serie temporal Saber 11 con brecha de género",
+        "nota": "Períodos con <100 evaluados marcados como muestra_menor",
     },
     "desercion_medellin.json": {
         "fuente": "datos.gov.co/sras-4t5p + MEData CSV",

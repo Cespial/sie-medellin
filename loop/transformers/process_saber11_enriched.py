@@ -72,10 +72,10 @@ def run():
         by_period[period]["by_gender"][gender]["total"] += score
         by_period[period]["by_gender"][gender]["count"] += 1
 
-    # Enhanced IE rankings
+    # Enhanced IE rankings (min 10 evaluados for statistical significance)
     ie_list = []
     for code, d in by_ie.items():
-        if len(d["scores"]) >= 5:
+        if len(d["scores"]) >= 10:
             avg = sum(d["scores"]) / len(d["scores"])
             entry = {
                 "codigoDane": code,
@@ -104,6 +104,9 @@ def run():
             "promedio": round(avg, 1),
             "evaluados": d["count"],
         }
+        # Flag periods with very small samples
+        if d["count"] < 100:
+            entry["muestra_menor"] = True
         for g, gd in d["by_gender"].items():
             if gd["count"] > 0:
                 key = f"promedio_{g.strip().lower()}" if g else "promedio_nd"

@@ -41,18 +41,32 @@ def process_bachilleres():
         records = json.load(f)
 
     # Deduplicate by year (source may have duplicate rows with conflicting values)
+    # Also detect and remove suspicious duplicates: if a later year has identical
+    # values to an earlier year (except anio), it's likely a copy, not real data.
     seen_years = {}
     for r in records:
         anio = r.get("a_o", "")
         if not anio:
             continue
-        # Keep first occurrence per year
         if anio not in seen_years:
             seen_years[anio] = r
 
-    result = []
+    # Detect copied rows: compare each year's values against all previous years
+    clean_years = {}
+    prev_signatures = {}
     for anio in sorted(seen_years.keys()):
         r = seen_years[anio]
+        # Create a signature of data values (excluding year)
+        sig = tuple(str(r.get(k, "")) for k in sorted(r.keys()) if k != "a_o")
+        if sig in prev_signatures:
+            print(f"  ⚠️ {anio} es copia de {prev_signatures[sig]} — eliminado")
+            continue
+        prev_signatures[sig] = anio
+        clean_years[anio] = r
+
+    result = []
+    for anio in sorted(clean_years.keys()):
+        r = clean_years[anio]
         mat_11 = safe_int(r.get("matricula_11_total"))
         mat_26 = safe_int(r.get("matricula_26_total"))
         apr_11 = safe_int(r.get("aprobados_11_total"))
