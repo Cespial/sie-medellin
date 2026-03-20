@@ -15,7 +15,7 @@ export default function MatriculaPage() {
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
           Evolución de la matrícula educativa en Medellín por sector, nivel
-          educativo y comuna. Datos MEData 2004-2023.
+          educativo y comuna. MEData 2004-2019 + estimaciones 2020-2024.
         </p>
       </div>
 
@@ -53,7 +53,7 @@ function MatriculaNivelSection() {
         {[
           {
             fuente: "MEData — Matrícula por IE",
-            desc: "265.000+ registros por institución, grado y año (2004-2023)",
+            desc: "265.000+ registros por institución, grado y año (2004-2019, real) + estimaciones 2020-2024",
             status: "cargado",
           },
           {

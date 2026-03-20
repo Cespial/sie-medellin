@@ -436,6 +436,51 @@ def process_matricula():
                 "total": round(by_nivel[nivel]["total"]),
             })
 
+    # --- Extend with estimated years 2020-2024 from ETC stats ---
+    etc_path = RAW_DIR / "estadisticas_etc_medellin.json"
+    if etc_path.exists() and serie_temporal:
+        last_real_year = max(int(s["anio"]) for s in serie_temporal)
+        try:
+            with open(etc_path, "r", encoding="utf-8") as f:
+                etc_records = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            etc_records = []
+
+        estimated_count = 0
+        for r in etc_records:
+            ano = r.get("ano", "")
+            if not ano:
+                continue
+            try:
+                year_int = int(ano)
+            except (ValueError, TypeError):
+                continue
+            if year_int <= last_real_year:
+                continue
+
+            cobertura_bruta = None
+            poblacion_5_16 = None
+            try:
+                cobertura_bruta = float(r.get("cobertura_bruta", 0))
+                poblacion_5_16 = int(r.get("poblacion_5_16", 0))
+            except (ValueError, TypeError):
+                pass
+
+            if cobertura_bruta and poblacion_5_16 and cobertura_bruta > 0 and poblacion_5_16 > 0:
+                matricula_est = int(cobertura_bruta * poblacion_5_16 / 100)
+                serie_temporal.append({
+                    "anio": str(year_int),
+                    "total": matricula_est,
+                    "oficial": None,
+                    "privado": None,
+                    "estimado": True,
+                })
+                estimated_count += 1
+
+        if estimated_count:
+            serie_temporal.sort(key=lambda x: x["anio"])
+            print(f"  + {estimated_count} años estimados desde ETC stats (cobertura × población)")
+
     output = PUBLIC_DATA / "matricula_medellin.json"
     with open(output, "w", encoding="utf-8") as f:
         json.dump({
@@ -582,6 +627,57 @@ def process_aprobacion():
     print(f"  ✅ {output.name} ({len(por_comuna)} comunas, {len(por_genero)} géneros, {len(por_nivel)} niveles)")
 
 
+def process_clasificacion():
+    """Procesa clasificación Saber 11 por IE desde el CSV de MEData."""
+    print("\n📊 Clasificación Saber 11...")
+    rows = read_csv("medata_clasificacion_saber11.csv")
+    if not rows:
+        return
+
+    print(f"  {len(rows)} registros")
+
+    por_clasif = defaultdict(int)
+    por_sector_clasif = defaultdict(lambda: defaultdict(int))
+    instituciones = []
+
+    for r in rows:
+        clasif = r.get("clasificacion", "").strip().upper()
+        sector = r.get("sector_educativo", r.get("prestacion_servicio", "")).strip().lower()
+        comuna = r.get("comuna_establecimiento", "").strip()
+        evaluados = 0
+        try:
+            evaluados = int(float(r.get("numero_evaluados", 0)))
+        except (ValueError, TypeError):
+            pass
+
+        if clasif:
+            por_clasif[clasif] += 1
+            if sector:
+                por_sector_clasif[sector][clasif] += 1
+
+        instituciones.append({
+            "codigoDane": r.get("codigo_dane", ""),
+            "nombre": r.get("establecimiento_educativo", ""),
+            "comuna": comuna,
+            "sector": sector,
+            "clasificacion": clasif,
+            "evaluados": evaluados,
+        })
+
+    # Sort: A+ first, then by evaluados desc
+    clasif_order = {"A+": 0, "A": 1, "B": 2, "C": 3, "D": 4}
+    instituciones.sort(key=lambda x: (clasif_order.get(x["clasificacion"], 99), -x["evaluados"]))
+
+    output = PUBLIC_DATA / "clasificacion_saber11.json"
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump({
+            "porClasificacion": dict(por_clasif),
+            "porSectorClasificacion": {k: dict(v) for k, v in por_sector_clasif.items()},
+            "instituciones": instituciones,
+        }, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ {output.name} ({len(instituciones)} IEs, {len(por_clasif)} clasificaciones)")
+
+
 def run():
     print("=" * 60)
     print("TRANSFORMER — MEData CSV Datasets")
@@ -593,6 +689,7 @@ def run():
     process_docentes()
     process_matricula()
     process_aprobacion()
+    process_clasificacion()
 
     print("\n✅ Transformación MEData CSV completa")
 

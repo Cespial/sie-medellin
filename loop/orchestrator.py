@@ -16,16 +16,32 @@ from loop.collectors.datos_gov_collector import run_all as run_datos_gov
 
 
 def run_transformers():
-    """Run all data transformers."""
+    """Run all data transformers in dependency order."""
     from loop.transformers.process_for_frontend import run as run_frontend
     from loop.transformers.process_medata_csv import run as run_medata_csv
+    from loop.transformers.process_new_datasets import run as run_new_datasets
     from loop.transformers.process_saber11_enriched import run as run_saber11
     from loop.transformers.process_poblaciones import run as run_poblaciones
+    from loop.transformers.process_cruces import run as run_cruces
+    from loop.transformers.process_map_data import run as run_map_data
+    from loop.transformers._meta import build_manifest
 
+    # 1. Base stats + KPIs + saber11 initial + sedes
     run_frontend()
+    # 2. MEData CSVs: desercion, saber11_historico, isce, matricula, aprobacion, clasificacion
     run_medata_csv()
+    # 3. New datasets: bachilleres, ed_superior, paridad, docentes
+    run_new_datasets()
+    # 4. Saber 11 enriched (overwrites saber11_por_ie, adds serie_temporal)
     run_saber11()
+    # 5. Poblaciones especiales
     run_poblaciones()
+    # 6. Cruces multivariable (depends on clasificacion, saber11, desercion, aprobacion, matricula)
+    run_cruces()
+    # 7. Mapa enriquecido (depends on all above)
+    run_map_data()
+    # 8. Generate data freshness manifest
+    build_manifest()
 
 
 def main():

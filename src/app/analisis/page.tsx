@@ -14,7 +14,7 @@ export default function AnalisisPage() {
         </h1>
         <p className="text-muted mt-2 max-w-2xl">
           Cruces entre variables socioeconómicas y resultados educativos.
-          275K+ microdatos Saber 11 cruzados con estrato, acceso a internet,
+          275K+ microdatos Saber 11 (Período 20224) cruzados con estrato, acceso a internet,
           educación de la madre, sector y tipo de colegio.
         </p>
       </div>

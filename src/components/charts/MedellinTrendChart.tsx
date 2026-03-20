@@ -13,6 +13,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface MedellinTrendChartProps {
   title: string;
@@ -52,9 +53,10 @@ export function MedellinTrendChart({
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             {title}
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            Medellín ETC | {data[0]?.anio}–{data[data.length - 1]?.anio}
-          </p>
+          <DataVintage
+            fuente={`Medellín ETC · sras-4t5p · ${data[0]?.anio}–${data[data.length - 1]?.anio}`}
+            ultimoDato={data[data.length - 1]?.anio as string | undefined}
+          />
         </div>
         {change !== null && (
           <div

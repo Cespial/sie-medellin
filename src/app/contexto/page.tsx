@@ -90,42 +90,42 @@ export default function ContextoPage() {
               {
                 fuente: "datos.gov.co — Estadísticas Municipales",
                 desc: "14 años de indicadores para Medellín ETC (2011-2024)",
-                status: "cargado",
+                status: "ok",
               },
               {
                 fuente: "MEN — Estadísticas Sectoriales",
                 desc: "Cobertura, deserción, aprobación departamental Antioquia",
-                status: "cargado",
+                status: "ok",
               },
               {
                 fuente: "MEData — Deserción por Comuna",
-                desc: "Tasa de deserción por 21 comunas de Medellín",
-                status: "cargado",
+                desc: "Tasa de deserción por 21 comunas (~2017)",
+                status: "stale",
               },
               {
-                fuente: "MEData — ISCE",
-                desc: "Índice Sintético de Calidad por IE (2015-2018)",
-                status: "cargado",
+                fuente: "MEData — ISCE (2018)",
+                desc: "Índice Sintético de Calidad por IE — descontinuado",
+                status: "stale",
               },
               {
                 fuente: "datos.gov.co — Bachilleres",
                 desc: "Graduados grado 11 y 26 por año (2019-2024)",
-                status: "cargado",
+                status: "ok",
               },
               {
-                fuente: "datos.gov.co — Ed. Superior",
+                fuente: "datos.gov.co — Ed. Superior (2020)",
                 desc: "Matrícula por nivel de formación (2005-2020)",
-                status: "cargado",
+                status: "stale",
               },
               {
-                fuente: "datos.gov.co — Docentes",
-                desc: "Perfil planta docente oficial (2022)",
-                status: "cargado",
+                fuente: "datos.gov.co — Docentes (2022)",
+                desc: "Perfil planta docente oficial",
+                status: "stale",
               },
               {
-                fuente: "datos.gov.co — Paridad de Género",
-                desc: "IPG y matrícula por género×nivel (2020)",
-                status: "cargado",
+                fuente: "datos.gov.co — Paridad de Género (2020)",
+                desc: "IPG y matrícula por género×nivel — 1 registro",
+                status: "stale",
               },
               {
                 fuente: "DANE — Censo 2018",
@@ -149,7 +149,7 @@ export default function ContextoPage() {
               >
                 <span
                   className={`w-2 h-2 mt-1.5 rounded-full shrink-0 ${
-                    s.status === "cargado" ? "bg-success" : "bg-muted"
+                    s.status === "ok" ? "bg-success" : s.status === "stale" ? "bg-[#FFB703]" : "bg-muted"
                   }`}
                 />
                 <div>

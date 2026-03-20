@@ -131,7 +131,12 @@ export function ISCEChart() {
           (ISCE &ge; 7)
         </span>
       </div>
-      <p className="text-[10px] text-muted mt-2">Nota: El MEN dejó de publicar el ISCE después de 2018.</p>
+      <div className="flex items-center gap-2 mt-2">
+        <span className="px-2 py-0.5 text-[10px] rounded-full bg-danger/10 text-danger border border-danger/20">
+          Descontinuado 2018
+        </span>
+        <span className="text-[10px] text-muted">El MEN dejó de publicar el ISCE después de 2018.</span>
+      </div>
     </div>
   );
 }

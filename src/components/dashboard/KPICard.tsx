@@ -16,6 +16,7 @@ interface KPICardProps {
   trendIsGood?: boolean;
   delay?: number;
   className?: string;
+  dataYear?: string;
 }
 
 export function KPICard({
@@ -29,6 +30,7 @@ export function KPICard({
   trendIsGood = true,
   delay = 0,
   className,
+  dataYear,
 }: KPICardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -82,7 +84,10 @@ export function KPICard({
       {/* Accent line top */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" />
 
-      <p className="text-xs text-muted uppercase tracking-wider mb-2">{label}</p>
+      <p className="text-xs text-muted uppercase tracking-wider mb-2">
+        {label}
+        {dataYear && <span className="normal-case tracking-normal ml-1 opacity-60">({dataYear})</span>}
+      </p>
 
       <div className="flex items-baseline gap-1.5">
         <span className="font-[var(--font-jetbrains)] text-3xl font-bold text-foreground tabular-nums">

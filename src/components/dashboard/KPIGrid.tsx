@@ -16,6 +16,12 @@ interface KPIData {
   tasaAprobacion: number | null;
   desercion?: { valor: number };
   aprobacion?: { valor: number };
+  frescura?: {
+    estadisticas_etc?: { ultimo_anio?: string };
+    saber11?: { ultimo_periodo?: string };
+    sedes?: { ultimo_anio?: string };
+    matricula_medata?: { ultimo_anio?: string };
+  };
 }
 
 function extractValue(v: number | { valor: number } | null | undefined): number {
@@ -48,6 +54,11 @@ export function KPIGrid() {
   const desercion = kpis.desercion ? kpis.desercion.valor : (kpis.tasaDesercion ?? 0);
   const aprobacion = kpis.aprobacion ? kpis.aprobacion.valor : (kpis.tasaAprobacion ?? 0);
 
+  const f = kpis.frescura;
+  const etcYear = f?.estadisticas_etc?.ultimo_anio;
+  const saberPeriodo = f?.saber11?.ultimo_periodo;
+  const sedesYear = f?.sedes?.ultimo_anio;
+
   const cards = [
     {
       label: "Total Matriculados",
@@ -55,6 +66,7 @@ export function KPIGrid() {
       unit: "estudiantes",
       trend: "up" as const,
       trendIsGood: true,
+      dataYear: sedesYear,
     },
     {
       label: "Sedes Educativas",
@@ -62,6 +74,7 @@ export function KPIGrid() {
       unit: "sedes",
       trend: "stable" as const,
       trendIsGood: true,
+      dataYear: sedesYear,
     },
     {
       label: "Puntaje Saber 11",
@@ -70,6 +83,7 @@ export function KPIGrid() {
       decimals: 1,
       trend: "up" as const,
       trendIsGood: true,
+      dataYear: saberPeriodo,
     },
     {
       label: "Deserción",
@@ -78,6 +92,7 @@ export function KPIGrid() {
       decimals: 2,
       trend: "down" as const,
       trendIsGood: true,
+      dataYear: etcYear,
     },
     {
       label: "Cobertura Neta",
@@ -86,6 +101,7 @@ export function KPIGrid() {
       decimals: 1,
       trend: "stable" as const,
       trendIsGood: true,
+      dataYear: etcYear,
     },
     {
       label: "Aprobación",
@@ -94,6 +110,7 @@ export function KPIGrid() {
       decimals: 1,
       trend: "up" as const,
       trendIsGood: true,
+      dataYear: etcYear,
     },
   ];
 
@@ -109,6 +126,7 @@ export function KPIGrid() {
           trendIsGood={card.trendIsGood}
           decimals={card.decimals ?? 0}
           delay={i * 100}
+          dataYear={card.dataYear}
         />
       ))}
     </div>

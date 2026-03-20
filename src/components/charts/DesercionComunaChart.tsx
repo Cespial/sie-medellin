@@ -14,6 +14,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface ComunaData {
   comuna: string;
@@ -55,9 +56,10 @@ export function DesercionComunaChart() {
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
+      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
         Tasa de Deserción por Comuna ({data.ultimoAnio})
       </h3>
+      <DataVintage fuente="MEData CSV" ultimoDato={data.ultimoAnio} />
       <ResponsiveContainer width="100%" height={chartHeight}>
         <BarChart data={sorted} layout="vertical" margin={{ left: 20, right: 20 }}>
           <CartesianGrid

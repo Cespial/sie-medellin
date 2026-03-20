@@ -15,6 +15,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface AprobacionRecord {
   comuna?: string;
@@ -54,7 +55,8 @@ export function AprobacionChart() {
 
   return (
     <div>
-      <div className="flex gap-1 mb-4">
+      <DataVintage fuente="MEData CSV" ultimoDato="2017" nota="Datos por comuna ~2017" />
+      <div className="flex gap-1 mb-4 mt-2">
         {(["comuna", "nivel", "genero"] as const).map((t) => (
           <button
             key={t}

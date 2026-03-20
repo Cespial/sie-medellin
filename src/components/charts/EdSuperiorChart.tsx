@@ -54,9 +54,9 @@ export function EdSuperiorChart() {
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             {"Matr\u00edcula Educaci\u00f3n Superior \u2014 Medell\u00edn"}
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            Por nivel de formación | 2005-2020 | datos.gov.co/MEN
-          </p>
+          <span className="text-[10px] text-[#FFB703] block mt-0.5">
+            datos.gov.co/MEN · Último dato: {latest.anio} · Por nivel de formación
+          </span>
         </div>
         <div className="text-right">
           <p className="font-[var(--font-jetbrains)] text-xl font-bold text-accent">

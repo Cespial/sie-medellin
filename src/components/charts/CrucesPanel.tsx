@@ -224,10 +224,9 @@ export function CrucesPanel() {
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             {"Análisis Multivariable — Saber 11 × Contexto Socioeconómico"}
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            {s.total_evaluados.toLocaleString("es-CO")} evaluados | 20
-            dimensiones | Microdatos ICFES
-          </p>
+          <span className="text-[10px] text-muted block mt-0.5">
+            datos.gov.co/kgxf-xxbe · Período 20224 · {s.total_evaluados.toLocaleString("es-CO")} evaluados · 20 dimensiones
+          </span>
         </div>
       </div>
 

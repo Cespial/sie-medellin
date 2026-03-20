@@ -13,6 +13,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface Top5IE {
   nombre: string;
@@ -44,9 +45,13 @@ export function Saber11HistoricoChart() {
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
+      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
         {"Saber 11 \u2014 Promedio Hist\u00f3rico Medell\u00edn"}
       </h3>
+      <DataVintage
+        fuente={`MEData CSV + microdatos · ${data.length} períodos · ${data[0]?.periodo}–${data[data.length - 1]?.periodo}`}
+        ultimoDato={data[data.length - 1]?.periodo?.slice(0, 4)}
+      />
 
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>

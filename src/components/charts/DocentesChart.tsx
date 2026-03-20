@@ -60,10 +60,9 @@ export function DocentesChart() {
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             {"Perfil Docente Oficial \u2014 " + data.anio}
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            {data.total_docentes.toLocaleString("es-CO")} docentes |
-            datos.gov.co/MEN
-          </p>
+          <span className={`text-[10px] block mt-0.5 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
+            datos.gov.co/MEN · {data.total_docentes.toLocaleString("es-CO")} docentes · Último dato: {data.anio}
+          </span>
         </div>
       </div>
 

@@ -1,4 +1,15 @@
+"use client";
+
+import { useDataManifest } from "@/hooks/useDataManifest";
+
 export function DataSourcesFooter() {
+  const { manifest } = useDataManifest();
+
+  const totalArchivos = manifest?.total_archivos ?? 19;
+  const generado = manifest?.generado
+    ? new Date(manifest.generado).toLocaleDateString("es-CO", { year: "numeric", month: "short", day: "numeric" })
+    : "—";
+
   return (
     <footer className="px-6 py-6 border-t border-border/50">
       <div className="max-w-4xl mx-auto">
@@ -10,8 +21,7 @@ export function DataSourcesFooter() {
         </p>
         <p className="text-[10px] text-muted/60 text-center mt-1">
           Sistema de Inteligencia Educativa — Secretaría de Educación de
-          Medellín | Lago de datos: 250K+ registros Saber 11, 265K+ matrícula,
-          806 establecimientos, 21 comunas, 14 años de series temporales | 2026
+          Medellín | {totalArchivos} datasets procesados | Última generación: {generado}
         </p>
       </div>
     </footer>

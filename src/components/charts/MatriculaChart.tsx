@@ -9,17 +9,20 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
+  ReferenceLine,
 } from "recharts";
 import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface SerieTemporal {
   anio: string;
   total: number;
-  oficial: number;
-  privado: number;
+  oficial: number | null;
+  privado: number | null;
+  estimado?: boolean;
 }
 
 interface MatriculaResponse {
@@ -40,14 +43,36 @@ export function MatriculaChart() {
   if (!data) return null;
 
   const chartData = data.serieTemporal;
+  const realData = chartData.filter((d) => !d.estimado);
+  const estimatedData = chartData.filter((d) => d.estimado);
+  const lastRealYear = realData.length ? realData[realData.length - 1].anio : "";
+  const hasEstimated = estimatedData.length > 0;
+
+  // For the chart: split into real total vs estimated total
+  const enrichedData = chartData.map((d) => ({
+    ...d,
+    totalReal: d.estimado ? null : d.total,
+    totalEstimado: d.estimado ? d.total : null,
+    // Bridge point: last real year also goes in estimated series for continuity
+    ...(d.anio === lastRealYear && hasEstimated ? { totalEstimado: d.total } : {}),
+  }));
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
-        Matrícula Total — Medellín
-      </h3>
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+            Matrícula Total — Medellín
+          </h3>
+          <DataVintage
+            fuente="MEData CSV + sras-4t5p"
+            ultimoDato={lastRealYear}
+            nota={hasEstimated ? `Estimaciones ${estimatedData[0]?.anio}-${estimatedData[estimatedData.length - 1]?.anio}` : undefined}
+          />
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height={300}>
-        <AreaChart data={chartData}>
+        <AreaChart data={enrichedData}>
           <defs>
             <linearGradient id="grad-oficial" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3} />
@@ -56,6 +81,10 @@ export function MatriculaChart() {
             <linearGradient id="grad-privado" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#FFB703" stopOpacity={0.3} />
               <stop offset="95%" stopColor="#FFB703" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="grad-estimado" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#6B8CAE" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#6B8CAE" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#1A2D42" />
@@ -73,16 +102,34 @@ export function MatriculaChart() {
           />
           <Tooltip
             contentStyle={CHART_TOOLTIP_STYLE}
-            formatter={(value, name) => [
-              formatNumber(Number(value)),
-              String(name) === "oficial" ? "Oficial" : "Privado",
-            ]}
+            formatter={(value, name) => {
+              if (value === null) return ["-", ""];
+              const label =
+                String(name) === "oficial" ? "Oficial" :
+                String(name) === "privado" ? "Privado" :
+                String(name) === "totalEstimado" ? "Total (estimado)" :
+                "Total";
+              return [formatNumber(Number(value)), label];
+            }}
             labelFormatter={(label) => `Año ${label}`}
           />
           <Legend
             wrapperStyle={{ fontSize: "11px" }}
-            formatter={(value) => String(value) === "oficial" ? "Oficial" : "Privado"}
+            formatter={(value) =>
+              value === "oficial" ? "Oficial" :
+              value === "privado" ? "Privado" :
+              value === "totalEstimado" ? "Total (estimado*)" :
+              value === "totalReal" ? "Total" : value
+            }
           />
+          {hasEstimated && (
+            <ReferenceLine
+              x={lastRealYear}
+              stroke="#6B8CAE"
+              strokeDasharray="5 5"
+              label={{ value: "Estimaciones →", position: "top", fill: "#6B8CAE", fontSize: 9 }}
+            />
+          )}
           <Area
             type="monotone"
             dataKey="oficial"
@@ -90,6 +137,7 @@ export function MatriculaChart() {
             stroke="#00D4FF"
             strokeWidth={2}
             fill="url(#grad-oficial)"
+            connectNulls={false}
           />
           <Area
             type="monotone"
@@ -98,9 +146,26 @@ export function MatriculaChart() {
             stroke="#FFB703"
             strokeWidth={2}
             fill="url(#grad-privado)"
+            connectNulls={false}
           />
+          {hasEstimated && (
+            <Area
+              type="monotone"
+              dataKey="totalEstimado"
+              stroke="#6B8CAE"
+              strokeWidth={2}
+              strokeDasharray="8 4"
+              fill="url(#grad-estimado)"
+              connectNulls
+            />
+          )}
         </AreaChart>
       </ResponsiveContainer>
+      {hasEstimated && (
+        <p className="text-[10px] text-muted mt-2">
+          * Estimado desde tasa de cobertura bruta × población 5-16 años (fuente: sras-4t5p). No desagregado oficial/privado.
+        </p>
+      )}
     </div>
   );
 }

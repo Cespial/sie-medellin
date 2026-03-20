@@ -74,7 +74,7 @@ function AprobacionSection() {
         Aprobación Escolar
       </h3>
       <p className="text-xs text-muted mb-4">
-        Tasas de aprobación por comuna y género — datos MEData 2017
+        Tasas de aprobación por comuna y género — datos MEData (ver vintage por gráfica)
       </p>
       <AprobacionChart />
     </div>

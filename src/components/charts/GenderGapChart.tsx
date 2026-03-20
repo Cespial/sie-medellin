@@ -14,6 +14,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface PeriodData {
   periodo: string;
@@ -54,9 +55,10 @@ export function GenderGapChart() {
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             Saber 11 — Brecha de Género
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            Promedio global por género | 250K+ evaluados | datos.gov.co
-          </p>
+          <DataVintage
+            fuente={`datos.gov.co/kgxf-xxbe · ${data.length} períodos · ${data[0]?.periodo}–${data[data.length - 1]?.periodo}`}
+            ultimoDato={data[data.length - 1]?.periodo?.slice(0, 4)}
+          />
         </div>
         {latest && (
           <div className="flex gap-3 text-xs">

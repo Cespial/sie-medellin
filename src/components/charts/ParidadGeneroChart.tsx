@@ -54,9 +54,9 @@ export function ParidadGeneroChart() {
       <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
         {"\u00cdndice de Paridad de G\u00e9nero \u2014 " + data.anio}
       </h3>
-      <p className="text-xs text-muted mb-6">
-        Matrícula y cobertura bruta por género y nivel educativo | datos.gov.co/MEN
-      </p>
+      <span className={`text-[10px] block mb-6 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
+        datos.gov.co/MEN · Último dato: {data.anio} · 1 registro snapshot
+      </span>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Matrícula por género y nivel */}

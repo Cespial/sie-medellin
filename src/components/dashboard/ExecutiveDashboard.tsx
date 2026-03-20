@@ -40,6 +40,12 @@ interface KPIData {
   aprobacion?: { valor: number };
   fuentes?: Record<string, string>;
   ultimaActualizacion?: string;
+  frescura?: {
+    estadisticas_etc?: { ultimo_anio?: string };
+    saber11?: { ultimo_periodo?: string };
+    sedes?: { ultimo_anio?: string };
+    matricula_medata?: { ultimo_anio?: string };
+  };
 }
 
 interface ComunaData {
@@ -368,7 +374,7 @@ export function ExecutiveDashboard() {
         <KPICard
           label="Matriculados"
           value={kpis.totalMatriculados.toLocaleString("es-CO")}
-          unit="estudiantes activos"
+          unit={`estudiantes activos (${kpis.frescura?.sedes?.ultimo_anio || "—"})`}
           icon={Users}
           color="accent"
           delay={0}
@@ -376,7 +382,7 @@ export function ExecutiveDashboard() {
         <KPICard
           label="Cobertura Neta"
           value={`${cobNeta.toFixed(1)}%`}
-          unit="tasa neta"
+          unit={`tasa neta (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`}
           icon={Target}
           color="success"
           delay={1}
@@ -386,8 +392,8 @@ export function ExecutiveDashboard() {
           value={`${desercion.toFixed(2)}%`}
           unit={
             desercionDelta !== 0
-              ? `${desercionDelta > 0 ? "+" : ""}${desercionDelta.toFixed(2)} pp vs. anterior`
-              : "tasa global"
+              ? `${desercionDelta > 0 ? "+" : ""}${desercionDelta.toFixed(2)} pp vs. anterior (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
+              : `tasa global (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
           }
           icon={desercionDelta <= 0 ? TrendingDown : TrendingUp}
           color={desercion > 3.5 ? "danger" : "warning"}
@@ -398,8 +404,8 @@ export function ExecutiveDashboard() {
           value={`${aprobacion.toFixed(1)}%`}
           unit={
             aprobacionDelta !== 0
-              ? `${aprobacionDelta > 0 ? "+" : ""}${aprobacionDelta.toFixed(1)} pp vs. anterior`
-              : "tasa global"
+              ? `${aprobacionDelta > 0 ? "+" : ""}${aprobacionDelta.toFixed(1)} pp vs. anterior (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
+              : `tasa global (${kpis.frescura?.estadisticas_etc?.ultimo_anio || "—"})`
           }
           icon={Award}
           color="success"
@@ -408,7 +414,7 @@ export function ExecutiveDashboard() {
         <KPICard
           label="Saber 11"
           value={kpis.promedioSaber11.toFixed(1)}
-          unit="puntaje promedio global"
+          unit={`puntaje promedio (${kpis.frescura?.saber11?.ultimo_periodo || "—"})`}
           icon={GraduationCap}
           color="warning"
           delay={4}
@@ -416,7 +422,7 @@ export function ExecutiveDashboard() {
         <KPICard
           label="Sedes"
           value={kpis.totalSedes.toLocaleString("es-CO")}
-          unit="sedes educativas"
+          unit={`sedes educativas (${kpis.frescura?.sedes?.ultimo_anio || "—"})`}
           icon={School}
           color="secondary"
           delay={5}

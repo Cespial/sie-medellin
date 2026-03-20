@@ -17,6 +17,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface PoblacionCategory {
   totalUltimoAnio: number;
@@ -79,10 +80,11 @@ export function PoblacionesChart() {
           <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
             Poblaciones Especiales en Educación Formal
           </h3>
-          <p className="text-xs text-muted mt-0.5">
-            Total último año: {current.totalUltimoAnio?.toLocaleString() || 0}{" "}
-            estudiantes
-          </p>
+          <DataVintage
+            fuente="datos.gov.co"
+            ultimoDato={current.serieTemporal?.[current.serieTemporal.length - 1]?.anio}
+            nota={`${current.totalUltimoAnio?.toLocaleString() || 0} estudiantes`}
+          />
         </div>
         <div className="flex gap-1 flex-wrap">
           {(Object.keys(LABELS) as Tab[]).map((t) => (

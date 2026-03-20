@@ -13,6 +13,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { CHART_TOOLTIP_STYLE } from "@/lib/chart-styles";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { DataVintage } from "@/components/ui/DataVintage";
 
 interface TrendChartProps {
   title: string;
@@ -40,9 +41,13 @@ export function TrendChart({
 
   return (
     <div className="rounded-xl border border-border bg-surface/50 p-6">
-      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-4">
+      <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground mb-1">
         {title}
       </h3>
+      <DataVintage
+        fuente="Antioquia · ji8i-4anb"
+        ultimoDato={data[data.length - 1]?.anio as string | undefined}
+      />
       <ResponsiveContainer width="100%" height={250}>
         <AreaChart data={data}>
           <defs>
