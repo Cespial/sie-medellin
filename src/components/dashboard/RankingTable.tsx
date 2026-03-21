@@ -43,7 +43,7 @@ export function RankingTable({ limit = 20, showBottom = false }: RankingTablePro
   return (
     <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
       <div className="p-4 border-b border-border">
-        <h3 className="font-[var(--font-syne)] text-sm font-bold text-foreground">
+        <h3 className="text-[12px] font-semibold uppercase tracking-widest text-foreground">
           {showBottom ? "Bottom" : "Top"} {limit} IEs — Puntaje Saber 11
         </h3>
         <p className="text-xs text-muted mt-1">

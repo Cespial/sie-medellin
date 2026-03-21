@@ -7,61 +7,41 @@ export const metadata = { title: "Equidad — SIE Medellín" };
 
 export default function EquidadPage() {
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs mb-3">
-          Equidad Educativa
+    <div className="p-6 space-y-6">
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 bg-accent" />
+          <span className="text-[10px] text-muted uppercase tracking-[0.2em] font-medium">
+            Equidad Educativa
+          </span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Equidad
         </h1>
-        <p className="text-muted mt-2 max-w-2xl">
-          Análisis de brechas y poblaciones especiales en el sistema educativo
-          de Medellín. Datos MEData: extranjeros, etnias, víctimas de
-          violencia y necesidades educativas especiales.
+        <p className="text-[13px] text-muted mt-1 max-w-2xl tracking-tight">
+          Brechas de genero en Saber 11, indice de paridad, y poblaciones
+          especiales (extranjeros, etnias, victimas, NEE) en el sistema educativo.
         </p>
       </div>
 
-      <div className="mb-6">
-        <GenderGapChart />
-      </div>
+      <GenderGapChart />
+      <ParidadGeneroChart />
+      <PoblacionesChart />
 
-      <div className="mb-6">
-        <ParidadGeneroChart />
-      </div>
-
-      <div className="mb-6">
-        <PoblacionesChart />
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <MedellinTrendChart
-          title="Deserción — Transición"
-          dataKey="desercion_transicion"
-          color="#FF6B6B"
-          unit="%"
-        />
-        <MedellinTrendChart
-          title="Deserción — Media"
-          dataKey="desercion_media"
-          color="#EF233C"
-          unit="%"
-        />
-      </div>
-
+      <h2 className="text-[11px] font-semibold text-foreground uppercase tracking-widest pt-2">
+        Desercion por Nivel Educativo
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <MedellinTrendChart
-          title="Cobertura Bruta — Primaria"
-          dataKey="cobertura_bruta_primaria"
-          color="#00D4FF"
-          unit="%"
-        />
-        <MedellinTrendChart
-          title="Cobertura Bruta — Media"
-          dataKey="cobertura_bruta_media"
-          color="#3E92CC"
-          unit="%"
-        />
+        <MedellinTrendChart title="Desercion — Transicion" dataKey="desercion_transicion" color="#EF4444" unit="%" />
+        <MedellinTrendChart title="Desercion — Media" dataKey="desercion_media" color="#F59E0B" unit="%" />
+      </div>
+
+      <h2 className="text-[11px] font-semibold text-foreground uppercase tracking-widest pt-2">
+        Cobertura por Nivel
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <MedellinTrendChart title="Cobertura Bruta — Primaria" dataKey="cobertura_bruta_primaria" color="#10B981" unit="%" />
+        <MedellinTrendChart title="Cobertura Bruta — Media" dataKey="cobertura_bruta_media" color="#6366F1" unit="%" />
       </div>
     </div>
   );

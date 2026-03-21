@@ -1,0 +1,412 @@
+[23:29:55] [INFO] Pipeline nocturno iniciado: 2026-03-20 23:29:55
+[23:29:55] [INFO] Proyecto: /Users/cristianespinal/sie-medellin
+[23:29:55] [INFO] Python: 3.11.14
+[23:29:55] [INFO] 
+======================================================================
+[23:29:55] [INFO]   FASE 1: REFRESH DE DATOS DESDE APIs
+[23:29:55] [INFO] ======================================================================
+
+[23:29:56] [INFO] 1.1 Estadísticas ETC Medellín (sras-4t5p)...
+  -> Acumulado: 14 registros
+  ✅ estadisticas_etc_medellin.json (14 registros, 15.1 KB)
+[23:29:57] [INFO]   14 registros, años: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024']
+[23:29:59] [INFO] 1.2 Estadísticas MEN Antioquia (ji8i-4anb)...
+  -> Acumulado: 14 registros
+  ✅ estadisticas_men_antioquia.json (14 registros, 15.3 KB)
+[23:30:02] [INFO] 1.3 Saber 11 — verificando períodos más recientes...
+[23:30:35] [INFO]   Períodos disponibles: [('20224', 55342), ('20221', 553), ('20211', 238), ('20201', 380), ('20194', 57380), ('20191', 178), ('20181', 771), ('20172', 28610), ('20171', 185), ('20162', 29284)]
+[23:30:38] [INFO]   No hay períodos nuevos
+[23:30:40] [INFO] 1.4 Sedes educativas — verificando años más recientes...
+[23:30:41] [INFO]   Años disponibles: [('2019', 771)]
+[23:30:43] [INFO] 1.5 Bachilleres — verificando datos 2024...
+  -> Acumulado: 7 registros
+  ✅ bachilleres_medellin.json (7 registros, 3.9 KB)
+[23:30:46] [INFO] 1.6 Educación superior — verificando datos post-2020...
+  -> Acumulado: 31 registros
+  ✅ educacion_superior_medellin.json (31 registros, 9.7 KB)
+[23:30:49] [INFO] 1.7 Docentes — verificando datos post-2022...
+  -> Acumulado: 276 registros
+  ✅ docentes_medellin_perfil.json (276 registros, 81.5 KB)
+[23:30:55] [INFO] 1.8 Paridad de género...
+  ✅ paridad_genero_medellin.json (1 registros, 1.1 KB)
+[23:30:58] [INFO] 1.9 Explorando datasets adicionales en datos.gov.co...
+[23:30:58] [INFO]   Probando njym-jg76: Matrícula por sede educativa (SIMAT)...
+  ⚠️ HTTP 404 for njym-jg76: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/njym-jg76.json?%24limit=3
+[23:31:00] [INFO]   Probando ucdm-mhgx: Cobertura educación por municipio...
+  ⚠️ HTTP 404 for ucdm-mhgx: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/ucdm-mhgx.json?%24limit=3
+[23:31:02] [INFO]   Probando fs6e-hwnz: Planta docente por municipio...
+  ⚠️ HTTP 404 for fs6e-hwnz: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/fs6e-hwnz.json?%24limit=3
+[23:31:03] [INFO] 
+Fase 1 completa: 11 operaciones
+[23:31:03] [INFO]   [OK] etc_medellin: OK: 14 registros, años 2011-2024
+[23:31:03] [INFO]   [OK] men_antioquia: OK: 14 registros
+[23:31:03] [INFO]   [NOTA] saber11_nuevos: Sin cambios
+[23:31:03] [INFO]   [NOTA] sedes: Último año: 2019 (771 sedes)
+[23:31:03] [INFO]   [OK] bachilleres: OK: 7 registros, años ['2019', '2020', '2021', '2022', '2023', '2024']
+[23:31:03] [INFO]   [OK] ed_superior: OK: 31 registros, años 2005-2020
+[23:31:03] [INFO]   [OK] docentes: OK: 276 registros, años ['2022']
+[23:31:03] [INFO]   [OK] paridad: OK: 1 registros
+[23:31:03] [INFO]   [NOTA] explore_njym-jg76: NO ACCESIBLE
+[23:31:03] [INFO]   [NOTA] explore_ucdm-mhgx: NO ACCESIBLE
+[23:31:03] [INFO]   [NOTA] explore_fs6e-hwnz: NO ACCESIBLE
+[23:31:03] [INFO] 
+======================================================================
+[23:31:03] [INFO]   FASE 2: TRANSFORMACIÓN COMPLETA
+[23:31:03] [INFO] ======================================================================
+
+============================================================
+TRANSFORMER — Datos para Frontend
+============================================================
+📊 Procesando Saber 11...
+  Loaded saber11_medellin.json: 50000 registros
+  Loaded saber11_medellin_batch2.json: 50000 registros
+  Loaded saber11_medellin_batch3.json: 50000 registros
+  Loaded saber11_medellin_batch4.json: 50000 registros
+  Loaded saber11_medellin_batch5.json: 50000 registros
+  Loaded saber11_medellin_batch6.json: 25000 registros
+  Total registros cargados: 275000
+  Periodos encontrados: ['20101', '20102', '20111', '20112', '20121', '20122', '20131', '20132', '20141', '20142', '20151', '20152', '20161', '20162', '20171', '20172', '20181', '20191', '20194', '20201', '20211', '20221', '20224']
+  Periodo más reciente (seleccionado): 20224
+  Registros del periodo 20224: 50281 de 275000 totales
+  ✅ saber11_por_ie.json: 350 IEs con promedios
+  Promedio global ciudad: 250.5
+  Promedio matemáticas:   50.0
+  Promedio lectura:       53.5
+  Total estudiantes eval: 50281
+
+📊 Procesando Sedes Educativas...
+  ✅ sedes_resumen.json
+  Total sedes: 771
+  Total matrícula: 441,926
+  Zonas: {'URBANA': 716, 'RURAL': 55}
+  Sectores: {'OFICIAL': 420, 'NO OFICIAL': 351}
+
+📊 Procesando Estadísticas MEN...
+  ✅ estadisticas_historicas.json: 14 años
+
+📊 Procesando Estadísticas ETC Medellín...
+  14 registros crudos
+  ✅ estadisticas_medellin.json: 14 años
+  [CHECK] 2014 cobertura_neta = 105.73 (should be ~105.73)
+  [CHECK] 2021 poblacion_5_16 = 379616 (should be ~379616)
+
+📊 Generando KPIs ejecutivos...
+  Usando Medellín ETC año 2024 para KPIs
+  ✅ kpis.json
+  totalMatriculados: 441926
+  totalSedes: 771
+  promedioSaber11: 250.5
+  totalEvaluados: 50281
+  totalIEs: 350
+  coberturaNeta: {'valor': 93.58, 'fuente': 'datos.gov.co/sras-4t5p (Medellín ETC 2024)', 'tendencia': 'baja'}
+  coberturaBruta: 104.12
+  desercion: {'valor': 3.18, 'fuente': 'datos.gov.co/sras-4t5p (Medellín ETC 2024)', 'tendencia': 'baja'}
+  aprobacion: {'valor': 88.74, 'fuente': 'datos.gov.co/sras-4t5p (Medellín ETC 2024)', 'tendencia': 'alza'}
+  reprobacion: 8.08
+  repitencia: 9.08
+  sedesConInternet: None
+  ultimaActualizacion: 2026-03-20
+  frescura: {"estadisticas_etc": {"fuente": "sras-4t5p", "ultimo_anio": "2024"}, "saber11": {"fuente": "kgxf-xxbe", "ultimo_periodo": "20224", "ultimo_anio": "2022"}, "sedes": {"fuente": "x5ay-984n", "ultimo_anio": "2019"}, "matricula_medata": {"fuente": "MEData CSV", "ultimo_anio": "2019"}}
+
+✅ Transformación completa
+============================================================
+TRANSFORMER — MEData CSV Datasets
+============================================================
+📊 Deserción por comuna y año...
+  1134 registros
+  Serie temporal: 14 años (MEN/ETC + CSV)
+  ✅ desercion_medellin.json (14 años, 21 comunas)
+
+📊 Saber 11 Histórico por IE...
+  MEData CSV: 1660 registros
+  MEData CSV períodos: ['20142', '20151', '20152', '20161', '20162', '20171', '20172', '20181', '20182']
+    Loading saber11_medellin.json...
+    Loading saber11_medellin_batch2.json...
+    Loading saber11_medellin_batch3.json...
+    Loading saber11_medellin_batch4.json...
+    Loading saber11_medellin_batch5.json...
+    Loading saber11_medellin_batch6.json...
+    Microdatos: 82286 registros en 6 períodos nuevos
+  ✅ saber11_historico_medellin.json (15 períodos, CSV=9, microdatos=6)
+
+📊 ISCE por IE...
+  393 registros
+  ✅ isce_por_ie.json (328 IEs)
+
+📊 Docentes...
+  215 registros
+  Columnas: ['institucion', 'cantidad_programas', 'certificada_calidad', 'direccion_sede', 'telefono', 'correo_electronico', 'natauraleza']
+  ✅ docentes_medellin.json
+
+📊 Matrícula por comuna, nivel y año...
+  265525 registros
+  + 5 años estimados desde ETC stats (cobertura × población)
+  ✅ matricula_medellin.json (21 años, 21 comunas, 5 niveles)
+
+📊 Aprobación por comuna, género y nivel...
+  1134 registros
+  ✅ aprobacion_medellin.json (21 comunas, 2 géneros, 5 niveles)
+
+📊 Clasificación Saber 11...
+  348 registros
+  ✅ clasificacion_saber11.json (348 IEs, 5 clasificaciones)
+
+✅ Transformación MEData CSV completa
+============================================================
+TRANSFORMER — Nuevos Datasets para Frontend
+============================================================
+Procesando Bachilleres...
+  ⚠️ 2024 es copia de 2022 — eliminado
+  bachilleres_medellin.json: 5 registros
+Procesando Educación Superior...
+  educacion_superior_medellin.json: 16 registros
+Procesando Paridad de Género...
+  paridad_genero_medellin.json: 1 registro procesado
+Procesando Docentes...
+  docentes_perfil_medellin.json: 11634 docentes en 276 registros
+
+Transformación completa
+============================================================
+TRANSFORMER — Saber 11 Enriched (datos.gov.co)
+============================================================
+  Batch 1: 50000 registros
+  Batch 2: 50000 registros
+  Batch 3: 50000 registros
+  Batch 4: 50000 registros
+  Batch 5: 50000 registros
+  Batch 6: 25000 registros
+  Total: 275000 registros
+  452 IEs -> saber11_por_ie.json
+  14 períodos -> saber11_serie_temporal.json
+  Top IE: COLEGIO LEONARDO DA VINCI (379.2)
+============================================================
+TRANSFORMER — Poblaciones Especiales y Saber 3/5/9
+============================================================
+📊 Poblaciones especiales...
+  5400 registros en medata_extranjeros.csv
+  19310 registros en medata_etnias.csv
+  40778 registros en medata_victimas.csv
+  59756 registros en medata_nee.csv
+  ✅ poblaciones_especiales.json (4 categorias)
+
+📊 Saber 3/5/9...
+  2150 registros
+  ✅ saber_3_5_9.json (6 grado-area, 21 comunas)
+
+✅ Transformacion poblaciones y Saber completa
+============================================================
+TRANSFORMER — Cruces Multivariable
+============================================================
+Procesando cruces Saber 11...
+  275000 registros totales
+Procesando cruces comunales...
+
+  cruces_multivariable.json (17.8 KB)
+  Cruces Saber 11: 20 dimensiones
+  Comunas cruzadas: 21
+Completo
+============================================================
+TRANSFORMER — Datos Enriquecidos para Mapa
+============================================================
+  Deserción: 21 comunas
+  Aprobación: 21 comunas
+  Matrícula: 21 comunas
+  Clasificación Saber 11: 339 IEs
+  Saber 11 puntajes: 452 IEs
+  ISCE: 328 IEs
+
+  mapa_enriquecido.json (127.4 KB)
+  Comunas enriquecidas: 21
+  Instituciones enriquecidas: 469
+Completo
+============================================================
+GENERATING DATA MANIFEST
+============================================================
+  ✅ data_manifest.json (21 archivos documentados)
+  ⚠️  6 archivos con datos >2 años: bachilleres_medellin.json, docentes_perfil_medellin.json, educacion_superior_medellin.json, paridad_genero_medellin.json, saber11_historico_medellin.json, saber11_serie_temporal.json
+[23:31:22] [INFO] Fase 2 completa: transformación exitosa
+[23:31:22] [INFO] 
+======================================================================
+[23:31:22] [INFO]   FASE 3: ANÁLISIS AVANZADOS
+[23:31:22] [INFO] ======================================================================
+
+[23:31:22] [INFO] 3.1 Generando índice SIE compuesto por comuna...
+[23:31:22] [INFO]   Top 3: [('Laureles-Estadio', 82.1), ('Comuna 90', 75.2), ('Belén', 71.6)]
+[23:31:22] [INFO]   Bottom 3: [('Santa Cruz', 54.2), ('Popular', 54.1), ('Comuna 80', 53.1)]
+[23:31:22] [INFO] 3.2 Análisis de tendencias interanuales...
+[23:31:22] [INFO]   Cambios significativos: ['2012 reprobacion: 13833.3%', '2012 repitencia: -19.7%', '2013 reprobacion: 45.9%', '2013 repitencia: -61.6%', '2014 desercion: -46.9%']
+[23:31:22] [INFO] 3.3 Detección de outliers (IEs vs contexto)...
+[23:31:22] [INFO]   Mejor outlier: COLEGIO LEONARDO DA VINCI (+119.2 pts, 24 eval)
+[23:31:22] [INFO] 3.4 Generando resumen ejecutivo...
+[23:31:22] [INFO] 
+Fase 3 completa: 4 análisis
+[23:31:22] [INFO]   indice_sie: OK: 21 comunas rankeadas
+[23:31:22] [INFO]   tendencias: OK: 13 años analizados
+[23:31:22] [INFO]   outliers: OK: 51 sobre-rinden, 45 sub-rinden
+[23:31:22] [INFO]   resumen: OK
+[23:31:22] [INFO] 
+======================================================================
+[23:31:22] [INFO]   FASE 4: VALIDACIÓN INTEGRAL
+[23:31:22] [INFO] ======================================================================
+
+[23:31:22] [INFO] ========================================================================
+SIE Medellin — Data Validation Report
+Data directory: /Users/cristianespinal/sie-medellin/public/data
+Run at: 2026-03-20T23:31:22
+========================================================================
+  [WARNING] estadisticas_medellin.json: anio=2018: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2019: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2020: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2021: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2022: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2023: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [WARNING] estadisticas_medellin.json: anio=2024: sedes_conectadas_a_internet=None — missing data (null or zero)
+  [INFO] estadisticas_medellin.json: anio=2011: cobertura_neta=108.49% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2012: cobertura_neta=108.43% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2013: cobertura_neta=106.63% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2014: cobertura_neta=105.73% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2015: cobertura_neta=105.21% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2016: cobertura_neta=103.18% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] estadisticas_medellin.json: anio=2017: cobertura_neta=101.16% > 100% — possible with ETC methodology but worth reviewing
+  [INFO] desercion_medellin.json: serieTemporal has 14 year(s)
+  [INFO] matricula_medellin.json: Latest year in serieTemporal is 2024 (2 year(s) from current)
+------------------------------------------------------------------------
+Summary: 0 CRITICAL, 7 WARNING, 9 INFO
+========================================================================
+
+[23:31:22] [INFO]   indice_sie_comunas.json: OK (5.7 KB)
+[23:31:22] [INFO]   tendencias_yoy.json: OK (6.6 KB)
+[23:31:22] [INFO]   outliers_ie.json: OK (16.0 KB)
+[23:31:22] [INFO]   resumen_ejecutivo.json: OK (0.7 KB)
+[23:31:22] [INFO] 
+Actualizando manifest con nuevos archivos...
+============================================================
+GENERATING DATA MANIFEST
+============================================================
+  ✅ data_manifest.json (25 archivos documentados)
+  ⚠️  6 archivos con datos >2 años: bachilleres_medellin.json, docentes_perfil_medellin.json, educacion_superior_medellin.json, paridad_genero_medellin.json, saber11_historico_medellin.json, saber11_serie_temporal.json
+[23:31:22] [INFO] 
+======================================================================
+[23:31:22] [INFO]   FASE 5: BUILD + DEPLOY
+[23:31:22] [INFO] ======================================================================
+
+[23:31:22] [INFO] 5.1 npm run build...
+[23:31:34] [INFO]   ✓ Compiled successfully in 5.0s
+[23:31:34] [INFO]   Generating static pages using 13 workers (0/13) ...
+[23:31:34] [INFO]   Generating static pages using 13 workers (3/13)
+[23:31:34] [INFO]   Generating static pages using 13 workers (6/13)
+[23:31:34] [INFO]   Generating static pages using 13 workers (9/13)
+[23:31:34] [INFO]   ✓ Generating static pages using 13 workers (13/13) in 243.6ms
+[23:31:34] [INFO]   Route (app)
+[23:31:34] [INFO]   ┌ ○ /
+[23:31:34] [INFO]   ├ ○ /_not-found
+[23:31:34] [INFO]   ├ ○ /analisis
+[23:31:34] [INFO]   ├ ○ /calidad
+[23:31:34] [INFO]   ├ ○ /cobertura
+[23:31:34] [INFO]   ├ ○ /contexto
+[23:31:34] [INFO]   ├ ○ /equidad
+[23:31:34] [INFO]   ├ ○ /instituciones
+[23:31:34] [INFO]   ├ ƒ /instituciones/[codigo]
+[23:31:34] [INFO]   ├ ○ /mapa
+[23:31:34] [INFO]   ├ ○ /matricula
+[23:31:34] [INFO]   └ ○ /permanencia
+[23:31:34] [INFO]   ○  (Static)   prerendered as static content
+[23:31:34] [INFO]   ƒ  (Dynamic)  server-rendered on demand
+[23:31:34] [INFO] 5.2 git commit...
+[23:31:34] [INFO]   Commit: OK
+[23:31:35] [INFO]   Push completado
+[23:31:35] [INFO] 5.3 vercel --prod...
+[23:32:02] [INFO]   Production: https://sie-medellin-rg7qq4q3l-cespials-projects.vercel.app [4s]
+[23:32:02] [INFO]   Building...
+[23:32:02] [INFO]   Building...
+[23:32:02] [INFO]   Building: Running build in Washington, D.C., USA (East) – iad1 (Turbo Build Machine)
+[23:32:02] [INFO]   Building: Build machine configuration: 30 cores, 60 GB
+[23:32:02] [INFO]   Building: Retrieving list of deployment files...
+[23:32:02] [INFO]   Building: Downloading 173 deployment files...
+[23:32:02] [INFO]   Building: Restored build cache from previous deployment (3BgoQKSxK6o53ZKtVKkYG6jNdcm9)
+[23:32:02] [INFO]   Building: Running "vercel build"
+[23:32:02] [INFO]   Building: Vercel CLI 50.34.2
+[23:32:02] [INFO]   Building: Installing dependencies...
+[23:32:02] [INFO]   Building: up to date in 792ms
+[23:32:02] [INFO]   Building: 160 packages are looking for funding
+[23:32:02] [INFO]   Building: run `npm fund` for details
+[23:32:02] [INFO]   Building: Detected Next.js version: 16.1.6
+[23:32:02] [INFO]   Building: Running "npm run build"
+[23:32:02] [INFO]   Building: > sie-medellin@0.1.0 build
+[23:32:02] [INFO]   Building: > next build
+[23:32:02] [INFO]   Building: ▲ Next.js 16.1.6 (Turbopack)
+[23:32:02] [INFO]   Building: Creating an optimized production build ...
+[23:32:02] [INFO]   Building: ✓ Compiled successfully in 3.4s
+[23:32:02] [INFO]   Building: Running TypeScript ...
+[23:32:02] [INFO]   Building: Collecting page data using 29 workers ...
+[23:32:02] [INFO]   Building: Generating static pages using 29 workers (0/13) ...
+[23:32:02] [INFO]   Building: Generating static pages using 29 workers (3/13)
+[23:32:02] [INFO]   Building: Generating static pages using 29 workers (6/13)
+[23:32:02] [INFO]   Building: Generating static pages using 29 workers (9/13)
+[23:32:02] [INFO]   Building: ✓ Generating static pages using 29 workers (13/13) in 539.6ms
+[23:32:02] [INFO]   Building: Finalizing page optimization ...
+[23:32:02] [INFO]   Building: Route (app)
+[23:32:02] [INFO]   Building: ┌ ○ /
+[23:32:02] [INFO]   Building: ├ ○ /_not-found
+[23:32:02] [INFO]   Building: ├ ○ /analisis
+[23:32:02] [INFO]   Building: ├ ○ /calidad
+[23:32:02] [INFO]   Building: ├ ○ /cobertura
+[23:32:02] [INFO]   Building: ├ ○ /contexto
+[23:32:02] [INFO]   Building: ├ ○ /equidad
+[23:32:02] [INFO]   Building: ├ ○ /instituciones
+[23:32:02] [INFO]   Building: ├ ƒ /instituciones/[codigo]
+[23:32:02] [INFO]   Building: ├ ○ /mapa
+[23:32:02] [INFO]   Building: ├ ○ /matricula
+[23:32:02] [INFO]   Building: └ ○ /permanencia
+[23:32:02] [INFO]   Building: ○  (Static)   prerendered as static content
+[23:32:02] [INFO]   Building: ƒ  (Dynamic)  server-rendered on demand
+[23:32:02] [INFO]   Building: Traced Next.js server files in: 22.784ms
+[23:32:02] [INFO]   Building: Created all serverless functions in: 77.079ms
+[23:32:02] [INFO]   Building: Collected static files (public/, static/, .next/static): 3.633ms
+[23:32:02] [INFO]   Building: Build Completed in /vercel/output [12s]
+[23:32:02] [INFO]   Building: Deploying outputs...
+[23:32:02] [INFO]   [2K[1A[2K[GProduction: https://sie-medellin-rg7qq4q3l-cespials-projects.vercel.app [26s]
+[23:32:02] [INFO]   Aliased: https://sie-medellin.vercel.app [26s]
+[23:32:02] [INFO] 
+Tiempo total: 2.1 minutos
+[23:32:02] [INFO] 
+======================================================================
+[23:32:02] [INFO]   REPORTE FINAL — PIPELINE NOCTURNO
+[23:32:02] [INFO] ======================================================================
+
+[23:32:02] [INFO]   refresh: 6/11 exitosos
+[23:32:02] [INFO]   transform: OK
+[23:32:02] [INFO]   analysis: 4/4 exitosos
+[23:32:02] [INFO]   validation: OK
+[23:32:02] [INFO]   build: OK
+[23:32:02] [INFO]   deploy: OK
+[23:32:02] [INFO] 
+Archivos en public/data/:
+[23:32:02] [INFO]   aprobacion_medellin.json: 3.2 KB
+[23:32:02] [INFO]   bachilleres_medellin.json: 1.2 KB
+[23:32:02] [INFO]   clasificacion_saber11.json: 67.5 KB
+[23:32:02] [INFO]   cruces_multivariable.json: 17.8 KB
+[23:32:02] [INFO]   data_manifest.json: 6.1 KB
+[23:32:02] [INFO]   desercion_medellin.json: 4.8 KB
+[23:32:02] [INFO]   docentes_medellin.json: 64.5 KB
+[23:32:02] [INFO]   docentes_perfil_medellin.json: 2.0 KB
+[23:32:02] [INFO]   educacion_superior_medellin.json: 3.5 KB
+[23:32:02] [INFO]   estadisticas_historicas.json: 6.4 KB
+[23:32:02] [INFO]   estadisticas_medellin.json: 11.4 KB
+[23:32:02] [INFO]   indice_sie_comunas.json: 5.7 KB
+[23:32:02] [INFO]   isce_por_ie.json: 57.5 KB
+[23:32:02] [INFO]   kpis.json: 1.4 KB
+[23:32:02] [INFO]   mapa_enriquecido.json: 127.4 KB
+[23:32:02] [INFO]   matricula_medellin.json: 4.8 KB
+[23:32:02] [INFO]   outliers_ie.json: 16.0 KB
+[23:32:02] [INFO]   paridad_genero_medellin.json: 1.2 KB
+[23:32:02] [INFO]   poblaciones_especiales.json: 18.7 KB
+[23:32:02] [INFO]   resumen_ejecutivo.json: 0.7 KB
+[23:32:02] [INFO]   saber11_historico_medellin.json: 9.3 KB
+[23:32:02] [INFO]   saber11_por_ie.json: 143.8 KB
+[23:32:02] [INFO]   saber11_serie_temporal.json: 1.9 KB
+[23:32:02] [INFO]   saber_3_5_9.json: 7.3 KB
+[23:32:02] [INFO]   sedes_resumen.json: 0.2 KB
+[23:32:02] [INFO]   tendencias_yoy.json: 6.6 KB
+[23:32:02] [INFO] 
+Pipeline finalizado: 2026-03-20 23:32:02

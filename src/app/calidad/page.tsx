@@ -2,39 +2,35 @@ import { RankingTable } from "@/components/dashboard/RankingTable";
 import { ISCEChart } from "@/components/charts/ISCEChart";
 import { Saber11HistoricoChart } from "@/components/charts/Saber11HistoricoChart";
 import { BachilleresChart } from "@/components/charts/BachilleresChart";
+import { OutliersChart } from "@/components/charts/OutliersChart";
+import { Saber359Chart } from "@/components/charts/Saber359Chart";
 
 export const metadata = { title: "Calidad — SIE Medellín" };
 
 export default function CalidadPage() {
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-success/20 bg-success/5 text-success text-xs mb-3">
-          Calidad Educativa
+    <div className="p-6 space-y-6">
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 bg-accent" />
+          <span className="text-[10px] text-muted uppercase tracking-[0.2em] font-medium">
+            Calidad Educativa
+          </span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Calidad
         </h1>
-        <p className="text-muted mt-2 max-w-2xl">
-          Resultados Saber 11 por institución educativa, ISCE, rankings y
-          evolución histórica de indicadores de calidad.
+        <p className="text-[13px] text-muted mt-1 max-w-2xl tracking-tight">
+          Resultados Saber 11 por IE, ISCE, Saber 3/5/9, bachilleres graduados,
+          e instituciones que sobre/sub-rinden vs. su contexto.
         </p>
       </div>
 
-      {/* Saber 11 Histórico */}
-      <div className="mb-6">
-        <Saber11HistoricoChart />
-      </div>
-
-      {/* ISCE */}
-      <div className="mb-6">
-        <ISCEChart />
-      </div>
-
-      {/* Bachilleres */}
-      <div className="mb-6">
-        <BachilleresChart />
-      </div>
+      <Saber11HistoricoChart />
+      <Saber359Chart />
+      <OutliersChart />
+      <ISCEChart />
+      <BachilleresChart />
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <RankingTable limit={20} showBottom={false} />
