@@ -1,6 +1,6 @@
 {
-  "generado": "2026-03-19T22:02:42",
-  "total_archivos": 21,
+  "generado": "2026-03-20T23:31:22",
+  "total_archivos": 25,
   "archivos": {
     "aprobacion_medellin.json": {
       "fuente": "MEData CSV",
@@ -80,6 +80,11 @@
       "antiguedad_anios": 2,
       "tamano_kb": 11.4
     },
+    "indice_sie_comunas.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "tamano_kb": 5.7
+    },
     "isce_por_ie.json": {
       "fuente": "MEData CSV",
       "descripcion": "ISCE por IE (2015-2018, descontinuado)",
@@ -109,6 +114,11 @@
       "ultimo_dato_estimado": "2024",
       "tamano_kb": 4.8
     },
+    "outliers_ie.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "tamano_kb": 16.0
+    },
     "paridad_genero_medellin.json": {
       "fuente": "datos.gov.co/MEN",
       "descripcion": "Índice de paridad de género y matrícula por género×nivel",
@@ -123,6 +133,11 @@
       "fuente": "datos.gov.co",
       "descripcion": "Extranjeros, etnias, víctimas, NEE en educación formal",
       "tamano_kb": 18.7
+    },
+    "resumen_ejecutivo.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "tamano_kb": 0.7
     },
     "saber11_historico_medellin.json": {
       "fuente": "MEData CSV + datos.gov.co/kgxf-xxbe",
@@ -159,6 +174,15 @@
       "fuente": "datos.gov.co/x5ay-984n",
       "descripcion": "Resumen de sedes educativas (total, zonas, sectores)",
       "tamano_kb": 0.2
+    },
+    "tendencias_yoy.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "rango": "2012-2024",
+      "ultimo_dato": "2024",
+      "obsoleto": false,
+      "antiguedad_anios": 2,
+      "tamano_kb": 6.6
     }
   }
 }

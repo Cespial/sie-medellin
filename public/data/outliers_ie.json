@@ -1,0 +1,678 @@
+{
+  "sobre_rinden": [
+    {
+      "nombre": "COLEGIO LEONARDO DA VINCI",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 379.2,
+      "diferencia": 119.2,
+      "evaluados": 24
+    },
+    {
+      "nombre": "COLEGIO ALEMAN",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 354.5,
+      "diferencia": 94.5,
+      "evaluados": 24
+    },
+    {
+      "nombre": "COL MONTESSORI",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 352.3,
+      "diferencia": 92.3,
+      "evaluados": 209
+    },
+    {
+      "nombre": "COL FONTAN",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 352.1,
+      "diferencia": 92.1,
+      "evaluados": 50
+    },
+    {
+      "nombre": "COL SAN IGNACIO DE LOYOLA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 349.9,
+      "diferencia": 89.9,
+      "evaluados": 602
+    },
+    {
+      "nombre": "COLEGIO THEODORO HERTZL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 346.6,
+      "diferencia": 86.6,
+      "evaluados": 44
+    },
+    {
+      "nombre": "COL CORAZONISTA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 345.5,
+      "diferencia": 85.5,
+      "evaluados": 653
+    },
+    {
+      "nombre": "CORPORACION COLEGIO CUMBRES",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 345.1,
+      "diferencia": 85.1,
+      "evaluados": 244
+    },
+    {
+      "nombre": "COMUNIDAD COLEGIO JESUS MARIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 341.3,
+      "diferencia": 81.3,
+      "evaluados": 335
+    },
+    {
+      "nombre": "INST JORGE ROBLEDO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 340.5,
+      "diferencia": 80.5,
+      "evaluados": 285
+    },
+    {
+      "nombre": "COLEGIO GIMNASIO VERMONT",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 340.1,
+      "diferencia": 80.1,
+      "evaluados": 139
+    },
+    {
+      "nombre": "INST MUSICAL DIEGO ECHAVARRIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 337.7,
+      "diferencia": 77.7,
+      "evaluados": 39
+    },
+    {
+      "nombre": "COL SAN JOSE DE LAS VEGAS",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 337.2,
+      "diferencia": 77.2,
+      "evaluados": 126
+    },
+    {
+      "nombre": "COLEGIO CRISTOBAL COLON THE COLUMBUS SCHOOL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 335.8,
+      "diferencia": 75.8,
+      "evaluados": 448
+    },
+    {
+      "nombre": "COL MARYMOUNT",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 335.0,
+      "diferencia": 75.0,
+      "evaluados": 205
+    },
+    {
+      "nombre": "ASPAEN - GIMNASIO LOS ALCAZARES",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 332.7,
+      "diferencia": 72.7,
+      "evaluados": 144
+    },
+    {
+      "nombre": "COL CALASANZ",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 331.6,
+      "diferencia": 71.6,
+      "evaluados": 488
+    },
+    {
+      "nombre": "COL GIMN LOS PINARES",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 331.3,
+      "diferencia": 71.3,
+      "evaluados": 111
+    },
+    {
+      "nombre": "COL DE LA COMPANIA DE MARIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 328.3,
+      "diferencia": 68.3,
+      "evaluados": 109
+    },
+    {
+      "nombre": "COLEGIO SAGRADO CORAZON MONTEMAYOR",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 323.9,
+      "diferencia": 63.9,
+      "evaluados": 127
+    },
+    {
+      "nombre": "COL BETHLEMITAS",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 323.8,
+      "diferencia": 63.8,
+      "evaluados": 251
+    },
+    {
+      "nombre": "COL CAMPESTRE LA COLINA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 323.3,
+      "diferencia": 63.3,
+      "evaluados": 60
+    },
+    {
+      "nombre": "COL MARIA AUXILIADORA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 321.2,
+      "diferencia": 61.2,
+      "evaluados": 242
+    },
+    {
+      "nombre": "INST EDUC COLEGIO LOYOLA PARA LA CIENCIA Y LA INNOVACIÓN",
+      "naturaleza": "OFICIAL",
+      "puntaje": 302.9,
+      "diferencia": 57.9,
+      "evaluados": 299
+    },
+    {
+      "nombre": "COLEGIO CANADIENSE",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 316.7,
+      "diferencia": 56.7,
+      "evaluados": 300
+    },
+    {
+      "nombre": "COL CALASANZ CAMPESTRE ESCOLAPIAS",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 312.7,
+      "diferencia": 52.7,
+      "evaluados": 255
+    },
+    {
+      "nombre": "COL PADRE MANYANET",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 312.1,
+      "diferencia": 52.1,
+      "evaluados": 568
+    },
+    {
+      "nombre": "COL NUESTRA SENORA DEL ROSARIO DE CHIQUINQUIRA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 310.6,
+      "diferencia": 50.6,
+      "evaluados": 206
+    },
+    {
+      "nombre": "INST EDUC SANTO ANGEL",
+      "naturaleza": "OFICIAL",
+      "puntaje": 295.4,
+      "diferencia": 50.4,
+      "evaluados": 506
+    },
+    {
+      "nombre": "COL PALERMO DE SAN JOSE",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 309.7,
+      "diferencia": 49.7,
+      "evaluados": 95
+    },
+    {
+      "nombre": "INST SALESIANO PEDRO JUSTO BERRIO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 309.5,
+      "diferencia": 49.5,
+      "evaluados": 518
+    },
+    {
+      "nombre": "INST EDUC LUCRECIO JARAMILLO VELEZ",
+      "naturaleza": "OFICIAL",
+      "puntaje": 293.8,
+      "diferencia": 48.8,
+      "evaluados": 523
+    },
+    {
+      "nombre": "COL NUESTRA MADRE DE LAS MERCEDES",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 308.6,
+      "diferencia": 48.6,
+      "evaluados": 117
+    },
+    {
+      "nombre": "COLEGIO DE LA UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 308.4,
+      "diferencia": 48.4,
+      "evaluados": 2048
+    },
+    {
+      "nombre": "COLEGIO SAN JOSE DE LA SALLE",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 308.0,
+      "diferencia": 48.0,
+      "evaluados": 447
+    },
+    {
+      "nombre": "COL SAN GABRIEL DE LA DOLOROSA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 307.9,
+      "diferencia": 47.9,
+      "evaluados": 72
+    },
+    {
+      "nombre": "COL SAN JUAN BOSCO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 307.7,
+      "diferencia": 47.7,
+      "evaluados": 237
+    },
+    {
+      "nombre": "INST SAN CARLOS",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 307.5,
+      "diferencia": 47.5,
+      "evaluados": 610
+    },
+    {
+      "nombre": "INST EDUC SOR JUANA INES DE LA CRUZ",
+      "naturaleza": "OFICIAL",
+      "puntaje": 292.4,
+      "diferencia": 47.4,
+      "evaluados": 293
+    },
+    {
+      "nombre": "GIMN LOS CEDROS",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 307.2,
+      "diferencia": 47.2,
+      "evaluados": 63
+    },
+    {
+      "nombre": "COLEGIO SOLEIRA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 304.3,
+      "diferencia": 44.3,
+      "evaluados": 34
+    },
+    {
+      "nombre": "COLEGIO GIMNASIO CANTABRIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 304.3,
+      "diferencia": 44.3,
+      "evaluados": 34
+    },
+    {
+      "nombre": "INST COLOMBO VENEZOLANO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 304.1,
+      "diferencia": 44.1,
+      "evaluados": 242
+    },
+    {
+      "nombre": "COL SAN BUENAVENTURA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 303.7,
+      "diferencia": 43.7,
+      "evaluados": 27
+    },
+    {
+      "nombre": "INST EDUC LA PRESENTACION",
+      "naturaleza": "OFICIAL",
+      "puntaje": 287.9,
+      "diferencia": 42.9,
+      "evaluados": 336
+    },
+    {
+      "nombre": "COL DE LA PRESENTACION - MEDELLIN",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 301.7,
+      "diferencia": 41.7,
+      "evaluados": 314
+    },
+    {
+      "nombre": "INST EDUC MATER DEI",
+      "naturaleza": "OFICIAL",
+      "puntaje": 286.0,
+      "diferencia": 41.0,
+      "evaluados": 229
+    },
+    {
+      "nombre": "INST EDUC MADRE LAURA",
+      "naturaleza": "OFICIAL",
+      "puntaje": 285.9,
+      "diferencia": 40.9,
+      "evaluados": 304
+    },
+    {
+      "nombre": "COL BARBARA MICARELLI",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 300.8,
+      "diferencia": 40.8,
+      "evaluados": 144
+    },
+    {
+      "nombre": "COLEGIO SANTA BERTILLA BOSCARDIN",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 300.6,
+      "diferencia": 40.6,
+      "evaluados": 358
+    },
+    {
+      "nombre": "COL DE LA INMACULADA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 300.2,
+      "diferencia": 40.2,
+      "evaluados": 476
+    }
+  ],
+  "sub_rinden": [
+    {
+      "nombre": "CENT DE CAPACITACION VICENTA MARIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 196.9,
+      "diferencia": -63.1,
+      "evaluados": 41
+    },
+    {
+      "nombre": "COLEGIO LUIS AMIGO Y FERRER",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 197.4,
+      "diferencia": -62.6,
+      "evaluados": 170
+    },
+    {
+      "nombre": "COLEGIO CEDEPRO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 203.8,
+      "diferencia": -56.2,
+      "evaluados": 645
+    },
+    {
+      "nombre": "COL BOLIVARIANO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 205.6,
+      "diferencia": -54.4,
+      "evaluados": 67
+    },
+    {
+      "nombre": "COL COOP SAN ANTONIO DE PRADO (AC)",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 206.5,
+      "diferencia": -53.5,
+      "evaluados": 2292
+    },
+    {
+      "nombre": "CORP ESC EMPRESARIAL DE EDUCACION",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 207.3,
+      "diferencia": -52.7,
+      "evaluados": 1469
+    },
+    {
+      "nombre": "GIMN GUAYACANES",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 208.8,
+      "diferencia": -51.2,
+      "evaluados": 1636
+    },
+    {
+      "nombre": "CENT DE DESARROLLO INTEGRADO - CENDI",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 209.0,
+      "diferencia": -51.0,
+      "evaluados": 2673
+    },
+    {
+      "nombre": "COL CREADORES DEL FUTURO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 209.5,
+      "diferencia": -50.5,
+      "evaluados": 816
+    },
+    {
+      "nombre": "IE SAN JUDAS TADEO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 209.5,
+      "diferencia": -50.5,
+      "evaluados": 46
+    },
+    {
+      "nombre": "COL DE DSLLO SOC PARA LA ATENC INTEG AL JOVEN TALITA CUMI",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 209.6,
+      "diferencia": -50.4,
+      "evaluados": 392
+    },
+    {
+      "nombre": "COL EXTERNADO PATRIA - SEDE CENTRO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 210.1,
+      "diferencia": -49.9,
+      "evaluados": 187
+    },
+    {
+      "nombre": "COL NUEVO CERVANTES CONOCER",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 210.6,
+      "diferencia": -49.4,
+      "evaluados": 1302
+    },
+    {
+      "nombre": "CORPORACION CIER",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 211.6,
+      "diferencia": -48.4,
+      "evaluados": 76
+    },
+    {
+      "nombre": "INSTITUCION EDUCATIVA PEDAGOGICO INTEGRAL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 212.0,
+      "diferencia": -48.0,
+      "evaluados": 238
+    },
+    {
+      "nombre": "COL LATINO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 212.1,
+      "diferencia": -47.9,
+      "evaluados": 1935
+    },
+    {
+      "nombre": "CENTRO EDUCATIVO DE COMPUTO EMPRESARIAL PARA EL TRABAJO - CINDECOMPUTO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 212.1,
+      "diferencia": -47.9,
+      "evaluados": 394
+    },
+    {
+      "nombre": "COL EMPRESARIAL EDUCATIVO - CEMPED",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 212.5,
+      "diferencia": -47.5,
+      "evaluados": 437
+    },
+    {
+      "nombre": "COL FE Y ALEGRIA SANTA MARIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 213.0,
+      "diferencia": -47.0,
+      "evaluados": 165
+    },
+    {
+      "nombre": "INSTITUTO CODESARROLLO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 213.4,
+      "diferencia": -46.6,
+      "evaluados": 76
+    },
+    {
+      "nombre": "INSTITUTO DE EDUCACION FORMAL Y NO FORMAL ALIANZA ACADEMICA Y CIA LTDA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 214.0,
+      "diferencia": -46.0,
+      "evaluados": 40
+    },
+    {
+      "nombre": "INSTITUCIÓN EDUCATIVA ALIANZA PARA LA EDUCACIÓN EDUCANDO S.A.S",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 215.1,
+      "diferencia": -44.9,
+      "evaluados": 26
+    },
+    {
+      "nombre": "COL COMPUSOCIAL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 217.6,
+      "diferencia": -42.4,
+      "evaluados": 1009
+    },
+    {
+      "nombre": "COL NAL DE CAPACITACIÓN ACADEMICA Y CULTURAL CENCAL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 217.8,
+      "diferencia": -42.2,
+      "evaluados": 408
+    },
+    {
+      "nombre": "ACADEMIA POLITECNICA INTERACTIVA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 217.8,
+      "diferencia": -42.2,
+      "evaluados": 27
+    },
+    {
+      "nombre": "COL GENTE UNIDA JOVENES POR LA PAZ - LUZ DE ORIENTE",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 218.0,
+      "diferencia": -42.0,
+      "evaluados": 318
+    },
+    {
+      "nombre": "INSTITUCIÓN EDUCATIVA PEQUEÑA MARIA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 218.0,
+      "diferencia": -42.0,
+      "evaluados": 692
+    },
+    {
+      "nombre": "INST CORFERRINI - SEDE ROBLEDO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 218.2,
+      "diferencia": -41.8,
+      "evaluados": 855
+    },
+    {
+      "nombre": "COL FUNDADORES EN ADMINISTRACION (AC)",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 218.2,
+      "diferencia": -41.8,
+      "evaluados": 273
+    },
+    {
+      "nombre": "INSTITUTO DE EDUCACIÓN COMFENALCO  CONSUELO MONTOYA GIL",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 219.1,
+      "diferencia": -40.9,
+      "evaluados": 677
+    },
+    {
+      "nombre": "COLEGIO COMPUESTUDIO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 219.1,
+      "diferencia": -40.9,
+      "evaluados": 128
+    },
+    {
+      "nombre": "COL VIDA Y PAZ SEDE CENTRO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 220.4,
+      "diferencia": -39.6,
+      "evaluados": 369
+    },
+    {
+      "nombre": "ESC RURAL PRADITO EN ADMINISTRACION (AC)",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 220.6,
+      "diferencia": -39.4,
+      "evaluados": 20
+    },
+    {
+      "nombre": "UNION PROFESIONAL PARA LA EDUCACION Y EL TRABAJO UPET",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 220.7,
+      "diferencia": -39.3,
+      "evaluados": 268
+    },
+    {
+      "nombre": "INST CORFERRINI - SEDE LA DIVISA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 221.5,
+      "diferencia": -38.5,
+      "evaluados": 45
+    },
+    {
+      "nombre": "POLITÉCNICO MAYOR AGENCIA CRISTIANA DE SERVICIO Y EDUCACIÓN",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 221.6,
+      "diferencia": -38.4,
+      "evaluados": 1269
+    },
+    {
+      "nombre": "I. E. ANA EVA ESCOBAR GONZALEZ",
+      "naturaleza": "OFICIAL",
+      "puntaje": 206.9,
+      "diferencia": -38.1,
+      "evaluados": 21
+    },
+    {
+      "nombre": "CENTRO EDUCATIVO INSTITUTO DE CIENCIAS APLICADAS - INDECAP",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 222.3,
+      "diferencia": -37.7,
+      "evaluados": 160
+    },
+    {
+      "nombre": "CENTRO DE ESTUDIOS MULTITÉCNICO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 225.0,
+      "diferencia": -35.0,
+      "evaluados": 342
+    },
+    {
+      "nombre": "INSTITUCIÓN EDUCATIVA PEDRO LUIS ALVAREZ CORREA",
+      "naturaleza": "OFICIAL",
+      "puntaje": 210.2,
+      "diferencia": -34.8,
+      "evaluados": 20
+    },
+    {
+      "nombre": "INST FERRINI - SEDE CENTRO",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 226.4,
+      "diferencia": -33.6,
+      "evaluados": 1860
+    },
+    {
+      "nombre": "CENTRO EDUCATIVO PARA LA FORMACION EN COMPETENCIAS  COMPUCEC",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 227.3,
+      "diferencia": -32.7,
+      "evaluados": 25
+    },
+    {
+      "nombre": "CORP DE PROG DE EDUC SOCIAL - CORPROE",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 228.2,
+      "diferencia": -31.8,
+      "evaluados": 101
+    },
+    {
+      "nombre": "I. E. ANORI",
+      "naturaleza": "OFICIAL",
+      "puntaje": 213.6,
+      "diferencia": -31.4,
+      "evaluados": 52
+    },
+    {
+      "nombre": "INST EDUC JUAN SEBASTIAN DE CENSA",
+      "naturaleza": "NO OFICIAL",
+      "puntaje": 229.4,
+      "diferencia": -30.6,
+      "evaluados": 649
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "generado": "2026-03-20T23:31:22",
+  "periodo_analisis": "2024",
+  "indicadores_principales": {
+    "cobertura_neta": 93.58,
+    "desercion": 3.18,
+    "aprobacion": 88.74,
+    "saber11_promedio": 250.5,
+    "tendencia_desercion": "mejorando"
+  },
+  "brechas": {
+    "estrato_1_vs_5": 59.6,
+    "internet": 31.9
+  },
+  "datos_frescura": {
+    "bachilleres_medellin.json": "2023",
+    "docentes_perfil_medellin.json": "2022",
+    "educacion_superior_medellin.json": "2020",
+    "isce_por_ie.json": "?",
+    "paridad_genero_medellin.json": "2020",
+    "saber11_historico_medellin.json": "2022",
+    "saber11_serie_temporal.json": "2022"
+  },
+  "total_datasets": 21,
+  "total_ies": 350,
+  "total_evaluados": 50281
+}
