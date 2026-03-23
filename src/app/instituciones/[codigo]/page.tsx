@@ -85,7 +85,7 @@ const SUBJECT_COLORS: Record<string, string> = {
 };
 
 const tooltipStyle = {
-  background: "#F5F5F7",
+  background: "#FFFFFF",
   border: "1px solid #D2D2D7",
   borderRadius: "8px",
   fontSize: "12px",
@@ -402,7 +402,7 @@ export default function InstitucionDetallePage() {
                   dataKey="isce"
                   stroke="#34C759"
                   strokeWidth={2.5}
-                  dot={{ r: 5, fill: "#34C759", stroke: "#F5F5F7", strokeWidth: 2 }}
+                  dot={{ r: 5, fill: "#34C759", stroke: "#FFFFFF", strokeWidth: 2 }}
                   activeDot={{ r: 7, fill: "#34C759" }}
                 />
               </LineChart>

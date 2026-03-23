@@ -9,8 +9,8 @@ export default function ContextoPage() {
   return (
     <div className="p-6">
       <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-warning/20 bg-warning/5 text-warning text-xs mb-3">
-          Contexto Socioeconómico
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 bg-accent" /><span className="text-[10px] text-muted uppercase tracking-[0.2em] font-medium">Contexto</span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Contexto
