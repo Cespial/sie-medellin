@@ -11,7 +11,7 @@ export const THEME = {
   surface: '#F5F5F7',
   border: '#D2D2D7',
   text: '#1D1D1F',
-  muted: '#86868B',
+  muted: '#6E6E73',
 } as const;
 
 export const GRADIENT = {

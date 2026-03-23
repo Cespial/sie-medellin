@@ -73,13 +73,13 @@ export function EdSuperiorChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="anio"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             interval={2}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>
@@ -111,7 +111,7 @@ export function EdSuperiorChart() {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="tecnica" stackId="a" fill="#86868B" />
+          <Bar dataKey="tecnica" stackId="a" fill="#6E6E73" />
           <Bar dataKey="tecnologica" stackId="a" fill="#5856D6" />
           <Bar dataKey="universitaria" stackId="a" fill="#007AFF" />
           <Bar

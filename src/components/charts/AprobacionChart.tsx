@@ -77,7 +77,7 @@ export function AprobacionChart() {
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
             <XAxis
               type="number"
-              stroke="#86868B"
+              stroke="#6E6E73"
               fontSize={11}
               tickLine={false}
               domain={[80, 100]}
@@ -86,7 +86,7 @@ export function AprobacionChart() {
             <YAxis
               dataKey={labelKey}
               type="category"
-              stroke="#86868B"
+              stroke="#6E6E73"
               fontSize={10}
               tickLine={false}
               width={80}
@@ -102,12 +102,12 @@ export function AprobacionChart() {
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
             <XAxis
               dataKey={labelKey}
-              stroke="#86868B"
+              stroke="#6E6E73"
               fontSize={11}
               tickLine={false}
             />
             <YAxis
-              stroke="#86868B"
+              stroke="#6E6E73"
               fontSize={11}
               tickLine={false}
               domain={[80, 100]}
@@ -117,7 +117,7 @@ export function AprobacionChart() {
               contentStyle={CHART_TOOLTIP_STYLE}
               formatter={(value) => [`${Number(value).toFixed(1)}%`, "Aprobación"]}
             />
-            <Legend wrapperStyle={{ fontSize: "11px", color: "#86868B" }} />
+            <Legend wrapperStyle={{ fontSize: "11px", color: "#6E6E73" }} />
             <Bar dataKey="tasaAprobacion" fill="#34C759" radius={[4, 4, 0, 0]} name="Tasa de Aprobación" />
           </BarChart>
         )}

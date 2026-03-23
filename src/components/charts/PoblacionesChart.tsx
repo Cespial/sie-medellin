@@ -171,11 +171,11 @@ export function PoblacionesChart() {
                 stroke="#E5E5EA"
                 horizontal={false}
               />
-              <XAxis type="number" stroke="#86868B" fontSize={10} tickLine={false} />
+              <XAxis type="number" stroke="#6E6E73" fontSize={10} tickLine={false} />
               <YAxis
                 dataKey="comuna"
                 type="category"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
                 width={50}

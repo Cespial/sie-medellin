@@ -79,12 +79,12 @@ export function GenderGapChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="label"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={["auto", "auto"]}
@@ -105,7 +105,7 @@ export function GenderGapChart() {
           <Line
             type="monotone"
             dataKey="promedio"
-            stroke="#86868B"
+            stroke="#6E6E73"
             strokeWidth={1}
             strokeDasharray="5 5"
             dot={false}

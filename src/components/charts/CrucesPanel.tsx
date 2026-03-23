@@ -349,13 +349,13 @@ function EstratoTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[200, 320]}
@@ -372,7 +372,7 @@ function EstratoTab({
             {estrato.map((entry) => (
               <Cell
                 key={entry.estrato}
-                fill={ESTRATO_COLORS[entry.estrato] || "#86868B"}
+                fill={ESTRATO_COLORS[entry.estrato] || "#6E6E73"}
               />
             ))}
           </Bar>
@@ -387,7 +387,7 @@ function EstratoTab({
       <ResponsiveContainer width="100%" height={320}>
         <RadarChart data={radarData}>
           <PolarGrid stroke="#E5E5EA" />
-          <PolarAngleAxis dataKey="subject" stroke="#86868B" fontSize={10} />
+          <PolarAngleAxis dataKey="subject" stroke="#6E6E73" fontSize={10} />
           <PolarRadiusAxis
             stroke="#E5E5EA"
             fontSize={9}
@@ -423,13 +423,13 @@ function EstratoTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[30, 75]}
@@ -469,13 +469,13 @@ function EstratoTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -520,7 +520,7 @@ function EstratoTab({
             {estrato.map((e) => (
               <Cell
                 key={e.estrato}
-                fill={ESTRATO_COLORS[e.estrato] || "#86868B"}
+                fill={ESTRATO_COLORS[e.estrato] || "#6E6E73"}
               />
             ))}
           </Pie>
@@ -658,7 +658,7 @@ function DigitalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[200, 280]}
@@ -666,7 +666,7 @@ function DigitalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={120}
@@ -697,13 +697,13 @@ function DigitalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -739,12 +739,12 @@ function DigitalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="personas"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[220, 270]}
@@ -776,12 +776,12 @@ function DigitalTab({
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 dataKey="cuartos"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
               />
               <YAxis
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={11}
                 tickLine={false}
                 domain={[220, 280]}
@@ -867,7 +867,7 @@ function FamiliaTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -875,7 +875,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="label"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -915,7 +915,7 @@ function FamiliaTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -923,7 +923,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="label"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -963,7 +963,7 @@ function FamiliaTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[230, 320]}
@@ -971,7 +971,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="nivel"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -1066,7 +1066,7 @@ function GeneroTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[240, 265]}
@@ -1074,7 +1074,7 @@ function GeneroTab({
           <YAxis
             type="category"
             dataKey="genero"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
             width={80}
@@ -1102,7 +1102,7 @@ function GeneroTab({
       <ResponsiveContainer width="100%" height={320}>
         <RadarChart data={radarData}>
           <PolarGrid stroke="#E5E5EA" />
-          <PolarAngleAxis dataKey="subject" stroke="#86868B" fontSize={10} />
+          <PolarAngleAxis dataKey="subject" stroke="#6E6E73" fontSize={10} />
           <PolarRadiusAxis
             stroke="#E5E5EA"
             fontSize={9}
@@ -1142,12 +1142,12 @@ function GeneroTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[0, 20]}
@@ -1155,7 +1155,7 @@ function GeneroTab({
               value: "Δ puntos (M−F)",
               angle: -90,
               position: "insideLeft",
-              fill: "#86868B",
+              fill: "#6E6E73",
               fontSize: 10,
             }}
           />
@@ -1192,12 +1192,12 @@ function GeneroTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={12}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[210, 310]}
@@ -1291,7 +1291,7 @@ function InstitucionalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[190, 310]}
@@ -1299,7 +1299,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={80}
@@ -1335,7 +1335,7 @@ function InstitucionalTab({
       <ResponsiveContainer width="100%" height={250}>
         <PieChart>
           <Pie
-            data={jornada.map((j, i) => ({
+            data={jornada.map((j) => ({
               name:
                 j.jornada.charAt(0) + j.jornada.slice(1).toLowerCase(),
               value: j.evaluados,
@@ -1376,7 +1376,7 @@ function InstitucionalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[240, 265]}
@@ -1384,7 +1384,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             width={80}
@@ -1410,7 +1410,7 @@ function InstitucionalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[230, 290]}
@@ -1418,7 +1418,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={120}
@@ -1462,7 +1462,7 @@ function InstitucionalTab({
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[240, 260]}
@@ -1470,7 +1470,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="tipo"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             width={100}
@@ -1484,7 +1484,7 @@ function InstitucionalTab({
           />
           <Bar dataKey="promedio" radius={[0, 6, 6, 0]}>
             <Cell fill="#5856D6" />
-            <Cell fill="#86868B" />
+            <Cell fill="#6E6E73" />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -1551,14 +1551,14 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
             type="number"
             dataKey="tasa_desercion"
             name="Deserción"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             label={{
               value: "Tasa Deserción (%)",
               position: "insideBottom",
               offset: -5,
-              fill: "#86868B",
+              fill: "#6E6E73",
               fontSize: 10,
             }}
           />
@@ -1566,7 +1566,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
             type="number"
             dataKey="tasa_aprobacion"
             name="Aprobación"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[84, 96]}
@@ -1574,7 +1574,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
               value: "Aprobación (%)",
               angle: -90,
               position: "insideLeft",
-              fill: "#86868B",
+              fill: "#6E6E73",
               fontSize: 10,
             }}
           />
@@ -1639,7 +1639,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[0, 7]}
@@ -1648,7 +1648,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             width={45}
@@ -1681,7 +1681,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[84, 96]}
@@ -1690,7 +1690,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             width={45}
@@ -1724,14 +1724,14 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={45}

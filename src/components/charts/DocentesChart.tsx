@@ -44,7 +44,7 @@ export function DocentesChart() {
   const genderData = data.por_genero.map((g) => ({
     name: g.genero === "F" ? "Femenino" : "Masculino",
     value: g.total,
-    color: GENDER_COLORS[g.genero] || "#86868B",
+    color: GENDER_COLORS[g.genero] || "#6E6E73",
   }));
 
   // Truncate long level names for the bar chart
@@ -129,7 +129,7 @@ export function DocentesChart() {
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 type="number"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -139,7 +139,7 @@ export function DocentesChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={9}
                 tickLine={false}
                 width={140}

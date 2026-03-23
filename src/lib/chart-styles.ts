@@ -14,7 +14,7 @@ export const CHART_COLORS = {
   success: "#34C759",
   warning: "#FF9500",
   danger: "#FF3B30",
-  muted: "#86868B",
+  muted: "#6E6E73",
   primary: "#1D1D1F",
   cyan: "#32ADE6",
   violet: "#AF52DE",

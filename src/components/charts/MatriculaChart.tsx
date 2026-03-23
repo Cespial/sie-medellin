@@ -83,19 +83,19 @@ export function MatriculaChart() {
               <stop offset="95%" stopColor="#FF9500" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="grad-estimado" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#86868B" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#86868B" stopOpacity={0} />
+              <stop offset="5%" stopColor="#6E6E73" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#6E6E73" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="anio"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => formatNumber(v)}
@@ -125,9 +125,9 @@ export function MatriculaChart() {
           {hasEstimated && (
             <ReferenceLine
               x={lastRealYear}
-              stroke="#86868B"
+              stroke="#6E6E73"
               strokeDasharray="5 5"
-              label={{ value: "Estimaciones →", position: "top", fill: "#86868B", fontSize: 9 }}
+              label={{ value: "Estimaciones →", position: "top", fill: "#6E6E73", fontSize: 9 }}
             />
           )}
           <Area
@@ -152,7 +152,7 @@ export function MatriculaChart() {
             <Area
               type="monotone"
               dataKey="totalEstimado"
-              stroke="#86868B"
+              stroke="#6E6E73"
               strokeWidth={2}
               strokeDasharray="8 4"
               fill="url(#grad-estimado)"

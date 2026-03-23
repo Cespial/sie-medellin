@@ -63,12 +63,12 @@ export function BachilleresChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="anio"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>

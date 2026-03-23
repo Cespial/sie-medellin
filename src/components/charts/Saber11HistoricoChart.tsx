@@ -58,13 +58,13 @@ export function Saber11HistoricoChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="periodo"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             tickFormatter={formatPeriodo}
           />
           <YAxis
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={["dataMin - 10", "dataMax + 10"]}

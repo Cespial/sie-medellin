@@ -73,7 +73,7 @@ export function ParidadGeneroChart() {
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 type="number"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -83,7 +83,7 @@ export function ParidadGeneroChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
                 width={75}
@@ -117,12 +117,12 @@ export function ParidadGeneroChart() {
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 dataKey="nivel"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
               />
               <YAxis
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={11}
                 tickLine={false}
                 domain={[0.8, 1.3]}
@@ -136,12 +136,12 @@ export function ParidadGeneroChart() {
               />
               <ReferenceLine
                 y={1}
-                stroke="#86868B"
+                stroke="#6E6E73"
                 strokeDasharray="5 5"
                 label={{
                   value: "Paridad",
                   position: "right",
-                  fill: "#86868B",
+                  fill: "#6E6E73",
                   fontSize: 10,
                 }}
               />

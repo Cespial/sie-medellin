@@ -10,7 +10,7 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'SIMAT / DANE',
     esPorcentaje: true,
     mejorValor: 'mayor',
-    colorScale: ['#E5E5EA', '#D2D2D7', '#86868B', '#5856D6', '#007AFF'],
+    colorScale: ['#E5E5EA', '#D2D2D7', '#6E6E73', '#5856D6', '#007AFF'],
   },
   matricula_total: {
     codigo: 'matricula_total',
@@ -21,7 +21,7 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'SIMAT',
     esPorcentaje: false,
     mejorValor: 'mayor',
-    colorScale: ['#F5F5F7', '#D2D2D7', '#86868B', '#5856D6', '#007AFF'],
+    colorScale: ['#F5F5F7', '#D2D2D7', '#6E6E73', '#5856D6', '#007AFF'],
   },
   saber11_global: {
     codigo: 'saber11_global',

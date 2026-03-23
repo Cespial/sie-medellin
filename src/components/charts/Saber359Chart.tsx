@@ -90,11 +90,11 @@ export function Saber359Chart() {
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={chartData} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
-              <XAxis type="number" stroke="#86868B" fontSize={11} tickLine={false} />
+              <XAxis type="number" stroke="#6E6E73" fontSize={11} tickLine={false} />
               <YAxis
                 type="category"
                 dataKey="label"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={9}
                 tickLine={false}
                 width={140}
@@ -105,7 +105,7 @@ export function Saber359Chart() {
               />
               <Bar dataKey="promedio" radius={[0, 4, 4, 0]}>
                 {chartData.map((entry, i) => (
-                  <Cell key={i} fill={AREA_COLORS[entry.area] || "#86868B"} />
+                  <Cell key={i} fill={AREA_COLORS[entry.area] || "#6E6E73"} />
                 ))}
               </Bar>
             </BarChart>
@@ -118,11 +118,11 @@ export function Saber359Chart() {
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={topComunas} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
-              <XAxis type="number" stroke="#86868B" fontSize={11} tickLine={false} domain={[250, "dataMax + 10"]} />
+              <XAxis type="number" stroke="#6E6E73" fontSize={11} tickLine={false} domain={[250, "dataMax + 10"]} />
               <YAxis
                 type="category"
                 dataKey="comuna"
-                stroke="#86868B"
+                stroke="#6E6E73"
                 fontSize={10}
                 tickLine={false}
                 width={40}
@@ -135,7 +135,7 @@ export function Saber359Chart() {
               />
               <Bar dataKey="promedio" fill="#007AFF" radius={[0, 4, 4, 0]}>
                 {topComunas.map((_, i) => (
-                  <Cell key={i} fill={i < 3 ? "#007AFF" : "#86868B"} />
+                  <Cell key={i} fill={i < 3 ? "#007AFF" : "#6E6E73"} />
                 ))}
               </Bar>
             </BarChart>

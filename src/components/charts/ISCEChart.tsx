@@ -85,7 +85,7 @@ export function ISCEChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[0, 10]}
@@ -93,7 +93,7 @@ export function ISCEChart() {
           <YAxis
             dataKey="nombre"
             type="category"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={160}

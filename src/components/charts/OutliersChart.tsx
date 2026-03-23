@@ -83,7 +83,7 @@ export function OutliersChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={view === "sobre" ? [0, "dataMax + 10"] : ["dataMin - 10", 0]}
@@ -92,7 +92,7 @@ export function OutliersChart() {
           <YAxis
             type="category"
             dataKey="nombre"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={9}
             tickLine={false}
             width={160}

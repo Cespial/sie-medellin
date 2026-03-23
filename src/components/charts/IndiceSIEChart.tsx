@@ -71,7 +71,7 @@ export function IndiceSIEChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             domain={[40, 90]}
@@ -79,7 +79,7 @@ export function IndiceSIEChart() {
           <YAxis
             type="category"
             dataKey="nombre"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={10}
             tickLine={false}
             width={130}
@@ -96,9 +96,9 @@ export function IndiceSIEChart() {
           />
           <ReferenceLine
             x={avg}
-            stroke="#86868B"
+            stroke="#6E6E73"
             strokeDasharray="5 5"
-            label={{ value: `Promedio ${avg}`, position: "top", fill: "#86868B", fontSize: 9 }}
+            label={{ value: `Promedio ${avg}`, position: "top", fill: "#6E6E73", fontSize: 9 }}
           />
           <Bar dataKey="indice_sie" radius={[0, 4, 4, 0]}>
             {comunas.map((entry, i) => (

@@ -187,7 +187,7 @@ export function Sidebar() {
           collapsed ? "w-14" : "w-52"
         )}
         aria-label="Menú de navegación"
-        aria-expanded={!collapsed}
+        data-expanded={!collapsed}
       >
         {navContent}
 

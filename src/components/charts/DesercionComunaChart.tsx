@@ -69,7 +69,7 @@ export function DesercionComunaChart() {
           />
           <XAxis
             type="number"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => `${v}%`}
@@ -77,7 +77,7 @@ export function DesercionComunaChart() {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#86868B"
+            stroke="#6E6E73"
             fontSize={11}
             tickLine={false}
             width={120}
