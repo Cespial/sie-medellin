@@ -50,7 +50,7 @@ export function ParidadGeneroChart() {
   if (!data) return null;
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"\u00cdndice de Paridad de G\u00e9nero \u2014 " + data.anio}
       </h3>

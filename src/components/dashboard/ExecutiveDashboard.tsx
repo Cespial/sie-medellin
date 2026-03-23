@@ -222,6 +222,70 @@ function ComunaRow({
   );
 }
 
+/* ========== INDICE SIE MINI ========== */
+
+interface SIEIndex {
+  comuna: string;
+  nombre: string;
+  indice_sie: number;
+}
+
+function IndiceSIEMini() {
+  const { data } = useFetchData<SIEIndex[]>("/data/indice_sie_comunas.json");
+  if (!data || data.length === 0) return null;
+
+  const comunas = data.filter(d => d.comuna.length <= 2);
+  const top5 = comunas.slice(0, 5);
+  const bottom5 = comunas.slice(-5).reverse();
+
+  function scoreColor(score: number): string {
+    if (score >= 75) return "text-accent";
+    if (score >= 65) return "text-foreground";
+    if (score >= 55) return "text-warning";
+    return "text-danger";
+  }
+
+  return (
+    <motion.div {...fadeUp} transition={{ delay: 0.52, duration: 0.4 }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="apple-card p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-[12px] font-semibold text-foreground">
+              Indice SIE — Mejores Comunas
+            </h3>
+            <Link href="/cobertura" className="text-[10px] text-accent hover:text-accent/80 flex items-center gap-0.5">
+              Ver ranking <ChevronRight className="w-3 h-3" />
+            </Link>
+          </div>
+          {top5.map((c, i) => (
+            <div key={c.comuna} className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0">
+              <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">{i + 1}</span>
+              <span className="text-[12px] text-foreground flex-1">{c.nombre}</span>
+              <span className={`font-[var(--font-geist-mono)] text-[13px] font-semibold tabular-nums ${scoreColor(c.indice_sie)}`}>
+                {c.indice_sie}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="apple-card p-5">
+          <h3 className="text-[12px] font-semibold text-foreground mb-3">
+            Indice SIE — Comunas Prioritarias
+          </h3>
+          {bottom5.map((c, i) => (
+            <div key={c.comuna} className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0">
+              <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">{comunas.length - 4 + i}</span>
+              <span className="text-[12px] text-foreground flex-1">{c.nombre}</span>
+              <span className={`font-[var(--font-geist-mono)] text-[13px] font-semibold tabular-nums ${scoreColor(c.indice_sie)}`}>
+                {c.indice_sie}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ========== MAIN DASHBOARD ========== */
 
 export function ExecutiveDashboard() {
@@ -731,6 +795,9 @@ export function ExecutiveDashboard() {
           </Link>
         </div>
       </motion.div>
+
+      {/* ---- Índice SIE Mini ---- */}
+      <IndiceSIEMini />
 
       {/* ---- Dimensions ---- */}
       <motion.div {...fadeUp} transition={{ delay: 0.55, duration: 0.4 }}>

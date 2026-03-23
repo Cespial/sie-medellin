@@ -44,7 +44,7 @@ export function Saber11HistoricoChart() {
   };
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"Saber 11 \u2014 Promedio Hist\u00f3rico Medell\u00edn"}
       </h3>

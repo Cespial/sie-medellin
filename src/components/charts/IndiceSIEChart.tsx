@@ -48,7 +48,7 @@ export function IndiceSIEChart() {
   const avg = Math.round(comunas.reduce((s, d) => s + d.indice_sie, 0) / comunas.length * 10) / 10;
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <div className="flex items-center justify-between mb-1">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">

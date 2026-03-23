@@ -40,7 +40,7 @@ export function TrendChart({
   if (!data) return null;
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {title}
       </h3>

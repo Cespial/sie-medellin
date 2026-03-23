@@ -55,7 +55,7 @@ export function DesercionComunaChart() {
   const chartHeight = Math.max(400, sorted.length * 32);
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         Tasa de Deserción por Comuna ({data.ultimoAnio})
       </h3>

@@ -47,7 +47,7 @@ export function MedellinTrendChart({
       : null;
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">

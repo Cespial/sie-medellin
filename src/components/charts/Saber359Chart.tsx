@@ -75,7 +75,7 @@ export function Saber359Chart() {
   };
 
   return (
-    <div className="apple-card p-6">
+    <div className="apple-card p-6" role="img" aria-label="Gráfica de datos educativos">
       <div className="mb-4">
         <h3 className="text-[12px] font-semibold text-foreground">
           Pruebas Saber 3, 5 y 9
