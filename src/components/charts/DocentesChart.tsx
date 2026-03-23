@@ -29,8 +29,8 @@ interface DocentesData {
 }
 
 const GENDER_COLORS: Record<string, string> = {
-  F: "#FF6B9D",
-  M: "#10B981",
+  F: "#FF2D55",
+  M: "#007AFF",
 };
 
 export function DocentesChart() {
@@ -44,7 +44,7 @@ export function DocentesChart() {
   const genderData = data.por_genero.map((g) => ({
     name: g.genero === "F" ? "Femenino" : "Masculino",
     value: g.total,
-    color: GENDER_COLORS[g.genero] || "#63636E",
+    color: GENDER_COLORS[g.genero] || "#86868B",
   }));
 
   // Truncate long level names for the bar chart
@@ -54,13 +54,13 @@ export function DocentesChart() {
   }));
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
             {"Perfil Docente Oficial \u2014 " + data.anio}
           </h3>
-          <span className={`text-[10px] block mt-0.5 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
+          <span className={`text-[10px] block mt-0.5 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FF9500]" : "text-muted"}`}>
             datos.gov.co/MEN · {data.total_docentes.toLocaleString("es-CO")} docentes · Último dato: {data.anio}
           </span>
         </div>
@@ -81,7 +81,7 @@ export function DocentesChart() {
                 innerRadius={50}
                 outerRadius={80}
                 dataKey="value"
-                stroke="#111113"
+                stroke="#FFFFFF"
                 strokeWidth={2}
                 label={({ name, percent }) =>
                   `${name} ${((percent ?? 0) * 100).toFixed(0)}%`
@@ -126,10 +126,10 @@ export function DocentesChart() {
           </h4>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={nivelData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 type="number"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -139,7 +139,7 @@ export function DocentesChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={9}
                 tickLine={false}
                 width={140}
@@ -151,7 +151,7 @@ export function DocentesChart() {
                   "Docentes",
                 ]}
               />
-              <Bar dataKey="total" fill="#6366F1" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="total" fill="#5856D6" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

@@ -27,13 +27,13 @@ export default function MatriculaPage() {
         <TrendChart
           title="Cobertura Neta — Antioquia"
           dataKey="cobertura_neta"
-          color="#00D4FF"
+          color="#007AFF"
           unit="%"
         />
         <TrendChart
           title="Cobertura Bruta — Antioquia"
           dataKey="cobertura_bruta"
-          color="#3E92CC"
+          color="#5856D6"
           unit="%"
         />
       </div>
@@ -45,7 +45,7 @@ export default function MatriculaPage() {
 
 function MatriculaNivelSection() {
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <h3 className="text-[12px] font-semibold text-foreground mb-3">
         Fuentes de Datos de Matrícula
       </h3>

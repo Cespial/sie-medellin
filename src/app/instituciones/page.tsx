@@ -91,7 +91,7 @@ export default function InstitucionesPage() {
         </p>
       </div>
 
-      <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
+      <div className="apple-card overflow-hidden">
         {/* Filters */}
         <div className="flex flex-wrap items-center gap-3 p-4 border-b border-border">
           <div className="relative flex-1 min-w-[200px]">

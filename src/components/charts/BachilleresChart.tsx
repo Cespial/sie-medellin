@@ -38,7 +38,7 @@ export function BachilleresChart() {
   const latest = data[data.length - 1];
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
@@ -60,15 +60,15 @@ export function BachilleresChart() {
 
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={data} barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="anio"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>
@@ -96,12 +96,12 @@ export function BachilleresChart() {
           />
           <Bar
             dataKey="graduados_11"
-            fill="#10B981"
+            fill="#007AFF"
             radius={[4, 4, 0, 0]}
           />
           <Bar
             dataKey="graduados_26"
-            fill="#6366F1"
+            fill="#5856D6"
             radius={[4, 4, 0, 0]}
           />
         </BarChart>

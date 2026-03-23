@@ -31,7 +31,7 @@ interface DesercionResponse {
 function getBarColor(rate: number, min: number, max: number): string {
   const t = max === min ? 0 : (rate - min) / (max - min);
 
-  // Interpolate from cyan (#10B981) to red (#EF233C)
+  // Interpolate from cyan (#007AFF) to red (#FF3B30)
   const r = Math.round(0x00 + t * (0xef - 0x00));
   const g = Math.round(0xd4 + t * (0x23 - 0xd4));
   const b = Math.round(0xff + t * (0x3c - 0xff));
@@ -55,7 +55,7 @@ export function DesercionComunaChart() {
   const chartHeight = Math.max(400, sorted.length * 32);
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         Tasa de Deserción por Comuna ({data.ultimoAnio})
       </h3>
@@ -64,12 +64,12 @@ export function DesercionComunaChart() {
         <BarChart data={sorted} layout="vertical" margin={{ left: 20, right: 20 }}>
           <CartesianGrid
             strokeDasharray="3 3"
-            stroke="#1F1F23"
+            stroke="#E5E5EA"
             horizontal={false}
           />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) => `${v}%`}
@@ -77,7 +77,7 @@ export function DesercionComunaChart() {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             width={120}

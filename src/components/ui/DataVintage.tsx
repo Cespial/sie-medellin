@@ -22,10 +22,10 @@ export function DataVintage({ fuente, ultimoDato, nota, descontinuado }: DataVin
   const color = getAgeColor(ultimoDato, descontinuado);
 
   return (
-    <span className={`text-[10px] leading-tight ${color} block mt-1 font-[var(--font-geist-mono)] tracking-tight`}>
+    <span className={`text-[11px] leading-tight ${color} block mt-1 font-[var(--font-geist-mono)] tracking-tight`}>
       {fuente}
       {ultimoDato && ` · ${ultimoDato}`}
-      {descontinuado && " · DESCONTINUADO"}
+      {descontinuado && " · Descontinuado"}
       {nota && ` · ${nota}`}
     </span>
   );

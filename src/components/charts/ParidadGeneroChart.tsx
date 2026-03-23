@@ -36,9 +36,9 @@ interface ParidadData {
 }
 
 function getIPGColor(ipg: number): string {
-  if (ipg < 0.95) return "#EF233C";
-  if (ipg > 1.05) return "#06D6A0";
-  return "#FFB703";
+  if (ipg < 0.95) return "#FF3B30";
+  if (ipg > 1.05) return "#34C759";
+  return "#FF9500";
 }
 
 export function ParidadGeneroChart() {
@@ -50,11 +50,11 @@ export function ParidadGeneroChart() {
   if (!data) return null;
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"\u00cdndice de Paridad de G\u00e9nero \u2014 " + data.anio}
       </h3>
-      <span className={`text-[10px] block mb-6 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FFB703]" : "text-muted"}`}>
+      <span className={`text-[10px] block mb-6 ${Number(data.anio) < new Date().getFullYear() - 2 ? "text-[#FF9500]" : "text-muted"}`}>
         datos.gov.co/MEN · Último dato: {data.anio} · 1 registro snapshot
       </span>
 
@@ -70,10 +70,10 @@ export function ParidadGeneroChart() {
               layout="vertical"
               barGap={2}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 type="number"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
                 tickFormatter={(v) =>
@@ -83,7 +83,7 @@ export function ParidadGeneroChart() {
               <YAxis
                 type="category"
                 dataKey="nivel"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
                 width={75}
@@ -101,8 +101,8 @@ export function ParidadGeneroChart() {
                   v === "femenino" ? "Femenino" : "Masculino"
                 }
               />
-              <Bar dataKey="femenino" fill="#FF6B9D" radius={[0, 4, 4, 0]} />
-              <Bar dataKey="masculino" fill="#10B981" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="femenino" fill="#FF2D55" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="masculino" fill="#007AFF" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -114,15 +114,15 @@ export function ParidadGeneroChart() {
           </h4>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={data.ipg_cobertura_bruta}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 dataKey="nivel"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
               />
               <YAxis
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={11}
                 tickLine={false}
                 domain={[0.8, 1.3]}
@@ -136,12 +136,12 @@ export function ParidadGeneroChart() {
               />
               <ReferenceLine
                 y={1}
-                stroke="#63636E"
+                stroke="#86868B"
                 strokeDasharray="5 5"
                 label={{
                   value: "Paridad",
                   position: "right",
-                  fill: "#63636E",
+                  fill: "#86868B",
                   fontSize: 10,
                 }}
               />
@@ -154,15 +154,15 @@ export function ParidadGeneroChart() {
           </ResponsiveContainer>
           <div className="flex gap-4 mt-2 text-[10px] text-muted justify-center">
             <div className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-[#EF233C]" />
+              <span className="w-2 h-2 rounded-full bg-[#FF3B30]" />
               {"< 0.95 (brecha M)"}
             </div>
             <div className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-[#FFB703]" />
+              <span className="w-2 h-2 rounded-full bg-[#FF9500]" />
               Paridad
             </div>
             <div className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-[#06D6A0]" />
+              <span className="w-2 h-2 rounded-full bg-[#34C759]" />
               {"> 1.05 (brecha F)"}
             </div>
           </div>

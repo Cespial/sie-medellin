@@ -30,10 +30,10 @@ interface ComunaIndex {
 }
 
 function getBarColor(score: number): string {
-  if (score >= 75) return "#10B981";
-  if (score >= 65) return "#22D3EE";
-  if (score >= 55) return "#F59E0B";
-  return "#EF4444";
+  if (score >= 75) return "#007AFF";
+  if (score >= 65) return "#5AC8FA";
+  if (score >= 55) return "#FF9500";
+  return "#FF3B30";
 }
 
 export function IndiceSIEChart() {
@@ -48,7 +48,7 @@ export function IndiceSIEChart() {
   const avg = Math.round(comunas.reduce((s, d) => s + d.indice_sie, 0) / comunas.length * 10) / 10;
 
   return (
-    <div className="border border-border bg-surface p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-1">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
@@ -59,19 +59,19 @@ export function IndiceSIEChart() {
           </span>
         </div>
         <div className="flex gap-3 text-[9px] text-muted">
-          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#10B981]" /> &ge;75</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#22D3EE]" /> 65-74</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#F59E0B]" /> 55-64</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#EF4444]" /> &lt;55</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#007AFF]" /> &ge;75</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#5AC8FA]" /> 65-74</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#FF9500]" /> 55-64</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#FF3B30]" /> &lt;55</span>
         </div>
       </div>
 
       <ResponsiveContainer width="100%" height={500}>
         <BarChart data={comunas} layout="vertical" margin={{ left: 10, right: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[40, 90]}
@@ -79,7 +79,7 @@ export function IndiceSIEChart() {
           <YAxis
             type="category"
             dataKey="nombre"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={130}
@@ -96,9 +96,9 @@ export function IndiceSIEChart() {
           />
           <ReferenceLine
             x={avg}
-            stroke="#63636E"
+            stroke="#86868B"
             strokeDasharray="5 5"
-            label={{ value: `Promedio ${avg}`, position: "top", fill: "#63636E", fontSize: 9 }}
+            label={{ value: `Promedio ${avg}`, position: "top", fill: "#86868B", fontSize: 9 }}
           />
           <Bar dataKey="indice_sie" radius={[0, 4, 4, 0]}>
             {comunas.map((entry, i) => (

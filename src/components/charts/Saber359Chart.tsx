@@ -40,8 +40,8 @@ const GRADE_LABELS: Record<string, string> = {
 };
 
 const AREA_COLORS: Record<string, string> = {
-  lenguaje: "#10B981",
-  matematicas: "#6366F1",
+  lenguaje: "#007AFF",
+  matematicas: "#5856D6",
 };
 
 export function Saber359Chart() {
@@ -75,7 +75,7 @@ export function Saber359Chart() {
   };
 
   return (
-    <div className="border border-border bg-surface p-6">
+    <div className="apple-card p-6">
       <div className="mb-4">
         <h3 className="text-[12px] font-semibold text-foreground">
           Pruebas Saber 3, 5 y 9
@@ -89,12 +89,12 @@ export function Saber359Chart() {
           <h4 className="text-[10px] text-muted uppercase tracking-widest mb-3">Promedio ciudad por grado y area</h4>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={chartData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
-              <XAxis type="number" stroke="#63636E" fontSize={11} tickLine={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
+              <XAxis type="number" stroke="#86868B" fontSize={11} tickLine={false} />
               <YAxis
                 type="category"
                 dataKey="label"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={9}
                 tickLine={false}
                 width={140}
@@ -105,7 +105,7 @@ export function Saber359Chart() {
               />
               <Bar dataKey="promedio" radius={[0, 4, 4, 0]}>
                 {chartData.map((entry, i) => (
-                  <Cell key={i} fill={AREA_COLORS[entry.area] || "#63636E"} />
+                  <Cell key={i} fill={AREA_COLORS[entry.area] || "#86868B"} />
                 ))}
               </Bar>
             </BarChart>
@@ -117,12 +117,12 @@ export function Saber359Chart() {
           <h4 className="text-[10px] text-muted uppercase tracking-widest mb-3">Promedio por comuna (todos los grados)</h4>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={topComunas} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
-              <XAxis type="number" stroke="#63636E" fontSize={11} tickLine={false} domain={[250, "dataMax + 10"]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
+              <XAxis type="number" stroke="#86868B" fontSize={11} tickLine={false} domain={[250, "dataMax + 10"]} />
               <YAxis
                 type="category"
                 dataKey="comuna"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
                 width={40}
@@ -133,9 +133,9 @@ export function Saber359Chart() {
                 formatter={(value) => [`${Number(value).toFixed(1)}`, "Promedio"]}
                 labelFormatter={(v) => COMUNA_NAMES[String(v)] || String(v)}
               />
-              <Bar dataKey="promedio" fill="#10B981" radius={[0, 4, 4, 0]}>
+              <Bar dataKey="promedio" fill="#007AFF" radius={[0, 4, 4, 0]}>
                 {topComunas.map((_, i) => (
-                  <Cell key={i} fill={i < 3 ? "#10B981" : "#63636E"} />
+                  <Cell key={i} fill={i < 3 ? "#007AFF" : "#86868B"} />
                 ))}
               </Bar>
             </BarChart>
@@ -155,7 +155,7 @@ export function Saber359Chart() {
             </p>
             <div className="flex gap-1 mt-1">
               <div className="h-1 bg-accent" style={{ width: `${d.nivelAvanzado}%` }} title={`Avanzado: ${d.nivelAvanzado}%`} />
-              <div className="h-1 bg-[#22D3EE]" style={{ width: `${d.nivelSatisfactorio}%` }} title={`Satisfactorio: ${d.nivelSatisfactorio}%`} />
+              <div className="h-1 bg-[#5AC8FA]" style={{ width: `${d.nivelSatisfactorio}%` }} title={`Satisfactorio: ${d.nivelSatisfactorio}%`} />
               <div className="h-1 bg-warning" style={{ width: `${d.nivelMinimo}%` }} title={`Minimo: ${d.nivelMinimo}%`} />
             </div>
             <p className="text-[8px] text-muted mt-0.5">{d.registros} eval</p>

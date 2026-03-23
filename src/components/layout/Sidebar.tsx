@@ -125,8 +125,8 @@ export function Sidebar() {
               className={cn(
                 "group flex items-center gap-3 px-3 py-2 text-[13px] transition-colors duration-150",
                 isActive
-                  ? "text-foreground bg-white/[0.04]"
-                  : "text-muted hover:text-foreground"
+                  ? "text-accent bg-accent/[0.06] rounded-lg"
+                  : "text-muted hover:text-foreground hover:bg-black/[0.03] rounded-lg"
               )}
             >
               {isActive && (
@@ -153,7 +153,7 @@ export function Sidebar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="fixed top-3 left-3 z-50 flex items-center justify-center w-10 h-10 bg-surface border border-border text-muted hover:text-foreground transition-colors lg:hidden"
+        className="fixed top-3 left-3 z-50 flex items-center justify-center w-10 h-10 bg-white rounded-xl shadow-sm border border-border/50 text-muted hover:text-foreground transition-colors lg:hidden"
         aria-label="Abrir menú"
         aria-expanded={mobileOpen}
       >
@@ -172,7 +172,7 @@ export function Sidebar() {
       {/* Mobile drawer */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex flex-col w-52 border-r border-border bg-surface transition-transform duration-200 lg:hidden",
+          "fixed inset-y-0 left-0 z-50 flex flex-col w-56 border-r border-border/50 bg-white/95 backdrop-blur-xl transition-transform duration-200 lg:hidden",
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         )}
         aria-label="Menú de navegación"
@@ -183,7 +183,7 @@ export function Sidebar() {
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "hidden lg:flex flex-col border-r border-border bg-surface transition-all duration-200",
+          "hidden lg:flex flex-col border-r border-border/50 bg-white/80 backdrop-blur-xl transition-all duration-200",
           collapsed ? "w-14" : "w-52"
         )}
         aria-label="Menú de navegación"

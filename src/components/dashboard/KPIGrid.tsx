@@ -40,7 +40,7 @@ export function KPIGrid() {
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="h-28 rounded-xl border border-border bg-surface/50 animate-pulse"
+            className="h-28 rounded-xl apple-card/50 animate-pulse"
           />
         ))}
       </div>

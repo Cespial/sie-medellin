@@ -2,18 +2,18 @@
 @import "leaflet/dist/leaflet.css";
 
 :root {
-  /* Tensor-inspired: monochromatic zinc + single signal accent */
-  --color-primary: #18181B;
-  --color-secondary: #3F3F46;
-  --color-accent: #10B981;
-  --color-success: #10B981;
-  --color-warning: #F59E0B;
-  --color-danger: #EF4444;
-  --background: #09090B;
-  --surface: #111113;
-  --border: #1F1F23;
-  --foreground: #EDEDEF;
-  --muted: #63636E;
+  /* Apple-inspired light theme */
+  --color-primary: #1D1D1F;
+  --color-secondary: #6E6E73;
+  --color-accent: #007AFF;
+  --color-success: #34C759;
+  --color-warning: #FF9500;
+  --color-danger: #FF3B30;
+  --background: #FFFFFF;
+  --surface: #F5F5F7;
+  --border: #D2D2D7;
+  --foreground: #1D1D1F;
+  --muted: #86868B;
 }
 
 @theme inline {
@@ -36,24 +36,14 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, 'Geist', system-ui, sans-serif);
+  font-family: var(--font-sans, 'Geist', system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;
-}
-
-/* Noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Leaflet overrides */
 .leaflet-container {
-  background: var(--background) !important;
+  background: var(--surface) !important;
   font-family: var(--font-sans, 'Geist', sans-serif);
 }
 
@@ -61,7 +51,7 @@ body::before {
   background: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
-  border-radius: 4px !important;
+  border-radius: 12px !important;
 }
 
 .sie-popup .leaflet-popup-content {
@@ -69,11 +59,11 @@ body::before {
 }
 
 .sie-popup .leaflet-popup-tip {
-  background: #111113 !important;
+  background: #FFFFFF !important;
 }
 
 .sie-popup .leaflet-popup-close-button {
-  color: #63636E !important;
+  color: #86868B !important;
   font-size: 18px !important;
   top: 6px !important;
   right: 8px !important;
@@ -81,64 +71,47 @@ body::before {
 }
 
 .leaflet-control-zoom a {
-  background: var(--surface) !important;
-  color: var(--foreground) !important;
-  border-color: var(--border) !important;
+  background: #FFFFFF !important;
+  color: #1D1D1F !important;
+  border-color: #D2D2D7 !important;
 }
 
 .leaflet-control-zoom a:hover {
-  background: var(--border) !important;
+  background: #F5F5F7 !important;
 }
 
 .leaflet-control-attribution {
-  background: rgba(9, 9, 11, 0.8) !important;
-  color: var(--muted) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  color: #86868B !important;
   font-size: 9px !important;
 }
 
 .leaflet-control-attribution a {
-  color: var(--color-accent) !important;
+  color: #007AFF !important;
 }
 
-/* Scrollbar — razor thin */
-::-webkit-scrollbar {
-  width: 4px;
+/* Apple-style card shadow */
+.apple-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+.apple-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* Glow effects — subtle, not flashy */
+/* Glow effects — Apple blue tint */
 .glow-accent {
-  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
 }
 .glow-accent-strong {
-  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
 }
 
-/* Sharp angular accent line */
-.tensor-line {
-  position: relative;
-}
-.tensor-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--color-accent);
-}
-
-/* Selection */
+/* Selection — Apple blue */
 ::selection {
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(0, 122, 255, 0.15);
   color: var(--foreground);
 }

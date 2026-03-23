@@ -65,7 +65,7 @@ export function HeroSection() {
           Sistema de Inteligencia Educativa
         </motion.div>
 
-        <h1 className="font-[var(--font-syne)] text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
           <span className="text-foreground">Educación en </span>
           <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
             Medellín

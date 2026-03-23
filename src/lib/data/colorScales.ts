@@ -1,25 +1,23 @@
-// ============================================================
-// Escalas de color para mapas — SIE Medellín
-// ============================================================
+// Apple-style color system for SIE Medellín
 
 export const THEME = {
-  primary: '#0A2463',
-  secondary: '#3E92CC',
-  accent: '#00D4FF',
-  success: '#06D6A0',
-  warning: '#FFB703',
-  danger: '#EF233C',
-  background: '#020917',
-  surface: '#0D1B2A',
-  border: '#1A2D42',
-  text: '#E8F4FD',
-  muted: '#6B8CAE',
+  primary: '#1D1D1F',
+  secondary: '#6E6E73',
+  accent: '#007AFF',
+  success: '#34C759',
+  warning: '#FF9500',
+  danger: '#FF3B30',
+  background: '#FFFFFF',
+  surface: '#F5F5F7',
+  border: '#D2D2D7',
+  text: '#1D1D1F',
+  muted: '#86868B',
 } as const;
 
 export const GRADIENT = {
-  hero: 'linear-gradient(135deg, #020917 0%, #0A2463 50%, #020917 100%)',
-  card: 'linear-gradient(145deg, #0D1B2A, #1A2D42)',
-  accent: 'linear-gradient(90deg, #00D4FF, #3E92CC)',
+  hero: 'linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 50%, #F5F5F7 100%)',
+  card: 'linear-gradient(145deg, #FFFFFF, #F5F5F7)',
+  accent: 'linear-gradient(90deg, #007AFF, #5856D6)',
 } as const;
 
 /**

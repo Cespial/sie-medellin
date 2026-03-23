@@ -1,17 +1,16 @@
 import type { Indicador } from '@/types/education';
 
 export const INDICATORS: Record<string, Indicador> = {
-  // COBERTURA
   tcb: {
     codigo: 'tcb',
     nombre: 'Tasa de Cobertura Bruta',
-    descripcion: 'Matrícula total / Población en edad escolar × 100',
+    descripcion: 'Matrícula total / Población en edad escolar x 100',
     dimension: 'cobertura',
     unidad: '%',
     fuente: 'SIMAT / DANE',
     esPorcentaje: true,
     mejorValor: 'mayor',
-    colorScale: ['#1a1a2e', '#16213e', '#0f3460', '#3E92CC', '#00D4FF'],
+    colorScale: ['#E5E5EA', '#D2D2D7', '#86868B', '#5856D6', '#007AFF'],
   },
   matricula_total: {
     codigo: 'matricula_total',
@@ -22,10 +21,8 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'SIMAT',
     esPorcentaje: false,
     mejorValor: 'mayor',
-    colorScale: ['#0D1B2A', '#1B2838', '#2A3F55', '#3E92CC', '#00D4FF'],
+    colorScale: ['#F5F5F7', '#D2D2D7', '#86868B', '#5856D6', '#007AFF'],
   },
-
-  // CALIDAD
   saber11_global: {
     codigo: 'saber11_global',
     nombre: 'Puntaje Saber 11 (Global)',
@@ -35,7 +32,7 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'ICFES',
     esPorcentaje: false,
     mejorValor: 'mayor',
-    colorScale: ['#EF233C', '#FFB703', '#F4D35E', '#06D6A0', '#00D4FF'],
+    colorScale: ['#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#007AFF'],
   },
   isce: {
     codigo: 'isce',
@@ -46,23 +43,19 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'MEN/ICFES',
     esPorcentaje: false,
     mejorValor: 'mayor',
-    colorScale: ['#EF233C', '#FFB703', '#06D6A0', '#00D4FF', '#3E92CC'],
+    colorScale: ['#FF3B30', '#FF9500', '#34C759', '#007AFF', '#5856D6'],
   },
-
-  // PERMANENCIA
   tasa_desercion: {
     codigo: 'tasa_desercion',
     nombre: 'Tasa de Deserción',
-    descripcion: '(Matrícula inicial - final) / Matrícula inicial × 100',
+    descripcion: '(Matrícula inicial - final) / Matrícula inicial x 100',
     dimension: 'permanencia',
     unidad: '%',
     fuente: 'C600 / SEM',
     esPorcentaje: true,
     mejorValor: 'menor',
-    colorScale: ['#00D4FF', '#06D6A0', '#F4D35E', '#FFB703', '#EF233C'],
+    colorScale: ['#007AFF', '#34C759', '#FFCC00', '#FF9500', '#FF3B30'],
   },
-
-  // EFICIENCIA
   ratio_alumno_docente: {
     codigo: 'ratio_alumno_docente',
     nombre: 'Relación Alumno/Docente',
@@ -72,10 +65,8 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'C600',
     esPorcentaje: false,
     mejorValor: 'menor',
-    colorScale: ['#00D4FF', '#06D6A0', '#FFB703', '#EF233C', '#8B0000'],
+    colorScale: ['#007AFF', '#34C759', '#FF9500', '#FF3B30', '#AF52DE'],
   },
-
-  // CONTEXTO
   ipm: {
     codigo: 'ipm',
     nombre: 'Índice de Pobreza Multidimensional',
@@ -85,7 +76,7 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'DANE / ECV',
     esPorcentaje: true,
     mejorValor: 'menor',
-    colorScale: ['#00D4FF', '#06D6A0', '#FFB703', '#EF233C', '#8B0000'],
+    colorScale: ['#007AFF', '#34C759', '#FF9500', '#FF3B30', '#AF52DE'],
   },
   tasa_homicidios: {
     codigo: 'tasa_homicidios',
@@ -96,7 +87,7 @@ export const INDICATORS: Record<string, Indicador> = {
     fuente: 'Obs. Seguridad',
     esPorcentaje: false,
     mejorValor: 'menor',
-    colorScale: ['#00D4FF', '#06D6A0', '#FFB703', '#EF233C', '#8B0000'],
+    colorScale: ['#007AFF', '#34C759', '#FF9500', '#FF3B30', '#AF52DE'],
   },
 };
 

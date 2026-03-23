@@ -27,13 +27,13 @@ export default function PermanenciaPage() {
         <TrendChart
           title="Tasa de Deserción — Antioquia"
           dataKey="desercion"
-          color="#EF233C"
+          color="#FF3B30"
           unit="%"
         />
         <TrendChart
           title="Deserción Primaria — Antioquia"
           dataKey="desercion_primaria"
-          color="#FF6B6B"
+          color="#FF453A"
           unit="%"
         />
       </div>
@@ -42,13 +42,13 @@ export default function PermanenciaPage() {
         <TrendChart
           title="Reprobación Secundaria"
           dataKey="reprobacion_secundaria"
-          color="#FFB703"
+          color="#FF9500"
           unit="%"
         />
         <TrendChart
           title="Repitencia Media"
           dataKey="repitencia_media"
-          color="#FF6B6B"
+          color="#FF453A"
           unit="%"
         />
       </div>
@@ -69,7 +69,7 @@ function DesercionSection() {
 
 function AprobacionSection() {
   return (
-    <div className="rounded-xl border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         Aprobación Escolar
       </h3>

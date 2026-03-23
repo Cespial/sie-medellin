@@ -240,7 +240,7 @@ export function ExecutiveDashboard() {
     return (
       <div className="p-6 space-y-6">
         <ChartSkeleton height={80} />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="h-24 bg-surface animate-pulse" />
           ))}
@@ -361,7 +361,7 @@ export function ExecutiveDashboard() {
       </motion.div>
 
       {/* ---- KPI Strip ---- */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <MetricCard
           label="Matriculados"
           value={kpis.totalMatriculados.toLocaleString("es-CO")}
@@ -440,7 +440,7 @@ export function ExecutiveDashboard() {
 
       {/* ---- Diagnostic Alerts ---- */}
       <motion.div {...fadeUp} transition={{ delay: 0.2, duration: 0.4 }}>
-        <div className="border border-border bg-surface p-5">
+        <div className="apple-card p-5">
           <div className="flex items-center gap-2 mb-4">
             <ShieldAlert className="w-3.5 h-3.5 text-muted" />
             <h2 className="text-[12px] font-semibold text-foreground uppercase tracking-widest">
@@ -508,7 +508,7 @@ export function ExecutiveDashboard() {
         <motion.div
           {...fadeUp}
           transition={{ delay: 0.3, duration: 0.4 }}
-          className="border border-border bg-surface p-5"
+          className="apple-card p-5"
         >
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
@@ -545,7 +545,7 @@ export function ExecutiveDashboard() {
         <motion.div
           {...fadeUp}
           transition={{ delay: 0.35, duration: 0.4 }}
-          className="border border-border bg-surface p-5"
+          className="apple-card p-5"
         >
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
@@ -585,7 +585,7 @@ export function ExecutiveDashboard() {
         <motion.div
           {...fadeUp}
           transition={{ delay: 0.4, duration: 0.4 }}
-          className="border border-border bg-surface overflow-hidden"
+          className="apple-card overflow-hidden"
         >
           <div className="p-4 border-b border-border">
             <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
@@ -623,7 +623,7 @@ export function ExecutiveDashboard() {
         <motion.div
           {...fadeUp}
           transition={{ delay: 0.45, duration: 0.4 }}
-          className="border border-border bg-surface overflow-hidden"
+          className="apple-card overflow-hidden"
         >
           <div className="p-4 border-b border-border">
             <h3 className="text-[11px] font-semibold text-foreground uppercase tracking-widest">
@@ -663,7 +663,7 @@ export function ExecutiveDashboard() {
       <motion.div
         {...fadeUp}
         transition={{ delay: 0.5, duration: 0.4 }}
-        className="border border-accent/10 bg-accent/[0.02] p-5"
+        className="apple-card border-accent/20 p-5"
       >
         <h2 className="text-[11px] font-semibold text-foreground mb-4 flex items-center gap-2 uppercase tracking-widest">
           <FlaskConical className="w-3.5 h-3.5 text-accent" />
@@ -737,7 +737,7 @@ export function ExecutiveDashboard() {
         <h2 className="text-[11px] font-semibold text-foreground mb-3 uppercase tracking-widest">
           Dimensiones del Sistema
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-border">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {[
             { name: "Cobertura", icon: Users, href: "/cobertura" },
             { name: "Calidad", icon: Award, href: "/calidad" },
@@ -749,7 +749,7 @@ export function ExecutiveDashboard() {
             <Link
               key={dim.name}
               href={dim.href}
-              className="group bg-surface p-3 hover:bg-white/[0.02] transition-colors"
+              className="group apple-card p-3 hover:shadow-md transition-colors"
             >
               <div className="w-4 h-[2px] bg-accent/30 mb-2 group-hover:w-8 group-hover:bg-accent transition-all duration-300" />
               <div className="flex items-center gap-1.5">

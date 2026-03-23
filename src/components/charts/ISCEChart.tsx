@@ -53,7 +53,7 @@ export function ISCEChart() {
     filtered.length;
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
@@ -82,10 +82,10 @@ export function ISCEChart() {
       </div>
       <ResponsiveContainer width="100%" height={500}>
         <BarChart data={top20} layout="vertical" margin={{ left: 10 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[0, 10]}
@@ -93,7 +93,7 @@ export function ISCEChart() {
           <YAxis
             dataKey="nombre"
             type="category"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={160}
@@ -109,10 +109,10 @@ export function ISCEChart() {
                 key={i}
                 fill={
                   entry.sector === "privado"
-                    ? "#FFB703"
+                    ? "#FF9500"
                     : entry.valor >= 7
-                      ? "#06D6A0"
-                      : "#10B981"
+                      ? "#34C759"
+                      : "#007AFF"
                 }
               />
             ))}
@@ -121,13 +121,13 @@ export function ISCEChart() {
       </ResponsiveContainer>
       <div className="flex items-center gap-4 mt-3 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#10B981]" /> Oficial
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#007AFF]" /> Oficial
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#FFB703]" /> Privado
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#FF9500]" /> Privado
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#06D6A0]" /> Oficial
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#34C759]" /> Oficial
           (ISCE &ge; 7)
         </span>
       </div>

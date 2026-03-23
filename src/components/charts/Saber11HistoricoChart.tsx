@@ -44,7 +44,7 @@ export function Saber11HistoricoChart() {
   };
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <h3 className="text-[12px] font-semibold text-foreground mb-1">
         {"Saber 11 \u2014 Promedio Hist\u00f3rico Medell\u00edn"}
       </h3>
@@ -55,16 +55,16 @@ export function Saber11HistoricoChart() {
 
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="periodo"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             tickFormatter={formatPeriodo}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={["dataMin - 10", "dataMax + 10"]}
@@ -82,10 +82,10 @@ export function Saber11HistoricoChart() {
           <Line
             type="monotone"
             dataKey="promedioCiudad"
-            stroke="#FFB703"
+            stroke="#FF9500"
             strokeWidth={2}
-            dot={{ r: 4, fill: "#FFB703", stroke: "#111113", strokeWidth: 2 }}
-            activeDot={{ r: 6, fill: "#FFB703" }}
+            dot={{ r: 4, fill: "#FF9500", stroke: "#FFFFFF", strokeWidth: 2 }}
+            activeDot={{ r: 6, fill: "#FF9500" }}
           />
         </LineChart>
       </ResponsiveContainer>
@@ -115,7 +115,7 @@ export function Saber11HistoricoChart() {
                   <td
                     className={`py-2 pr-3 capitalize ${
                       idx === 0
-                        ? "text-[#FFB703] font-semibold"
+                        ? "text-[#FF9500] font-semibold"
                         : "text-foreground"
                     }`}
                   >
@@ -127,7 +127,7 @@ export function Saber11HistoricoChart() {
                   <td
                     className={`py-2 text-right tabular-nums ${
                       idx === 0
-                        ? "text-[#FFB703] font-semibold"
+                        ? "text-[#FF9500] font-semibold"
                         : "text-foreground"
                     }`}
                   >

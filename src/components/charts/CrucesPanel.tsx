@@ -147,12 +147,12 @@ const TABS: { key: TabKey; label: string }[] = [
 ];
 
 const ESTRATO_COLORS: Record<string, string> = {
-  "1": "#EF233C",
-  "2": "#FF6B6B",
-  "3": "#FFB703",
-  "4": "#06D6A0",
-  "5": "#10B981",
-  "6": "#6366F1",
+  "1": "#FF3B30",
+  "2": "#FF453A",
+  "3": "#FF9500",
+  "4": "#34C759",
+  "5": "#007AFF",
+  "6": "#5856D6",
 };
 
 const SUBJECT_LABELS: Record<string, string> = {
@@ -193,8 +193,8 @@ function StatCard({
   const colorMap: Record<string, string> = {
     accent: "bg-accent/10 border-accent/20 text-accent",
     danger: "bg-danger/10 border-danger/20 text-danger",
-    success: "bg-[#06D6A0]/10 border-[#06D6A0]/20 text-[#06D6A0]",
-    warning: "bg-[#FFB703]/10 border-[#FFB703]/20 text-[#FFB703]",
+    success: "bg-[#34C759]/10 border-[#34C759]/20 text-[#34C759]",
+    warning: "bg-[#FF9500]/10 border-[#FF9500]/20 text-[#FF9500]",
   };
   return (
     <div className={`px-3 py-2 rounded-lg border ${colorMap[color] || colorMap.accent}`}>
@@ -218,7 +218,7 @@ export function CrucesPanel() {
   const s = data.saber11;
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-2">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
@@ -346,16 +346,16 @@ function EstratoTab({
       <SectionTitle>Puntaje global promedio por estrato</SectionTitle>
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={estrato}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[200, 320]}
@@ -372,7 +372,7 @@ function EstratoTab({
             {estrato.map((entry) => (
               <Cell
                 key={entry.estrato}
-                fill={ESTRATO_COLORS[entry.estrato] || "#63636E"}
+                fill={ESTRATO_COLORS[entry.estrato] || "#86868B"}
               />
             ))}
           </Bar>
@@ -386,10 +386,10 @@ function EstratoTab({
       </Insight>
       <ResponsiveContainer width="100%" height={320}>
         <RadarChart data={radarData}>
-          <PolarGrid stroke="#1F1F23" />
-          <PolarAngleAxis dataKey="subject" stroke="#63636E" fontSize={10} />
+          <PolarGrid stroke="#E5E5EA" />
+          <PolarAngleAxis dataKey="subject" stroke="#86868B" fontSize={10} />
           <PolarRadiusAxis
-            stroke="#1F1F23"
+            stroke="#E5E5EA"
             fontSize={9}
             domain={[30, 70]}
             tickCount={5}
@@ -397,15 +397,15 @@ function EstratoTab({
           <Radar
             name="Estrato 1"
             dataKey="E1"
-            stroke="#EF233C"
-            fill="#EF233C"
+            stroke="#FF3B30"
+            fill="#FF3B30"
             fillOpacity={0.15}
           />
           <Radar
             name="Estrato 5"
             dataKey="E5"
-            stroke="#10B981"
-            fill="#10B981"
+            stroke="#007AFF"
+            fill="#007AFF"
             fillOpacity={0.15}
           />
           <Legend wrapperStyle={{ fontSize: "11px" }} />
@@ -420,16 +420,16 @@ function EstratoTab({
       <SectionTitle>Puntaje por materia y estrato</SectionTitle>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={materias} barGap={1} barSize={10}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[30, 75]}
@@ -446,15 +446,15 @@ function EstratoTab({
             wrapperStyle={{ fontSize: "10px" }}
             formatter={(v) => SUBJECT_LABELS[v] || v}
           />
-          <Bar dataKey="matematicas" fill="#EF233C" radius={[3, 3, 0, 0]} />
-          <Bar dataKey="lectura_critica" fill="#06D6A0" radius={[3, 3, 0, 0]} />
-          <Bar dataKey="c_naturales" fill="#FFB703" radius={[3, 3, 0, 0]} />
+          <Bar dataKey="matematicas" fill="#FF3B30" radius={[3, 3, 0, 0]} />
+          <Bar dataKey="lectura_critica" fill="#34C759" radius={[3, 3, 0, 0]} />
+          <Bar dataKey="c_naturales" fill="#FF9500" radius={[3, 3, 0, 0]} />
           <Bar
             dataKey="sociales_ciudadanas"
-            fill="#6366F1"
+            fill="#5856D6"
             radius={[3, 3, 0, 0]}
           />
-          <Bar dataKey="ingles" fill="#10B981" radius={[3, 3, 0, 0]} />
+          <Bar dataKey="ingles" fill="#007AFF" radius={[3, 3, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
 
@@ -466,16 +466,16 @@ function EstratoTab({
       </Insight>
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={sectorXEstrato} barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -492,8 +492,8 @@ function EstratoTab({
             wrapperStyle={{ fontSize: "11px" }}
             formatter={(v) => (v === "oficial" ? "Oficial" : "No Oficial")}
           />
-          <Bar dataKey="oficial" fill="#6366F1" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="no_oficial" fill="#FFB703" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="oficial" fill="#5856D6" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="no_oficial" fill="#FF9500" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
 
@@ -520,7 +520,7 @@ function EstratoTab({
             {estrato.map((e) => (
               <Cell
                 key={e.estrato}
-                fill={ESTRATO_COLORS[e.estrato] || "#63636E"}
+                fill={ESTRATO_COLORS[e.estrato] || "#86868B"}
               />
             ))}
           </Pie>
@@ -572,12 +572,12 @@ function DigitalTab({
           {
             factor: "Internet — Sí",
             promedio: internet.find((i) => i.internet === "Si")?.promedio || 0,
-            color: "#06D6A0",
+            color: "#34C759",
           },
           {
             factor: "Internet — No",
             promedio: internet.find((i) => i.internet === "No")?.promedio || 0,
-            color: "#EF233C",
+            color: "#FF3B30",
           },
         ]
       : []),
@@ -587,13 +587,13 @@ function DigitalTab({
             factor: "Computador — Sí",
             promedio:
               computador.find((c) => c.tiene === "Si")?.promedio || 0,
-            color: "#06D6A0",
+            color: "#34C759",
           },
           {
             factor: "Computador — No",
             promedio:
               computador.find((c) => c.tiene === "No")?.promedio || 0,
-            color: "#EF233C",
+            color: "#FF3B30",
           },
         ]
       : []),
@@ -603,13 +603,13 @@ function DigitalTab({
             factor: "Automóvil — Sí",
             promedio:
               automovil.find((a) => a.tiene === "Si")?.promedio || 0,
-            color: "#10B981",
+            color: "#007AFF",
           },
           {
             factor: "Automóvil — No",
             promedio:
               automovil.find((a) => a.tiene === "No")?.promedio || 0,
-            color: "#FF6B6B",
+            color: "#FF453A",
           },
         ]
       : []),
@@ -619,13 +619,13 @@ function DigitalTab({
             factor: "Lavadora — Sí",
             promedio:
               lavadora.find((l) => l.tiene === "Si")?.promedio || 0,
-            color: "#6366F1",
+            color: "#5856D6",
           },
           {
             factor: "Lavadora — No",
             promedio:
               lavadora.find((l) => l.tiene === "No")?.promedio || 0,
-            color: "#FFB703",
+            color: "#FF9500",
           },
         ]
       : []),
@@ -655,10 +655,10 @@ function DigitalTab({
       <SectionTitle>Impacto de bienes del hogar en puntaje</SectionTitle>
       <ResponsiveContainer width="100%" height={320}>
         <BarChart data={assetData} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[200, 280]}
@@ -666,7 +666,7 @@ function DigitalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={120}
@@ -694,16 +694,16 @@ function DigitalTab({
       </Insight>
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={estratoXInternet} barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
             tickFormatter={(v) => `E${v}`}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -724,8 +724,8 @@ function DigitalTab({
               v === "con_internet" ? "Con Internet" : "Sin Internet"
             }
           />
-          <Bar dataKey="con_internet" fill="#06D6A0" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="sin_internet" fill="#EF233C" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="con_internet" fill="#34C759" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="sin_internet" fill="#FF3B30" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
 
@@ -736,15 +736,15 @@ function DigitalTab({
       </Insight>
       <ResponsiveContainer width="100%" height={250}>
         <BarChart data={personas}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="personas"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[220, 270]}
@@ -756,11 +756,11 @@ function DigitalTab({
               "Promedio",
             ]}
           />
-          <Bar dataKey="promedio" fill="#6366F1" radius={[4, 4, 0, 0]}>
+          <Bar dataKey="promedio" fill="#5856D6" radius={[4, 4, 0, 0]}>
             {personas.map((_, i) => (
               <Cell
                 key={i}
-                fill={i < 2 ? "#06D6A0" : i < 4 ? "#FFB703" : "#EF233C"}
+                fill={i < 2 ? "#34C759" : i < 4 ? "#FF9500" : "#FF3B30"}
               />
             ))}
           </Bar>
@@ -773,15 +773,15 @@ function DigitalTab({
           <SectionTitle>Puntaje según habitaciones en el hogar</SectionTitle>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={cuartos}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
               <XAxis
                 dataKey="cuartos"
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={10}
                 tickLine={false}
               />
               <YAxis
-                stroke="#63636E"
+                stroke="#86868B"
                 fontSize={11}
                 tickLine={false}
                 domain={[220, 280]}
@@ -793,7 +793,7 @@ function DigitalTab({
                   "Promedio",
                 ]}
               />
-              <Bar dataKey="promedio" fill="#10B981" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="promedio" fill="#007AFF" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </>
@@ -864,10 +864,10 @@ function FamiliaTab({
       <SectionTitle>Puntaje según educación de la madre</SectionTitle>
       <ResponsiveContainer width="100%" height={360}>
         <BarChart data={madreChart} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -875,7 +875,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="label"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -893,10 +893,10 @@ function FamiliaTab({
                 key={i}
                 fill={
                   entry.promedio >= 270
-                    ? "#06D6A0"
+                    ? "#34C759"
                     : entry.promedio >= 250
-                      ? "#FFB703"
-                      : "#EF233C"
+                      ? "#FF9500"
+                      : "#FF3B30"
                 }
               />
             ))}
@@ -912,10 +912,10 @@ function FamiliaTab({
       </Insight>
       <ResponsiveContainer width="100%" height={360}>
         <BarChart data={padreChart} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[190, 320]}
@@ -923,7 +923,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="label"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -935,16 +935,16 @@ function FamiliaTab({
               "Promedio",
             ]}
           />
-          <Bar dataKey="promedio" fill="#6366F1" radius={[0, 6, 6, 0]}>
+          <Bar dataKey="promedio" fill="#5856D6" radius={[0, 6, 6, 0]}>
             {padreChart.map((entry, i) => (
               <Cell
                 key={i}
                 fill={
                   entry.promedio >= 270
-                    ? "#06D6A0"
+                    ? "#34C759"
                     : entry.promedio >= 250
-                      ? "#FFB703"
-                      : "#EF233C"
+                      ? "#FF9500"
+                      : "#FF3B30"
                 }
               />
             ))}
@@ -960,10 +960,10 @@ function FamiliaTab({
       </Insight>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={combinedData} layout="vertical" barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[230, 320]}
@@ -971,7 +971,7 @@ function FamiliaTab({
           <YAxis
             type="category"
             dataKey="nivel"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={9}
             tickLine={false}
             width={150}
@@ -987,8 +987,8 @@ function FamiliaTab({
             wrapperStyle={{ fontSize: "11px" }}
             formatter={(v) => (v === "madre" ? "Ed. Madre" : "Ed. Padre")}
           />
-          <Bar dataKey="madre" fill="#FF6B6B" radius={[0, 4, 4, 0]} />
-          <Bar dataKey="padre" fill="#6366F1" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="madre" fill="#FF453A" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="padre" fill="#5856D6" radius={[0, 4, 4, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -1063,10 +1063,10 @@ function GeneroTab({
           layout="vertical"
           barGap={4}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[240, 265]}
@@ -1074,7 +1074,7 @@ function GeneroTab({
           <YAxis
             type="category"
             dataKey="genero"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
             width={80}
@@ -1087,8 +1087,8 @@ function GeneroTab({
             ]}
           />
           <Bar dataKey="promedio" radius={[0, 6, 6, 0]}>
-            <Cell fill="#FF6B6B" />
-            <Cell fill="#6366F1" />
+            <Cell fill="#FF453A" />
+            <Cell fill="#5856D6" />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -1101,10 +1101,10 @@ function GeneroTab({
       </Insight>
       <ResponsiveContainer width="100%" height={320}>
         <RadarChart data={radarData}>
-          <PolarGrid stroke="#1F1F23" />
-          <PolarAngleAxis dataKey="subject" stroke="#63636E" fontSize={10} />
+          <PolarGrid stroke="#E5E5EA" />
+          <PolarAngleAxis dataKey="subject" stroke="#86868B" fontSize={10} />
           <PolarRadiusAxis
-            stroke="#1F1F23"
+            stroke="#E5E5EA"
             fontSize={9}
             domain={[40, 60]}
             tickCount={5}
@@ -1112,15 +1112,15 @@ function GeneroTab({
           <Radar
             name="Femenino"
             dataKey="Femenino"
-            stroke="#FF6B6B"
-            fill="#FF6B6B"
+            stroke="#FF453A"
+            fill="#FF453A"
             fillOpacity={0.15}
           />
           <Radar
             name="Masculino"
             dataKey="Masculino"
-            stroke="#6366F1"
-            fill="#6366F1"
+            stroke="#5856D6"
+            fill="#5856D6"
             fillOpacity={0.15}
           />
           <Legend wrapperStyle={{ fontSize: "11px" }} />
@@ -1139,15 +1139,15 @@ function GeneroTab({
       </Insight>
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={gapByEstrato}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[0, 20]}
@@ -1155,7 +1155,7 @@ function GeneroTab({
               value: "Δ puntos (M−F)",
               angle: -90,
               position: "insideLeft",
-              fill: "#63636E",
+              fill: "#86868B",
               fontSize: 10,
             }}
           />
@@ -1166,12 +1166,12 @@ function GeneroTab({
               "Brecha",
             ]}
           />
-          <Bar dataKey="brecha" fill="#FFB703" radius={[4, 4, 0, 0]}>
+          <Bar dataKey="brecha" fill="#FF9500" radius={[4, 4, 0, 0]}>
             {gapByEstrato.map((entry, i) => (
               <Cell
                 key={i}
                 fill={
-                  ESTRATO_COLORS[(i + 1).toString()] || "#FFB703"
+                  ESTRATO_COLORS[(i + 1).toString()] || "#FF9500"
                 }
               />
             ))}
@@ -1189,15 +1189,15 @@ function GeneroTab({
             Masculino: e.m,
           }))}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="estrato"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={12}
             tickLine={false}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[210, 310]}
@@ -1210,16 +1210,16 @@ function GeneroTab({
           <Line
             type="monotone"
             dataKey="Femenino"
-            stroke="#FF6B6B"
+            stroke="#FF453A"
             strokeWidth={2}
-            dot={{ r: 4, fill: "#FF6B6B" }}
+            dot={{ r: 4, fill: "#FF453A" }}
           />
           <Line
             type="monotone"
             dataKey="Masculino"
-            stroke="#6366F1"
+            stroke="#5856D6"
             strokeWidth={2}
-            dot={{ r: 4, fill: "#6366F1" }}
+            dot={{ r: 4, fill: "#5856D6" }}
           />
         </LineChart>
       </ResponsiveContainer>
@@ -1288,10 +1288,10 @@ function InstitucionalTab({
       <SectionTitle>Puntaje por jornada escolar</SectionTitle>
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={allFactors} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[190, 310]}
@@ -1299,7 +1299,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={80}
@@ -1317,12 +1317,12 @@ function InstitucionalTab({
                 key={i}
                 fill={
                   entry.promedio >= 280
-                    ? "#06D6A0"
+                    ? "#34C759"
                     : entry.promedio >= 250
-                      ? "#10B981"
+                      ? "#007AFF"
                       : entry.promedio >= 220
-                        ? "#FFB703"
-                        : "#EF233C"
+                        ? "#FF9500"
+                        : "#FF3B30"
                 }
               />
             ))}
@@ -1354,7 +1354,7 @@ function InstitucionalTab({
               <Cell
                 key={i}
                 fill={
-                  ["#06D6A0", "#10B981", "#6366F1", "#FFB703", "#FF6B6B", "#EF233C"][i]
+                  ["#34C759", "#007AFF", "#5856D6", "#FF9500", "#FF453A", "#FF3B30"][i]
                 }
               />
             ))}
@@ -1373,10 +1373,10 @@ function InstitucionalTab({
       <SectionTitle>Oficial vs No Oficial</SectionTitle>
       <ResponsiveContainer width="100%" height={160}>
         <BarChart data={sectorData} layout="vertical" barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[240, 265]}
@@ -1384,7 +1384,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             width={80}
@@ -1397,8 +1397,8 @@ function InstitucionalTab({
             ]}
           />
           <Bar dataKey="promedio" radius={[0, 6, 6, 0]}>
-            <Cell fill="#6366F1" />
-            <Cell fill="#FFB703" />
+            <Cell fill="#5856D6" />
+            <Cell fill="#FF9500" />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -1407,10 +1407,10 @@ function InstitucionalTab({
       <SectionTitle>Tipo de colegio (carácter)</SectionTitle>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={caracterData} layout="vertical" barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[230, 290]}
@@ -1418,7 +1418,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="factor"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={120}
@@ -1436,10 +1436,10 @@ function InstitucionalTab({
                 key={i}
                 fill={
                   entry.promedio >= 270
-                    ? "#06D6A0"
+                    ? "#34C759"
                     : entry.promedio >= 250
-                      ? "#10B981"
-                      : "#FFB703"
+                      ? "#007AFF"
+                      : "#FF9500"
                 }
               />
             ))}
@@ -1459,10 +1459,10 @@ function InstitucionalTab({
           promedio: b.promedio,
           evaluados: b.evaluados,
         }))} layout="vertical" barGap={4}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[240, 260]}
@@ -1470,7 +1470,7 @@ function InstitucionalTab({
           <YAxis
             type="category"
             dataKey="tipo"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             width={100}
@@ -1483,8 +1483,8 @@ function InstitucionalTab({
             ]}
           />
           <Bar dataKey="promedio" radius={[0, 6, 6, 0]}>
-            <Cell fill="#6366F1" />
-            <Cell fill="#63636E" />
+            <Cell fill="#5856D6" />
+            <Cell fill="#86868B" />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -1546,19 +1546,19 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
       </Insight>
       <ResponsiveContainer width="100%" height={320}>
         <ScatterChart>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
             dataKey="tasa_desercion"
             name="Deserción"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             label={{
               value: "Tasa Deserción (%)",
               position: "insideBottom",
               offset: -5,
-              fill: "#63636E",
+              fill: "#86868B",
               fontSize: 10,
             }}
           />
@@ -1566,7 +1566,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
             type="number"
             dataKey="tasa_aprobacion"
             name="Aprobación"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[84, 96]}
@@ -1574,7 +1574,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
               value: "Aprobación (%)",
               angle: -90,
               position: "insideLeft",
-              fill: "#63636E",
+              fill: "#86868B",
               fontSize: 10,
             }}
           />
@@ -1601,16 +1601,16 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
             }}
             labelFormatter={() => ""}
           />
-          <Scatter data={valid} fill="#10B981" fillOpacity={0.7}>
+          <Scatter data={valid} fill="#007AFF" fillOpacity={0.7}>
             {valid.map((entry, i) => (
               <Cell
                 key={i}
                 fill={
                   (entry.tasa_desercion ?? 0) > 4
-                    ? "#EF233C"
+                    ? "#FF3B30"
                     : (entry.tasa_desercion ?? 0) > 2.5
-                      ? "#FFB703"
-                      : "#06D6A0"
+                      ? "#FF9500"
+                      : "#34C759"
                 }
               />
             ))}
@@ -1619,15 +1619,15 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
       </ResponsiveContainer>
       <div className="flex gap-4 mt-2 text-[10px] text-muted justify-center">
         <div className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-[#06D6A0]" />
+          <span className="w-2 h-2 rounded-full bg-[#34C759]" />
           {"Deserción < 2.5%"}
         </div>
         <div className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-[#FFB703]" />
+          <span className="w-2 h-2 rounded-full bg-[#FF9500]" />
           2.5–4%
         </div>
         <div className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-[#EF233C]" />
+          <span className="w-2 h-2 rounded-full bg-[#FF3B30]" />
           {"> 4%"}
         </div>
       </div>
@@ -1636,10 +1636,10 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
       <SectionTitle>Ranking: mayor deserción</SectionTitle>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={sortedDesercion} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[0, 7]}
@@ -1648,7 +1648,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             width={45}
@@ -1663,10 +1663,10 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
                 key={i}
                 fill={
                   entry.tasa > 4
-                    ? "#EF233C"
+                    ? "#FF3B30"
                     : entry.tasa > 2.5
-                      ? "#FFB703"
-                      : "#06D6A0"
+                      ? "#FF9500"
+                      : "#34C759"
                 }
               />
             ))}
@@ -1678,10 +1678,10 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
       <SectionTitle>Ranking: mayor aprobación</SectionTitle>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={sortedAprobacion} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={[84, 96]}
@@ -1690,7 +1690,7 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             width={45}
@@ -1702,11 +1702,11 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
               "Aprobación",
             ]}
           />
-          <Bar dataKey="tasa" fill="#06D6A0" radius={[0, 6, 6, 0]}>
+          <Bar dataKey="tasa" fill="#34C759" radius={[0, 6, 6, 0]}>
             {sortedAprobacion.map((entry, i) => (
               <Cell
                 key={i}
-                fill={entry.tasa >= 92 ? "#06D6A0" : entry.tasa >= 88 ? "#10B981" : "#FFB703"}
+                fill={entry.tasa >= 92 ? "#34C759" : entry.tasa >= 88 ? "#007AFF" : "#FF9500"}
               />
             ))}
           </Bar>
@@ -1721,17 +1721,17 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
       </Insight>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={oficialidadData} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
           />
           <YAxis
             type="category"
             dataKey="comuna"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             width={45}
@@ -1750,12 +1750,12 @@ function ComunasTab({ data }: { data: ComunaData[] }) {
           <Bar
             dataKey="oficial"
             stackId="a"
-            fill="#6366F1"
+            fill="#5856D6"
           />
           <Bar
             dataKey="privado"
             stackId="a"
-            fill="#FFB703"
+            fill="#FF9500"
           />
         </BarChart>
       </ResponsiveContainer>

@@ -48,13 +48,13 @@ export function EdSuperiorChart() {
   }));
 
   return (
-    <div className="border border-border bg-surface/50 p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
             {"Matr\u00edcula Educaci\u00f3n Superior \u2014 Medell\u00edn"}
           </h3>
-          <span className="text-[10px] text-[#FFB703] block mt-0.5">
+          <span className="text-[10px] text-[#FF9500] block mt-0.5">
             datos.gov.co/MEN · Último dato: {latest.anio} · Por nivel de formación
           </span>
         </div>
@@ -70,16 +70,16 @@ export function EdSuperiorChart() {
 
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
           <XAxis
             dataKey="anio"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={10}
             tickLine={false}
             interval={2}
           />
           <YAxis
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             tickFormatter={(v) =>
@@ -111,13 +111,13 @@ export function EdSuperiorChart() {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="tecnica" stackId="a" fill="#63636E" />
-          <Bar dataKey="tecnologica" stackId="a" fill="#6366F1" />
-          <Bar dataKey="universitaria" stackId="a" fill="#10B981" />
+          <Bar dataKey="tecnica" stackId="a" fill="#86868B" />
+          <Bar dataKey="tecnologica" stackId="a" fill="#5856D6" />
+          <Bar dataKey="universitaria" stackId="a" fill="#007AFF" />
           <Bar
             dataKey="posgrado"
             stackId="a"
-            fill="#06D6A0"
+            fill="#34C759"
             radius={[4, 4, 0, 0]}
           />
         </BarChart>

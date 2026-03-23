@@ -74,10 +74,10 @@ export function AprobacionChart() {
       <ResponsiveContainer width="100%" height={isVertical ? 500 : 250}>
         {isVertical ? (
           <BarChart data={chartData} layout="vertical" margin={{ left: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
             <XAxis
               type="number"
-              stroke="#63636E"
+              stroke="#86868B"
               fontSize={11}
               tickLine={false}
               domain={[80, 100]}
@@ -86,7 +86,7 @@ export function AprobacionChart() {
             <YAxis
               dataKey={labelKey}
               type="category"
-              stroke="#63636E"
+              stroke="#86868B"
               fontSize={10}
               tickLine={false}
               width={80}
@@ -95,19 +95,19 @@ export function AprobacionChart() {
               contentStyle={CHART_TOOLTIP_STYLE}
               formatter={(value) => [`${Number(value).toFixed(1)}%`, "Aprobación"]}
             />
-            <Bar dataKey="tasaAprobacion" fill="#06D6A0" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="tasaAprobacion" fill="#34C759" radius={[0, 4, 4, 0]} />
           </BarChart>
         ) : (
           <BarChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" />
             <XAxis
               dataKey={labelKey}
-              stroke="#63636E"
+              stroke="#86868B"
               fontSize={11}
               tickLine={false}
             />
             <YAxis
-              stroke="#63636E"
+              stroke="#86868B"
               fontSize={11}
               tickLine={false}
               domain={[80, 100]}
@@ -117,8 +117,8 @@ export function AprobacionChart() {
               contentStyle={CHART_TOOLTIP_STYLE}
               formatter={(value) => [`${Number(value).toFixed(1)}%`, "Aprobación"]}
             />
-            <Legend wrapperStyle={{ fontSize: "11px", color: "#63636E" }} />
-            <Bar dataKey="tasaAprobacion" fill="#06D6A0" radius={[4, 4, 0, 0]} name="Tasa de Aprobación" />
+            <Legend wrapperStyle={{ fontSize: "11px", color: "#86868B" }} />
+            <Bar dataKey="tasaAprobacion" fill="#34C759" radius={[4, 4, 0, 0]} name="Tasa de Aprobación" />
           </BarChart>
         )}
       </ResponsiveContainer>

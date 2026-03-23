@@ -50,7 +50,7 @@ export function OutliersChart() {
   }));
 
   return (
-    <div className="border border-border bg-surface p-6">
+    <div className="apple-card p-6">
       <div className="flex items-center justify-between mb-1">
         <div>
           <h3 className="text-[12px] font-semibold text-foreground">
@@ -80,10 +80,10 @@ export function OutliersChart() {
 
       <ResponsiveContainer width="100%" height={420}>
         <BarChart data={chartData} layout="vertical" margin={{ left: 10, right: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#1F1F23" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5EA" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={11}
             tickLine={false}
             domain={view === "sobre" ? [0, "dataMax + 10"] : ["dataMin - 10", 0]}
@@ -92,7 +92,7 @@ export function OutliersChart() {
           <YAxis
             type="category"
             dataKey="nombre"
-            stroke="#63636E"
+            stroke="#86868B"
             fontSize={9}
             tickLine={false}
             width={160}
@@ -113,8 +113,8 @@ export function OutliersChart() {
               <Cell
                 key={i}
                 fill={view === "sobre"
-                  ? (entry.diferencia > 80 ? "#10B981" : entry.diferencia > 50 ? "#22D3EE" : "#6366F1")
-                  : (entry.diferencia < -50 ? "#EF4444" : "#F59E0B")
+                  ? (entry.diferencia > 80 ? "#007AFF" : entry.diferencia > 50 ? "#5AC8FA" : "#5856D6")
+                  : (entry.diferencia < -50 ? "#FF3B30" : "#FF9500")
                 }
               />
             ))}

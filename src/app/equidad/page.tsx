@@ -32,16 +32,16 @@ export default function EquidadPage() {
         Desercion por Nivel Educativo
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <MedellinTrendChart title="Desercion — Transicion" dataKey="desercion_transicion" color="#EF4444" unit="%" />
-        <MedellinTrendChart title="Desercion — Media" dataKey="desercion_media" color="#F59E0B" unit="%" />
+        <MedellinTrendChart title="Desercion — Transicion" dataKey="desercion_transicion" color="#FF3B30" unit="%" />
+        <MedellinTrendChart title="Desercion — Media" dataKey="desercion_media" color="#FF9500" unit="%" />
       </div>
 
       <h2 className="text-[11px] font-semibold text-foreground uppercase tracking-widest pt-2">
         Cobertura por Nivel
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <MedellinTrendChart title="Cobertura Bruta — Primaria" dataKey="cobertura_bruta_primaria" color="#10B981" unit="%" />
-        <MedellinTrendChart title="Cobertura Bruta — Media" dataKey="cobertura_bruta_media" color="#6366F1" unit="%" />
+        <MedellinTrendChart title="Cobertura Bruta — Primaria" dataKey="cobertura_bruta_primaria" color="#007AFF" unit="%" />
+        <MedellinTrendChart title="Cobertura Bruta — Media" dataKey="cobertura_bruta_media" color="#5856D6" unit="%" />
       </div>
     </div>
   );

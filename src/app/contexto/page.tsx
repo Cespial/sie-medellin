@@ -29,25 +29,25 @@ export default function ContextoPage() {
         <MedellinTrendChart
           title="Tasa de Reprobación"
           dataKey="reprobacion"
-          color="#EF233C"
+          color="#FF3B30"
           unit="%"
         />
         <MedellinTrendChart
           title="Reprobación Secundaria"
           dataKey="reprobacion_secundaria"
-          color="#FF6B6B"
+          color="#FF453A"
           unit="%"
         />
         <MedellinTrendChart
           title="Repitencia"
           dataKey="repitencia"
-          color="#FFB703"
+          color="#FF9500"
           unit="%"
         />
         <MedellinTrendChart
           title="Aprobación"
           dataKey="aprobacion"
-          color="#06D6A0"
+          color="#34C759"
           unit="%"
         />
       </div>
@@ -59,13 +59,13 @@ export default function ContextoPage() {
         <TrendChart
           title="Tamaño Promedio de Grupo"
           dataKey="tamano_promedio_grupo"
-          color="#3E92CC"
+          color="#5856D6"
           unit=" est."
         />
         <TrendChart
           title="Reprobación por Nivel — Primaria"
           dataKey="reprobacion_primaria"
-          color="#FFB703"
+          color="#FF9500"
           unit="%"
         />
       </div>
@@ -81,7 +81,7 @@ export default function ContextoPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-border bg-surface/50 p-6">
+        <div className="apple-card p-6">
           <h3 className="text-[12px] font-semibold text-foreground mb-3">
             Fuentes de Datos de Contexto
           </h3>
@@ -149,7 +149,7 @@ export default function ContextoPage() {
               >
                 <span
                   className={`w-2 h-2 mt-1.5 rounded-full shrink-0 ${
-                    s.status === "ok" ? "bg-success" : s.status === "stale" ? "bg-[#FFB703]" : "bg-muted"
+                    s.status === "ok" ? "bg-success" : s.status === "stale" ? "bg-[#FF9500]" : "bg-muted"
                   }`}
                 />
                 <div>
@@ -163,7 +163,7 @@ export default function ContextoPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-surface/50 p-6">
+        <div className="apple-card p-6">
           <h3 className="text-[12px] font-semibold text-foreground mb-3 flex items-center">
             Cruces Potenciales
             <span className="ml-2 px-2 py-0.5 text-[10px] rounded-full bg-warning/10 text-warning border border-warning/20">En desarrollo</span>
