@@ -12,6 +12,7 @@ import {
   LineChart, Line, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   PieChart, Pie, Cell, Legend,
 } from "recharts";
+import { IEMapLoader } from "@/components/map/IEMapLoader";
 
 /* ---------- types ---------- */
 
@@ -228,6 +229,11 @@ export default function InstitucionDetallePage() {
           </div>
         </div>
       </div>
+
+      {/* ==================== MAPA ==================== */}
+      {p.coordenadas && (
+        <IEMapLoader highlightCode={p.codigoDane} height="350px" />
+      )}
 
       {/* ==================== RENDIMIENTO ==================== */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
