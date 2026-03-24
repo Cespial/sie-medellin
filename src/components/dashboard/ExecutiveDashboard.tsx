@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 import { useFetchData } from "@/hooks/useFetchData";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { Minus } from "lucide-react";
 
 /* ========== TYPES ========== */
 
@@ -222,6 +224,68 @@ function ComunaRow({
   );
 }
 
+/* ========== TENDENCIAS YoY ========== */
+
+interface TendenciaEntry {
+  anio: string;
+  desercion_delta?: number;
+  cobertura_neta_delta?: number;
+  aprobacion_delta?: number;
+  reprobacion_delta?: number;
+}
+
+function TendenciasCard() {
+  const { data } = useFetchData<TendenciaEntry[]>("/data/tendencias_yoy.json");
+  if (!data || data.length === 0) return null;
+
+  const latest = data[data.length - 1]; // 2024 vs 2023
+
+  const items = [
+    { label: "Deserción", delta: latest.desercion_delta, inverse: true },
+    { label: "Cobertura", delta: latest.cobertura_neta_delta, inverse: false },
+    { label: "Aprobación", delta: latest.aprobacion_delta, inverse: false },
+  ];
+
+  return (
+    <motion.div {...fadeUp} transition={{ delay: 0.08, duration: 0.4 }}>
+      <div className="apple-card p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="text-[11px] font-medium text-foreground">
+              {latest.anio} vs {Number(latest.anio) - 1}
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            {items.map((item) => {
+              if (item.delta === undefined) return null;
+              const isGood = item.inverse ? item.delta < 0 : item.delta > 0;
+              const color = Math.abs(item.delta) < 0.1 ? "text-muted" : isGood ? "text-success" : "text-danger";
+              const Icon = Math.abs(item.delta) < 0.1 ? Minus : isGood ? TrendingDown : TrendingUp;
+              const displayIcon = item.inverse
+                ? (item.delta < 0 ? TrendingDown : TrendingUp)
+                : (item.delta > 0 ? TrendingUp : TrendingDown);
+              return (
+                <div key={item.label} className="flex items-center gap-1.5">
+                  {React.createElement(displayIcon, { className: `w-3.5 h-3.5 ${color}` })}
+                  <span className={`font-[var(--font-geist-mono)] text-[13px] font-semibold ${color}`}>
+                    {item.delta > 0 ? "+" : ""}{item.delta.toFixed(2)}pp
+                  </span>
+                  <span className="text-[11px] text-muted">{item.label}</span>
+                </div>
+              );
+            })}
+          </div>
+          <span className="text-[10px] text-muted sm:ml-auto">
+            {items.filter(i => i.delta !== undefined && (i.inverse ? i.delta < 0 : i.delta > 0)).length >= 2
+              ? "Sistema mejorando"
+              : "Atención requerida"}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ========== INDICE SIE MINI ========== */
 
 interface SIEIndex {
@@ -407,22 +471,25 @@ export function ExecutiveDashboard() {
           </div>
           <div className="flex gap-2">
             <Link
+              href="/riesgo"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-xl text-[12px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
+            >
+              <ShieldAlert className="w-3 h-3" />
+              Escuelas en Riesgo
+            </Link>
+            <Link
               href="/mapa"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background text-[12px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-foreground text-[12px] tracking-tight hover:border-foreground/30 transition-colors"
             >
               <Map className="w-3 h-3" />
               Mapa
             </Link>
-            <Link
-              href="/analisis"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-[12px] tracking-tight hover:border-foreground/30 transition-colors"
-            >
-              <FlaskConical className="w-3 h-3" />
-              Análisis
-            </Link>
           </div>
         </div>
       </motion.div>
+
+      {/* ---- Tendencias YoY ---- */}
+      <TendenciasCard />
 
       {/* ---- KPI Strip ---- */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

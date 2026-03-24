@@ -23,6 +23,7 @@ import { useState, useEffect } from "react";
 
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/riesgo", label: "Riesgo", icon: ShieldAlert },
   { href: "/mapa", label: "Mapa", icon: Map },
   { href: "/cobertura", label: "Cobertura", icon: Users },
   { href: "/calidad", label: "Calidad", icon: Award },
