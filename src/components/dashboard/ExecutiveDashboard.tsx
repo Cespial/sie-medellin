@@ -201,15 +201,17 @@ function ComunaRow({
   value,
   label,
   color,
+  code,
 }: {
   rank: number;
   name: string;
   value: string;
   label: string;
   color: string;
+  code?: string;
 }) {
-  return (
-    <div className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0">
+  const content = (
+    <>
       <span className="font-[var(--font-geist-mono)] text-[10px] text-muted w-4 tabular-nums">
         {rank}
       </span>
@@ -220,6 +222,21 @@ function ComunaRow({
         </span>
         <span className="text-[9px] text-muted ml-1">{label}</span>
       </div>
+    </>
+  );
+
+  if (code) {
+    return (
+      <Link href={`/comunas/${code}`} className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0 hover:bg-accent/[0.03] transition-colors">
+        {content}
+        <ChevronRight className="w-3 h-3 text-muted" />
+      </Link>
+    );
+  }
+
+  return (
+    <div className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0">
+      {content}
     </div>
   );
 }
@@ -660,6 +677,7 @@ export function ExecutiveDashboard() {
                 key={c.code}
                 rank={i + 1}
                 name={COMUNA_NAMES[c.code] || `Comuna ${c.code}`}
+                code={c.code}
                 value={`${c.tasa_desercion?.toFixed(2)}%`}
                 label="deserción"
                 color={
@@ -697,6 +715,7 @@ export function ExecutiveDashboard() {
                 key={c.code}
                 rank={i + 1}
                 name={COMUNA_NAMES[c.code] || `Comuna ${c.code}`}
+                code={c.code}
                 value={`${c.tasa_aprobacion?.toFixed(1)}%`}
                 label="aprobación"
                 color={
