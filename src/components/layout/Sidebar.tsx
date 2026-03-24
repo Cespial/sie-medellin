@@ -30,6 +30,7 @@ const NAV_ITEMS = [
   { href: "/matricula", label: "Matrícula", icon: GraduationCap },
   { href: "/equidad", label: "Equidad", icon: Heart },
   { href: "/instituciones", label: "Instituciones", icon: School },
+  { href: "/mapa/instituciones", label: "Mapa IEs", icon: Map },
   { href: "/contexto", label: "Contexto", icon: BarChart3 },
   { href: "/analisis", label: "Análisis", icon: FlaskConical },
 ];

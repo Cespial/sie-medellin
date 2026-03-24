@@ -79,15 +79,18 @@ export default function InstitucionesPage() {
   return (
     <div className="p-6">
       <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs mb-3">
-          Directorio — {data.length} IEs con datos Saber 11
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 bg-accent rounded-sm" />
+          <span className="text-[10px] text-muted uppercase tracking-[0.2em] font-medium">
+            Directorio — {data.length} IEs
+          </span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Instituciones Educativas
         </h1>
-        <p className="text-muted mt-2">
+        <p className="text-[13px] text-muted mt-1 max-w-xl">
           Busca y compara instituciones por puntaje Saber 11, sector y zona.
-          Haz clic en una institución para ver su ficha completa.
+          Haz clic para ver la ficha completa con perfil socioeconómico.
         </p>
       </div>
 
