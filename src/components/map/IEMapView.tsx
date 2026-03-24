@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import L from "leaflet";
 import { useFetchData } from "@/hooks/useFetchData";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
@@ -106,10 +106,37 @@ export function IEMapView({ highlightCode, height = "500px" }: IEMapViewProps) {
     return result;
   }, [profiles, filter, search]);
 
-  const initMap = useCallback(() => {
+  // Initialize map only after container is mounted and has dimensions
+  useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
-    const map = L.map(containerRef.current, {
+    // Ensure container has height before initializing
+    const container = containerRef.current;
+    if (container.clientHeight === 0) {
+      // Wait for layout to complete
+      const raf = requestAnimationFrame(() => {
+        if (container.clientHeight > 0 && !mapRef.current) {
+          initMapInstance(container);
+        }
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+
+    initMapInstance(container);
+
+    return () => {
+      resizeObs.current?.disconnect();
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, []);
+
+  const resizeObs = useRef<ResizeObserver | null>(null);
+
+  function initMapInstance(container: HTMLDivElement) {
+    const map = L.map(container, {
       center: CENTER,
       zoom: 12,
       zoomControl: false,
@@ -118,6 +145,7 @@ export function IEMapView({ highlightCode, height = "500px" }: IEMapViewProps) {
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       maxZoom: 19,
+      subdomains: "abcd",
     }).addTo(map);
 
     L.control.zoom({ position: "bottomright" }).addTo(map);
@@ -127,17 +155,13 @@ export function IEMapView({ highlightCode, height = "500px" }: IEMapViewProps) {
 
     markersRef.current = L.layerGroup().addTo(map);
     mapRef.current = map;
-  }, []);
 
-  useEffect(() => {
-    initMap();
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
-    };
-  }, [initMap]);
+    // ResizeObserver to handle layout shifts
+    resizeObs.current = new ResizeObserver(() => {
+      map.invalidateSize();
+    });
+    resizeObs.current.observe(container);
+  }
 
   // Render markers when filtered data changes
   useEffect(() => {
@@ -228,7 +252,7 @@ export function IEMapView({ highlightCode, height = "500px" }: IEMapViewProps) {
       </div>
 
       {/* Map */}
-      <div ref={containerRef} style={{ height }} />
+      <div ref={containerRef} style={{ height, minHeight: "300px" }} />
     </div>
   );
 }
