@@ -34,6 +34,7 @@ const NAV_ITEMS = [
   { href: "/mapa/instituciones", label: "Mapa IEs", icon: Map },
   { href: "/contexto", label: "Contexto", icon: BarChart3 },
   { href: "/analisis", label: "Análisis", icon: FlaskConical },
+  { href: "/metodologia", label: "Metodología", icon: FlaskConical },
 ];
 
 /* Tensor chevron logo mark */

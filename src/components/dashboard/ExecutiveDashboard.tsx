@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { useFetchData } from "@/hooks/useFetchData";
 import { ChartSkeleton } from "@/components/ui/ChartSkeleton";
+import { ExportButton } from "@/components/ui/ExportButton";
 import { Minus } from "lucide-react";
 
 /* ========== TYPES ========== */
@@ -370,6 +371,7 @@ function IndiceSIEMini() {
 /* ========== MAIN DASHBOARD ========== */
 
 export function ExecutiveDashboard() {
+  const dashboardRef = React.useRef<HTMLDivElement>(null);
   const { data: kpis, loading: kpiLoading } =
     useFetchData<KPIData>("/data/kpis.json");
   const { data: mapData, loading: mapLoading } =
@@ -467,7 +469,7 @@ export function ExecutiveDashboard() {
   const sedesYear = f?.sedes?.ultimo_anio;
 
   return (
-    <div className="p-6 space-y-6 max-w-[1400px]">
+    <div ref={dashboardRef} className="p-6 space-y-6 max-w-[1400px]">
       {/* ---- Header ---- */}
       <motion.div {...fadeUp} transition={{ duration: 0.4 }}>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -501,6 +503,7 @@ export function ExecutiveDashboard() {
               <Map className="w-3 h-3" />
               Mapa
             </Link>
+            <ExportButton targetRef={dashboardRef} filename="dashboard-sie-medellin" />
           </div>
         </div>
       </motion.div>
