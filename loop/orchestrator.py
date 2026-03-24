@@ -24,6 +24,7 @@ def run_transformers():
     from loop.transformers.process_poblaciones import run as run_poblaciones
     from loop.transformers.process_cruces import run as run_cruces
     from loop.transformers.process_map_data import run as run_map_data
+    from loop.transformers.process_ie_profiles import run as run_ie_profiles
     from loop.transformers._meta import build_manifest
 
     # 1. Base stats + KPIs + saber11 initial + sedes
@@ -40,7 +41,9 @@ def run_transformers():
     run_cruces()
     # 7. Mapa enriquecido (depends on all above)
     run_map_data()
-    # 8. Generate data freshness manifest
+    # 8. Institution profiles (depends on all above)
+    run_ie_profiles()
+    # 9. Generate data freshness manifest
     build_manifest()
 
 
