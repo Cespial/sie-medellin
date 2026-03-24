@@ -99,6 +99,13 @@ export default function InstitucionDetallePage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Dynamic page title
+  useEffect(() => {
+    if (profile) {
+      document.title = `${profile.nombre} — SIE Medellín`;
+    }
+  }, [profile]);
+
   useEffect(() => {
     if (!codigo) return;
     fetch("/data/perfiles_ie.json")

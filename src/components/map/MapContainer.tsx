@@ -195,36 +195,36 @@ function buildComunaPopup(
   return `<div style="padding:14px;font-family:Inter,system-ui,sans-serif;background:#F5F5F7;color:#E8F4FD;border-radius:12px;min-width:260px;max-width:320px;">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
       <h3 style="font-weight:800;font-size:14px;margin:0;">${nombre}</h3>
-      <span style="font-size:10px;color:#6B8CAE;background:#D2D2D7;padding:2px 6px;border-radius:4px;">C${codigo}</span>
+      <span style="font-size:10px;color:#6E6E73;background:#D2D2D7;padding:2px 6px;border-radius:4px;">C${codigo}</span>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;">
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">Deserción</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Deserción</span><br/>
         <span style="font-weight:700;color:${(data.tasa_desercion ?? 0) > 3.5 ? "#FF3B30" : "#34C759"};font-size:16px;">${fmt(data.tasa_desercion, 2)}%</span>
       </div>
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">Aprobación</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Aprobación</span><br/>
         <span style="font-weight:700;color:${(data.tasa_aprobacion ?? 0) >= 90 ? "#34C759" : "#FF9500"};font-size:16px;">${fmt(data.tasa_aprobacion, 1)}%</span>
       </div>
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">Matrícula</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Matrícula</span><br/>
         <span style="font-weight:600;color:#007AFF;font-size:14px;">${fmtInt(data.matricula)}</span>
       </div>
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">% Oficial</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">% Oficial</span><br/>
         <span style="font-weight:600;color:#5856D6;font-size:14px;">${fmt(data.pct_oficial, 1)}%</span>
       </div>
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">Saber 11</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Saber 11</span><br/>
         <span style="font-weight:700;color:#FF9500;font-size:14px;">${data.saber11_promedio != null ? data.saber11_promedio.toFixed(1) + " pts" : "N/D"}</span>
       </div>
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">ISCE</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">ISCE</span><br/>
         <span style="font-weight:600;color:#34C759;font-size:14px;">${data.isce_promedio != null ? data.isce_promedio.toFixed(2) : "N/D"}</span>
       </div>
     </div>
     ${clasifBadges ? `<div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap;">${clasifBadges}</div>` : ""}
-    ${data.saber11_ies ? `<div style="margin-top:6px;font-size:10px;color:#6B8CAE;">${data.saber11_ies} IEs con Saber 11 · ${fmtInt(data.saber11_evaluados)} evaluados</div>` : ""}
+    ${data.saber11_ies ? `<div style="margin-top:6px;font-size:10px;color:#6E6E73;">${data.saber11_ies} IEs con Saber 11 · ${fmtInt(data.saber11_evaluados)} evaluados</div>` : ""}
   </div>`;
 }
 
@@ -244,11 +244,11 @@ function buildIEPopup(
   let subjectsHtml = "";
   if (ieData?.matematicas) {
     subjectsHtml = `<div style="margin-top:8px;padding-top:8px;border-top:1px solid #D2D2D7;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;font-size:10px;">
-      <div><span style="color:#6B8CAE;">Mat</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.matematicas?.toFixed(1)}</span></div>
-      <div><span style="color:#6B8CAE;">Lec</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.lecturaCritica?.toFixed(1)}</span></div>
-      <div><span style="color:#6B8CAE;">Nat</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.cienciasNaturales?.toFixed(1)}</span></div>
-      <div><span style="color:#6B8CAE;">Soc</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.socialesCiudadanas?.toFixed(1)}</span></div>
-      <div><span style="color:#6B8CAE;">Ing</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.ingles?.toFixed(1)}</span></div>
+      <div><span style="color:#6E6E73;">Mat</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.matematicas?.toFixed(1)}</span></div>
+      <div><span style="color:#6E6E73;">Lec</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.lecturaCritica?.toFixed(1)}</span></div>
+      <div><span style="color:#6E6E73;">Nat</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.cienciasNaturales?.toFixed(1)}</span></div>
+      <div><span style="color:#6E6E73;">Soc</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.socialesCiudadanas?.toFixed(1)}</span></div>
+      <div><span style="color:#6E6E73;">Ing</span> <span style="color:#E8F4FD;font-weight:600;">${ieData.ingles?.toFixed(1)}</span></div>
     </div>`;
   }
 
@@ -257,24 +257,24 @@ function buildIEPopup(
     <div style="margin-bottom:8px;">${sectorBadge}${clasifBadge}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;">
       <div>
-        <span style="color:#6B8CAE;font-size:10px;">Matrícula</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Matrícula</span><br/>
         <span style="font-weight:600;color:#007AFF;font-size:14px;">${mat.toLocaleString("es-CO")}</span>
       </div>
       ${ieData?.promedioGlobal ? `<div>
-        <span style="color:#6B8CAE;font-size:10px;">Saber 11</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Saber 11</span><br/>
         <span style="font-weight:700;color:#FF9500;font-size:14px;">${ieData.promedioGlobal.toFixed(1)}</span>
       </div>` : ""}
       ${ieData?.isce ? `<div>
-        <span style="color:#6B8CAE;font-size:10px;">ISCE</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">ISCE</span><br/>
         <span style="font-weight:600;color:#34C759;font-size:14px;">${ieData.isce.toFixed(2)}</span>
       </div>` : ""}
       ${ieData?.evaluados ? `<div>
-        <span style="color:#6B8CAE;font-size:10px;">Evaluados</span><br/>
+        <span style="color:#6E6E73;font-size:10px;">Evaluados</span><br/>
         <span style="color:#E8F4FD;">${ieData.evaluados.toLocaleString("es-CO")}</span>
       </div>` : ""}
     </div>
     ${subjectsHtml}
-    ${props.zona ? `<div style="margin-top:6px;font-size:10px;color:#6B8CAE;">${props.zona}${props.barrio_vereda ? ` · ${props.barrio_vereda}` : ""}</div>` : ""}
+    ${props.zona ? `<div style="margin-top:6px;font-size:10px;color:#6E6E73;">${props.zona}${props.barrio_vereda ? ` · ${props.barrio_vereda}` : ""}</div>` : ""}
   </div>`;
 }
 
