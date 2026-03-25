@@ -75,7 +75,7 @@ def run():
     # Enhanced IE rankings (min 10 evaluados for statistical significance)
     ie_list = []
     for code, d in by_ie.items():
-        if len(d["scores"]) >= 10:
+        if len(d["scores"]) >= 3:
             avg = sum(d["scores"]) / len(d["scores"])
             entry = {
                 "codigoDane": code,

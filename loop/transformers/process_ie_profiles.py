@@ -193,7 +193,7 @@ def run():
     all_ie_avgs = []  # for percentile calculation
 
     for code, ie in ie_raw.items():
-        if len(ie["scores"]) < 10:
+        if len(ie["scores"]) < 3:
             continue
         avg_global = round(sum(ie["scores"]) / len(ie["scores"]), 1)
         all_ie_avgs.append((code, avg_global))
@@ -222,7 +222,7 @@ def run():
     }
 
     for code, ie in ie_raw.items():
-        if len(ie["scores"]) < 10:
+        if len(ie["scores"]) < 3:
             continue
 
         avg_global = round(sum(ie["scores"]) / len(ie["scores"]), 1)

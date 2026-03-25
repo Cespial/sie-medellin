@@ -1,6 +1,6 @@
 {
-  "generado": "2026-03-20T23:31:22",
-  "total_archivos": 25,
+  "generado": "2026-03-25T10:33:02",
+  "total_archivos": 27,
   "archivos": {
     "aprobacion_medellin.json": {
       "fuente": "MEData CSV",
@@ -62,6 +62,11 @@
       "antiguedad_anios": 6,
       "tamano_kb": 3.5
     },
+    "escuelas_riesgo.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "tamano_kb": 168.9
+    },
     "estadisticas_historicas.json": {
       "fuente": "datos.gov.co/ji8i-4anb",
       "descripcion": "Estadísticas departamentales Antioquia",
@@ -100,7 +105,7 @@
     "mapa_enriquecido.json": {
       "fuente": "Múltiples (deserción, aprobación, matrícula, Saber 11, ISCE)",
       "descripcion": "Datos enriquecidos por comuna e IE para el mapa",
-      "tamano_kb": 127.4
+      "tamano_kb": 142.0
     },
     "matricula_medellin.json": {
       "fuente": "MEData CSV + estimaciones sras-4t5p",
@@ -129,6 +134,11 @@
       "nota": "Snapshot de un solo año",
       "tamano_kb": 1.2
     },
+    "perfiles_ie.json": {
+      "fuente": "desconocida",
+      "descripcion": "",
+      "tamano_kb": 1183.2
+    },
     "poblaciones_especiales.json": {
       "fuente": "datos.gov.co",
       "descripcion": "Extranjeros, etnias, víctimas, NEE en educación formal",
@@ -153,7 +163,7 @@
       "fuente": "datos.gov.co/kgxf-xxbe",
       "descripcion": "Promedios Saber 11 por institución educativa (min 10 evaluados)",
       "nota": "Agrega todos los períodos 2014-2022. Último examen: período ICFES 20224 = año 2022",
-      "tamano_kb": 143.8
+      "tamano_kb": 164.9
     },
     "saber11_serie_temporal.json": {
       "fuente": "datos.gov.co/kgxf-xxbe",
